@@ -1,4 +1,10 @@
 @charset "UTF-8";
+
+@viewport {
+  width: device-width ;
+  zoom: 1.0 ;
+} 
+
 * {
   box-sizing: border-box;
 }
@@ -24,12 +30,14 @@ a:hover {
 }
 header {
   width: 100%;
-  height: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   background-color: #333;
   color: #efefef;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align:center;
   font-size: 20px;
 }
 nav {
@@ -43,7 +51,8 @@ nav {
   padding: 5px;
   height: 35px;
   margin-right: 10px;
-  box-shadow: #a4d8ff 0 0px 2px, #8bcdff 0 3px 0px;	
+  box-shadow: #a4d8ff 0 0px 2px, #8bcdff 0 3px 0px;
+  margin-bottom: 8px;
 }
 .selectWrapper:hover {
   background: #fff;
@@ -87,6 +96,8 @@ article {
   display: inline-block;
   vertical-align: top; 
   padding: 9px 13px 9px 13px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 .table .box {
   vertical-align: middle;
@@ -225,3 +236,20 @@ footer img {
 .lN2B {background:#9A181F} .lN2B:before{content:"N2B"}
 .lN3 {background:#DDAD22} .lN3:before{content:"N3"}
 .lN11 {background:#90277D} .lN11:before{content:"N11"}
+
+@media screen and (max-width:600px) {
+  #numbr {
+	display: block;  
+  }
+} 
+@media screen and (max-width:450px) {
+  .selectWrapper {
+	display: block;  
+	margin-left: 8px;
+	margin-right: 8px;
+  }
+  .selectWrapper a, select {
+	 width: 100%;
+	 display: block;
+  }
+} 
