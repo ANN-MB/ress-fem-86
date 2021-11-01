@@ -135,7 +135,7 @@ hr {
 #totop {
   display: none;
   position: fixed;
-  bottom: 30px;
+  bottom: 26px;
   right: 30px;
   z-index: 20; 
   border: none;
@@ -184,7 +184,7 @@ footer {
   position: fixed; 
   bottom:0;
   display: table;
-  height: 30px;
+  height: 26px;
   background-color: #333;
   color: #efefef;display: flex;
   justify-content: center;
