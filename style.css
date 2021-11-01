@@ -1,0 +1,227 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0 0 30px 0;
+  font-size: 16px;
+  color: #333;
+}
+body, select, option {
+	font-family: "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; 
+}
+body {
+  background: #D7EEFF;
+}
+a {
+  color: #0078A8;
+  font: 16px 
+}
+a:hover {
+  color: #333;
+}
+header {
+  width: 100%;
+  height: 50px;
+  background-color: #333;
+  color: #efefef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+nav {
+	text-align: center;
+	padding: 15px 0 8px 0;
+}
+.selectWrapper{
+  border-radius: 36px;
+  display: inline-block;
+  background: #f1f9ff;
+  padding: 5px;
+  height: 35px;
+  margin-right: 10px;
+  box-shadow: #a4d8ff 0 0px 2px, #8bcdff 0 3px 0px;	
+}
+.selectWrapper:hover {
+  background: #fff;
+  box-shadow: #3facff 0 0px 2px, #3facff 0 3px 0px ;
+}
+.selectWrapper:hover select {
+  background: #fff;
+}
+select, .maplink {
+  font-size: 18px;
+  color: #333;
+  height:100%;
+}
+select {
+  background: #f1f9ff;
+  padding-left: 5px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+.maplink {
+  width: 100%; 
+  padding: 0 10px 0 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.table {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+article {
+  width: 500px;
+  margin: 1vw;
+  background: #FCFCFC;
+  box-shadow: #888 0 2px 4px;	
+  border-radius: 10px;
+  display: inline-block;
+  vertical-align: top; 
+  padding: 9px 13px 9px 13px;
+}
+.table .box {
+  vertical-align: middle;
+  padding: 4px 4px 4px 3px;
+}
+.box:empty {display:none;border:1px solid #f00}
+
+hr {
+  border-top: 1px solid #333; 
+  border-bottom: 0
+}
+#careContainer {display: none}
+.name {font-weight: bold;border-bottom: 1px solid #333;}
+.loc, .bus, .time, .avis, .info, .loc, .web {margin-left: 20px}
+.desc {font-style: italic}
+.info {text-align: justify}
+.ig:not(:empty):before {content:"";background-image:url(img/ig.png);width:16px;height:16px;background-size: 16px 16px;display: inline-block;margin-right:5px}
+.tw:not(:empty):before {content:"";background-image:url(img/tw.png);width:16px;height:16px;background-size: 16px 16px;display: inline-block;margin-right:5px}
+.fb:not(:empty):before {content:"";background-image:url(img/fb.png);width:16px;height:16px;background-size: 16px 16px;display: inline-block;margin-right:5px}
+.num:not(:empty):before {content:"📞 "}
+.mail:not(:empty):before {content:"📧 "}
+.web:not(:empty):before {content:"🔗 ";margin-left:-20px}
+.loc:not(:empty):before {content:"📬 ";margin-left:-20px}
+.bus:not(:empty):before {content:"🚌 "; margin-left:-20px}
+.time:not(:empty):before {content:"🕒 ";margin-left:-20px}
+.avis:not(:empty):before {content:"📝 ";margin-left:-20px}
+.prix:not(:empty):before {content:"🪙 "}
+.conv:not(:empty):before {content:"💶 "}
+.lng:not(:empty):before {content:"🗣️ "}
+.acc:not(:empty):before {content:"♿ "}
+.park:not(:empty):before {content:"🅿️ "}
+.info:not(:empty):before {content:"ℹ️ ";margin-left:-20px}
+
+
+#totop {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 20; 
+  border: none;
+  outline: none;
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  padding: 5px;
+  border-radius:  10px  10px 0 0;
+  font-size: 16px; 
+}
+
+#totop:hover {
+  background-color: #555;
+}
+#mymap {
+  width: 50vw;
+  height: 100vh;
+  position: fixed;
+  bottom: 0; top: 0;
+  border: 0;
+  right: -50vw;
+  transition: right 1s;
+  z-index: 30;
+ box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+footer {
+  width: 100%;
+  position: fixed; 
+  bottom:0;
+  display: table;
+  height: 30px;
+  background-color: #333;
+  color: #efefef;display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px
+}
+footer a {
+  color: #efefef;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #D7EEFF
+}
+footer img {
+  height:20px
+}
+.l {
+  display: inline-block;
+  width: 17px; height: 17px;
+  font: bold 10px sans-serif;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 18px;   
+  color: #fff;
+}
+.lN2A, .lN2B, .lTER, .lN11, .lCITA {font-size:7px;line-height: 17px}
+.l3, .lD {color:#000}
+.l1 {background:#00A3DB} .l1:before{content:"1"}
+.l2A {background:#FF0000} .l2A:before{content:"2A"}
+.l2B {background:#D71F26} .l2B:before{content:"2B"}
+.l3 {background:#FFF000} .l3:before{content:"3"}
+.l1E {background:#83D0F5} .l1E:before{content:"1E"}
+.lO {background:#E94282} .lO:before{content:"O"}
+.l10 {background:#92CFC5} .l10:before{content:"10"}
+.l11 {background:#90277D} .l11:before{content:"11"}
+.l12 {background:#A780AD} .l12:before{content:"12"}
+.l13 {background:#E57FA9} .l13:before{content:"13"}
+.l14 {background:#DE3FA2} .l14:before{content:"14"}
+.l15 {background:#9EC83F} .l15:before{content:"15"}
+.l16 {background:#347C86} .l16:before{content:"16"}
+.l17 {background:#C1934F} .l17:before{content:"17"}
+.l34 {background:#573D90} .l34:before{content:"34"}
+.l32 {background:#347AB3} .l32:before{content:"32"}
+.l35 {background:#719B68} .l35:before{content:"35"}
+.l33 {background:#A4502B} .l33:before{content:"33"}
+.l20 {background:#82BE40} .l20:before{content:"20"}
+.l21 {background:#E78229} .l21:before{content:"21"}
+.l22 {background:#837438} .l22:before{content:"22"}
+.l23 {background:#E26626} .l23:before{content:"23"}
+.l24 {background:#E05A75} .l24:before{content:"24"}
+.l25 {background:#EEA829} .l25:before{content:"25"}
+.l27 {background:#A1BCC6} .l27:before{content:"27"}
+.l28 {background:#9D6331} .l28:before{content:"28"}
+.l29 {background:#69B642} .l29:before{content:"29"}
+.l30 {background:#C71066} .l30:before{content:"30"}
+.l31 {background:#07AD98} .l31:before{content:"31"}
+.lTER {background:#0000B0} .lTER:before{content:"TER"}
+.lCITA {background:#64C800} .lCITA:before{content:"CITA"}
+.lA {background:#FF0000} .lA:before{content:"A"}
+.lB {background:#E30613} .lB:before{content:"B"}
+.lC {background:#00A665} .lC:before{content:"C"}
+.lD {background:#FFF000} .lD:before{content:"D"}
+.lE {background:#90287B} .lE:before{content:"E"}
+.lN2A {background:#D80014} .lN2A:before{content:"N2A"}
+.lN2B {background:#9A181F} .lN2B:before{content:"N2B"}
+.lN3 {background:#DDAD22} .lN3:before{content:"N3"}
+.lN11 {background:#90277D} .lN11:before{content:"N11"}
