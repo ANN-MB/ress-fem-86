@@ -50,6 +50,11 @@ function sort() {
 	nb = 0;
 }	
 
-cats.addEventListener("change", sort, false);	
-cars.addEventListener("change",sort, false);
+cats.addEventListener("change", function(){
+	if (this.value !== "care") {
+		cars.selectedIndex = 0
+	}
+	sort()
+}, false);	
+cars.addEventListener("change", sort, false);
 city.addEventListener("change", sort, false);
