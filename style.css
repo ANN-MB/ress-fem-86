@@ -243,6 +243,9 @@ footer img {
   }
 } 
 @media screen and (max-width:450px) {
+  header {
+	font-size: 16px;
+  }
   .selectWrapper {
 	display: block;  
 	margin-left: 8px;
