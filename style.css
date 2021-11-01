@@ -151,16 +151,33 @@ hr {
 #totop:hover {
   background-color: #555;
 }
-#mymap {
+.mapcontainer {
   width: 50vw;
   height: 100vh;
   position: fixed;
   bottom: 0; top: 0;
-  border: 0;
   right: -50vw;
   transition: right 1s;
   z-index: 30;
- box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.mymap {
+  border: 0;
+  width: 100%;
+  height: 100%;
+}
+.mapcontainerdeployed {
+  right: 0;
+}
+#exit {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  background-color: #f99;
+  font-size: 18px;
+	
 }
 footer {
   width: 100%;
@@ -239,7 +256,16 @@ footer img {
 
 @media screen and (max-width:600px) {
   #numbr {
-	display: block;  
+	display: block; 
+    width: 100vw;
+    right: -100vw;	
+  }
+  .mapcontainer {
+	width: 100vw;
+    right: -100vw;
+  }
+  .mapcontainerdeployed {
+	  right: 0;
   }
 } 
 @media screen and (max-width:450px) {

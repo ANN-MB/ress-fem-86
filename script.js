@@ -1,14 +1,14 @@
 /* REVEALS THE MAP */
 document.addEventListener("click", function(evt) {
-	if(evt.target.className == "tomap") {
-		document.getElementById("mymap").style.right = "0"
-	} else if(evt.target.className !== "map") {
-		document.getElementById("mymap").style.right = "-50vw"
-	} else {
-		return false
-	}
+		if(evt.target.className == "tomap") {
+			document.getElementById("mapcontainer").className += " mapcontainerdeployed"
+		} else if(evt.target.className !== "mapcontainer") {
+			document.getElementById("mapcontainer").className = "mapcontainer"
+		} 
 }, false);
-
+document.getElementById("exit").addEventListener("click", function(evt) {
+	document.getElementById("mapcontainer").className = "mapcontainer"
+}, false);
 /* SCROLL TO TOP */
 window.onscroll = function() {
   if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
