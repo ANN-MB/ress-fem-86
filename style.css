@@ -1,49 +1,40 @@
 @charset "UTF-8";
-
 @viewport {
-  width: device-width ;
-  zoom: 1.0 ;
+  width: device-width;
+  zoom: 1
 } 
-
 * {
   box-sizing: border-box;
+  font-family: "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
 }
-
 body, html {
   margin: 0;
   padding: 0 0 30px 0;
   font-size: 16px;
-  color: #333;
-}
-body, select, option {
-	font-family: "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; 
-}
-body {
-  background: #D7EEFF;
+  background: #D7EEFF
 }
 a {
   color: #0078A8;
   font: 16px 
 }
-a:hover {
+a:hover, select, .maplink, article div {
   color: #333;
 }
+hr {
+  border-top: 1px solid #333; 
+  border-bottom: 0
+}
+header, nav, .maplink, .l {text-align: center}
+header, footer {color: #efefef}
 header {
-  width: 100%;
   padding: 10px;
-  
   background-color: #333;
-  color: #efefef;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align:center;
   font-size: 20px;
 }
-nav {
-	text-align: center;
-	padding: 15px 0 8px 0;
-}
+nav {padding: 19px 0 8px 0}
 .selectWrapper{
   border-radius: 36px;
   display: inline-block;
@@ -61,27 +52,23 @@ nav {
 .selectWrapper:hover select {
   background: #fff;
 }
-select, .maplink {
+select, .maplink, .mymap {
   font-size: 18px;
-  color: #333;
-  height:100%;
+  height: 100%;
+  border: 0;
 }
 select {
   background: #f1f9ff;
   padding-left: 5px;
-  border: 0;
   outline: none;
-  cursor: pointer;
 }
+.maplink, .table, .mymap, header, footer {width: 100%}
+#exit, select, #totop {cursor: pointer}
 .maplink {
-  width: 100%; 
   padding: 0 10px 0 10px;
-  text-align: center;
   text-decoration: none;
 }
-
 .table {
-  width: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -89,48 +76,18 @@ select {
 }
 article {
   width: 500px;
-  margin: 1vw;
   background: #FCFCFC;
   box-shadow: #888 0 2px 4px;	
-  border-radius: 10px;
-  display: inline-block;
+  border-radius: 12px;
   vertical-align: top; 
   padding: 9px 13px 9px 13px;
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin: 8px 1vw 15px 1vw
 }
-.table .box {
+article div {
   vertical-align: middle;
   padding: 4px 4px 4px 3px;
 }
-.box:empty {display:none;border:1px solid #f00}
-
-hr {
-  border-top: 1px solid #333; 
-  border-bottom: 0
-}
-#careContainer {display: none}
-.name {font-weight: bold;border-bottom: 1px solid #333;}
-.loc, .bus, .time, .avis, .info, .loc, .web {margin-left: 20px}
-.desc {font-style: italic}
-.info {text-align: justify}
-.ig:not(:empty):before {content:"";background-image:url(img/ig.png);width:16px;height:16px;background-size: 16px 16px;display: inline-block;margin-right:5px}
-.tw:not(:empty):before {content:"";background-image:url(img/tw.png);width:16px;height:16px;background-size: 16px 16px;display: inline-block;margin-right:5px}
-.fb:not(:empty):before {content:"";background-image:url(img/fb.png);width:16px;height:16px;background-size: 16px 16px;display: inline-block;margin-right:5px}
-.num:not(:empty):before {content:"📞 "}
-.mail:not(:empty):before {content:"📧 "}
-.web:not(:empty):before {content:"🔗 ";margin-left:-20px}
-.loc:not(:empty):before {content:"📬 ";margin-left:-20px}
-.bus:not(:empty):before {content:"🚌 "; margin-left:-20px}
-.time:not(:empty):before {content:"🕒 ";margin-left:-20px}
-.avis:not(:empty):before {content:"📝 ";margin-left:-20px}
-.prix:not(:empty):before {content:"🪙 "}
-.conv:not(:empty):before {content:"💶 "}
-.lng:not(:empty):before {content:"🗣️ "}
-.acc:not(:empty):before {content:"♿ "}
-.park:not(:empty):before {content:"🅿️ "}
-.info:not(:empty):before {content:"ℹ️ ";margin-left:-20px}
-
+article div:empty, #careContainer{display:none}
 
 #totop {
   display: none;
@@ -138,11 +95,10 @@ hr {
   bottom: 26px;
   right: 30px;
   z-index: 20; 
-  border: none;
+  border: 0;
   outline: none;
-  background-color: #333;
+  background: #333;
   color: #fff;
-  cursor: pointer;
   padding: 5px;
   border-radius:  10px  10px 0 0;
   font-size: 16px; 
@@ -151,7 +107,7 @@ hr {
 #totop:hover {
   background-color: #555;
 }
-.mapcontainer {
+.mapbox {
   width: 50vw;
   height: 100vh;
   position: fixed;
@@ -161,12 +117,7 @@ hr {
   z-index: 30;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
-.mymap {
-  border: 0;
-  width: 100%;
-  height: 100%;
-}
-.mapcontainerdeployed {
+.deploy {
   right: 0;
 }
 #exit {
@@ -177,16 +128,13 @@ hr {
   height: 30px;
   background-color: #f99;
   font-size: 18px;
-	
 }
 footer {
-  width: 100%;
+  display: flex;
   position: fixed; 
-  bottom:0;
-  display: table;
   height: 26px;
-  background-color: #333;
-  color: #efefef;display: flex;
+  bottom: 0;  
+  background: #333;
   justify-content: center;
   align-items: center;
   font-size: 16px
@@ -198,20 +146,43 @@ footer a {
 footer a:hover {
   color: #D7EEFF
 }
-footer img {
-  height:20px
-}
+
+/*** Article elements ***/
+.name {font-weight: bold;border-bottom: 1px solid #333}
+.loc, .bus, .time, .avis, .info, .loc, .web {margin-left: 20px}
+.desc {font-style: italic}
+.info {text-align: justify}
+.ig:before {content:"";background-image:url(img/ig.png);width:16px;height:16px;background-size: 16px 16px;display: inline-block;margin-right:5px}
+.tw:before {content:"";background-image:url(img/tw.png);width:16px;height:16px;background-size: 16px 16px;display: inline-block;margin-right:5px}
+.fb:before {content:"";background-image:url(img/fb.png);width:16px;height:16px;background-size: 16px 16px;display: inline-block;margin-right:5px}
+.num:before {content:"📞 "}
+.mail:before {content:"📧 "}
+.web:before {content:"🔗 "; margin-left:-20px}
+.loc:before {content:"📬 "; margin-left:-20px}
+.bus:before {content:"🚌 "; margin-left:-20px}
+.time:before {content:"🕒 "; margin-left:-20px}
+.avis:before {content:"📝 "; margin-left:-20px}
+.prix:before {content:"🪙 "}
+.conv:before {content:"💶 "}
+.lng:before {content:"🗣️ "}
+.acc:before {content:"♿ "}
+.park:before {content:"🅿️ "}
+.info:before {content:"ℹ️ ";margin-left:-20px}
+
+/*** Bus Circles ***/
 .l {
   display: inline-block;
   width: 17px; height: 17px;
   font: bold 10px sans-serif;
   border-radius: 50%;
-  text-align: center;
   vertical-align: middle;
   line-height: 18px;   
   color: #fff;
 }
-.lN2A, .lN2B, .lTER, .lN11, .lCITA {font-size:7px;line-height: 17px}
+.lN2A, .lN2B, .lTER, .lN11, .lCITA {
+  font-size:7px;
+  line-height: 17px
+}
 .l3, .lD {color:#000}
 .l1 {background:#00A3DB} .l1:before{content:"1"}
 .l2A {background:#FF0000} .l2A:before{content:"2A"}
@@ -260,11 +231,11 @@ footer img {
     width: 100vw;
     right: -100vw;	
   }
-  .mapcontainer {
+  .mapbox {
 	width: 100vw;
     right: -100vw;
   }
-  .mapcontainerdeployed {
+  .deploy {
 	  right: 0;
   }
 } 
