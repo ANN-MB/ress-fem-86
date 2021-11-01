@@ -30,8 +30,8 @@ a:hover {
 }
 header {
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
+  
   background-color: #333;
   color: #efefef;
   display: flex;
