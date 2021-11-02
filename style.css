@@ -114,8 +114,7 @@ article div:empty, #careContainer{display:none}
   bottom: 0; top: 0;
   right: -50vw;
   transition: right 1s;
-  z-index: 30;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  z-index: 30
 }
 .deploy {
   right: 0;
