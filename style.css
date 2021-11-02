@@ -150,7 +150,7 @@ footer a:hover {
 .name {font-weight: bold;border-bottom: 1px solid #333}
 .loc, .bus, .time, .avis, .info, .loc, .web {margin-left: 20px}
 .desc {font-style: italic}
-.info {text-align: justify}
+/*.info, .avis {text-align: justify; text-align-last: left; text-justify: distribute}*/
 .ig:before {content:"";background-image:url(img/ig.png);width:16px;height:16px;background-size: 16px 16px;display: inline-block;margin-right:5px}
 .tw:before {content:"";background-image:url(img/tw.png);width:16px;height:16px;background-size: 16px 16px;display: inline-block;margin-right:5px}
 .fb:before {content:"";background-image:url(img/fb.png);width:16px;height:16px;background-size: 16px 16px;display: inline-block;margin-right:5px}
