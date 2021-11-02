@@ -30,12 +30,15 @@ hr {
   white-space: nowrap;
   border: 0
 }
-header, nav, .maplink, .l {text-align: center}
-header, footer {color: #efefef}
-header {
+h1, nav, .maplink, .l {text-align: center}
+h1, footer {color: #efefef}
+h1 {
   padding: 10px;
   background-color: #333;
   display: flex;
+  margin: 0;
+  font-size: 1.1em;
+  font-weight: normal;
   justify-content: center;
   align-items: center;
 }
@@ -66,7 +69,7 @@ select {
   padding-left: 5px;
   outline: none;
 }
-.maplink, .table, .mymap, header {width: 100%}
+.maplink, .table, .mymap, h1 {width: 100%}
 #exit, select, #totop {cursor: pointer}
 .maplink {
   padding: 0 10px 0 10px;
@@ -258,7 +261,7 @@ footer a:hover {
 } 
 @media screen and (max-width:450px) {
  
-  header {
+  h1 {
 
   }
   .wrap {
