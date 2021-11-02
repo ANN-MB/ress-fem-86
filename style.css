@@ -239,14 +239,15 @@ footer a:hover {
   }
 } 
 @media screen and (max-width:450px) {
+ 
   header {
 	font-size: 16px;
   }
   .selectWrapper {
 	display: block;  
+	width: calc(100% - 16px);
 	margin-left: 8px;
 	margin-right: 8px;
-	  width: 100%;
   }
   .selectWrapper a, select {
 	 width: 100%;
