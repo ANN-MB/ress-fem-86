@@ -7,22 +7,28 @@
   box-sizing: border-box;
   font-family: "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
 }
-body, html {
+html {
+  font-size: 100%
+}
+body {
   margin: 0;
   padding: 0 0 30px 0;
-  font-size: 16px;
   background: #D7EEFF
 }
-a {
-  color: #0078A8;
-  font: 16px 
-}
-a:hover, select, .maplink, article div {
-  color: #333;
-}
 hr {
-  border-top: 1px solid #333; 
+  border-top: 3px solid #333; 
   border-bottom: 0
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0
 }
 header, nav, .maplink, .l {text-align: center}
 header, footer {color: #efefef}
@@ -32,37 +38,35 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
 }
 nav {padding: 19px 0 8px 0}
-.selectWrapper{
+.wrap {
   border-radius: 36px;
   display: inline-block;
   background: #f1f9ff;
   padding: 5px;
-  height: 35px;
   margin-right: 10px;
   box-shadow: #a4d8ff 0 0px 2px, #8bcdff 0 3px 0px;
   margin-bottom: 8px;
 }
-.selectWrapper:hover {
+.wrap:hover {
   background: #fff;
   box-shadow: #3facff 0 0px 2px, #3facff 0 3px 0px ;
 }
-.selectWrapper:hover select {
+.wrap:hover select {
   background: #fff;
 }
 select, .maplink, .mymap {
-  font-size: 18px;
   height: 100%;
   border: 0;
+  font-size: 1em;
 }
 select {
   background: #f1f9ff;
   padding-left: 5px;
   outline: none;
 }
-.maplink, .table, .mymap, header, footer {width: 100%}
+.maplink, .table, .mymap, header {width: 100%}
 #exit, select, #totop {cursor: pointer}
 .maplink {
   padding: 0 10px 0 10px;
@@ -80,28 +84,34 @@ article {
   box-shadow: #888 0 2px 4px;	
   border-radius: 12px;
   vertical-align: top; 
-  padding: 9px 13px 9px 13px;
+  padding: 5px 0 9px 0;
   margin: 8px 1vw 15px 1vw
 }
 article div {
   vertical-align: middle;
-  padding: 4px 4px 4px 3px;
+  padding: 4px 13px 4px 13px;
 }
-article div:empty, #careContainer{display:none}
+article a {
+  color: #0078A8
+}
+article a:hover, select, .maplink, article div {
+  color: #333;
+}
+ #careContainer {display:none}
 
 #totop {
   display: none;
   position: fixed;
-  bottom: 26px;
-  right: 30px;
+  bottom: 15px;
+  right: 15px;
   z-index: 20; 
   border: 0;
   outline: none;
   background: #333;
   color: #fff;
   padding: 5px;
-  border-radius:  10px  10px 0 0;
-  font-size: 16px; 
+  border-radius:  10px;
+  font-size: 0.9em
 }
 
 #totop:hover {
@@ -126,47 +136,55 @@ article div:empty, #careContainer{display:none}
   width: 30px;
   height: 30px;
   background-color: #f99;
-  font-size: 18px;
 }
 footer {
   display: flex;
-  position: fixed; 
-  height: 26px;
-  bottom: 0;  
+  position: fixed;
+  bottom: 0;  left: 0;
   background: #333;
+  font-size: 0.9em;
   justify-content: center;
   align-items: center;
-  font-size: 16px
+  padding: 3px 5px 3px 5px
 }
 footer a {
   color: #efefef;
   text-decoration: none;
 }
 footer a:hover {
-  color: #D7EEFF
+  color: #D7EEFF;
+  text-decoration: underline
 }
 
 /*** Article elements ***/
-.name {font-weight: bold;border-bottom: 1px solid #333}
+
+.ig::before, .tw::before, .fb::before {
+  content:"";
+  width:16px; height:16px;
+  background-size: 16px 16px;
+  display: inline-block;
+  margin-right:5px
+}
 .loc, .bus, .time, .avis, .info, .loc, .web {margin-left: 20px}
+
+.name {font-weight: bold; margin-bottom: 5px; border-bottom: 1px solid #777}
 .desc {font-style: italic}
-/*.info, .avis {text-align: justify; text-align-last: left; text-justify: distribute}*/
-.ig:before {content:"";background-image:url(img/ig.png);width:16px;height:16px;background-size: 16px 16px;display: inline-block;margin-right:5px}
-.tw:before {content:"";background-image:url(img/tw.png);width:16px;height:16px;background-size: 16px 16px;display: inline-block;margin-right:5px}
-.fb:before {content:"";background-image:url(img/fb.png);width:16px;height:16px;background-size: 16px 16px;display: inline-block;margin-right:5px}
-.num:before {content:"📞 "}
-.mail:before {content:"📧 "}
-.web:before {content:"🔗 "; margin-left:-20px}
-.loc:before {content:"📬 "; margin-left:-20px}
-.bus:before {content:"🚌 "; margin-left:-20px}
-.time:before {content:"🕒 "; margin-left:-20px}
-.avis:before {content:"📝 "; margin-left:-20px}
-.prix:before {content:"🪙 "}
-.conv:before {content:"💶 "}
-.lng:before {content:"🗣️ "}
-.acc:before {content:"♿ "}
-.park:before {content:"🅿️ "}
-.info:before {content:"ℹ️ ";margin-left:-20px}
+.ig::before {background-image:url(img/ig.png)}
+.tw::before {background-image:url(img/tw.png)}
+.fb::before {background-image:url(img/fb.png)}
+.num::before {content:"📞 "}
+.mail::before {content:"📧 "}
+.web::before {content:"🔗 "; margin-left:-20px}
+.loc::before {content:"📬 "; margin-left:-20px}
+.bus::before {content:"🚌 "; margin-left:-20px}
+.time::before {content:"🕒 "; margin-left:-20px}
+.avis::before {content:"📝 "; margin-left:-20px}
+.prix::before {content:"🪙 "}
+.conv::before {content:"💶 "}
+.lng::before {content:"🗣️ "}
+.acc::before {content:"♿ "}
+.park::before {content:"🅿️ "}
+.info::before {content:"ℹ️ ";margin-left:-20px}
 
 /*** Bus Circles ***/
 .l {
@@ -174,55 +192,55 @@ footer a:hover {
   width: 17px; height: 17px;
   font: bold 10px sans-serif;
   border-radius: 50%;
-  vertical-align: middle;
+  /*vertical-align: middle;*/
   line-height: 18px;   
   color: #fff;
 }
 .lN2A, .lN2B, .lTER, .lN11, .lCITA {
-  font-size:7px;
+  font-size: 7px;
   line-height: 17px
 }
 .l3, .lD {color:#000}
-.l1 {background:#00A3DB} .l1:before{content:"1"}
-.l2A {background:#FF0000} .l2A:before{content:"2A"}
-.l2B {background:#D71F26} .l2B:before{content:"2B"}
-.l3 {background:#FFF000} .l3:before{content:"3"}
-.l1E {background:#83D0F5} .l1E:before{content:"1E"}
-.lO {background:#E94282} .lO:before{content:"O"}
-.l10 {background:#92CFC5} .l10:before{content:"10"}
-.l11 {background:#90277D} .l11:before{content:"11"}
-.l12 {background:#A780AD} .l12:before{content:"12"}
-.l13 {background:#E57FA9} .l13:before{content:"13"}
-.l14 {background:#DE3FA2} .l14:before{content:"14"}
-.l15 {background:#9EC83F} .l15:before{content:"15"}
-.l16 {background:#347C86} .l16:before{content:"16"}
-.l17 {background:#C1934F} .l17:before{content:"17"}
-.l34 {background:#573D90} .l34:before{content:"34"}
-.l32 {background:#347AB3} .l32:before{content:"32"}
-.l35 {background:#719B68} .l35:before{content:"35"}
-.l33 {background:#A4502B} .l33:before{content:"33"}
-.l20 {background:#82BE40} .l20:before{content:"20"}
-.l21 {background:#E78229} .l21:before{content:"21"}
-.l22 {background:#837438} .l22:before{content:"22"}
-.l23 {background:#E26626} .l23:before{content:"23"}
-.l24 {background:#E05A75} .l24:before{content:"24"}
-.l25 {background:#EEA829} .l25:before{content:"25"}
-.l27 {background:#A1BCC6} .l27:before{content:"27"}
-.l28 {background:#9D6331} .l28:before{content:"28"}
-.l29 {background:#69B642} .l29:before{content:"29"}
-.l30 {background:#C71066} .l30:before{content:"30"}
-.l31 {background:#07AD98} .l31:before{content:"31"}
-.lTER {background:#0000B0} .lTER:before{content:"TER"}
-.lCITA {background:#64C800} .lCITA:before{content:"CITA"}
-.lA {background:#FF0000} .lA:before{content:"A"}
-.lB {background:#E30613} .lB:before{content:"B"}
-.lC {background:#00A665} .lC:before{content:"C"}
-.lD {background:#FFF000} .lD:before{content:"D"}
-.lE {background:#90287B} .lE:before{content:"E"}
-.lN2A {background:#D80014} .lN2A:before{content:"N2A"}
-.lN2B {background:#9A181F} .lN2B:before{content:"N2B"}
-.lN3 {background:#DDAD22} .lN3:before{content:"N3"}
-.lN11 {background:#90277D} .lN11:before{content:"N11"}
+.l1 {background:#00A3DB}
+.l2A {background:#FF0000}
+.l2B {background:#D71F26}
+.l3 {background:#FFF000}
+.l1E {background:#83D0F5}
+.lO {background:#E94282}
+.l10 {background:#92CFC5}
+.l11 {background:#90277D}
+.l12 {background:#A780AD}
+.l13 {background:#E57FA9}
+.l14 {background:#DE3FA2}
+.l15 {background:#9EC83F}
+.l16 {background:#347C86}
+.l17 {background:#C1934F}
+.l34 {background:#573D90}
+.l32 {background:#347AB3}
+.l35 {background:#719B68}
+.l33 {background:#A4502B}
+.l20 {background:#82BE40}
+.l21 {background:#E78229}
+.l22 {background:#837438}
+.l23 {background:#E26626}
+.l24 {background:#E05A75}
+.l25 {background:#EEA829}
+.l27 {background:#A1BCC6}
+.l28 {background:#9D6331}
+.l29 {background:#69B642}
+.l30 {background:#C71066}
+.l31 {background:#07AD98}
+.lTER {background:#0000B0}
+.lCITA {background:#64C800}
+.lA {background:#FF0000}
+.lB {background:#E30613}
+.lC {background:#00A665}
+.lD {background:#FFF000}
+.lE {background:#90287B}
+.lN2A {background:#D80014}
+.lN2B {background:#9A181F}
+.lN3 {background:#DDAD22}
+.lN11 {background:#90277D}
 
 @media screen and (max-width:600px) {
   #numbr {
@@ -241,15 +259,15 @@ footer a:hover {
 @media screen and (max-width:450px) {
  
   header {
-	font-size: 16px;
+
   }
-  .selectWrapper {
+  .wrap {
 	display: block;  
 	width: calc(100% - 16px);
 	margin-left: 8px;
 	margin-right: 8px;
   }
-  .selectWrapper a, select {
+  .wrap a, select {
 	 width: 100%;
 	 display: block;
   }
