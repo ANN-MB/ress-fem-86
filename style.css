@@ -16,7 +16,7 @@ body {
   background: #D7EEFF
 }
 hr {
-  border-top: 3px solid #333; 
+  border-top: 2px dashed #777; 
   border-bottom: 0
 }
 .sr-only {

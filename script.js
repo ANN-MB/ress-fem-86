@@ -47,6 +47,7 @@ function sort() {
 
 cats.addEventListener("change", function(){
   "care" !== this.value && (cars.selectedIndex = 0);
+  "phon" == this.value && (city.selectedIndex = 0);
   sort()
 }, false);	
 cars.addEventListener("change", sort, false);
