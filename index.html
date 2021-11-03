@@ -7,70 +7,73 @@
 	<meta name="robots" content="none" />
 	<meta name="author" content="Ann MB" />
 	<link href="style.css" rel="stylesheet" />
-	<link rel="icon" type="image/png" href="img/favicon.png" />
-	<title>Ressources féministes, LGBTQI+ et TPG de Poitiers et alentours</title>
+	<!--<link rel="icon" type="image/png" href="img/favicon.png" />-->
+	<title>Ressources féministes & queer Poitiers et Vienne</title>
 </head>
 <body>
 	<h1>♀️&nbsp;Ressources féministes & queer Poitiers et Vienne&nbsp;⚧️</h1>
 	<nav>
 		<a href="http://u.osmfr.org/m/672182/" class="wrap maplink" target="_blank">🌍 Voir la carte</a>
 		<div class="wrap">
-			<select id="categories">
-			<option value="">Trier par catégorie</option>
-			<option value="asso">Associations</option>
-			<option value="cont">Contraception</option>
-			<option value="cult">Culturel / Artistique</option>
-			<option value="dmst">Dépistage MST / IST</option>
-			<option value="drag">Drag king/queen/queer</option>
-			<option value="righ">Droits</option>
-			<option value="evnt">Évènements</option>
-			<option value="fami">Famille</option>
-			<option value="femi">Féminisme</option>
-			<option value="host">Hébergement</option>
-			<option value="inst">Institution</option>
-			<option value="ivg">IVG</option>
-			<option value="phon">Ligne téléphonique</option>
-			<option value="lgbt">LGBTQI+</option>
-			<option value="mine">Mineur&middot;es & Enfants</option>
-			<option value="acti">Politique / activisme / militantisme</option>
-			<option value="heal">Santé (sauf soignant·es)</option>
-			<option value="care">Soignant&middot;es ❯</option>
-			<option value="sprt">Sport</option>
-			<option value="tran">Transidentité</option>
-			<option value="aggr">Violences</option>
-		</select>
+			<label for="categories">Choix d'une catégories pour restreindre les résultats</label>
+			<select id="categories" name="categories">
+				<option value="">Trier par catégorie</option>
+				<option value="asso">Associations</option>
+				<option value="cont">Contraception</option>
+				<option value="cult">Culturel / Artistique</option>
+				<option value="dmst">Dépistage MST / IST</option>
+				<option value="drag">Drag king/queen/queer</option>
+				<option value="righ">Droits</option>
+				<option value="evnt">Évènements</option>
+				<option value="fami">Famille</option>
+				<option value="femi">Féminisme</option>
+				<option value="host">Hébergement</option>
+				<option value="inst">Institution</option>
+				<option value="ivg">IVG</option>
+				<option value="phon">Ligne téléphonique</option>
+				<option value="lgbt">LGBTQI+</option>
+				<option value="mine">Mineur&middot;es & Enfants</option>
+				<option value="acti">Politique / activisme / militantisme</option>
+				<option value="heal">Santé (sauf soignant·es)</option>
+				<option value="care">Soignant&middot;es ❯</option>
+				<option value="sprt">Sport</option>
+				<option value="tran">Transidentité</option>
+				<option value="aggr">Violences</option>
+			</select>
 		</div>
 		<div class="wrap" id="careContainer">
-		<select id="caretakers">
-			<option value="">Choix d'un type de soignant·e</option>
-			<option value="derm">Dermatologue</option>
-			<option value="endo">Endocrinologue</option>
-			<option value="gene">Généraliste</option>
-			<option value="ggyn">Généraliste spé. gynéco</option>
-			<option value="gyne">Gynécologue</option>
-			<option value="hypn">Hypnothérapeute</option>
-			<option value="infi">Infirmier·e</option>
-			<option value="orth">Orthophoniste / Vocologiste</option>
-			<option value="psyi">Psychiatre</option>
-			<option value="psyo">Psychologue</option>
-			<option value="safe">Sage-Femme</option>
-			<option value="sexo">Sexologue</option>
-			<option value="soph">Sophrologue</option>
-		</select>
+			<label for="caretakers">Choix d'une profession de soignant en particulier</label>
+			<select id="caretakers" name="caretakers">
+				<option value="">Choix d'un type de soignant·e</option>
+				<option value="derm">Dermatologue</option>
+				<option value="endo">Endocrinologue</option>
+				<option value="gene">Généraliste</option>
+				<option value="ggyn">Généraliste spé. gynéco</option>
+				<option value="gyne">Gynécologue</option>
+				<option value="hypn">Hypnothérapeute</option>
+				<option value="infi">Infirmier·e</option>
+				<option value="orth">Orthophoniste / Vocologiste</option>
+				<option value="psyi">Psychiatre</option>
+				<option value="psyo">Psychologue</option>
+				<option value="safe">Sage-Femme</option>
+				<option value="sexo">Sexologue</option>
+				<option value="soph">Sophrologue</option>
+			</select>
 		</div>
 		<div class="wrap">
-		<select id="city">
-			<option value="">Trier par ville</option>
-			<option value="B">Bignoux</option>
-			<option value="X">Buxerolles</option>
-			<option value="I">Civray</option>
-			<option value="C">Châtellerault</option>
-			<option value="L">Loudun</option>
-			<option value="M">Montmorillon</option>
-			<option value="T">Monts Sur Guesnes</option>
-			<option value="P">Poitiers</option>
-			<option value="S">Saint-Benoît</option>
-		</select>
+			<label for="city">Choix d'une ville pour restreindre les résultats</label>
+			<select id="city" name="city">
+				<option value="">Trier par ville</option>
+				<option value="B">Bignoux</option>
+				<option value="X">Buxerolles</option>
+				<option value="I">Civray</option>
+				<option value="C">Châtellerault</option>
+				<option value="L">Loudun</option>
+				<option value="M">Montmorillon</option>
+				<option value="T">Monts Sur Guesnes</option>
+				<option value="P">Poitiers</option>
+				<option value="S">Saint-Benoît</option>
+			</select>
 	</div>
 		<span id="numbr"></span> 
 	</nav>
@@ -81,7 +84,7 @@
 			<div class="num">05 49 88 44 20</div>
 			<div class="mail"><a href="mailto:res.cma@free.fr" target="_blank">res.cma@free.fr</a></div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.58351/0.34606" class="tomap" target="map">16, rue Riffault - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l1">1</span> <span class="l l3">3</span> <span class="l l11">11</span> <span class="l l12">12</span> <span class="l l15">15</span> <span class="l l16">16</span> <span class="l l17">17</span> <span class="l l22">22</span> <span class="l l23">23</span> <span class="l lO">O</span> <span class="l lC">C</span> <span class="l lD">D</span>  Notre-Dame<br/><span class="l lCITA">CITA</span>  Maison du Tourisme</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l1">1</span> <span class="l l3">3</span> <span class="l l11">11</span> <span class="l l12">12</span> <span class="l l15">15</span> <span class="l l16">16</span> <span class="l l17">17</span> <span class="l l22">22</span> <span class="l l23">23</span> <span class="l lO">O</span> <span class="l lC">C</span> <span class="l lD">D</span> Notre-Dame<br/><span class="l lCITA">CITA</span> Maison du Tourisme</div>
 			<div class="info">Capacité : 10 femmes dont 2 femmes avec 1 enfant. 7 studios et 3 chambres. L'accueil à la résidence suppose la mise en œuvre d'une rencontre entre la femme et une professionnelle dans un entretien d'admission.</div>
 		</article>
 		<article data-hashtag="P X asso fami mine">
@@ -92,7 +95,7 @@
 			<div class="mail"><a href="mailto:contact@adsea86.fr" target="_blank">contact@adsea86.fr</a></div>
 			<div class="web"><a href="https://www.adsea86.fr/aide-aux-victimes-2" target="_blank">https://www.adsea86.fr/aide-aux-victimes-2</a></div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.60265/0.36030" class="tomap" target="map">8, allée. du Parchemin - 86180 BUXEROLLES</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l13">13</span>  Voie Romaine</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l13">13</span> Voie Romaine</div>
 		</article>
 		<article data-hashtag="heal P asso dmst cont">
 			<div class="name">⚕️ AIDES</div>
@@ -102,9 +105,9 @@
 			<div class="web"><a href="https://www.aides.org" target="_blank">https://www.aides.org</a> (site national)</div>
 			<div class="fb"><a href="https://www.facebook.com/aides.territoirepoitoucharentes/" target="_blank">AIDES Caarud de la Vienne</a></div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.59024/0.34064" class="tomap" target="map">1, boulevard Jeanne d'Arc - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l17">17</span>  Abbé Frémont<br/>
-				<span class="l l1E">1E</span> <span class="l l21">21</span>  Porte de Paris<br/>
-				<span class="l l2A">2A</span> <span class="l l2B">2B</span> <span class="l l13">13</span>  Pont le Nain
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l17">17</span> Abbé Frémont<br/>
+				<span class="l l1E">1E</span> <span class="l l21">21</span> Porte de Paris<br/>
+				<span class="l l2A">2A</span> <span class="l l2B">2B</span> <span class="l l13">13</span> Pont le Nain
 			</div>
 		</article>
 		<article data-hashtag="P righ">
@@ -126,7 +129,7 @@
 			<div class="mail"><a href="mailto:black-star-feminin@riseup.net" target="_blank">black-star-feminin@riseup.net</a></div>
 			<div class="web"><a href="https://blackstar.noblogs.org" target="_blank">https://blackstar.noblogs.org</a></div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.55384/0.34238" class="tomap" target="map">52-56, route de Poitiers - 86280 SAINT-BENOIT</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l12">12</span>  Irma Jouenne</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l12">12</span> Irma Jouenne</div>
 		</article>
 		<article data-hashtag="heal P dmst">
 			<div class="name">⚕️ CeGIDD - CHU Poitiers</div>
@@ -137,8 +140,8 @@
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.55833/0.38919" class="tomap" target="map">CHRU de Poitiers - La Milétrie<br/>Avenue Jacques CŒur - 86000 POITIERS</a><br/>
 				Bâtiment Vie la Santé, Porte 5
 			</div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l1">1</span>  Centre Hospitalier / Tour Jean Bernard<br/>
-				<span class="l l10">10</span> <span class="l l11">11</span> <span class="l l27">27</span> <span class="l l13">13</span> <span class="l lC">C</span>  Milétrie Rond Point
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l1">1</span> Centre Hospitalier / Tour Jean Bernard<br/>
+				<span class="l l10">10</span> <span class="l l11">11</span> <span class="l l27">27</span> <span class="l l13">13</span> <span class="l lC">C</span> Milétrie Rond Point
 			</div>
 			<div class="time">Sur rendez-vous :<br/>
 				&nbsp;&nbsp;lundi : de 8h30 à 12h00<br/>
@@ -153,8 +156,8 @@
 			<div class="desc">Centre gratuit de santé sexuelle du CHU.<br/>Information, diagnostic et dépistage du VIH, des hépatites et des infections sexuellement transmissibles</div>
 			<div class="num">05 49 38 45 10</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.58945/0.34368" class="tomap" target="map">Relais Georges Charbonnier<br/>14, rue du Mouton - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l17">17</span>  Abbé Frémont
-				<br/><span class="l l13">13</span> <span class="l l21">21</span> <span class="l l2A">2A</span> <span class="l l2B">2B</span> <span class="l l32">32</span> <span class="l l33">33</span> <span class="l l34">34</span> <span class="l l35">35</span>  La Chaussée</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l17">17</span> Abbé Frémont
+				<br/><span class="l l13">13</span> <span class="l l21">21</span> <span class="l l2A">2A</span> <span class="l l2B">2B</span> <span class="l l32">32</span> <span class="l l33">33</span> <span class="l l34">34</span> <span class="l l35">35</span> La Chaussée</div>
 			<div class="time">Sans rendez-vous : mercredi : de 9h00 à 12h30</div>
 		</article>
 		<article data-hashtag="heal C dmst">
@@ -163,7 +166,7 @@
 			<div class="num">05 49 02 90 19</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#16/46.8326/0.5558" class="tomap" target="map">rue du Docteur Luc Montagnier - 86106 CHÂTELLERAULT</a>
 				<br/>Pôle de Santé Publique, 1<sup>er</sup> étage à gauche du bâtiment A</div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l1">1</span>  Hôpital</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l1">1</span> Hôpital</div>
 			<div class="time">Horaires :<br/>
 				&nbsp;&nbsp;mercredi : de 12h00 à 16h00<br/>
 				&nbsp;&nbsp;vendredi : de 15h00 à 19h00
@@ -204,10 +207,10 @@
 				CHU de Poitiers - service Gynécologie Obstétrique<br/>
 				Hall d’entrée de la tour Jean-Bernard à droite, couloir A1
 			</div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l11">11</span> <span class="l l2A">2A</span> <span class="l l2B">2B</span>  Petit Champs
-				<br/><span class="l l13">13</span>  Hélioport
-				<br/><span class="l l10">10</span> <span class="l l27">27</span> <span class="l lC">C</span>  Faculté de médecine
-				<br/><span class="l l1">1</span>  Tour Jean Bernard</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l11">11</span> <span class="l l2A">2A</span> <span class="l l2B">2B</span> Petit Champs
+				<br/><span class="l l13">13</span> Hélioport
+				<br/><span class="l l10">10</span> <span class="l l27">27</span> <span class="l lC">C</span> Faculté de médecine
+				<br/><span class="l l1">1</span> Tour Jean Bernard</div>
 			<div class="time">lundi au vendredi : de 9h00 à 17h00 sans interruption</div>
 			<div class="info">&bull; L’accueil des patientes est assuré par l’infirmière ou la sage-femme.<br/>
 				&bull; Consultations gynécologiques spécifiques pour les mineures le mercredi après-midi.
@@ -221,7 +224,7 @@
 			<div class="tw"><a href="https://www.twitter.com/CentreLGBTI/" target="_blank">@CentreLGBTI</a></div>
 			<div class="fb"><a href="https://www.facebook.com/centrelgbtidupoitou/" target="_blank">Centre LGBTI du Poitou</a></div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.58077/0.35177" class="tomap" target="map">Maison de la Solidarité<br/>22, rue du Pigeon Blanc - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l11">11</span> <span class="l l23">23</span> <span class="l lO">O</span> <span class="l lC">C</span>  Pont Joubert</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l11">11</span> <span class="l l23">23</span> <span class="l lO">O</span> <span class="l lC">C</span> Pont Joubert</div>
 		</article>
 		<article data-hashtag="host P host fami aggr">
 			<div class="name">🛏️ Centre d'hébergement pour femmes</div>
@@ -230,8 +233,8 @@
 			</div>
 			<div class="num">05 49 41 19 42 (Croix Rouge)</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.58661/0.32833" class="tomap" target="map">39, rue de la Chauvinerie - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l14">14</span> <span class="l lC">C</span>  Capitaine Bès<br/>
-				<span class="l l1">1</span> <span class="l l11">11</span> <span class="l l16">16</span> <span class="l lE">E</span>  La Roche
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l14">14</span> <span class="l lC">C</span> Capitaine Bès<br/>
+				<span class="l l1">1</span> <span class="l l11">11</span> <span class="l l16">16</span> <span class="l lE">E</span> La Roche
 			</div>
 		</article>
 		<article data-hashtag="heal P psyi psyo aggr inst">
@@ -241,8 +244,8 @@
 			<!--<div class="mail"><a href="mailto:contact@mediation-poitiers.org" target="_blank">contact@mediation-poitiers.org</a></div>-->
 			<div class="web"><a href="https://ch-laborit.fr/services-de-soins/adultes/consultations/centre-medico-psychologique-cmp-laborit/" target="_blank">https://ch-laborit.fr/services-de-soins/adultes/consultations/centre-medico-psychologique-cmp-laborit/</a></div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#16/46.5776/0.3781" class="tomap" target="map">14, Rue Gay Lussac - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l2A">2A</span> <span class="l l2B">2B</span> <span class="l l10">10</span>  Bois Dousset<br/>
-				<span class="l l15">15</span>  Beaulieu
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l2A">2A</span> <span class="l l2B">2B</span> <span class="l l10">10</span> Bois Dousset<br/>
+				<span class="l l15">15</span> Beaulieu
 			</div>
 			<div class="time">Du lundi au vendredi, de 9h à 19h</div>
 		</article>
@@ -268,7 +271,7 @@
 				&nbsp;&nbsp;lundi au vendredi : de 9h00 à 12h30<br/>
 				&nbsp;&nbsp;mardi : de 14h00 à 16h30
 			</div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l2A">2A</span> <span class="l l2B">2B</span>  Les Sables / Clos Gaultier</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l2A">2A</span> <span class="l l2B">2B</span> Les Sables / Clos Gaultier</div>
 			<hr/>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/fr/map/ressources-feministes-lgbtqi-et-tpg-de-poitiers-et_672182#18/46.42754/0.87399" class="tomap" target="map">18, place de la Victoire - 86500 MONTMORILLON<a/></div>
 			<div class="time">Sur rendez-vous le 2<sup>ème</sup> mercredi de chaque mois à la Maison Départementale de la Solidarité</div>
@@ -288,7 +291,7 @@
 			<div class="name">📢 Collectif Poitevin pour le Droit des Femmes</div>
 			<div class="desc"></div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.58076/0.35190" class="tomap" target="map">Maison de la Solidarité<br/>22, rue du Pigeon Blanc - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l11">11</span> <span class="l l23">23</span> <span class="l lO">O</span> <span class="l lC">C</span>  Pont Joubert</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l11">11</span> <span class="l l23">23</span> <span class="l lO">O</span> <span class="l lC">C</span> Pont Joubert</div>
 		</article>
 		<article data-hashtag="acti lgbt P asso tran fami">
 			<div class="name">📢 CONTACT Vienne</div>
@@ -298,7 +301,7 @@
 			<div class="web"><a href="https://www.asso-contact.org/asso/86" target="_blank">https://www.asso-contact.org/asso/86</a></div>
 			<div class="fb"><a href="https://www.facebook.com/ContactVienne" target="_blank">Association CONTACT Vienne</a></div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.58070/0.35156" class="tomap" target="map">Maison de la Solidarité<br/>22, rue du Pigeon Blanc - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l11">11</span> <span class="l l23">23</span> <span class="l lO">O</span> <span class="l lC">C</span>  Pont Joubert</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l11">11</span> <span class="l l23">23</span> <span class="l lO">O</span> <span class="l lC">C</span> Pont Joubert</div>
 		</article>
 		<article data-hashtag="acti heal P lgbt asso tran">
 			<div class="name">📢 Couvent des SDF - Les Sœurs de la Perpétuelle Indulgence</div>
@@ -323,7 +326,7 @@
 			<div class="num">09 72 34 70 80 (tous les dimanches de 19h00 à 21h00)</div>
 			<div class="web"><a href="http://www.entousgenres.org/" target="_blank">http://www.entousgenres.org/</a></div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#" class="tomap" target="map">Maison de la Solidarité<br/>22, rue du Pigeon Blanc - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l11">11</span> <span class="l l23">23</span> <span class="l lO">O</span> <span class="l lC">C</span>  Pont Joubert</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l11">11</span> <span class="l l23">23</span> <span class="l lO">O</span> <span class="l lC">C</span> Pont Joubert</div>
 			<div class="time">Rendez vous sur demande.</div>
 		</article>
 		<article data-hashtag="heal P">
@@ -336,7 +339,7 @@
 			<div class="ig"><a href="https://www.instagram.com/erspoitiers/" target="_blank">@erspoitiers</a></div>
 			<div class="fb"><a href="https://www.facebook.com/ERSPoitiers" target="_blank">Étudiants Relai Santé - Université de Poitiers</a></div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#16/46.5644/0.3850" class="tomap" target="map">allée Jean Monnet - 86073 POITIERS</a><br/>Bâtiment C44</div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l1">1</span> <span class="l l13">13</span> <span class="l l10">10</span> <span class="l l2A">2A</span> <span class="l l2B">2B</span> <span class="l l33">33</span> <span class="l l34">34</span>  Pôle Technologique</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l1">1</span> <span class="l l13">13</span> <span class="l l10">10</span> <span class="l l2A">2A</span> <span class="l l2B">2B</span> <span class="l l33">33</span> <span class="l l34">34</span> Pôle Technologique</div>
 			<div class="time">Horaires :<br/>
 				&nbsp;&nbsp;lundi : de 08h30 à 17h30<br/>
 				&nbsp;&nbsp;mardi : de 08h30 à 17h30<br/>
@@ -375,12 +378,12 @@
 			<div class="mail"><a href="mailto:contact@clubdebridge.fr" target="_blank">contact@clubdebridge.fr</a></div>
 			<div class="web"><a href="https://clubdebridge.fr/" target="_blank">https://clubdebridge.fr/</a></div>
 		</article>
-		<article data-hashtag="phon inst A aggr">
+		<article data-hashtag="phon inst aggr">
 			<div class="name">📞 Ligne d'écoute violences conjugales</div>
 			<div class="desc">Ligne téléphonique</div>
 			<div class="num">0 800 002 906 (gratuit depuis un fixe)</div>
 		</article>
-		<article data-hashtag="phon heal A ivg cont">
+		<article data-hashtag="phon heal ivg cont">
 			<div class="name">📞 Ligne d’information régionale pour la contraception et les IVG</div>
 			<div class="desc">Ligne téléphonique</div>
 			<div class="num">05 49 44 46 46</div>
@@ -392,8 +395,8 @@
 			<div class="num">05 49 41 97 00</div>
 			<div class="web">Carte des antennes de quartier : <a href="https://cutt.ly/jRB7vVy" target="_blank">https://cutt.ly/jRB7vVy</a></div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.58800/0.34717" class="tomap" target="map">9, rue Guillaume 7 le Troubadour - 86000 POITIERS</a> (siège)</div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l17">17</span>  Jardin des Plantes
-				<br/><span class="l l1">1</span> <span class="l l13">13</span> <span class="l l22">22</span>  Voie Malraux</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l17">17</span> Jardin des Plantes
+				<br/><span class="l l1">1</span> <span class="l l13">13</span> <span class="l l22">22</span> Voie Malraux</div>
 			<div class="park">Parking public : <a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-lgbtqi-et-tpg-de-poitiers-et_672182#18/46.58731/0.34423" class="tomap" target="map">36, rue de la Bretonnerie - 86000 POITIERS</a></div>
 			<div class="time">Horaires :<br/>
 				&nbsp;&nbsp;lundi : de 8h30 à 12h30<br/>
@@ -433,7 +436,7 @@
 			<div class="web"><a href="http://planning-familial.org/content/le-planning-familial-86-00293" target="_blank">http://planning-familial.org/content/le-planning-familial-86-00293</a></div>
 			<div class="fb"><a href="https://www.facebook.com/planningfamilial86" target="_blank">Planning Familial de la Vienne - Poitiers</a></div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.59240/0.36178" class="tomap" target="map">20, rue Fief des Hausses - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l3">3</span> <span class="l l10">10</span>  La Pépinière / Nimègue</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l3">3</span> <span class="l l10">10</span> La Pépinière / Nimègue</div>
 		</article>
 		<article data-hashtag="righ inst I">
 			<div class="name">⚖️ Point d'Accès au Droit - Civray</div>
@@ -493,7 +496,7 @@
 			<div class="mail"><a href="mailto:ass.sanza@hotmail.fr" target="_blank">ass.sanza@hotmail.fr</a></div>
 			<div class="fb"><a href="https://www.facebook.com/ass.sanza/" target="_blank">Association Sanza</a></div>		
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.58915/0.35558" class="tomap" target="map">90, avenue Georges Pompidou - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l2A">2A</span> <span class="l l2B">2B</span>  Le Mail</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l2A">2A</span> <span class="l l2B">2B</span> Le Mail</div>
 			<div class="time">Horaires :<br/>
 				&nbsp;&nbsp;lundi : de 14h00 à 17h00<br/>
 				&nbsp;&nbsp;mardi : de 11h00 à 12h00 et de 14h00 à 17h00<br/>
@@ -521,9 +524,9 @@
 			<div class="mail"><a href="mailto:savmj@prism86.fr" target="_blank">savmj@prism86.fr</a></div>
 			<div class="web"><a href="https://www.aideauxvictimes86.com/" target="_blank">https://www.aideauxvictimes86.com/</a></div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.59700/0.32255" class="tomap" target="map">16, rue de la Demi-Lune - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l1">1</span> <span class="l l11">11</span> <span class="l l14">14</span> <span class="l l17">17</span> <span class="l lE">E</span> <span class="l lC">C</span>  Avenue de Nantes<br/>
-				<span class="l l14">14</span> <span class="l l20">20</span> <span class="l l17">17</span>  Demi-Lune<br/>
-				<span class="l l1">1</span> <span class="l l11">11</span> <span class="l lE">E</span>  Les Glières
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l1">1</span> <span class="l l11">11</span> <span class="l l14">14</span> <span class="l l17">17</span> <span class="l lE">E</span> <span class="l lC">C</span> Avenue de Nantes<br/>
+				<span class="l l14">14</span> <span class="l l20">20</span> <span class="l l17">17</span> Demi-Lune<br/>
+				<span class="l l1">1</span> <span class="l l11">11</span> <span class="l lE">E</span> Les Glières
 			</div>
 			<div class="time">Des permanences sur rendez-vous sont tenues par les juristes sont organisées une demi journée par semaine :<br/>
 				&bull; Le lundi après midi à la mairie de Châtellerault <br/>
@@ -568,10 +571,10 @@
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.55950/0.38535" class="tomap" target="map">2, rue de la Milétrie - 86021 POITIERS</a><br/>
 				Porte 1 de la Tour Jean-Bernard<br/>
 				Niveau -2, Aile B</div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l11">11</span> <span class="l l2A">2A</span> <span class="l l2B">2B</span>  Petit Champs
-				<br/><span class="l l13">13</span>  Hélioport
-				<br/><span class="l l10">10</span> <span class="l l27">27</span> <span class="l lC">C</span>  Faculté de médecine
-				<br/><span class="l l1">1</span>  Tour Jean Bernard</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l11">11</span> <span class="l l2A">2A</span> <span class="l l2B">2B</span> Petit Champs
+				<br/><span class="l l13">13</span> Hélioport
+				<br/><span class="l l10">10</span> <span class="l l27">27</span> <span class="l lC">C</span> Faculté de médecine
+				<br/><span class="l l1">1</span> Tour Jean Bernard</div>
 			<div class="time">du lundi au vendredi, de 9h00 à 18h00, avec des consultations uniquement sur rendez-vous</div>
 			<div class="info">Pour les victimes d’infractions et après un dépôt de plainte, uniquement sur réquisition judiciaire, pour :<br/>
 				&bull; un examen de constatation des lésions et de leurs conséquences<br/>
@@ -587,8 +590,8 @@
 			<div class="num">06 34 32 03 10</div>
 			<div class="mail"><a href="mailto:projet.volar@sciencespo.fr" target="_blank">projet.volar@sciencespo.fr</a></div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.58151/0.34389" class="tomap" target="map">23, rue Jean Jaurès - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l13">13</span> <span class="l lO">O</span>  Henri Oudin<br/>
-				<span class="l l12">12</span> <span class="l l15">15</span>  Cordeliers
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l13">13</span> <span class="l lO">O</span> Henri Oudin<br/>
+				<span class="l l12">12</span> <span class="l l15">15</span> Cordeliers
 			</div>
 		</article>
 		<article data-hashtag="P femi">
@@ -602,8 +605,8 @@
 			<div class="desc">Psychologue Sexologue</div>
 			<div class="num">06 62 62 76 42</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.58281/0.35046" class="tomap" target="map">61, rue des Feuillants - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l1">1</span> <span class="l l3">3</span> <span class="l l11">11</span> <span class="l l16">16</span> <span class="l l17">17</span> <span class="l l22">22</span> <span class="l l23">23</span>  Voie Malraux<br/>
-				<span class="l l11">11</span> <span class="l l23">23</span> <span class="l lO">O</span> <span class="l lC">C</span>  Palais de Justice
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l1">1</span> <span class="l l3">3</span> <span class="l l11">11</span> <span class="l l16">16</span> <span class="l l17">17</span> <span class="l l22">22</span> <span class="l l23">23</span> Voie Malraux<br/>
+				<span class="l l11">11</span> <span class="l l23">23</span> <span class="l lO">O</span> <span class="l lC">C</span> Palais de Justice
 			</div>
 			<div class="park">Deux parkings boulevard Bajon</div>
 			<div class="prix">60 €</div>
@@ -618,7 +621,7 @@
 			<div class="desc">Sage-femme</div>
 			<div class="num">05 49 41 75 48</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.58456/0.34398" class="tomap" target="map">9, rue de la Tête Noire - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l1">1</span> <span class="l l1E">1E</span> <span class="l l3">3</span> <span class="l l11">11</span> <span class="l l12">12</span> <span class="l l15">15</span> <span class="l l16">16</span> <span class="l l17">17</span> <span class="l l22">22</span> <span class="l l23">23</span> <span class="l lO">O</span> <span class="l lC">C</span>  Notre Dame</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l1">1</span> <span class="l l1E">1E</span> <span class="l l3">3</span> <span class="l l11">11</span> <span class="l l12">12</span> <span class="l l15">15</span> <span class="l l16">16</span> <span class="l l17">17</span> <span class="l l22">22</span> <span class="l l23">23</span> <span class="l lO">O</span> <span class="l lC">C</span> Notre Dame</div>
 			<div class="prix">25 €</div>
 			<div class="conv">Secteur 1</div>
 			<div class="acc">Cabinet accessible fauteuil (rez-de-chaussée, tout de plain pied)</div>
@@ -632,7 +635,7 @@
 			<div class="desc">Généraliste</div>
 			<div class="num">05 86 16 03 34</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.56453/0.34032" class="tomap" target="map">15b, rue du Clos Gaultier - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l2A">2A</span> <span class="l l2B">2B</span>  Les Sables</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l2A">2A</span> <span class="l l2B">2B</span> Les Sables</div>
 			<div class="prix">25 €</div>
 			<div class="web"><a href="https://www.doctolib.fr/medecin-generaliste/poitiers/celine-brechon" target="_blank">https://www.doctolib.fr/medecin-generaliste/poitiers/celine-brechon</a></div>
 			<div class="conv">Secteur 1</div>
@@ -648,7 +651,7 @@
 			<div class="desc">Généraliste spécialisée gynéco</div>
 			<div class="num">05 49 41 08 40</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.57764/0.33877" class="tomap" target="map">9, rue Alsace Lorraine - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l lCITA">CITA</span>  Carnot<br/><span class="l l2A">2A</span> <span class="l lO">O</span> <span class="l l12">12</span> <span class="l l13">13</span> <span class="l l15">15</span>  Victor Hugo</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l lCITA">CITA</span> Carnot<br/><span class="l l2A">2A</span> <span class="l lO">O</span> <span class="l l12">12</span> <span class="l l13">13</span> <span class="l l15">15</span> Victor Hugo</div>
 			<div class="park">Parking Carnot (payant)</div>
 			<div class="prix">25 €</div>
 			<div class="web"><a href="https://www.doctolib.fr/medecin-generaliste/poitiers/elsa-cantos" target="_blank">https://www.doctolib.fr/medecin-generaliste/poitiers/elsa-cantos</a></div>
@@ -671,7 +674,7 @@
 			<div class="desc">Psychiatre</div>
 			<div class="num">05 49 88 25 10</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.57280/0.32754" class="tomap" target="map">22, avenue de la libération - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l3">3</span> <span class="l l17">17</span> <span class="l l2A">2A</span> <span class="l l24">24</span> <span class="l l25">25</span> <span class="l l28">28</span> <span class="l l29">29</span>  Porte de la Madeleine / La Souche</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l3">3</span> <span class="l l17">17</span> <span class="l l2A">2A</span> <span class="l l24">24</span> <span class="l l25">25</span> <span class="l l28">28</span> <span class="l l29">29</span> Porte de la Madeleine / La Souche</div>
 			<div class="prix">46,70 €</div>
 			<div class="conv">Secteur 1</div>
 			<div class="avis">&laquo;&nbsp;Excellent praticien très sensibilisé à la question trans-identitaire pour avoir suivi de nombreuses patientes du département.&nbsp;&raquo; - <i><a href="https://bddtrans.fr/psy/105-chaumeron.html" target="_blank">posté sur BDDTrans le 25/09/2017</a></i></div>
@@ -683,7 +686,7 @@
 			<div class="desc">Sage-femme</div>
 			<div class="num">09 64 34 37 92</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.58812/0.35787" class="tomap" target="map">7, rue de Provence - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l2A">2A</span> <span class="l l2B">2B</span>  Le Mail</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l2A">2A</span> <span class="l l2B">2B</span> Le Mail</div>
 			<div class="web"><a href="https://www.facebook.com/sagefemme86/" target="_blank">https://www.facebook.com/sagefemme86/</a></div>
 			<div class="conv">Secteur 1</div>
 			<div class="info">&bull; Pose DIU nullipares<br/>
@@ -728,7 +731,7 @@
 			<div class="desc">Orthophoniste</div>
 			<div class="num">06 48 89 29 76</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.57890/0.33889" class="tomap" target="map">28, rue Carnot - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l lCITA">CITA</span>  Carnot<br/><span class="l l2A">2A</span> <span class="l lO">O</span> <span class="l l12">12</span> <span class="l l13">13</span> <span class="l l15">15</span>  Victor Hugo</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l lCITA">CITA</span> Carnot<br/><span class="l l2A">2A</span> <span class="l lO">O</span> <span class="l l12">12</span> <span class="l l13">13</span> <span class="l l15">15</span> Victor Hugo</div>
 			<div class="mail"><a href="mailto:maya.hallay@larylab.fr">maya.hallay@larylab.fr</a></div>
 			<div class="web"><a href="https://larylab.fr" target="_blank">https://larylab.fr</a></div>
 			<div class="tw"><a href="https://twitter.com/hallaymaya" target="_blank">@hallaymaya</a></div>
@@ -755,7 +758,7 @@
 			<div class="desc">Psychologue & Sophrologue</div>
 			<div class="num">07 67 85 37 75</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.58597/0.36563" class="tomap" target="map">42, rue du Rondy - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l3">3</span> <span class="l l10">10</span> <span class="l l2A">2A</span> <span class="l l2B">2B</span>  Rondy</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l3">3</span> <span class="l l10">10</span> <span class="l l2A">2A</span> <span class="l l2B">2B</span> Rondy</div>
 			<div class="prix">50 €</div>
 			<div class="web"><a href="https://psychologue.laffontas.fr/" target="_blank">https://psychologue.laffontas.fr/</a></div>
 			<div class="avis">&laquo;&nbsp;Propose des séances autres de bilan neuropsychologiques d'adultes et des séances de remédiation / stimulation cognitive. Délais rapide (rendez vous sur son site avec le calendrier de ses disponibilités. Souvent la semaine suivante). Aucune info pour les visio mais peut se demander par mail. Psychologue très à l'écoute, respecte les pronoms, ne pose pas de questions indiscrètes bateaux, se renseigne sur les sujets qu'elle ne maîtrise pas pour aider son patient, non culpabilisante. A proposé son aide pour mes démarches.&nbsp;&raquo; – <i>avis posté sur Fransgenre le  23/08/2021</i> </div>
@@ -765,7 +768,7 @@
 			<div class="desc">Généraliste</div>
 			<div class="num">05 49 47 57 77</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.60238/0.46964" class="tomap" target="map">37, rue de la Forêt - 86800 BIGNOUX</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l32">32</span>  Bignoux École</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l32">32</span> Bignoux École</div>
 			<div class="prix">25 €</div>
 			<div class="web"><a href="https://www.doctolib.fr/medecin-generaliste/bignoux/delphine-lasseur-touzalin" target="_blank">https://www.doctolib.fr/medecin-generaliste/bignoux/delphine-lasseur-touzalin</a></div>
 			<div class="conv">Secteur 1</div>
@@ -805,7 +808,7 @@
 			<div class="desc">Généraliste</div>
 			<div class="num">05 86 16 03 06</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.56481/0.35215" class="tomap" target="map">11 bis, rue René Amand - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l2A">2A</span> <span class="l l2B">2B</span>  Grand Maison / St-Cyprien</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l2A">2A</span> <span class="l l2B">2B</span> Grand Maison / St-Cyprien</div>
 			<div class="avis">Conseillée par une pote trans. Ferait facilement des ALD pour transitions.</div>
 		</article>
 		<article data-hashtag="care derm P" >
@@ -813,8 +816,8 @@
 			<div class="desc">Dermatologue</div>
 			<div class="num">05 49 01 79 09</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.58332/0.34368" class="tomap" target="map">24, rue de la Regratterie - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l1">1</span> <span class="l l1E">1E</span> <span class="l l3">3</span> <span class="l l11">11</span> <span class="l l12">12</span> <span class="l l15">15</span> <span class="l l16">16</span> <span class="l l17">17</span> <span class="l l22">22</span> <span class="l l23">23</span> <span class="l lO">O</span> <span class="l lC">C</span>  Notre Dame<br/>
-				<span class="l l1">1</span> <span class="l l1E">1E</span> <span class="l l3">3</span> <span class="l l11">11</span> <span class="l l12">12</span> <span class="l l15">15</span> <span class="l l16">16</span> <span class="l l17">17</span> <span class="l lO">O</span> <span class="l lC">C</span> <span class="l lCITA">CITA</span>  Place Lepetit<br/>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l1">1</span> <span class="l l1E">1E</span> <span class="l l3">3</span> <span class="l l11">11</span> <span class="l l12">12</span> <span class="l l15">15</span> <span class="l l16">16</span> <span class="l l17">17</span> <span class="l l22">22</span> <span class="l l23">23</span> <span class="l lO">O</span> <span class="l lC">C</span> Notre Dame<br/>
+				<span class="l l1">1</span> <span class="l l1E">1E</span> <span class="l l3">3</span> <span class="l l11">11</span> <span class="l l12">12</span> <span class="l l15">15</span> <span class="l l16">16</span> <span class="l l17">17</span> <span class="l lO">O</span> <span class="l lC">C</span> <span class="l lCITA">CITA</span> Place Lepetit<br/>
 				<span class="l lCITA">CITA</span> Maison du Tourisme
 			</div>
 			<div class="prix">De 30€ à 95€</div>
@@ -827,7 +830,7 @@
 			<div class="desc">Endocrinologue</div>
 			<div class="num">05 49 37 94 04</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.57160/0.32572" class="tomap" target="map">54B, avenue de la Libération - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l3">3</span> <span class="l l17">17</span> <span class="l l2A">2A</span> <span class="l l24">24</span> <span class="l l25">25</span> <span class="l l28">28</span> <span class="l l29">29</span>  La Souche</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l3">3</span> <span class="l l17">17</span> <span class="l l2A">2A</span> <span class="l l24">24</span> <span class="l l25">25</span> <span class="l l28">28</span> <span class="l l29">29</span> La Souche</div>
 			<div class="conv">Secteur 2</div>
 			<div class="avis">&laquo;&nbsp;Peut prescrire un traitement si au moins un an de suivi psychiatrique&nbsp;&raquo; - <i><a href="https://bddtrans.fr/endocrinologues/816-nocent.html" target="_blank">posté sur BDDTrans le 11/01/2020</a></i></div>
 			<div class="avis">&laquo;&nbsp;À la retraite depuis le 31/12/19&nbsp;&raquo; - <i><a href="https://bddtrans.fr/endocrinologues/816-nocent.html" target="_blank">posté sur BDDTrans le 06/10/2020</a></i></div>
@@ -837,7 +840,7 @@
 			<div class="desc">Généraliste</div>
 			<div class="num">05 49 01 91 87</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.57319/0.38632" class="tomap" target="map">6, place de Rochemaux - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l15">15</span> <span class="l l10">10</span>  Iaroslav</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l15">15</span> <span class="l l10">10</span> Iaroslav</div>
 			<div class="prix">25 €</div>
 			<div class="conv">Secteur 1</div>
 			<div class="info">&bull; Pose de DIU aux nullipares</div>
@@ -848,7 +851,7 @@
 			<div class="desc">Infirmière & hypnothérapeute</div>
 			<div class="num">06 10 81 78 62</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.57280/0.32754" class="tomap" target="map">22, avenue de la Libération - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l3">3</span> <span class="l l17">17</span> <span class="l l15">15</span>  <span class="l l24">24</span> <span class="l l25">25</span> <span class="l l28">28</span> <span class="l l29">29</span>  La Souche / Porte de la Madeleine</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l3">3</span> <span class="l l17">17</span> <span class="l l15">15</span> <span class="l l24">24</span> <span class="l l25">25</span> <span class="l l28">28</span> <span class="l l29">29</span> La Souche / Porte de la Madeleine</div>
 			<div class="mail"><a href="mailto:stephaniepottier.hypnose@gmail.com">stephaniepottier.hypnose@gmail.com</a></div>
 			<div class="fb"><a href="https://www.facebook.com/Stéphanie-Pottier-Praticienne-en-Hypnose-2012880082375300/" target="_blank">Stéphanie Pottier - Praticienne en Hypnose</a></div>
 			<div class="conv">Carte vitale acceptée et conventionnée. Prend l'ALD.</div>
@@ -859,9 +862,9 @@
 			<div class="desc">Généraliste</div>
 			<div class="num">05 49 45 11 11</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.59007/0.35940" class="tomap" target="map">115, rue des Couronneries - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l3">3</span> <span class="l l10">10</span>  Nimègue<br/>
-				<span class="l l3">3</span> <span class="l l10">10</span> <span class="l l2A">2A</span> <span class="l l2B">2B</span>  Marbourg<br/>
-				<span class="l l2A">2A</span> <span class="l l2B">2B</span>  Le Mail
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l3">3</span> <span class="l l10">10</span> Nimègue<br/>
+				<span class="l l3">3</span> <span class="l l10">10</span> <span class="l l2A">2A</span> <span class="l l2B">2B</span> Marbourg<br/>
+				<span class="l l2A">2A</span> <span class="l l2B">2B</span> Le Mail
 			</div>
 			<div class="park">Parking gratuit devant le bâtiment</div>
 			<div class="prix">25 €</div>
@@ -876,7 +879,7 @@
 			<div class="desc">Sage-femme</div>
 			<div class="num">07 71 27 08 39</div>
 			<div class="loc"><a href="https://umap.openstreetmap.fr/en/map/ressources-feministes-queer-poitiers-et-86_672182#18/46.59094/0.32651" class="tomap" target="map">58, rue de Quinçay - 86000 POITIERS</a></div>
-			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l14">14</span> <span class="l l16">16</span> <span class="l lC">C</span>  Cité Bel Air</div>
+			<div class="bus"><span class="sr-only">Accès en bus </span><span class="l l14">14</span> <span class="l l16">16</span> <span class="l lC">C</span> Cité Bel Air</div>
 			<div class="mail"><a href="mailto:sagesfemmes.belair@gmail.com">sagesfemmes.belair@gmail.com</a></div>
 			<div class="web"><a href="https://sagefemme-poitiers.fr/" target="_blank">https://sagefemme-poitiers.fr/</a></div>
 			<div class="conv">Secteur 1 (PUMA)</div>

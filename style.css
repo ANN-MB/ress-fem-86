@@ -30,6 +30,9 @@ hr {
   white-space: nowrap;
   border: 0
 }
+label {
+  display: none;
+}
 h1, nav, .maplink, .l {text-align: center}
 h1, footer {color: #efefef}
 h1 {
