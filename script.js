@@ -42,7 +42,7 @@ function sort() {
       art[i].style.display = "none"
     }
   }
-  nmbr.innerHTML = "("+nb+" résultats)";
+  nmbr.innerHTML = "("+nb+"&nbsp;résultats)";
   nb = 0;
 }	
 
@@ -55,5 +55,5 @@ cars.addEventListener("change", sort, false);
 city.addEventListener("change", sort, false);
 
 window.addEventListener("DOMContentLoaded", function(){
-   nmbr.innerHTML = "("+artl+" résultats)";
+   nmbr.innerHTML = "("+artl+"&nbsp;résultats)";
 });

@@ -3,9 +3,20 @@
   width: device-width;
   zoom: 1
 } 
+@font-face {
+  font-family: 'tiresias_infofontitalic';
+  src: url('Tiresias_Infofont_Italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'tiresias_infofontregular';
+  src: url('Tiresias_Infofont-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   box-sizing: border-box;
-  font-family: "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
 }
 html {
   font-size: 100%
@@ -13,7 +24,10 @@ html {
 body {
   margin: 0;
   padding: 0 0 30px 0;
-  background: #D7EEFF
+  background: #D7EEFF;
+}
+body, select {
+  font-family: "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
 }
 hr {
   border-top: 2px dashed #777; 
@@ -36,7 +50,7 @@ label {
 h1, nav, .maplink, .l {text-align: center}
 h1, footer {color: #efefef}
 h1 {
-  padding: 10px;
+  padding: 7px;
   background-color: #333;
   display: flex;
   margin: 0;
@@ -143,9 +157,13 @@ article a:hover, select, .maplink, article div {
   position: absolute;
   top: 15px;
   right: 15px;
-  width: 30px;
   height: 30px;
-  background-color: #f99;
+  background-color: #D7EEFF;
+  font-size: 1.2em;
+  box-shadow: #a4d8ff 0 0px 2px, #8bcdff 0 3px 0px;
+  border: 1px solid #a4d8ff;
+  border-radius: 10px;
+  color: #333
 }
 footer {
   display: flex;
@@ -170,32 +188,34 @@ footer a:hover {
 /*** Article elements ***/
 
 .ig::before, .tw::before, .fb::before {
-  content:"";
+  content: "";
   width:16px; height:16px;
   background-size: 16px 16px;
   display: inline-block;
-  margin-right:5px
+  margin-right: 5px;
+  transform: translateY(2px);
 }
 .loc, .bus, .time, .avis, .info, .loc, .web {margin-left: 20px}
 
 .name {font-weight: bold; margin-bottom: 5px; border-bottom: 1px solid #777}
 .desc {font-style: italic}
+.num {speak-as:digits}
 .ig::before {background-image:url(img/ig.png)}
 .tw::before {background-image:url(img/tw.png)}
 .fb::before {background-image:url(img/fb.png)}
-.num::before {content:"📞 "}
-.mail::before {content:"📧 "}
-.web::before {content:"🔗 "; margin-left:-20px}
-.loc::before {content:"📬 "; margin-left:-20px}
-.bus::before {content:"🚌 "; margin-left:-20px}
-.time::before {content:"🕒 "; margin-left:-20px}
-.avis::before {content:"💬 "; margin-left:-20px}
-.prix::before {content:"🪙 "}
-.conv::before {content:"📃 "}
-.lng::before {content:"🗣️ "}
-.acc::before {content:"♿ "}
-.park::before {content:"🅿️ "}
-.info::before {content:"ℹ️ ";margin-left:-20px}
+.num::before {content:"\01F4DE\00a0"}
+.mail::before {content:"\01F4E7\00a0"}
+.web::before {content:"\01F4CE\00a0"; margin-left:-20px}
+.loc::before {content:"\01F4EC\00a0"; margin-left:-20px}
+.bus::before {content:"\01F68C\00a0"; margin-left:-20px}
+.time::before {content:"\01F552\00a0"; margin-left:-20px}
+.avis::before {content:"\01F4AC\00a0"; margin-left:-20px}
+.prix::before {content:"\1FA99\00a0"}
+.conv::before {content:"\01F4C3\00a0"}
+.lng::before {content:"\01F5E3\FE0F\00a0"}
+.acc::before {content:"\0267F\00a0"}
+.park::before {content:"\01F17F\FE0F\00a0"}
+.info::before {content:"\2139\FE0F\00a0";margin-left:-20px}
 
 /*** Bus Circles ***/
 .l {
@@ -203,7 +223,6 @@ footer a:hover {
   width: 17px; height: 17px;
   font: bold 10px sans-serif;
   border-radius: 50%;
-  /*vertical-align: middle;*/
   line-height: 18px;   
   color: #fff;
 }
@@ -253,7 +272,7 @@ footer a:hover {
 .lN3 {background:#DDAD22}
 .lN11 {background:#90277D}
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:800px) {
   #numbr {
 	display: block; 
     width: 100vw;
