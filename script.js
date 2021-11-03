@@ -4,7 +4,8 @@ const mbox = document.getElementById("mapbox"),
 	  cars = document.getElementById("caretakers"),
 	  city = document.getElementById("city"),
 	  carc = document.getElementById("careContainer"),
-	  ttop = document.getElementById("totop");
+	  ttop = document.getElementById("totop"),
+	  nmbr = document.getElementById("numbr");
 
 document.addEventListener("click", function(evt) {
   if(evt.target.className == "tomap") {
@@ -41,7 +42,7 @@ function sort() {
       art[i].style.display = "none"
     }
   }
-  document.getElementById("numbr").innerHTML = "("+nb+" résultats)";
+  nmbr.innerHTML = "("+nb+" résultats)";
   nb = 0;
 }	
 
@@ -54,5 +55,5 @@ cars.addEventListener("change", sort, false);
 city.addEventListener("change", sort, false);
 
 window.addEventListener("DOMContentLoaded", function(){
-   document.getElementById("numbr").innerHTML = "("+artl+" résultats)";
+   nmbr.innerHTML = "("+artl+" résultats)";
 });
