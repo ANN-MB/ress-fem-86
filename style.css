@@ -191,7 +191,7 @@ footer a:hover {
 
 /*** Article elements ***/
 
-.ig::before, .tw::before, .fb::before {
+.ig::before, .tw::before, .fb::before, .yt::before, .sc::before {
   content: "";
   width:16px; height:16px;
   background-size: 16px 16px;
@@ -207,6 +207,8 @@ footer a:hover {
 .ig::before {background-image:url(img/ig.png)}
 .tw::before {background-image:url(img/tw.png)}
 .fb::before {background-image:url(img/fb.png)}
+.yt::before {background-image:url(img/yt.png)}
+.sc::before {background-image:url(img/sc.png)}
 .num::before {content:"\01F4DE\00a0"}
 .mail::before {content:"\01F4E7\00a0"}
 .web::before {content:"\01F4CE\00a0"; margin-left:-20px}
