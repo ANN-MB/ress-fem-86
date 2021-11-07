@@ -3,28 +3,20 @@
   width: device-width;
   zoom: 1
 } 
-@font-face {
-  font-family: 'tiresias_infofontitalic';
-  src: url('Tiresias_Infofont_Italic-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-}
-@font-face {
-  font-family: 'tiresias_infofontregular';
-  src: url('Tiresias_Infofont-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-* {
-  box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box
 }
 html {
   font-size: 100%
+	
 }
 body {
   margin: 0;
+  line-height: 1.15;
   padding: 0 0 30px 0;
-  background: #D7EEFF;
+  background: #D7EEFF
 }
 body, select {
   font-family: "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
@@ -37,7 +29,7 @@ ul {
   display: block;
   list-style-type: disc;
   margin: 0.5em 0 1em 0;
-  padding-left: 1.3em;
+  padding-left: 1.3em
 }
 .sr-only {
   position: absolute;
@@ -46,12 +38,12 @@ ul {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  /*clip: rect(0, 0, 0, 0);*/
   white-space: nowrap;
   border: 0
 }
 label {
-  display: none;
+  display: none
 }
 h1, nav, .maplink, .l {text-align: center}
 h1, footer {color: #efefef}
@@ -63,7 +55,7 @@ h1 {
   font-size: 1.1em;
   font-weight: normal;
   justify-content: center;
-  align-items: center;
+  align-items: center
 }
 nav {padding: 19px 0 8px 0}
 .wrap {
@@ -73,30 +65,30 @@ nav {padding: 19px 0 8px 0}
   padding: 5px;
   margin-right: 10px;
   box-shadow: #a4d8ff 0 0px 2px, #8bcdff 0 3px 0px;
-  margin-bottom: 8px;
+  margin-bottom: 8px
 }
 .wrap:hover {
   background: #fff;
-  box-shadow: #3facff 0 0px 2px, #3facff 0 3px 0px ;
+  box-shadow: #3facff 0 0px 2px, #3facff 0 3px 0px 
 }
 .wrap:hover select {
-  background: #fff;
+  background: #fff
 }
 select, .mymap {
   height: 100%;
   border: 0;
-  font-size: 1em;
+  font-size: 1em
 }
 select {
   background: #f1f9ff;
   padding-left: 5px;
-  outline: none;
+  outline: none
 }
  .table, .mymap, h1 {width: 100%}
 #exit, select, #totop {cursor: pointer}
 .maplink {
   padding: 6px 12px 6px 12px;
-  text-decoration: none;
+  text-decoration: none
 }
 .maplink:active {
   box-shadow: #3facff 0 0px 2px, #3facff 0 1px 0px ;
@@ -106,26 +98,55 @@ select {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center
 }
+a {background-color: transparent}
+b, strong {font-weight: bolder}
+button {
+  overflow: visible;
+  -webkit-appearance: button
+}
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0
+}
+button, select { 
+  text-transform: none
+}
+button, input, select {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0
+}
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline
+}
+sup {top: -0.5em}
 article {
   width: 500px;
   background: #FCFCFC;
   box-shadow: #888 0 2px 4px;	
   border-radius: 12px;
-  vertical-align: top; 
+  vertical-align: top;
   padding: 5px 0 9px 0;
   margin: 8px 1vw 15px 1vw
 }
-article div {
+article div, article h2 {
   vertical-align: middle;
-  padding: 4px 13px 4px 13px;
+  padding: 4px 13px 4px 13px
 }
 article a {
   color: #0078A8
 }
 article a:hover, select, .maplink, article div {
-  color: #333;
+  color: #333
 }
 article b {
   display: block;
@@ -138,19 +159,17 @@ article b {
   position: fixed;
   bottom: 15px;
   right: 15px;
-  z-index: 20; 
+  z-index: 20;
   border: 0;
   outline: none;
   background: #333;
   color: #fff;
   padding: 5px;
-  border-radius:  10px;
+  border-radius: 10px;
   font-size: 0.9em
 }
 
-#totop:hover {
-  background-color: #555;
-}
+#totop:hover {background-color: #555}
 .mapbox {
   width: 50vw;
   height: 100vh;
@@ -160,9 +179,7 @@ article b {
   transition: right 1s;
   z-index: 30
 }
-.deploy {
-  right: 0;
-}
+.deploy {right: 0}
 #exit {
   position: absolute;
   top: 15px;
@@ -184,11 +201,11 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 3px 5px 3px 5px;
-  border-top-right-radius: 10px;
+  border-top-right-radius: 10px
 }
 footer a {
   color: #efefef;
-  text-decoration: none;
+  text-decoration: none
 }
 footer a:hover {
   color: #D7EEFF;
@@ -207,7 +224,12 @@ footer a:hover {
 }
 .loc, .bus, .time, .avis, .info, .loc, .web {margin-left: 20px}
 
-.name {font-weight: bold; margin-bottom: 5px; border-bottom: 1px solid #777}
+h2 {
+  font-weight: bold;
+  margin: 0 0 5px 0;
+  border-bottom: 1px solid #777;
+  font-size: 1em
+}
 .desc {font-style: italic}
 .num {speak-as:digits}
 .ig::before {background-image:url(img/ig.png)}
@@ -231,11 +253,12 @@ footer a:hover {
 
 /*** Bus Circles ***/
 .l {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 17px; height: 17px;
   font: bold 10px sans-serif;
   border-radius: 50%;
-  line-height: 18px;   
   color: #fff;
 }
 .lN2A, .lN2B, .lTER, .lN11, .lCITA {
@@ -286,7 +309,7 @@ footer a:hover {
 
 @media screen and (max-width:800px) {
   #numbr {
-	display: block; 
+	display: block;
     width: 100vw;
     right: -100vw;	
   }
@@ -307,7 +330,7 @@ footer a:hover {
 	  padding: 0px 5px 0px 5px
   }
   .wrap {
-	display: block;  
+	display: block;
 	width: calc(100% - 16px);
 	margin-left: 8px;
 	margin-right: 8px;
@@ -316,4 +339,4 @@ footer a:hover {
 	 width: 100%;
 	 display: block;
   }
-} 
+}
