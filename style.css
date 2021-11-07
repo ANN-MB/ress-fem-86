@@ -222,7 +222,7 @@ footer a:hover {
   margin-right: 5px;
   transform: translateY(2px);
 }
-.loc, .bus, .time, .avis, .info, .loc, .web {margin-left: 20px}
+.loc, .bus, .time, .avis, .info, .loc, .web {margin-left: 20px;}
 
 h2 {
   font-weight: bold;
@@ -261,6 +261,10 @@ h2 {
   border-radius: 50%;
   color: #fff;
 }
+.lc {
+  border-radius: 0 !important;
+}
+/* BUS POITIERS */
 .lN2A, .lN2B, .lTER, .lN11, .lCITA {
   font-size: 7px;
   line-height: 17px
@@ -306,6 +310,21 @@ h2 {
 .lN2B {background:#9A181F}
 .lN3 {background:#DDAD22}
 .lN11 {background:#90277D}
+/* BUS CHÂTELLERAULT */
+.lc1 {background:#DE192C}
+.lc2 {background:#FF7900}
+.lc3 {background:#FFB500;color:#333}
+.lc4 {background:#CC9900}
+.lc5 {background:#0080C2}
+.lc6 {background:#00C4F3}
+.lc7 {background:#4A55BA}
+.lc10 {background:#34B49D}
+.lc11 {background:#00A456}
+.lc12 {background:#95C44B}
+.lc13 {background:#007139}
+.lc14 {background:#A69E42}
+.lc15 {background:#1B7B6A}
+.lc16 {background:#46B052}
 
 @media screen and (max-width:800px) {
   #numbr {
