@@ -2,16 +2,9 @@
 @viewport {
   width: device-width;
   zoom: 1
-} 
-*,
-*::before,
-*::after {
-  box-sizing: border-box
 }
-html {
-  font-size: 100%
-	
-}
+*, *::before, *::after {box-sizing: border-box}
+html {font-size: 100%}
 body {
   margin: 0;
   line-height: 1.15;
@@ -28,24 +21,19 @@ hr {
 ul {
   display: block;
   list-style-type: disc;
-  margin: 0.5em 0 1em 0;
-  padding-left: 1.3em
+  margin: 0 0 0 0;
+  padding-left: 15px
 }
-.sr-only {
+.sr-only, label {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  border: 0;
   overflow: hidden;
-  /*clip: rect(0, 0, 0, 0);*/
   white-space: nowrap;
-  border: 0
+  /*clip: rect(0, 0, 0, 0);*/
 }
-label {
-  display: none
-}
-h1, nav, .maplink, .l {text-align: center}
+h1, .selectors, .maplink, .l {text-align: center}
 h1, footer {color: #efefef}
 h1 {
   padding: 7px;
@@ -57,8 +45,19 @@ h1 {
   justify-content: center;
   align-items: center
 }
-nav {padding: 19px 0 8px 0}
-.wrap {
+h2 {
+  margin: 0 0 5px 0;
+  border-bottom: 1px solid #777;
+  font-size: 1em
+}
+h3 {
+  font-size: 1em;
+  margin:0;
+  padding: 4px 13px 4px 13px;
+}
+/********** SELECTORS **********/
+.selectors {padding: 19px 0 8px 0}
+.selectors div, .selectors a {
   border-radius: 36px;
   display: inline-block;
   background: #f1f9ff;
@@ -67,12 +66,20 @@ nav {padding: 19px 0 8px 0}
   box-shadow: #a4d8ff 0 0px 2px, #8bcdff 0 3px 0px;
   margin-bottom: 8px
 }
-.wrap:hover {
+.selectors div:hover, .selectors a:hover{
   background: #fff;
   box-shadow: #3facff 0 0px 2px, #3facff 0 3px 0px 
 }
-.wrap:hover select {
+.selectors div:hover select {
   background: #fff
+}
+.selectors a {
+  padding: 6px 12px 6px 12px;
+  text-decoration: none
+}
+.selectors a:active {
+  box-shadow: #3facff 0 0px 2px, #3facff 0 1px 0px ;
+  transform: translateY(2px)
 }
 select, .mymap {
   height: 100%;
@@ -84,16 +91,9 @@ select {
   padding-left: 5px;
   outline: none
 }
- .table, .mymap, h1 {width: 100%}
+.table, .mymap, h1 {width: 100%}
 #exit, select, #totop {cursor: pointer}
-.maplink {
-  padding: 6px 12px 6px 12px;
-  text-decoration: none
-}
-.maplink:active {
-  box-shadow: #3facff 0 0px 2px, #3facff 0 1px 0px ;
-  transform: translateY(2px)
-}
+
 .table {
   display: flex;
   flex-direction: row;
@@ -102,6 +102,7 @@ select {
 }
 a {background-color: transparent}
 b, strong {font-weight: bolder}
+u {text-decoration-color: #aaa}
 button {
   overflow: visible;
   -webkit-appearance: button
@@ -131,28 +132,35 @@ sup {
 sup {top: -0.5em}
 article {
   width: 500px;
+  position: relative;
   background: #FCFCFC;
   box-shadow: #888 0 2px 4px;	
   border-radius: 12px;
   vertical-align: top;
-  padding: 5px 0 9px 0;
+  padding: 5px 0 9px 0px;
   margin: 8px 1vw 15px 1vw
+}
+article ::before {
+  position: absolute;
+  left: 12px;
 }
 article div, article h2 {
   vertical-align: middle;
   padding: 4px 13px 4px 13px
 }
+article div:not(.name,.desc) {
+  padding-left: 35px
+}
+/*article div:not(:last-child) {
+	border-bottom: 1px solid #f2f2f2;
+}*/
 article a {
   color: #0078A8
 }
 article a:hover, select, .maplink, article div {
   color: #333
 }
-article b {
-  display: block;
-  padding: 4px 13px 4px 13px;
-}
- #careContainer {display:none}
+#careContainer {display:none}
 
 #totop {
   display: none;
@@ -212,7 +220,7 @@ footer a:hover {
   text-decoration: underline
 }
 
-/*** Article elements ***/
+/**************************************** EMOJIS ****************************************/
 
 .ig::before, .tw::before, .fb::before, .yt::before, .sc::before {
   content: "";
@@ -220,18 +228,10 @@ footer a:hover {
   background-size: 16px 16px;
   display: inline-block;
   margin-right: 5px;
-  transform: translateY(2px);
-}
-.loc, .bus, .time, .avis, .info, .loc, .web {margin-left: 20px;}
-
-h2 {
-  font-weight: bold;
-  margin: 0 0 5px 0;
-  border-bottom: 1px solid #777;
-  font-size: 1em
+  transform: translateY(2px)
 }
 .desc {font-style: italic}
-.num {speak-as:digits}
+.bus span, .num {speak-as:digits}
 .ig::before {background-image:url(img/ig.png)}
 .tw::before {background-image:url(img/tw.png)}
 .fb::before {background-image:url(img/fb.png)}
@@ -239,20 +239,20 @@ h2 {
 .sc::before {background-image:url(img/sc.png)}
 .num::before {content:"\01F4DE\00a0"}
 .mail::before {content:"\01F4E7\00a0"}
-.web::before {content:"\01F4CE\00a0"; margin-left:-20px}
-.loc::before {content:"\01F4EC\00a0"; margin-left:-20px}
-.bus::before {content:"\01F68C\00a0"; margin-left:-20px}
-.time::before {content:"\01F552\00a0"; margin-left:-20px}
-.avis::before {content:"\01F4AC\00a0"; margin-left:-20px}
+.web::before {content:"\01F4CE\00a0"}
+.loc::before {content:"\01F4EC\00a0"}
+.bus::before {content:"\01F68C\00a0"}
+.time::before {content:"\01F552\00a0"}
+.avis::before {content:"\01F4AC\00a0"}
 .prix::before {content:"\1FA99\00a0"}
 .conv::before {content:"\01F4C3\00a0"}
 .lng::before {content:"\01F5E3\FE0F\00a0"}
 .acc::before {content:"\0267F\00a0"}
 .park::before {content:"\01F17F\FE0F\00a0"}
-.info::before {content:"\2139\FE0F\00a0";margin-left:-20px}
+.info::before {content:"\2139\FE0F\00a0"}
 
-/*** Bus Circles ***/
-.l {
+/**************************************** BUS ****************************************/
+.bus span {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -260,71 +260,69 @@ h2 {
   font: bold 10px sans-serif;
   border-radius: 50%;
   color: #fff;
+	transform: translateY(-2px)
 }
-.lc {
-  border-radius: 0 !important;
-}
-/* BUS POITIERS */
-.lN2A, .lN2B, .lTER, .lN11, .lCITA {
-  font-size: 7px;
-  line-height: 17px
-}
-.l3, .lD {color:#000}
-.l1 {background:#00A3DB}
-.l2A {background:#FF0000}
-.l2B {background:#D71F26}
-.l3 {background:#FFF000}
-.l1E {background:#83D0F5}
-.lO {background:#E94282}
-.l10 {background:#92CFC5}
-.l11 {background:#90277D}
-.l12 {background:#A780AD}
-.l13 {background:#E57FA9}
-.l14 {background:#DE3FA2}
-.l15 {background:#9EC83F}
-.l16 {background:#347C86}
-.l17 {background:#C1934F}
-.l34 {background:#573D90}
-.l32 {background:#347AB3}
-.l35 {background:#719B68}
-.l33 {background:#A4502B}
-.l20 {background:#82BE40}
-.l21 {background:#E78229}
-.l22 {background:#837438}
-.l23 {background:#E26626}
-.l24 {background:#E05A75}
-.l25 {background:#EEA829}
-.l27 {background:#A1BCC6}
-.l28 {background:#9D6331}
-.l29 {background:#69B642}
-.l30 {background:#C71066}
-.l31 {background:#07AD98}
-.lTER {background:#0000B0}
-.lCITA {background:#64C800}
-.lA {background:#FF0000}
-.lB {background:#E30613}
-.lC {background:#00A665}
-.lD {background:#FFF000}
-.lE {background:#90287B}
-.lN2A {background:#D80014}
-.lN2B {background:#9A181F}
-.lN3 {background:#DDAD22}
-.lN11 {background:#90277D}
-/* BUS CHÂTELLERAULT */
-.lc1 {background:#DE192C}
-.lc2 {background:#FF7900}
-.lc3 {background:#FFB500;color:#333}
-.lc4 {background:#CC9900}
-.lc5 {background:#0080C2}
-.lc6 {background:#00C4F3}
-.lc7 {background:#4A55BA}
-.lc10 {background:#34B49D}
-.lc11 {background:#00A456}
-.lc12 {background:#95C44B}
-.lc13 {background:#007139}
-.lc14 {background:#A69E42}
-.lc15 {background:#1B7B6A}
-.lc16 {background:#46B052}
+.PTER, .PCITA, .PN2A, .PN2B, .PN11 {font-size: 7px !important}
+.P3, .PD, .C2, .C3 {color:#000 !important}
+.C1, .C2, .C3, .C4, .C5, .C6, .C7, .C10, .C11, .C12, .C13, .C14, .C15, .C16 {border-radius: 0 !important}
+
+/********** BUS POITIERS **********/
+.P1 {background:#00A3DB}
+.P1E {background:#83D0F5}
+.P2A {background:#FF0000}
+.PN2A {background:#D80014}
+.P2B {background:#D71F26}
+.PN2B {background:#9A181F}
+.P3 {background:#FFF000}
+.PN3 {background:#DDAD22}
+.P10 {background:#92CFC5}
+.P11 {background:#90277D}
+.PN11 {background:#90277D}
+.P12 {background:#A780AD}
+.P13 {background:#E57FA9}
+.P14 {background:#DE3FA2}
+.P15 {background:#9EC83F}
+.P16 {background:#347C86}
+.P17 {background:#C1934F}
+.P20 {background:#82BE40}
+.P21 {background:#E78229}
+.P22 {background:#837438}
+.P23 {background:#E26626}
+.P24 {background:#E05A75}
+.P25 {background:#EEA829}
+.P27 {background:#A1BCC6}
+.P28 {background:#9D6331}
+.P29 {background:#69B642}
+.P30 {background:#C71066}
+.P31 {background:#07AD98}
+.P32 {background:#347AB3}
+.P33 {background:#A4502B}
+.P34 {background:#573D90}
+.P35 {background:#719B68}
+.PA {background:#FF0000}
+.PB {background:#E30613}
+.PC {background:#00A665}
+.PD {background:#FFF000}
+.PE {background:#90287B}
+.PO {background:#E94282}
+.PTER {background:#0000B0}
+.PCITA {background:#64C800}
+
+/********** BUS CHÂTELLERAULT **********/
+.C1 {background:#DE192C}
+.C2 {background:#FF7900}
+.C3 {background:#FFB500}
+.C4 {background:#CC9900}
+.C5 {background:#0080C2}
+.C6 {background:#00C4F3}
+.C7 {background:#4A55BA}
+.C10 {background:#34B49D}
+.C11 {background:#00A456}
+.C12 {background:#95C44B}
+.C13 {background:#007139}
+.C14 {background:#A69E42}
+.C15 {background:#1B7B6A}
+.C16 {background:#46B052}
 
 @media screen and (max-width:800px) {
   #numbr {
@@ -346,15 +344,15 @@ h2 {
 	padding: 5px;
   }
   footer {
-	  padding: 0px 5px 0px 5px
+	  padding: 3px 5px 3px 5px
   }
-  .wrap {
+  .selectors div {
 	display: block;
 	width: calc(100% - 16px);
 	margin-left: 8px;
 	margin-right: 8px;
   }
-  .wrap a, select {
+  selectors div a, select {
 	 width: 100%;
 	 display: block;
   }
