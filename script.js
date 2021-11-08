@@ -54,6 +54,12 @@ cats.addEventListener("change", function(){
 cars.addEventListener("change", sort, false);
 city.addEventListener("change", sort, false);
 
+document.getElementById("quitter").addEventListener("click", function(){
+  document.getElementById("important").style.display = "none"
+}, false);
+
+
+
 window.addEventListener("DOMContentLoaded", function(){
    nmbr.innerHTML = "("+artl+"&nbsp;résultats)";
 });
