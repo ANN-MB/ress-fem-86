@@ -381,5 +381,7 @@ footer a:hover {
   .selectors a, select {
 	 width: 100%;
 	 display: block;
+         margin-left: 8px;
+	 margin-right: 8px;
   }
 }
