@@ -56,27 +56,37 @@ h3 {
   padding: 4px 13px 4px 13px;
 }
 #important {
-  margin: 15px 20px 0 20px;
-  padding: 7px 35px 7px 7px ;
   text-align: justify;
   font-size: 0.9em;
-  border: 1px solid #888;
-  border-radius: 16px;
   position: relative;
-  background-color: #f1f9ff
+  background-color: #f1f9ff;
+  padding: 10px !important ;
 }
 #quitter {
-  position: absolute;
+  float: right; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 5px;
   right: 5px;
   background-color: #fff;
   font-size: 1.2em;
   border: 1px solid #888;
-  border-radius: 10px;
-  color: #333
+  border-radius: 5px;
+  color: #333;
+  margin-left: 5px;
+}
+#quitter:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+#quitter:hover {
+	color: #ccc;
+	background-color: #333;
 }
 /********** SELECTORS **********/
-.selectors {padding: 19px 0 8px 0}
+.selectors {margin: 20px 0 10px 0}
 .selectors div, .selectors a {
   border-radius: 36px;
   display: inline-block;
@@ -109,7 +119,8 @@ select, .mymap {
 select {
   background: #f1f9ff;
   padding-left: 5px;
-  outline: none
+  outline: none;
+  width: 100%;
 }
 .table, .mymap, h1 {width: 100%}
 #exit, #quitter, select, #totop {cursor: pointer}
@@ -150,8 +161,8 @@ sup {
   vertical-align: baseline
 }
 sup {top: -0.5em}
-article {
-  width: 500px;
+article {width: 500px}
+article, #important {
   position: relative;
   background: #FCFCFC;
   box-shadow: #888 0 2px 4px;	
@@ -283,10 +294,10 @@ footer a:hover {
   align-items: center;
   justify-content: center;
   width: 17px; height: 17px;
-  font: bold 10px sans-serif;
+  font: bold 11px sans-serif;
   border-radius: 50%;
   color: #fff;
-	transform: translateY(-2px)
+  transform: translateY(-2px)
 }
 .PTER, .PCITA, .PN2A, .PN2B, .PN11 {font-size: 7px !important}
 .P3, .PD, .C2, .C3 {color:#000 !important}
@@ -353,15 +364,13 @@ footer a:hover {
 @media screen and (max-width:800px) {
   #numbr {
 	display: block;
-    width: 100vw;
-    right: -100vw;	
   }
   .mapbox {
-    width: 100vw;
+	width: 100vw;
     right: -100vw;
   }
   .deploy {
-	  right: 0;
+	right: 0;
   }
 } 
 @media screen and (max-width:450px) {
@@ -372,16 +381,36 @@ footer a:hover {
   footer {
 	  padding: 3px 5px 3px 5px
   }
-  .selectors div, .selectors a {
-	display: block;
-	width: calc(100% - 16px);
-	margin-left: 8px;
-	margin-right: 8px;
+  .selectors {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+	margin-left: 15px;
+	margin-right: 15px;
   }
-  .selectors a, select {
-	 width: 100%;
-	 display: block;
-         margin-left: 8px;
-	 margin-right: 8px;
+ 
+  .maplink:nth-child(1) {
+    display: block;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: flex-start;
+	margin-right: 10px
+  }
+  .maplink:nth-child(2) {
+    display: block;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: flex-start
+  }
+  .selectors div, .selectors a {
+    margin-right:0;	
+  }
+  .selectors div {
+    width: 100%; 
   }
 }

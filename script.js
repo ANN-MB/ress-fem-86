@@ -55,11 +55,12 @@ cars.addEventListener("change", sort, false);
 city.addEventListener("change", sort, false);
 
 document.getElementById("quitter").addEventListener("click", function(){
-  document.getElementById("important").style.display = "none"
+  document.getElementById("important").style.display = "none";
+  window.sessionStorage.setItem("modale", true);
 }, false);
-
-
 
 window.addEventListener("DOMContentLoaded", function(){
    nmbr.innerHTML = "("+artl+"&nbsp;résultats)";
+   var isModale = window.sessionStorage.getItem("modale");
+   if (isModale) {document.getElementById("important").style.display = "none";}
 });
