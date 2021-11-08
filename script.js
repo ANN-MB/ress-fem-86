@@ -13,6 +13,10 @@ document.addEventListener("click", function(evt) {
   } else if(evt.target.className !== "mapbox") {
     mbox.className = "mapbox"
   }
+  if(evt.target.className == "cloning") {
+    evt.preventDefault();
+    doClone(evt.target)
+  }
 }, false);
 
 document.getElementById("exit").addEventListener("click", function() {
@@ -64,3 +68,25 @@ window.addEventListener("DOMContentLoaded", function(){
    var isModale = window.sessionStorage.getItem("modale");
    if (isModale) {document.getElementById("important").style.display = "none";}
 });
+
+function doClone(a) {
+  function absoluteClone(a) {
+    var b = a.cloneNode(true);
+    b.style.display = "block";
+    b.style.position = "fixed";
+    b.style.left = "50%";
+    b.style.top = "50%";
+    b.style.transform = "translateX(-50%) translateY(-50%)"
+    b.zIndex = "" != a.zIndex ? +a.zIndex + 1 : 16777271;
+    b.id = (a.id) ? a.id + "_cloned" : "";
+    return b
+  }
+  var trad = a.getAttribute('data-clone'),
+      elem = document.getElementById(trad),
+      myClone = absoluteClone(elem);
+  document.body.appendChild(myClone);
+  
+  document.addEventListener("click", function(e) {
+	  if (!myClone.contains(e.target)) myClone.remove();
+  },false);
+}
