@@ -6,7 +6,6 @@ const mbox = document.getElementById("mapbox"),
       carc = document.getElementById("careContainer"),
       ttop = document.getElementById("totop"),
       nmbr = document.getElementById("numbr");
-      // beta = document.querySelectorAll("[data-alpha]");
 var art = document.getElementsByTagName("article"),
     artl = art.length;
 
@@ -24,10 +23,6 @@ function sort() {
   nmbr.innerHTML = "(" + nb + "&nbsp;résultats)";
   nb = 0;
 }
-/*document.getElementById("scroller").addEventListener("mouseover", function(evt) {
-  var targ = beta[evt.target.id.charCodeAt(0) - 65]
-  console.log(targ)
-},false);/*
 
 /*** Click EventListeners ***/
 document.addEventListener("click", function(evt) {
@@ -39,22 +34,9 @@ document.addEventListener("click", function(evt) {
   if (evt.target.className == "cloning") {
     evt.preventDefault();
     var trad = evt.target.getAttribute('data-clone'),
-        elem = document.getElementById(trad),
-        b = elem.cloneNode(true);
-    b.style.display = "block";
-    b.style.position = "fixed";
-    b.style.left = "50%";
-    b.style.top = "50%";
-    b.style.maxWidth = "100vw";
-    b.style.transform = "translateX(-50%) translateY(-50%)";
-	b.style.boxShadow = "0 0 100px #000";
-	b.style.overflow = "auto";
-    b.zIndex = "" != elem.zIndex ? + elem.zIndex + 1 : 16777271;
-    b.id = (elem.id) ? elem.id + "_cloned" : "";
-    document.body.appendChild(b);
-    document.addEventListener("click", function(e) {
-      !b.contains(e.target) && b.remove();
-    }, false);
+        elem = document.getElementById(trad);
+	elem.style.display = "block";
+	elem.scrollIntoView();
   }
 }, false);
 document.getElementById("quitter").addEventListener("click", function() {
