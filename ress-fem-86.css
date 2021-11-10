@@ -64,6 +64,10 @@ h3 {
   background-color: #f1f9ff;
   padding: 10px !important ;
 }
+#important ul {
+  display:inline-block;
+  vertical-align: top
+}
 #quitter {
   float: right; 
   display: flex;
