@@ -46,7 +46,9 @@ document.addEventListener("click", function(evt) {
     b.style.left = "50%";
     b.style.top = "50%";
     b.style.maxWidth = "100vw";
-    b.style.transform = "translateX(-50%) translateY(-50%)"
+    b.style.transform = "translateX(-50%) translateY(-50%)";
+	b.style.boxShadow = "0 0 100px #000";
+	b.style.overflow = "auto";
     b.zIndex = "" != elem.zIndex ? + elem.zIndex + 1 : 16777271;
     b.id = (elem.id) ? elem.id + "_cloned" : "";
     document.body.appendChild(b);
