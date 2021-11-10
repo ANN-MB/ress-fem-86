@@ -335,7 +335,7 @@ footer a:hover {
   color: #fff;
   transform: translateY(-2px)
 }
-.PTER, .PCITA, .PN2A, .PN2B, .PN11 {font-size: 7px !important}
+
 .P3, .PD, .C2, .C3 {color:#000 !important}
 .C1, .C2, .C3, .C4, .C5, .C6, .C7, .C10, .C11, .C12, .C13, .C14, .C15, .C16 {border-radius: 0 !important}
 
@@ -343,14 +343,10 @@ footer a:hover {
 .P1 {background:#00A3DB}
 .P1E {background:#83D0F5}
 .P2A {background:#FF0000}
-.PN2A {background:#D80014}
 .P2B {background:#D71F26}
-.PN2B {background:#9A181F}
 .P3 {background:#FFF000}
-.PN3 {background:#DDAD22}
 .P10 {background:#92CFC5}
 .P11 {background:#90277D}
-.PN11 {background:#90277D}
 .P12 {background:#A780AD}
 .P13 {background:#E57FA9}
 .P14 {background:#DE3FA2}
@@ -372,14 +368,18 @@ footer a:hover {
 .P33 {background:#A4502B}
 .P34 {background:#573D90}
 .P35 {background:#719B68}
-.PA {background:#FF0000}
+.PO {background:#E94282}
+.PTER {background:#0000B0;font-size: 7px !important}
+.PCITA {background:#64C800;font-size: 7px !important}
+/*.PA {background:#FF0000}
 .PB {background:#E30613}
 .PC {background:#00A665}
 .PD {background:#FFF000}
 .PE {background:#90287B}
-.PO {background:#E94282}
-.PTER {background:#0000B0}
-.PCITA {background:#64C800}
+.PN11 {background:#90277D}
+.PN3 {background:#DDAD22}
+.PN2B {background:#9A181F}
+.PN2A {background:#D80014}*/
 
 /********** BUS CHÂTELLERAULT **********/
 .C1 {background:#DE192C}
@@ -424,8 +424,8 @@ footer a:hover {
     justify-content: center;
     align-items: center;
     align-content: flex-start;
-	margin-left: 15px;
-	margin-right: 15px;
+	  margin-left: 15px;
+	  margin-right: 15px;
   }
  
   .maplink:nth-child(1) {
