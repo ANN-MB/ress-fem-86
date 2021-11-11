@@ -7,147 +7,15 @@
 html {font-size: 100%}
 body {
   margin: 0;
+  padding: 0;
   line-height: 1.15;
-  padding: 0 0 0 0;
-  background: #D7EEFF;
-  background-attachment: fixed;
-  background-image: linear-gradient(45deg, #8EC5FC, #E0C3FC);
+  background: #d7eeff linear-gradient(45deg, #8ec5fc, #e0c3fc) fixed;
 }
-body, select {
+body, select, button {
   font-family: "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
-}
-hr {
-  border-top: 2px dashed #777; 
-  border-bottom: 0
-}
-ul {
-  display: block;
-  list-style-type: disc;
-  margin: 0 0 0 0;
-  padding-left: 15px
-}
-.sr-only, label {
-  position: absolute;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  border: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  /*clip: rect(0, 0, 0, 0);*/
-}
-.ctt, h1 {
-  background-color: #333;
-  color: #efefef
-}
-.selectors, .maplink, .l {text-align: center}
-
-h1 {
-  padding: 7px;
-  display: flex;
-  margin: 0;
-  font-size: 1.1em;
-  font-weight: 500;
-  justify-content: center;
-  align-items: center;
-  text-align:center;
-}
-h2 {
-  margin: 0 0 5px 0;
-  border-bottom: 1px solid #777;
-  font-size: 1em
-}
-h3 {
-  font-size: 1em;
-  margin:0;
-  padding: 4px 13px 4px 13px;
-}
-#important {
-  font-size: 0.9em;
-  display: none;
-  position: relative;
-  background-color: #f1f9ff;
-  padding: 10px !important ;
-}
-#important ul {
-  display:inline-block;
-  vertical-align: top
-}
-#quitter {
-  float: right; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 5px;
-  right: 5px;
-  background-color: #fff;
-  font-size: 1.2em;
-  border: 1px solid #888;
-  border-radius: 5px;
-  color: #333;
-  margin-left: 5px;
-}
-#quitter:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
-}
-#quitter:hover {
-	color: #ccc;
-	background-color: #333;
-}
-/********** SELECTORS **********/
-.selectors {margin: 20px 0 10px 0}
-.selectors div, .selectors a {
-  border-radius: 36px;
-  display: inline-block;
-  background: #f1f9ff;
-  padding: 5px;
-  margin-right: 10px;
-  box-shadow: #aaa 0 0px 2px, #333 0 3px 0px;
-  margin-bottom: 8px
-}
-.selectors div:hover, .selectors a:hover{
-  background: #fefefe;
-  box-shadow: #888 0 0px 2px, #666 0 3px 0px 
-}
-.selectors div:hover select {
-  background: #fff
-}
-.selectors a {
-  padding: 6px 12px 6px 12px;
-  text-decoration: none
-}
-.selectors a:active {
-  box-shadow: #3facff 0 0px 2px, #3facff 0 1px 0px ;
-  transform: translateY(2px)
-}
-select, #mymap {
-  height: 100%;
-  border: 0;
-  font-size: 1em
-}
-select {
-  background: #f1f9ff;
-  padding-left: 5px;
-  outline: none;
-  width: 100%;
-}
-option {
-  background-color: #333;
-  color: #efefef
-}
-.table, #mymap, h1 {width: 100%}
-#exit, #quitter, select, #totop {cursor: pointer}
-
-.table {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center
 }
 a {background-color: transparent}
 b, strong {font-weight: bolder}
-u {text-decoration-color: #aaa}
 button {
   overflow: visible;
   -webkit-appearance: button
@@ -175,11 +43,120 @@ sup {
   vertical-align: baseline
 }
 sup {top: -0.5em}
+hr {
+  border-top: 2px dashed #777; 
+  border-bottom: 0
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin: 0;
+  padding-left: 15px
+}
+.sr-only, label {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  border: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  /*clip: rect(0, 0, 0, 0);*/
+}
+
+
+/*** END GLOBAL ***/
+
+  /** COLORS **/
+.ctt, h1, option, #totop, #quitter:hover, #exit:hover { background: #333 }
+.ctt a, h1, option #totop, #quitter:hover, #exit:hover, #totop, .bus span { color: #fefefe }
+#totop:hover,#quitter, #exit, article, .selectors div:hover, .selectors a:hover { background: #fefefe }
+article a:hover, #important a:hover, select, .maplink, article div, #quitter, #exit, #totop:hover { color: #333 }
+article a, #important a { color: #0078A8 }
+.selectors div, .selectors a, select {background: #f1f9ff}
+
+#careContainer,#totop, #important {display:none}
+.table, #mymap, h1 {width: 100%}
+#exit, #quitter, select, #totop {cursor: pointer}
+.selectors, .maplink, .l, h1 {text-align: center}
+#quitter, #exit {border: 1px solid #888;font-size: 1.2rem;border-radius: 5px}
+#quitter, h1, .table, .bus span  { justify-content: center}
+#quitter, h1, .bus span { align-items: center}
+#quitter, .table {display: flex}
+#quitter {
+  float: right; 
+  margin-left: 5px;
+}
+#quitter:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+#exit {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+h1 {
+  margin: 0; padding: 7px; 
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+h2, h3 {font-size: 1rem}
+h2 {
+  margin: 0 0 5px 0;
+  border-bottom: 1px solid #777;
+}
+h3 {
+  margin: 0;
+  padding: 4px 13px 4px 13px;
+}
+
+/********** SELECTORS **********/
+.selectors {margin: 20px 0 10px 0}
+.selectors div, .selectors a {
+  border-radius: 36px;
+  display: inline-block;
+
+  padding: 5px;
+  margin-right: 10px;
+  box-shadow: #aaa 0 0px 2px, #555 0 3px 0px;
+  margin-bottom: 8px
+}
+.selectors div:hover, .selectors a:hover {
+  box-shadow: #888 0 0px 2px, #333 0 3px 0px;
+  color: #111
+}
+.selectors div:hover select {
+  background: #fff
+}
+.selectors a {
+  padding: 6px 12px 6px 12px;
+  text-decoration: none
+}
+.selectors a:active  {
+  box-shadow: #333 0 0px 2px, #3facff 0 1px 0px ;
+  transform: translateY(2px)
+}
+select, #mymap {
+  height: 100%;
+  border: 0;
+  font-size: 1em
+}
+select {
+  padding-left: 5px;
+  outline: none;
+  width: 100%;
+}
+.table {
+
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 article {width: 500px}
 article, #important {
   position: relative;
-  background: #FCFCFC;
-  box-shadow: #888 0 2px 4px;	
+  box-shadow: #555 0 2px 4px;	
   border-radius: 12px;
   vertical-align: top;
   padding: 5px 0 9px 0px;
@@ -193,118 +170,47 @@ article div, article h2 {
   vertical-align: middle;
   padding: 4px 13px 4px 13px
 }
-article div:not(.name,.desc) {
+article div:not(.desc) {
   padding-left: 35px
 }
-/*article div:not(:last-child) {
-	border-bottom: 1px solid #f2f2f2;
-}*/
-article a {
-  color: #0078A8
+#important {
+  position: relative;
+  font-size: 0.9rem;
+  background: rgba(241, 249, 255, .7);
+  padding: 10px !important ;
 }
-article a:hover, select, .maplink, article div {
-  color: #333
+#important ul {
+  display: inline-block;
+  vertical-align: top
 }
-#careContainer {display:none}
-
+#totop, .mapbox, .ctt {position: fixed}
 #totop {
-  display: none;
-  position: fixed;
   bottom: 15px;
   right: 15px;
   z-index: 20;
   border: 0;
-  outline: none;
-  background: #333;
-  color: #fff;
   padding: 5px;
   border-radius: 10px;
   font-size: 0.9em
 }
-
-#totop:hover {background-color: #555}
 .mapbox {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  bottom: 0; top: 0;
-  right: -100vw;
+  width: 100vw; height: 100vh;
+  bottom: 0; top: 0; right: -100vw;
   transition: right 1s;
   z-index: 30
-}
-.deploy {right: 0}
-#exit {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  height: 30px;
-  background-color: #f1f9ff;
-  font-size: 1.2em;
-  box-shadow:  #333 0 1px 0px;
-  border: 1px solid #333;
-  border-radius: 10px;
-  color: #333;
-}
-#exit:hover {
-  background-color: #fefefe;
-}
+} .deploy {right: 0}
 .ctt {
-  position: fixed;
-  bottom:0;
-  font-size: 0.9em;
-  justify-content: center;
-  align-items: center;
+  bottom: 0;
+  font-size: 0.9rem;
   padding: 3px 5px 3px 5px;
   border-top-right-radius: 10px
 }
-.ctt a {
-  color: #efefef;
-  text-decoration: none
-}
-.ctt a:hover {
-  color: #D7EEFF;
-  text-decoration: underline
-}
-.fbi {
-  background-image:url(img/fb.png);
-  width:16px; height:16px;
-  background-size: 16px 16px;
-  display: inline-block;
-  transform: translateY(2px)
-}
-#scroller {
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-  position: fixed;
-  right: 0;
-  top: 0;
-  background-color: rgba(255,255,255,0.5);
-  padding: 0 7px 0 4px;
-  height: 100%;
-  justify-content: space-between;
-  pointer-events:none;
-}
-#scroller span {
-  display: block;
-  font-size: calc(90vh / 26);
-  font-family: monospace;
-  transition: transform 0.5s, background-color 0.5s;
-  cursor: pointer;
-  height: calc(100vh / 26);
-  width: calc(100vh / 26);
-  text-align:center;
-  pointer-events:auto;
-  border-radius: 50%;
-}
-#scroller span:hover {
-  transform: scale(2);
-  transform-origin: 100% 50%;
-  background-color:  rgba(255,255,255,0.5);
-}
+.ctt a { text-decoration: none } .ctt a:hover { text-decoration: underline }
+
+
 /**************************************** EMOJIS ****************************************/
 
-.ig::before, .tw::before, .fb::before, .yt::before, .sc::before {
+.ig::before, .tw::before, .fb::before, .yt::before, .sc::before, .fbi {
   content: "";
   width:16px; height:16px;
   background-size: 16px 16px;
@@ -312,6 +218,7 @@ article a:hover, select, .maplink, article div {
   margin-right: 5px;
   transform: translateY(2px)
 }
+.fbi { background-image:url(img/fb.png) }
 .desc {font-style: italic}
 .bus span, .num {speak-as:digits}
 .ig::before {background-image:url(img/ig.png)}
@@ -336,19 +243,16 @@ article a:hover, select, .maplink, article div {
 /**************************************** BUS ****************************************/
 .bus span {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 17px; height: 17px;
-  font: bold 10px sans-serif;
+  width: 1.1rem; height: 1.1rem;
+  font-weight: 500;
+  font-size: .8rem;
   border-radius: 50%;
-  color: #fff;
-  transform: translateY(-2px)
 }
 
-.P3, .PD, .C2, .C3, .P10, .P13, .P27, .P15 {color:#000 !important}
+.P3, .PD, .C2, .C3, .P10, .P13, .P27, .P15 {color: #000 !important}
 .C1, .C2, .C3, .C4, .C5, .C6, .C7, .C10, .C11, .C12, .C13, .C14, .C15, .C16 {border-radius: 0 !important}
 
-/********** BUS POITIERS **********/
+/********** POITIERS **********/
 .P1 {background:#00A3DB}
 .P1E {background:#83D0F5}
 .P2A {background:#FF0000}
@@ -380,17 +284,8 @@ article a:hover, select, .maplink, article div {
 .PO {background:#E94282}
 .PTER {background:#0000B0;font-size: 7px !important}
 .PCITA {background:#64C800;font-size: 7px !important}
-/*.PA {background:#FF0000}
-.PB {background:#E30613}
-.PC {background:#00A665}
-.PD {background:#FFF000}
-.PE {background:#90287B}
-.PN11 {background:#90277D}
-.PN3 {background:#DDAD22}
-.PN2B {background:#9A181F}
-.PN2A {background:#D80014}*/
 
-/********** BUS CHÂTELLERAULT **********/
+/********** CHÂTELLERAULT **********/
 .C1 {background:#DE192C}
 .C2 {background:#FF7900}
 .C3 {background:#FFB500}
@@ -413,7 +308,7 @@ article a:hover, select, .maplink, article div {
 } 
 @media screen and (max-width:450px) {
   h1 {
-    font-size: 0.95em;
+    font-size: 0.95rem;
     padding: 5px;
   }
   h1 img {display:none}
@@ -430,7 +325,6 @@ article a:hover, select, .maplink, article div {
     margin-left: 15px;
     margin-right: 15px;
   }
- 
   .maplink:nth-child(1) {
     display: block;
     flex-grow: 1;
