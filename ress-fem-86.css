@@ -220,11 +220,11 @@ article a:hover, select, .maplink, article div {
 
 #totop:hover {background-color: #555}
 .mapbox {
-  width: 50vw;
+  width: 100vw;
   height: 100vh;
   position: fixed;
   bottom: 0; top: 0;
-  right: -50vw;
+  right: -100vw;
   transition: right 1s;
   z-index: 30
 }
@@ -403,23 +403,16 @@ footer a:hover {
 
 @media screen and (max-width:800px) {
   #numbr {
-	display: block;
-  }
-  .mapbox {
-	width: 100vw;
-    right: -100vw;
-  }
-  .deploy {
-	right: 0;
+    display: block;
   }
 } 
 @media screen and (max-width:450px) {
   h1 {
-	font-size: 0.95em;
-	padding: 5px;
+    font-size: 0.95em;
+    padding: 5px;
   }
   footer {
-	  padding: 3px 5px 3px 5px
+    padding: 3px 5px 3px 5px
   }
   .selectors {
     display: flex;
@@ -428,8 +421,8 @@ footer a:hover {
     justify-content: center;
     align-items: center;
     align-content: flex-start;
-	  margin-left: 15px;
-	  margin-right: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
   }
  
   .maplink:nth-child(1) {
@@ -438,7 +431,7 @@ footer a:hover {
     flex-shrink: 1;
     flex-basis: auto;
     align-self: flex-start;
-	margin-right: 10px
+    margin-right: 10px
   }
   .maplink:nth-child(2) {
     display: block;
