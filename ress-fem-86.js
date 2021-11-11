@@ -28,12 +28,10 @@ function sort() {
 document.addEventListener("click", function(evt) {
   if (evt.target.className == "tomap") {
     mbox.className += " deploy"
-  } else if (evt.target.className !== "mapbox") {
-    mbox.className = "mapbox"
   }
-  if (evt.target.className == "cloning") {
+  if (evt.target.className == "goto") {
     evt.preventDefault();
-    var trad = evt.target.getAttribute('data-clone'),
+    var trad = evt.target.getAttribute('data-ref'),
         elem = document.getElementById(trad);
 	elem.style.display = "block";
 	elem.scrollIntoView();

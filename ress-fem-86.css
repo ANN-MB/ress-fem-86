@@ -234,12 +234,15 @@ article a:hover, select, .maplink, article div {
   top: 15px;
   right: 15px;
   height: 30px;
-  background-color: #D7EEFF;
+  background-color: #f1f9ff;
   font-size: 1.2em;
-  box-shadow: #a4d8ff 0 0px 2px, #8bcdff 0 3px 0px;
-  border: 1px solid #a4d8ff;
+  box-shadow:  #333 0 1px 0px;
+  border: 1px solid #333;
   border-radius: 10px;
-  color: #333
+  color: #333;
+}
+#exit:hover {
+  background-color: #fefefe;
 }
 footer {
   display: flex;
