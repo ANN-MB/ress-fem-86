@@ -121,7 +121,7 @@ h3 {
   box-shadow: #3facff 0 0px 2px, #3facff 0 1px 0px ;
   transform: translateY(2px)
 }
-select, .mymap {
+select, #mymap {
   height: 100%;
   border: 0;
   font-size: 1em
@@ -136,7 +136,7 @@ option {
   background-color: #333;
   color: #efefef
 }
-.table, .mymap, h1 {width: 100%}
+.table, #mymap, h1 {width: 100%}
 #exit, #quitter, select, #totop {cursor: pointer}
 
 .table {

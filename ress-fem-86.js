@@ -1,5 +1,6 @@
 /* REVEALS THE MAP */
 const mbox = document.getElementById("mapbox"),
+      mmap = document.getElementById("mymap"),
       cats = document.getElementById("categories"),
       cars = document.getElementById("caretakers"),
       city = document.getElementById("city"),
@@ -7,7 +8,8 @@ const mbox = document.getElementById("mapbox"),
       ttop = document.getElementById("totop"),
       nmbr = document.getElementById("numbr");
 var art = document.getElementsByTagName("article"),
-    artl = art.length;
+    artl = art.length,
+    stock;
 
 function sort() {
   "care" == cats.value ? carc.style.display = "inline-block" : carc.style.display = "none";
@@ -27,7 +29,9 @@ function sort() {
 /*** Click EventListeners ***/
 document.addEventListener("click", function(evt) {
   if (evt.target.className == "tomap") {
-    mbox.className += " deploy"
+    mbox.className += " deploy";
+    stock = evt.target;
+    mmap.focus();
   }
   if (evt.target.className == "goto") {
     evt.preventDefault();
@@ -44,9 +48,13 @@ document.getElementById("quitter").addEventListener("click", function() {
 ttop.addEventListener("click", function() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+  document.activeElement.blur();
 }, false);
 document.getElementById("exit").addEventListener("click", function() {
-  mbox.className = "mapbox"
+  mbox.className = "mapbox";
+  mmap.blur();
+  stock.focus();
+  stock = undefined;
 }, false);
 
 /*** Change EventListeners ***/
