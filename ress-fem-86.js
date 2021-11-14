@@ -1,29 +1,28 @@
 /* REVEALS THE MAP */
 const mbox = document.getElementById("mapbox"),
       mmap = document.getElementById("mymap"),
-      cats = document.getElementById("categories"),
-      cars = document.getElementById("caretakers"),
+      cate = document.getElementById("categories"),
+      care = document.getElementById("caretakers"),
       city = document.getElementById("city"),
       carc = document.getElementById("careContainer"),
       ttop = document.getElementById("totop"),
-      nmbr = document.getElementById("numbr");
+      nmbr = document.getElementById("numbr"),
+	  impo = document.getElementById("important");
 var art = document.getElementsByTagName("article"),
     artl = art.length,
     stock;
 
 function sort() {
-  "care" == cats.value ? carc.style.display = "inline-block" : carc.style.display = "none";
   var nb = 0;
   for (let i = 0; i < artl; i++) {
-    if (art[i].getAttribute('data-hashtag').indexOf(cats.value) !== -1 && art[i].getAttribute('data-hashtag').indexOf(cars.value) !== -1 && art[i].getAttribute('data-hashtag').indexOf(city.value) !== -1) {
+    if (art[i].getAttribute('data-hashtag').indexOf(cate.value) !== -1 && art[i].getAttribute('data-hashtag').indexOf(care.value) !== -1 && art[i].getAttribute('data-hashtag').indexOf(city.value) !== -1) {
       art[i].style.display = "block";
       nb++
     } else {
       art[i].style.display = "none"
     }
   }
-  nmbr.innerHTML = "(" + nb + "&nbsp;résultats)";
-  nb = 0;
+  nmbr.innerHTML = "(" + nb + "&nbsp;r\u00e9sultats)";
 }
 
 /*** Click EventListeners ***/
@@ -35,35 +34,31 @@ document.addEventListener("click", function(evt) {
   }
   if (evt.target.className == "goto") {
     evt.preventDefault();
-    var trad = evt.target.getAttribute('data-ref'),
+    var trad = evt.target.href.replace(/(.+)#([A-Za-z0-9]+)/,"$2"),
         elem = document.getElementById(trad);
 	elem.style.display = "block";
 	elem.scrollIntoView();
   }
 }, false);
 document.getElementById("quitter").addEventListener("click", function() {
-  document.getElementById("important").style.display = "none";
+  impo.style.display = "none";
   window.localStorage.setItem("modale", true);
 }, false);
-ttop.addEventListener("click", function() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-  document.activeElement.blur();
-}, false);
+
 document.getElementById("exit").addEventListener("click", function() {
   mbox.className = "mapbox";
   mmap.blur();
   stock.focus();
-  stock = undefined;
+  stock = void 0;
 }, false);
 
 /*** Change EventListeners ***/
-cars.addEventListener("change", sort, false);
+care.addEventListener("change", sort, false);
 city.addEventListener("change", sort, false);
-cats.addEventListener("change", function() {
-  "care" !== this.value && (cars.selectedIndex = 0);
+cate.addEventListener("change", function() {
+  "care" !== this.value ? (care.selectedIndex = 0, carc.style.display = "none") : carc.style.display = "inline-block";
   "phon" == this.value && (city.selectedIndex = 0);
-  sort()
+  sort();
 }, false);
 
 window.addEventListener("scroll", function() {
@@ -71,8 +66,7 @@ window.addEventListener("scroll", function() {
 }, false);
 
 window.addEventListener("DOMContentLoaded", function() {
-  cats.selectedIndex = cars.selectedIndex = city.selectedIndex = 0;
-  nmbr.innerHTML = "(" + artl + "&nbsp;résultats)";
-  var isModale = window.localStorage.getItem("modale");
-  if (!isModale) document.getElementById("important").style.display = "block";
+  cate.selectedIndex = care.selectedIndex = city.selectedIndex = 0;
+  nmbr.innerHTML = "(" + artl + "&nbsp;r\u00e9sultats)";
+  window.localStorage.getItem("modale") || (impo.style.display = "block");
 },false);
