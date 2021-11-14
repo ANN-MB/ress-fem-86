@@ -3,15 +3,37 @@
   width: device-width;
   zoom: 1
 }
+@font-face {
+  font-family: "Public Sans";
+  src: url("font/PublicSans-Regular.woff2") format("woff2"),
+       url("font/PublicSans-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Public Sans";
+  src: url("font/PublicSans-Italic.woff2") format("woff2"),
+       url("font/PublicSans-Italic.woff") format("woff");
+  font-style: italic;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Public Sans";
+  src: url("font/PublicSans-Bold.woff2") format("woff2"),
+       url("font/PublicSans-Bold.woff") format("woff");
+  font-style: normal;
+  font-weight: bold;
+}
+
 *, *::before, *::after {box-sizing: border-box}
 html {font-size: 100%}
 body {
-  margin: 0; padding: 0; 
+  margin: 0; padding: 0 0 30px 0; 
   line-height: 1.15;
   /* background-image: linear-gradient(322deg, #ba4aff, rgba(186, 74, 255, 0) 70%), linear-gradient(178deg, #008aff, rgba(0, 138, 255, 0) 70%), linear-gradient(24deg, #00ffc6, rgba(0, 255, 198, 0) 35%);*/
   background: #d7eeff linear-gradient(45deg, #8ec5fc, #e0c3fc) fixed;
 }
-body, select, button { font-family: "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif }
+body, select, button { font-family: "Public Sans"}/*, "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif */
 a {background-color: transparent}
 b, strong {font-weight: bolder}
 button { overflow: visible; -webkit-appearance: button }
@@ -25,7 +47,7 @@ sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseli
 
 /** COLORS **/
 .ctt, h1, option, #totop, #quitter:hover, #exit:hover { background: #333 }
-.ctt a, h1, option #totop, #quitter:hover, #exit:hover, #totop, .bus span { color: #fefefe }
+.ctt a, h1, option, #totop, #quitter:hover, #exit:hover, #totop, .bus span { color: #fefefe }
 #totop:hover, #exit, article, .selectors div:hover, .selectors a:hover { background: #fefefe }
 article a:hover, #important a:hover, select, .maplink, article div, #quitter, #exit, #totop:hover { color: #333 }
 article a, #important a { color: #0078A8 }
@@ -106,7 +128,7 @@ select {
   flex-direction: row;
   flex-wrap: wrap;
 }
-article {width: 500px}
+article {width: 500px;}
 article, #important {
   position: relative;
   padding: 5px 0 9px 0;  margin: 11px 1vw;
@@ -118,7 +140,7 @@ article div:not(.desc) { padding-left: 35px }
 article div::before { position: absolute; left: 12px }
 #important {
   position: relative;
-  font-size: .9rem;
+  font-size: 1rem;
   background: linear-gradient(-45deg, rgba(241, 249, 255, .4), rgba(255,255,255,.8));
   padding: 10px !important;
   border: 1px solid rgba(255,255,255,0.7)
@@ -183,7 +205,7 @@ article div::before { position: absolute; left: 12px }
 .bus span {
   display: inline-flex;
   width: 1.1rem; height: 1.1rem;
-  font-size: .8rem; font-weight: 500;
+  font-size: .8rem; font-weight: bold;
   border-radius: 50%
 }
 .P3, .PD, .C2, .C3, .P10, .P13, .P27, .P15 {color: #000 !important}
