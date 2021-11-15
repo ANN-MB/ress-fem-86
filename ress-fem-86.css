@@ -43,25 +43,24 @@ hr { border-top: 2px dashed #777; border-bottom: 0 }
 ul { display: block; list-style-type: disc; margin: 0; padding-left: 15px }
 button, input, select { font-family: inherit; font-size: 100%; line-height: 1.15; margin: 0 }
 sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; top: -.5em }
-.sr-only, label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; border: 0; overflow: hidden; white-space: nowrap; /*clip: rect(0, 0, 0, 0);*/ }
 
 /** COLORS **/
-.ctt, h1, option, #totop, #quitter:hover, #exit:hover { background: #333 }
-.ctt a, h1, option, #totop, #quitter:hover, #exit:hover, #totop, .bus span { color: #fefefe }
-#totop:hover, #exit, article, .selectors div:hover, .selectors a:hover { background: #fefefe }
+footer, h1, option, #totop, #quitter:hover, #exit:hover { background: #333 }
+footer a, h1, option, #totop, #quitter:hover, #exit:hover, #totop, .bus span { color: #fefefe }
+#totop:hover, #exit, article, nav div:hover, nav a:hover { background: #fefefe }
 article a:hover, #important a:hover, select, .maplink, article div, #quitter, #exit, #totop:hover { color: #333 }
 article a, #important a { color: #0078A8 }
-.selectors div, .selectors a, select {background: #f1f9ff}
+nav div, nav a, select {background: #f1f9ff}
 
 /*** SAMES ***/
 #careContainer, #totop, #important {display:none}
-.table, #mymap, h1 {width: 100%}
+main, #mymap, h1 {width: 100%}
 #exit, #quitter, select, #totop {cursor: pointer}
-.selectors, .maplink, .l, h1 {text-align: center}
+nav, .maplink, .l, h1 {text-align: center}
 #quitter, #exit {border: 1px solid #888;font-size: 1.2rem;border-radius: 5px}
-#quitter, h1, .table, .bus span  { justify-content: center}
+#quitter, h1, main, .bus span  { justify-content: center}
 #quitter, h1, .bus span { align-items: center}
-#quitter, .table {display: flex}
+#quitter, main {display: flex}
 #quitter {
   float: right; 
   margin-left: 5px;
@@ -92,25 +91,25 @@ h3 {
 }
 
 /********** SELECTORS **********/
-.selectors {margin: 20px 0 10px 0}
-.selectors div, .selectors a {
+nav {margin: 20px 0 10px 0}
+nav div, nav a {
   display: inline-block;
   padding: 5px; margin: 0 10px 8px 0;
   border-radius: 36px;
   box-shadow: #888 0 0 2px, #666 0 3px 0;
 }
-.selectors div:hover, .selectors a:hover {
+nav div:hover, nav a:hover {
   box-shadow: #888 0 0 2px, #333 0 3px 0;
   color: #111
 }
-.selectors div:hover select {
+nav div:hover select {
   background: #fff
 }
-.selectors a {
+nav a {
   padding: 6px 12px;
   text-decoration: none
 }
-.selectors a:active  {
+nav a:active  {
   box-shadow: #333 0 0 2px, #3facff 0 1px 0;
   transform: translateY(2px)
 }
@@ -124,7 +123,7 @@ select {
   outline: none;
   width: 100%;
 }
-.table {
+main {
   flex-direction: row;
   flex-wrap: wrap;
 }
@@ -149,7 +148,7 @@ article div::before { position: absolute; left: 12px }
   display: inline-block;
   vertical-align: top
 }
-#totop, .mapbox, .ctt {position: fixed}
+#totop, aside, footer {position: fixed}
 #totop {
   display: block;
   text-decoration: none;
@@ -159,19 +158,19 @@ article div::before { position: absolute; left: 12px }
   font-size: .9rem;
   z-index: 20
 }
-.mapbox {
+aside {
   width: 100vw; height: 100vh;
   bottom: 0; top: 0; right: -100vw;
   transition: right 1s;
   z-index: 30
 } .deploy {right: 0}
-.ctt {
+footer {
   bottom: 0;
   font-size: .9rem;
   padding: 3px 5px;
   border-top-right-radius: 10px
 }
-.ctt a { text-decoration: none } .ctt a:hover { text-decoration: underline }
+footer a { text-decoration: none } footer a:hover { text-decoration: underline }
 
 /*************************************** EMOJIS ***************************************/
 .ig::before, .tw::before, .fb::before, .yt::before, .sc::before, .fbi {
@@ -260,6 +259,8 @@ article div::before { position: absolute; left: 12px }
 .C15 {background:#1b7b6a}
 .C16 {background:#46b052}
 
+.sr-only, label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; border: 0; overflow: hidden; white-space: nowrap; clip: rect(0, 0, 0, 0) }
+
 @media screen and (max-width:800px) {
   #numbr { display: block }
 } 
@@ -268,7 +269,7 @@ article div::before { position: absolute; left: 12px }
     font-size: .95rem;
     padding: 5px;
   }
-  .selectors {
+  nav {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -294,8 +295,8 @@ article div::before { position: absolute; left: 12px }
     align-self: flex-start
   }
   h1 img {display:none}
-  .ctt {padding: 3px 5px}
-  .selectors div, .selectors a { margin-right:0 }
-  .selectors div { width: 100% }
+  footer {padding: 3px 5px}
+  nav div, nav a { margin-right:0 }
+  nav div { width: 100% }
   article:last-of-type { margin-bottom: 25px }
 }

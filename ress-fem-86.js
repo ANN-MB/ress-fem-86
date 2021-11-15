@@ -30,7 +30,7 @@ document.addEventListener("click", function(evt) {
   if (evt.target.className == "tomap") {
     mbox.className += " deploy";
     stock = evt.target;
-    mmap.focus();
+    document.getElementById("exit").focus();
   }
   if (evt.target.className == "goto") {
     evt.preventDefault();
@@ -47,7 +47,7 @@ document.getElementById("quitter").addEventListener("click", function() {
 
 document.getElementById("exit").addEventListener("click", function() {
   mbox.className = "mapbox";
-  mmap.blur();
+  document.getElementById("exit").blur();
   stock.focus();
   stock = void 0;
 }, false);
