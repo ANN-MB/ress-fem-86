@@ -1,0 +1,1182 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": 40028304,
+        "osm_type": "W",
+        "extent": [
+          0.3451742,
+          46.5834596,
+          0.3453966,
+          46.583333
+        ],
+        "country": "France",
+        "osm_key": "amenity",
+        "city": "Poitiers",
+        "street": "Place Charles De Gaulle",
+        "osm_value": "bar",
+        "postcode": "86000",
+        "name": "Boîte à don menstruelle - Crafty Brewpub (à vérifier)",
+        "state": "New Aquitaine",
+        "description": "📬 20, place Charles de Gaulle - 86000 POITIERS\n\nChangement de propriétaire récent. Vérifier que l'établissement participe toujours.\n\nLa boîte se trouve dans les toilettes de l'établissement\nHoraires d'ouverture : \nlundi- mardi - mercredi - jeudi - vendredi - samedi : 16h00-02h00\ndimanche : fermé\n\nBoîte à dons proposant tampons, serviettes... en auto-gestion : \n- Servez-vous librement si vous en avez besoin\n- N'hésitez pas à y déposer vos dons si vous en avez les moyens!",
+        "_umap_options": {
+          "color": "White",
+          "iconUrl": "🩸"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.345285,
+          46.583397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": 1297400394,
+        "osm_type": "N",
+        "country": "France",
+        "osm_key": "amenity",
+        "city": "Poitiers",
+        "street": "Rue de la Regratterie",
+        "osm_value": "restaurant",
+        "postcode": "86000",
+        "name": "Boîte à don menstruelle - L'envers du bocal",
+        "state": "New Aquitaine",
+        "description": "📬 16 ter, rue de la Regratterie - 86000 POITIERS\n\nLa boîte se trouve dans les toilettes de l'établissement\n\nHoraires d'ouverture : \nlundi- mardi : fermé\nmercredi - jeudi : 12h00-22h00\nvendredi - samedi : 12h00-23h00\ndimanche : 14h30-20h00\n\nBoîte à dons proposant tampons, serviettes... en auto-gestion : \n- Servez-vous librement si vous en avez besoin\n- N'hésitez pas à y déposer vos dons si vous en avez les moyens!",
+        "_umap_options": {
+          "color": "White",
+          "iconUrl": "🩸"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.342445,
+          46.583337
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": 40028259,
+        "osm_type": "W",
+        "extent": [
+          0.3449826,
+          46.5829279,
+          0.3450857,
+          46.5827929
+        ],
+        "country": "France",
+        "osm_key": "amenity",
+        "city": "Poitiers",
+        "street": "Grand'Rue",
+        "osm_value": "bar",
+        "postcode": "86000",
+        "name": "Boîte à don menstruelle - Le Zinc",
+        "state": "New Aquitaine",
+        "description": "📬 196 Grand'Rue - 86000 POITIERS\n\nLa boîte se trouve dans les toilettes de l'établissement\nHoraires d'ouverture : \nmardi - mercredi - jeudi - vendredi - samedi : 18h00-02h00\ndimanche -lundi : fermé\n\nBoîte à dons proposant tampons, serviettes... en auto-gestion : \n- Servez-vous librement si vous en avez besoin\n- N'hésitez pas à y déposer vos dons si vous en avez les moyens!",
+        "_umap_options": {
+          "color": "White",
+          "iconUrl": "🩸"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.345039,
+          46.58286
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": 145429465,
+        "osm_type": "W",
+        "extent": [
+          0.3432689,
+          46.5849463,
+          0.3437081,
+          46.5847129
+        ],
+        "country": "France",
+        "osm_key": "leisure",
+        "city": "Poitiers",
+        "street": "Rue des Flageolles",
+        "osm_value": "garden",
+        "postcode": "86000",
+        "name": "Boîte à don menstruelle - Square des Flageolles",
+        "state": "New Aquitaine",
+        "description": "📬 rue des Flageolles - 86000 POITIERS\n\nLa boîte se trouve dans la boîte à livres du Square des Flageolles\n\nHoraires :\n\n    Du 1er novembre au 31 mars, de 8h à 18h ;\n    Du 1er avril au 31 octobre, de 8h à 20h\n\nBoîte à dons proposant tampons, serviettes... en auto-gestion : \n- Servez-vous librement si vous en avez besoin\n- N'hésitez pas à y déposer vos dons si vous en avez les moyens!\n",
+        "_umap_options": {
+          "color": "White",
+          "iconUrl": "🩸"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.343457,
+          46.584832
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "osm_id": 5114919982,
+        "osm_type": "N",
+        "country": "France",
+        "osm_key": "amenity",
+        "housenumber": "84",
+        "city": "Poitiers",
+        "street": "Rue de la Cathédrale",
+        "osm_value": "restaurant",
+        "postcode": "86000",
+        "name": "Boîte à don menstruelle - Sweet Time & Company",
+        "state": "New Aquitaine",
+        "description": "📬 84, rue de la Cathédrale - 86000 POITIERS\n\nLa boîte se trouve dans les toilettes de l'établissement\n\nHoraires d'ouverture : \nmardi - mercredi - jeudi - vendredi - samedi : 10h30-19h00\ndimanche - lundi : fermé\n\nBoîte à dons proposant tampons, serviettes... en auto-gestion : \n- Servez-vous librement si vous en avez besoin\n- N'hésitez pas à y déposer vos dons si vous en avez les moyens!",
+        "_umap_options": {
+          "color": "White",
+          "iconUrl": "🩸"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.34388,
+          46.582478
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "BurlyWood",
+          "iconUrl": "👩‍⚕️",
+          "iconClass": "Default"
+        },
+        "name": "Agathe LIER (gynécologue obstétricienne)",
+        "description": "📬 Centre AMP, tour Jean Bernard - 2, rue de la Milétrie - 86021 POITIERS\n📞 05 49 44 39 56 (CHU)\n@ sec.amp@chu-poitiers.fr\n🔗 https://www.chu-poitiers.fr/specialites/medecine-de-la-reproduction/contact/\n💶  Secteur 1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.384975,
+          46.55946
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Green",
+          "iconUrl": "👩‍⚕️",
+          "iconClass": "Default"
+        },
+        "description": "📬 6 place de Rochemaux - 86000 POITIERS\n📞 05 49 01 91 87\n",
+        "name": "Airelle PLANQUES (généraliste)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.386227,
+          46.573301
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "",
+          "iconUrl": "",
+          "iconClass": "Default"
+        },
+        "description": "",
+        "name": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.351734,
+          46.56488
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Cyan",
+          "iconUrl": "👩‍⚕️",
+          "iconClass": "Default"
+        },
+        "description": "📬 24, rue de la Regratterie - 86000 POITIERS\n📞 05 49 01 79 09\n🔗 https://www.doctolib.fr/dermatologue/poitiers/arielle-neau\n🪙 De 30€ à 95€\t\n💶 Secteur 1",
+        "name": "Arielle NEAU (dermatologue)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.342941,
+          46.583412
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Aqua",
+          "iconUrl": "👨‍⚕️",
+          "iconClass": "Default"
+        },
+        "description": "📬 30, boulevard Aristide Briand - 86100 CHÂTELLERAULT\n📞 05 49 93 15 02\t\t\n🔗 www.dermatellerault.com\t\n🪙 30€ à 320€ par séance d'épilation selon la zone\n💶  Secteur 1, accèpte CMU",
+        "name": "Asene JELIASKOFF (dermatologue)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.540843,
+          46.811667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Green",
+          "iconUrl": "👩‍⚕️",
+          "iconClass": "Default"
+        },
+        "description": "📬 15b, rue du Clos Gaultier - 86000 POITIERS\n📞 05 86 16 03 34\n🔗 https://www.doctolib.fr/medecin-generaliste/poitiers/celine-brechon\n🪙 25€ \n💶 Secteur 1",
+        "name": "Céline BRECHON GIRAUD (généraliste)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.340045,
+          46.564608
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Gold",
+          "iconUrl": "👩‍⚕️",
+          "iconClass": "Default"
+        },
+        "name": "Christelle VIOLE (sage femme)",
+        "description": "📬 58, rue de Quinçay - 86000 POITIERS\n📞 07 71 27 08 39\n🔗 https://sagefemme-poitiers.fr/\n@ [[mailto:sagesfemmes.belair@gmail.com|sagesfemmes.belair@gmail.com]]\n💶 Secteur 1 (PUMA)\n"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.326275,
+          46.590975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Green",
+          "iconUrl": "👩‍⚕️",
+          "iconClass": "Default"
+        },
+        "name": "Delphine LASSEUR-TOUZALIN (généraliste)",
+        "description": "📬 37, rue de la Forêt - 86800 BIGNOUX\n📞 05 49 47 57 77\n🔗 https://www.doctolib.fr/medecin-generaliste/bignoux/delphine-lasseur-touzalin\n🪙 25€\n💶 Secteur 1\n"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.46948,
+          46.602361
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Green",
+          "iconUrl": "👩‍⚕️",
+          "iconClass": "Default"
+        },
+        "description": "📬 9, rue Alsace Lorraine - 86000 POITIERS\n📞 05 49 41 08 40\t\t\n🔗 https://www.doctolib.fr/medecin-generaliste/poitiers/elsa-cantos\n",
+        "name": "Elsa CANTOS (généraliste spé. gynéco)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.33843,
+          46.577637
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Green",
+          "iconUrl": "👩‍⚕️",
+          "iconClass": "Default"
+        },
+        "description": "📬 15, avenue Maréchal Foch - 86100 CHÂTELLERAULT\n📞 05 49 02 50 50\n🪙 25€\n💶 Secteur 1",
+        "name": "Frédérique YANA (généraliste)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.553222,
+          46.818687
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "DodgerBlue",
+          "iconClass": "Default",
+          "iconUrl": "👨‍⚕️"
+        },
+        "description": "📬 22, avenue de la Libération - 86000 POITIERS\n📞 05 49 88 25 10\n🪙 46,70€ ou 55€ sans médecin traitant\n💶 Secteur 1",
+        "name": "Jacques CHAUMERON (psychiatre)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.327455,
+          46.572806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Aqua",
+          "iconUrl": "👨‍⚕️",
+          "iconClass": "Default"
+        },
+        "description": "📬 22, boulevard Aristide Briand - 86100 CHÂTELLERAULT\n📞 05 49 02 54 54\n🔗 https://www.doctolib.fr/gynecologue/chatellerault/jean-charles-guttila\n🪙  30€\n💶  Secteur 2",
+        "name": "Jean-Charles GUTTILLA (gynécologue obstétricien)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.540374,
+          46.811681
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "DodgerBlue",
+          "iconUrl": "👩‍⚕️",
+          "iconClass": "Default"
+        },
+        "description": "📬 42, rue du Rondy - 86000 POITIERS\n📞 07 67 85 37 75\n🔗 https://psychologue.laffontas.fr/\n🪙 50€",
+        "name": "Lise LAFFONTAS (psychologue & sophrologue)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.365435,
+          46.585899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Darkviolet",
+          "iconClass": "Default",
+          "iconUrl": "👩‍⚕️"
+        },
+        "description": "📬 28, rue Carnot - 86000 POITIERS\n📞 06 48 89 29 76\t\n@ maya.hallay@larylab.fr\n🔗 https://larylab.fr\n{{https://icons.iconarchive.com/icons/sicons/basic-round-social/128/facebook-icon.png|16}} [[https://www.facebook.com/lary.lab.1|Maya Hallay-Dufour]]\n{{https://icons.iconarchive.com/icons/limav/flat-gradient-social/16/Twitter-icon.png|16}} [[https://twitter.com/hallaymaya|@hallaymaya]]\n",
+        "name": "Maya HALLAY DUFOUR (orthophoniste)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.338514,
+          46.578921
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Gold",
+          "iconUrl": "👩‍⚕️",
+          "iconClass": "Default"
+        },
+        "name": "Nathalie FAYOUX (sage-femme)",
+        "description": "📬 7, rue de Provence - 86000 POITIERS\n📞 09 64 34 37 92\n{{https://icons.iconarchive.com/icons/sicons/basic-round-social/128/facebook-icon.png|16}} [[https://www.facebook.com/sagefemme86/|Nathalie Fayoux - Sage Femme]] \n💶 Secteur 1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.357654,
+          46.588103
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Gold",
+          "iconClass": "Default",
+          "iconUrl": "👩‍⚕️"
+        },
+        "name": "Paule BERNARD (sage femme)",
+        "description": "📬 9, rue de la Tête Noire - 86000 POITIERS\n📞 05 49 41 75 48\n🪙 25€\n💶 Secteur 1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.343764,
+          46.584557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Orange",
+          "iconUrl": "👨‍⚕️",
+          "iconClass": "Default"
+        },
+        "name": "Philippe ARLIN (sexologue)",
+        "description": "Pratique également TCC et Thérapies de couple\n\n📬 61, rue des Feuillants - 86000 POITIERS\n📞 06 62 62 76 42\n@ p-arlin@arlinsexo.fr\t\n🔗 https://www.arlin-sexo.fr/identite-de-genre/\n{{https://icons.iconarchive.com/icons/sicons/basic-round-social/128/facebook-icon.png|16}} [[https://www.facebook.com/PhilippeARLIN|Philippe ARLIN Sexologue]]\n\nPrendre rendez-vous : https://www.clicrdv.com/arlin-sexo\n\n🪙 60€"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.350464,
+          46.582813
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "SaddleBrown",
+          "iconUrl": "👨‍⚕️",
+          "iconClass": "Default"
+        },
+        "description": "📬 54B, avenue de la Libération - 86000 POITIERS\n📞 05 49 37 94 04\n💶 Secteur 2",
+        "name": "Pierre NOCENT (endocrinologue)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.32578,
+          46.57163
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Green",
+          "iconUrl": "👩‍⚕️",
+          "iconClass": "Default"
+        },
+        "description": "📬 ZAC de Beaulieu - 3, place des Capétiens - 86000 POITIERS\n📞 05 49 03 00 70\n🔗 https://www.doctolib.fr/medecin-generaliste/poitiers/stephanie-grandcolin\n🪙 De 25€ à 41,80€\n💶 Secteur 1 (PUMA/AME)",
+        "name": "Stéphanie GRANCOLIN (généraliste  spé. gynéco)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.377026,
+          46.574598
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Green",
+          "iconUrl": "👩‍⚕️",
+          "iconClass": "Default"
+        },
+        "description": "📬 37, place des Templiers - 86000 POITIERS\n\nconsultations gynécologie le mercredi\n\nVoir autre fiche 3, place des Capétiens pour plus d'informations.",
+        "name": "Stéphanie GRANCOLIN (généraliste  spé. gynéco)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.37898,
+          46.57532
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "MediumVioletRed",
+          "iconUrl": "👩‍⚕️",
+          "iconClass": "Default"
+        },
+        "description": "📬 22, avenue de la Libération - 86000 POITIERS\n📞 06 10 81 78 62\n@ stephaniepottier.hypnose@gmail.com\t\n{{https://icons.iconarchive.com/icons/sicons/basic-round-social/128/facebook-icon.png|16}} [[https://www.facebook.com/St%C3%A9phanie-Pottier-Praticienne-en-Hypnose-2012880082375300/|Stéphanie Pottier - Praticienne en Hypnose]] ",
+        "name": "Stephanie POTTIER\t(Infirmière)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.327546,
+          46.572842
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "green",
+          "iconUrl": " 👩‍⚕️",
+          "iconClass": "Default"
+        },
+        "name": "Sylvie MAILLOT-MARY (généraliste sexologue)",
+        "description": "📬 17, rue abbé Lalanne - 86100 CHÂTELLERAULT\n📞 05 49 21 16 16\n🔗 https://www.doctolib.fr/medecin-generaliste/chatellerault/sylvie-maillot-mary\n🪙 De 25€ à 46€\n💶 Secteur 1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.540562,
+          46.810722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Green",
+          "iconUrl": "👨‍⚕️",
+          "iconClass": "Default"
+        },
+        "name": "Yann TIERCE (généraliste)",
+        "description": "📬 115, rue des Couronneries - 86000 POITIERS\n📞 05 49 45 11 11\n🔗 https://www.doctolib.fr/medecin-generaliste/poitiers/yann-tierce\n🪙 25€\n💶 Secteur 1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.359282,
+          46.590111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.349803,
+          46.579483
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconClass": "Drop",
+          "color": "Orchid",
+          "iconUrl": "/uploads/pictogram/lodging-24-white.png"
+        },
+        "description": "Association. Résidence « Cécile et Marie-Anne » pour femmes en difficulté.\n\n📬 16, rue Riffault - 86000 POITIERS\n📞 05 49 88 44 20\t\n@ [[mailto:res.cma@free.fr|res.cma@free.fr]]\n\nCapacité d'accueil : 10 femmes dont 2 femmes avec 1 enfant. 7 studios et 3 chambres.\nL'accueil à la résidence suppose la mise en oeuvre d'une rencontre entre la femme et une professionnelle dans un entretien d'admission.",
+        "name": "ADIFAS Poitou"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.345989,
+          46.583428
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconClass": "Drop",
+          "iconUrl": "🧑‍🤝‍🧑"
+        },
+        "name": "ADSEA 86",
+        "description": "Association Départementale pour la Sauvegarde de l'Enfant à l'Adulte.\n\n📬 8, allée. du Parchemin - 86180 BUXEROLLES\n📞 05 49 88 01 13 \n📞 05 49 61 06 00\n@ [[mailto:contact@adsea86.fr|contact@adsea86.fr]]\n🔗 https://www.adsea86.fr/aide-aux-victimes-2\n\nL’accueil des victimes s’effectue,                                                                                                                             Sur rendez-vous en appelant au 05.49.88.01.13\n\nAu PRISM, 16 rue de la demi-lune 86000 POITIERS –\n\nAu CRIJ, Centre régional d’information jeunesse Nouvelle-Aquitaine, 45, place Charles-de-Gaulle à Poitiers.                                                                                                                                                                       Tous les jeudis de 14h à 17h\n\nA la Mairie de Châtellerault, 78 Boulevard Blossac 86100 Châtellerault,                                                    tous les lundis de 14 h à 17 h\n\nA la Maison de quartier de St Eloi, 15 avenue de la fraternité – 86 000 Poitiers                                tous les vendredis de 9h à 12 h\n\nAu Tribunal de Grande Instance, au sein du Bureau d’Aide aux Victimes (BAV)                                   4, BD du Maréchal de Lattre de Tassigny, 86000 Poitiers – Tel 05.16.08.04.71\n\nPermanences hebdomadaires:\n\nLundi              14 h -16 h 30                                                                                                                                        Mardi              14 h – 16 h 30                                                                                                                                Mercredi         14 h – 16 h 30                                                                                                                                           Jeudi               9h15-12h15 puis 14h-16h45                                                                                                         Vendredi         9h15-12h15 puis 14h-16h45\n\nRendez-vous à  la demande possibles\n\nMairie de Loudun\n1 Rue Gambetta\n86200 Loudun\n\nCCAS de Montmorillon\n4 Rue des Recollets\n86500 Montmorillon\n\nMairie de Civray\n12 Place de Gaulle\n86400 Civray"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.359767,
+          46.602584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconUrl": "🎗️",
+          "color": "Black"
+        },
+        "name": "AIDES",
+        "description": "Prévention sur le SIDA et sur les infections sexuellement transmissibles.\n📬 1, boulevard Jeanne d'Arc - 86000 POITIERS\n📞 05 49 42 45 45\n@  [[mailto:vienne@aides.org|vienne@aides.org]]\n🔗 https://www.aides.org (site national)\n{{https://icons.iconarchive.com/icons/sicons/basic-round-social/128/facebook-icon.png|16}} [[https://www.facebook.com/aides.territoirepoitoucharentes/|AIDES Caarud de la Vienne]]\n\n"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.34048,
+          46.590098
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconUrl": "🙎",
+          "color": "Ivory"
+        },
+        "description": "Conseillère municipale déléguée à l'Action sociale et égalité des droits\n\n📬 Mairie de Poitiers\n15, place du Maréchal Leclerc - 86021 POITIERS\n📞 05 49 52 35 35 \n@ [[mailto:maire@poitiers.fr|maire@poitiers.fr]]\n\n{{https://icons.iconarchive.com/icons/sicons/basic-round-social/128/facebook-icon.png|16}} [[https://www.facebook.com/alexandra.duv|Alexandra Duval]]\n{{https://icons.iconarchive.com/icons/limav/flat-gradient-social/16/Twitter-icon.png|16}} [[https://twitter.com/alexduv|@alexduv]]\n{{https://icons.iconarchive.com/icons/designbolts/free-instagram/16/Active-Instagram-3-icon.png|16}} [[https://www.instagram.com/duvhale|@duvhale]]\n\n\t\t",
+        "name": "Alexandra Duval"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.341086,
+          46.580154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "LimeGreen",
+          "iconClass": "Drop",
+          "iconUrl": "🥏",
+          "showLabel": null
+        },
+        "name": "Black Star Ultimate",
+        "description": "Équipe d'ultimate (frisbee) dont 1 groupe non-mixte\n\n📬 52-56, route de Poitiers - 86280 SAINT-BENOIT (lieu de pratique)\n@ [[mailto:black-star-feminin@riseup.net|black-star-feminin@riseup.net]]\n🔗 https://blackstar.noblogs.org\n{{https://icons.iconarchive.com/icons/sicons/basic-round-social/128/facebook-icon.png|16}} [[https://www.facebook.com/blackstarultimate/|Black Star Ultimate Poitiers - Saint Benoit]]"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.342464,
+          46.553785
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconClass": "Drop",
+          "iconUrl": "🎗️",
+          "color": "black",
+          "showLabel": null
+        },
+        "description": "Centre gratuit de santé sexuelle du CHU\nInformation, diagnostic et dépistage du VIH, des hépatites et des infections sexuellement transmissibles.\n\n📬 CHRU de Poitiers - La Milétrie \nAvenue Jacques CŒur\n86000 POITIERS\nBâtiment Vie la Santé, Porte 5\n📞 05 49 44 39 05\n@ [[mailto:sec.cegidd@chu-poitiers.fr|sec.cegidd@chu-poitiers.fr]]\n🔗 https://www.chu-poitiers.fr/specialites/cegidd/\n\nSur rendez-vous : \n\n    Lundi de 8h30 à 12h\n    Mardi de 9h à 12h30\n    Mercredi de 14h à 19h\n    Jeudi de 12h30 à 19h30\n    Vendredi de 8h30 à 12h (standard ouvert de 8h30 à 12h et de 12h30 à 16h)\n",
+        "name": "CeGIDD - à la Villa Santé"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.389135,
+          46.558307
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Black",
+          "iconUrl": "🎗️"
+        },
+        "name": "CeGIDD - relai Georges Charbonnier",
+        "description": "Centre gratuit de santé sexuelle du CHU\nInformation, diagnostic et dépistage du VIH, des hépatites et des infections sexuellement transmissible\n\n📬 14, rue du Mouton - 86000 POITIERS\n📞 05 49 38 45 10\t\n\nSans rendez-vous :\n\n    Mercredi : de 9h à 12h30"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.343489,
+          46.589364
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconUrl": "🎗️",
+          "color": "Black"
+        },
+        "description": "Centre gratuit de santé sexuelle du CHU\nInformation, diagnostic et dépistage du VIH, des hépatites et des infections sexuellement transmissibles.\n\n📬 rue du Docteur Luc Montagnier - 86106 CHÂTELLERAULT\nPôle de Santé Publique, 1er étage à gauche du bâtiment A\n📞 05 49 02 90 19\n\nOuvert le :\n    le mercredi de 12h à 16h*\n    le vendredi de 15h à 19h*\n\nUne permanence téléphonique assure la prise de rendez-vous, du lundi au vendredi de 12h à 17h.\n\n*Jours et horaires susceptibles de varier\n\n",
+        "name": "CeGIDD Châtellerault - Centre Hospitalier Camille Guérin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.555464,
+          46.832761
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Black",
+          "iconUrl": "🎗️"
+        },
+        "description": "Information, diagnostic et dépistage du VIH, des hépatites et des infections sexuellement transmissibles\n\n📬 3, rue des Visitandines - 86200 LOUDUN\nCentre de Périnatalité, 2ème étage\n📞 05 49 98 44 72\n\nHoraires : \n\n     Mardi : 11h00 - 12h30\n     Vendredi : 15h00 - 17h00",
+        "name": "CeGIDD Loudun - Centre Hospitalier"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.078031,
+          47.011422
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Black",
+          "iconUrl": "🎗️"
+        },
+        "name": "CeGIDD Montmorillon - Centre Hospitalier ",
+        "description": "Information, diagnostic et dépistage du VIH, des hépatites et des infections sexuellement transmissibles.\n\n📬 2, rue Henri Dunant - 86500 MONTMORILLON\n1er étage, au Centre Périnatal de Proximité\n📞 05 49 83 83 67\n📞 05 49 83 83 71\t\t\n\n\nSur rendez-vous :\n\n     Lundi, mardi, jeudi : 16h30 - 17h00\n     Mercredi, vendredi : 16h00 - 17h00\""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.866075,
+          46.42871
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconClass": "Drop",
+          "color": "Orchid",
+          "iconUrl": "/uploads/pictogram/lodging-24-white.png"
+        },
+        "description": "Centre d'hébergement pour femmes  en errance ou victimes de violences.\nGéré par Ekidom et La Croix Rouge.\n\n📬  39, rue de la Chauvinerie - 86000 POITIERS\n📞 05 49 41 19 42 (La Croix Rouge)",
+        "name": "Centre d'hébergement pour femmes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.328227,
+          46.58666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconClass": "Drop",
+          "iconUrl": "/uploads/pictogram/hospital-24-white.png",
+          "color": "Red",
+          "showLabel": null
+        },
+        "description": "📬 2, rue de la Milétrie - 86021 POITIERS\nservice Gynécologie Obstétrique\n📞 05 49 44 44 56\n📞 05 49 44 48 31\n🔗 https://www.chu-poitiers.fr/specialites/centre-planification-education-familiale/\n\n• Le Centre de planification et d’éducation familiale est ouvert du lundi au vendredi de 9 h à 17 h sans interruption (hall d’entrée de la tour Jean-Bernard à droite, couloir A1).\n• L’accueil des patientes est assuré par l’infirmière ou la sage-femme.\n• Consultations gynécologiques spécifiques pour les mineures le mercredi après-midi.\n",
+        "name": "Centre de Planification du CHU"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.384674,
+          46.559403
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconClass": "Drop",
+          "color": "DarkViolet",
+          "iconUrl": "📢"
+        },
+        "name": "Centre LGBTI du Poitou",
+        "description": "Coordination de 5 associations LGBT :\n- Contact 86\n- David & Jonathan\n- Les Soeurs de la Perpétuelle Indulgence\n- Rando’s Poitou\n- SOS homophobie\n\n📬 22, rue du Pigeon Blanc - 86000 POITIERS\n(Maison de la Solidarité)\n@ [[mailto:contact@centrelgbtidupoitou.org|contact@centrelgbtidupoitou.org]]\n🔗 https://www.centrelgbtidupoitou.org/centre/\n{{https://icons.iconarchive.com/icons/sicons/basic-round-social/128/facebook-icon.png|16}} [[https://www.facebook.com/centrelgbtidupoitou/|Centre LGBTI du Poitou]]\n{{https://icons.iconarchive.com/icons/limav/flat-gradient-social/16/Twitter-icon.png|16}} [[https://twitter.com/CentreLGBTI|@CentreLGBTI]]"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.351455,
+          46.580707
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Red",
+          "iconUrl": "/uploads/pictogram/hospital-24-white.png",
+          "iconClass": "Drop",
+          "showLabel": null
+        },
+        "name": "Centre Médico Psychologique (CMP) de Poitiers",
+        "description": "📬 14, Rue Gay Lussac - 86000 POITIERS\n📞 05 16 52 61 03\t\n🔗 https://ch-laborit.fr/services-de-soins/adultes/consultations/centre-medico-psychologique-cmp-laborit/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.377121,
+          46.577981
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Red",
+          "iconUrl": "/uploads/pictogram/hospital-24-white.png",
+          "iconClass": "Drop",
+          "showLabel": null
+        },
+        "name": "Centre Médico Psychologique de Châtellerault",
+        "description": "📬 78, rue Jean Vilar - 86100 CHÂTELLERAULT\n📞 05 49 23 36 65\n🔗 https://ch-laborit.fr/services-de-soins/adultes/consultations/centre-medico-psychologique-georges-ruetsch/"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.555952,
+          46.830258
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "color": "Red",
+          "iconUrl": "/uploads/pictogram/hospital-24-white.png",
+          "iconClass": "Drop",
+          "showLabel": null
+        },
+        "name": "Centre Médico Psychologique de Loudun",
+        "description": "📬 8, rue du Martray - 86200 LOUDUN \n📞 05 16 52 61 09 (accueil infirmier)\n📞 05 16 52 61 03 (secrétariat médical)\n📎 https://ch-laborit.fr/services-de-soins/adultes/consultations/centre-medico-psychologique-cmp-laborit/\n🕒 Du lundi au vendredi de 10h à 16h (sans rendez-vous uniquement le vendredi après-midi)\nℹ️ Consultations avec ou sans rendez-vous sans obligation de prescription médicale initiale.\nL'accueil est réalisé par un(e) infirmier(e). Son rôle est d'évaluer la nature de la demande et, en étroite collaboration avec l'équipe médicale du CMP, de définir le projet de soins. "
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.077312,
+          47.010387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconUrl": "🧑‍🤝‍🧑"
+        },
+        "description": "Centre d'information sur les droits des femmes et des familles.\n\n📬 33, avenue Rhin et Danube - 86000 POITIERS\n📞 05 49 88 04 41\n@ [[mailto:cidff86@cidff86.fr|cidff86@cidff86.fr]]\n🔗 https://nouvelleaquitaine-fr.cidff.info/\n{{https://icons.iconarchive.com/icons/sicons/basic-round-social/128/facebook-icon.png|16}} [[https://www.facebook.com/CIDFF86/|CIDFF de la Vienne]]\n{{https://icons.iconarchive.com/icons/designbolts/free-instagram/16/Active-Instagram-3-icon.png|16}} [[https://www.instagram.com/cidff86/|@cidff86]]\n\nHoraires d'ouverture:\n\n     Du lundi au vendredi de 9h à 12h30\n     Le mardi de 14h à 16h30\n",
+        "name": "CIDFF de la Vienne"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.339922,
+          46.566421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconUrl": "🧑‍🤝‍🧑"
+        },
+        "name": "CIDFF de la Vienne - antenne de Montmorillon",
+        "description": "Centre d'information sur les droits des femmes et des familles.\n\n📬 18, place de la Victoire - 86500 MONTMORILLON\n📞 05 49 88 04 41\n@ [[mailto:cidff86@cidff86.fr|cidff86@cidff86.fr]]\n🔗 https://nouvelleaquitaine-fr.cidff.info/\n{{https://icons.iconarchive.com/icons/sicons/basic-round-social/128/facebook-icon.png|16}} [[https://www.facebook.com/CIDFF86/|CIDFF de la Vienne]]\n{{https://icons.iconarchive.com/icons/designbolts/free-instagram/16/Active-Instagram-3-icon.png|16}} [[https://www.instagram.com/cidff86/|@cidff86]]\n\n\n Horaires du secrétariat :\n  lundi, mardi et jeudi de 09h à 12h30 et de 13h30 à 17h\n\nReçoit sur rendez-vous"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.873933,
+          46.427557
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconUrl": "🎭"
+        },
+        "description": "Compagnie de spectacle\n\n📬  M3Q - 25, rue du Général Sarrail - 86000 POITIERS\n📞 07 82 81 52 89 (administration)\n📞 06 83 20 85 92 (artistique)\n📧 [[mailto:sanstitreproduction@gmail.com|sanstitreproduction@gmail.com]]\n📧 [[mailto:annevanhyftemorel@gmail.com|annevanhyftemorel@gmail.com]]\n📎 https://www.ciesanstitre.com/la-compagnie\n{{https://icons.iconarchive.com/icons/sicons/basic-round-social/128/facebook-icon.png|16}} [[https://www.facebook.com/Cie-Sans-Titre-Prod-679688008797526|@Cie-Sans-Titre-Prod-679688008797526]]\nℹ️  Arts Mêlés : Théâtre, Danse, Clown, Musique, Slam\n\n",
+        "name": "Cie. Sans Titre"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.342851,
+          46.589264
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconClass": "Drop",
+          "color": "darkviolet",
+          "iconUrl": "📢"
+        },
+        "name": "Collectif Poitevin pour le Droit des Femmes",
+        "description": "📬 22, rue du Pigeon Blanc - 86000 POITIERS\n(Maison de la Solidarité)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.35164,
+          46.580715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconClass": "Drop",
+          "color": "darkviolet",
+          "iconUrl": "📢"
+        },
+        "name": "CONTACT Vienne",
+        "description": "Association encourageant le dialogue entre les parents, les gays et lesbiennes, bi et trans et leurs familles et ami-e-s\n\n📬 22, rue du Pigeon Blanc - 86000 POITIERS\n(Maison de la Solidarité)\n📞 0805 69 64 64 (ligne nationale confidentielle et gratuite)\n@ [[mailto:contact.association86@gmail.com|contact.association86@gmail.com]]\n🔗 https://www.asso-contact.org/asso/86\n{{https://icons.iconarchive.com/icons/sicons/basic-round-social/128/facebook-icon.png|16}} [[https://www.facebook.com/ContactVienne|Association CONTACT Vienne]]"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.351477,
+          46.580622
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconUrl": "🎗️",
+          "color": "Black"
+        },
+        "name": "Dépistage rapide du VIH",
+        "description": "📬 place de l'Europe (quartier d'Ozon) - 86106 CHÂTELLERAULT\n\nde 13h30 à 15h30\n\nAssuré par un véhicule du CAARUD"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.543426,
+          46.808233
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconUrl": "🎗️",
+          "color": "Black"
+        },
+        "name": "Dépistage rapide du VIH",
+        "description": "📬 square Alexis Danan (quartier de Châteauneuf) - 86106 CHÂTELLERAULT\n\nde 16h à 18h\n\nAssuré par un véhicule du CAARUD"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.53347,
+          46.815378
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconClass": "Drop",
+          "color": "darkviolet",
+          "iconUrl": "📢",
+          "popupTemplate": "Default"
+        },
+        "name": "En Tous Genres",
+        "description": "Association de visibilité et de lutte contre les discriminations fondées sur le genre, le sexe et l’orientation sexuelle\n\n📬 22, rue du Pigeon Blanc - 86000 POITIERS\n(Maison de la Solidarité)\n📞 09 72 34 70 80\t\n🔗 http://www.entousgenres.org/\n{{https://icons.iconarchive.com/icons/sicons/basic-round-social/128/facebook-icon.png|16}} [[https://www.facebook.com/EnTousGenres|En Tous Genres]]\n\nPermanence téléphonique tous les dimanche de 19h à 21h.\nRendez vous sur demande."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.351552,
+          46.580648
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconClass": "Drop",
+          "iconUrl": "/uploads/pictogram/hospital-24-white.png",
+          "color": "Red",
+          "showLabel": null
+        },
+        "description": "Service de santé universitaire\n\n📬 4, allée Jean Monnet - 86073 POITIERS\nBâtiment C4\n📞 05 49 45 33 54\t\n@ [[mailto:erspoitiers@outlook.fr|erspoitiers@outlook.fr]]\n@ [[mailto:infirmiers@univ-poitiers.fr|infirmiers@univ-poitiers.fr]]\n🔗 http://ssu.univ-poitiers.fr/\t\n{{https://icons.iconarchive.com/icons/sicons/basic-round-social/128/facebook-icon.png|16}} [[https://www.facebook.com/ERSPoitiers|Étudiants Relai Santé - Université de Poitiers]]\n{{https://icons.iconarchive.com/icons/designbolts/free-instagram/16/Active-Instagram-3-icon.png|16}} [[https://www.instagram.com/erspoitiers/|@erspoitiers]]\n\nHoraires :\n\n﻿lundi : 08:30 - 17:30\nmardi : 08:30 - 17:30\nmercredi : 08:30 - 17:30\njeudi : 08:30 - 17:30\nvendredi : 08:30 - 16:30",
+        "name": "Étudiant·e·s Relais Santé"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.382781,
+          46.563921
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconUrl": "🧑‍🤝‍🧑"
+        },
+        "name": "Maison Départementale de la Solidarité (MDS)",
+        "description": "📬 9, rue Guillaume 7 le Troubadour - 86000 POITIERS\n📞 05 49 41 97 00\n\nConsultations gynécologiques anonymes. Les mineur.es peuvent venir sans l’autorisation de leurs parents et pourront bénéficier d’une délivrance de contraception gratuite.\n\nHoraires :\n  lundi : 8:30 - 12:30\n  mardi, mercredi, jeudi : 8:30 - 12:30 et de 13h30 à 17h00\n  vendredi : 8:30 - 12:30 et 13:30 à 16:30\"\n\n[[https://www.lavienne86.fr/ftp/cartographie/Carte_ActionSociale_MaisonsDesSolidarites/index.html|Carte des antennes de quartier]]"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.347078,
+          46.587911
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconClass": "Drop",
+          "iconUrl": "🧑‍🤝‍🧑"
+        },
+        "name": "Planning Familial de la Vienne",
+        "description": "📬 20, rue Fief des Hausses - 86000 POITIERS\n📞 06 40 21 09 26 \n📞 05 49 47 76 49\n@ [[mailto:planning.familial-ad86@wanadoo.fr|planning.familial-ad86@wanadoo.fr]]\n🔗 http://planning-familial.org/content/le-planning-familial-86-00293\n{{https://icons.iconarchive.com/icons/sicons/basic-round-social/128/facebook-icon.png|16}} [[https://www.facebook.com/planningfamilial86|Planning Familial de la Vienne]]\n\nNous vous invitons à nous contacter pour en savoir plus sur nos horaires de permanences.\n\nLe numéro vert national 0800 08 11 11 \"Sexualités, Contraception, IVG\" est également à votre disposition (appels anonymes et gratuits)."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.361315,
+          46.592435
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "SANZA",
+        "description": "Médiation sociale et culturelle, notamment avec et auprès des personnes racisées. Nombreux projets dédiés aux femmes.\n\n📬 90, avenue Georges Pompidou - 86000 POITIERS\n📞 05 49 54 18 80\n@ [[mailto:ass.sanza@hotmail.fr|ass.sanza@hotmail.fr]]\n🔗 \n{{https://icons.iconarchive.com/icons/sicons/basic-round-social/128/facebook-icon.png|16}} [[https://www.facebook.com/ass.sanza/|Association Sanza]]\n\nHoraires :\n\nlundi : 14:00 - 17:00\nmardi : 11:00 - 12:00 et 14:00 - 17:00\nmercredi : 09:00 - 12:00 et 14:00 - 17:00\njeudi :  11:00 - 12:00 et 14:00 - 17:00\nvendredi : 11:00 - 12:00",
+        "_umap_options": {
+          "iconUrl": "🧑‍🤝‍🧑"
+        }
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.354813,
+          46.589113
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconClass": "Drop",
+          "iconUrl": "🧑‍🤝‍🧑"
+        },
+        "name": "SAVI 86",
+        "description": "Service d'aide aux victimes de la Vienne\n\n📬 16, rue de la Demi-Lune - 86000 POITIERS\n📞 05 49 00 26 52\n@ [[mailto:savmj@prism86.fr|savmj@prism86.fr]]\n🔗 https://www.aideauxvictimes86.com/\n\nDes permanences sur rendez-vous sont tenues par les juristes sont organisées une demi journée par semaine :\n- Le lundi après midi à la mairie de Châtellerault,\n- Le jeudi après midi au Centre Régional d’Information Jeunesse de Poitiers,\n- Le mardi matin à la maison des services publics de Saint Eloi,\n- En mairie, en milieu rural (Civray, Loudun, Montmorillon) à la demande\n\nLe Bureau d'Aide aux Victimes situé au Sein du Tribunal Judiciaire de Poitiers est ouvert le :\n- Lundi de 14h à 16h30\n- Mardi de 14h à 16h45\n- Mercredi de 14h à 16h30\n- Jeudi de 9h15 à 12h15 et de 14h à 16h45\n- Vendredi de 9h15 à 12h15 et de 14h à 16h45"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.322208,
+          46.597231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconClass": "Drop",
+          "iconUrl": "/uploads/pictogram/hospital-24-white.png",
+          "color": "Red",
+          "showLabel": null
+        },
+        "description": "📬 CHRU de Poitiers - La Milétrie \nAvenue Jacques CŒur\n86000 POITIERS\nniveau -2 aile B\nporte 1 de la Tour Jean-Bernard\n\n📞 05 49 44 46 88\n\n🔗 https://www.chu-poitiers.fr/specialites/medecine-legale/vous-etes-une-femme-victime-de-violences-et-vous-avez-besoin-daide/\n\n🔗 https://www.chu-poitiers.fr/specialites/medecine-legale/unite-medico-judiciaire-umj/\n\nDu lundi au vendredi, de 9h à 18h, avec des consultations uniquement sur rendez-vous.",
+        "name": "Unité Médico Judiciaire du CHU (UMJ)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.385246,
+          46.559504
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "_umap_options": {
+          "iconUrl": "📢"
+        },
+        "name": "Volar",
+        "description": "Association étudiante féministe, queer de SciencePo\n\n📬 23, rue Jean Jaurès - 86000 POITIERS\n📞 06 34 32 03 10\n@ [[mailto:projet.volar@sciencespo.fr|projet.volar@sciencespo.fr]]\n{{https://icons.iconarchive.com/icons/sicons/basic-round-social/128/facebook-icon.png|16}} [[https://www.facebook.com/VolarScpo|Volar]]\n{{https://icons.iconarchive.com/icons/designbolts/free-instagram/16/Active-Instagram-3-icon.png|16}} [[https://www.instagram.com/instavolar/|@instavolar\t]]"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.343645,
+          46.581341
+        ]
+      }
+    }
+  ]
+}

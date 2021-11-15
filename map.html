@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
+    <meta name="googlebot" content="noindex" />
+    <meta name="robots" content="none" />
+    <meta name="author" content="Ann MB" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="leaflet/leaflet.css"/>
+    <script src="leaflet/leaflet.js"></script>
+   	<script src="leaflet/leaflet.ajax.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+     <div id="map" style="height: 100vh;"></div>
+    <script >
+    var mymap = L.map('map').setView([46.7309, 0.4697], 10);
+
+/*let xhr = new XMLHttpRequest();
+xhr.open('GET', 'ress.geojson');
+xhr.setRequestHeader('Content-Type', 'application/json');
+xhr.responseType = 'json';
+xhr.onload = function() {
+    if (xhr.status !== 200) return
+    L.geoJSON(xhr.response).addTo(mymap);
+};
+xhr.send();*/
+      
+      var geojsonLayer = new L.GeoJSON.AJAX("ress.json");
+geojsonLayer.addTo(mymap);
+
+    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibG9hcmdhbm4iLCJhIjoiY2t3MGhqbXJqMW9hYTJ2cGhlaTdvZTVlZyJ9.D8Abb60WrFCVJLVR63NdzA', {
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'your.mapbox.access.token'
+}).addTo(mymap);
+      
+      var ggfeature =  {
+      "type": "Feature",
+      "properties": {
+        "name": "Boîte à don menstruelle - L'envers du bocal",
+        "description": "📬 16 ter, rue de la Regratterie - 86000 POITIERS\n\nLa boîte se trouve dans les toilettes de l'établissement\n\nHoraires d'ouverture : \nlundi- mardi : fermé\nmercredi - jeudi : 12h00-22h00\nvendredi - samedi : 12h00-23h00\ndimanche : 14h30-20h00\n\nBoîte à dons proposant tampons, serviettes... en auto-gestion : \n- Servez-vous librement si vous en avez besoin\n- N'hésitez pas à y déposer vos dons si vous en avez les moyens!",
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.342445,
+          46.583337
+        ]
+      }
+    };
+      L.geoJSON(ggfeature).addTo(mymap);
+    </script>
+  </body>
+</html>
