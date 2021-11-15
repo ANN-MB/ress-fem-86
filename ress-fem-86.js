@@ -56,7 +56,7 @@ document.getElementById("exit").addEventListener("click", function() {
 care.addEventListener("change", sort, false);
 city.addEventListener("change", sort, false);
 cate.addEventListener("change", function() {
-  "care" !== this.value ? (care.selectedIndex = 0, carc.style.display = "none") : carc.style.display = "inline-block";
+  "care" !== this.value ? (care.selectedIndex = 0, carc.style.display = "none") : (carc.style.display = "inline-block", care.focus());
   "phon" == this.value && (city.selectedIndex = 0);
   sort();
 }, false);
