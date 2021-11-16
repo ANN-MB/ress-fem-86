@@ -60,6 +60,11 @@ nav, .maplink, .l, h1 {text-align: center}
 #quitter, #exit {border: 1px solid #888;font-size: 1.2rem;border-radius: 5px}
 #quitter, h1, main, .bus span  { justify-content: center}
 #quitter, h1, .bus span { align-items: center}
+.mail, .web {
+  overflow-wrap: break-word; 
+  word-wrap: break-word;
+  hyphens: auto
+} 
 #quitter, main {display: flex}
 #quitter {
   float: right; 
