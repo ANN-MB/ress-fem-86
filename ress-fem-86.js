@@ -10,9 +10,8 @@ const mbox = document.getElementById("mapbox"),
 	  impo = document.getElementById("important");
 var art = document.getElementsByTagName("article"),
     artl = art.length,
-    stock;
-
-function sort() {
+    stock,
+	sort = function() {
   var nb = 0;
   for (let i = 0; i < artl; i++) {
     if (art[i].getAttribute('data-hashtag').indexOf(cate.value) !== -1 && art[i].getAttribute('data-hashtag').indexOf(care.value) !== -1 && art[i].getAttribute('data-hashtag').indexOf(city.value) !== -1) {
@@ -22,10 +21,15 @@ function sort() {
       art[i].style.display = "none"
     }
   }
-  nmbr.innerHTML = "(" + nb + "&nbsp;r\u00e9sultats)";
-}
+  if (nb == 0) {
+    nmbr.innerHTML = "(aucun&nbsp;r\u00e9sultat)";
+  } else if (nb == 1) {
+      nmbr.innerHTML = "(1&nbsp;r\u00e9sultat)";
+  } else {
+      nmbr.innerHTML = "(" + nb + "&nbsp;r\u00e9sultats)";
+  }
+};
 
-/*** Click EventListeners ***/
 document.addEventListener("click", function(evt) {
   if (evt.target.className == "tomap") {
     mbox.className += " deploy";
@@ -52,7 +56,6 @@ document.getElementById("exit").addEventListener("click", function() {
   stock = void 0;
 }, false);
 
-/*** Change EventListeners ***/
 care.addEventListener("change", sort, false);
 city.addEventListener("change", sort, false);
 cate.addEventListener("change", function() {
