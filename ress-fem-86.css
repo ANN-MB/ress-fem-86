@@ -149,7 +149,7 @@ article div::before { position: absolute; left: 12px }
   display: inline-block;
   vertical-align: top
 }
-#totop, aside, footer {position: fixed}
+#totop, #mapbox, footer {position: fixed}
 #totop {
   display: block;
   text-decoration: none;
@@ -159,12 +159,12 @@ article div::before { position: absolute; left: 12px }
   font-size: .9rem;
   z-index: 20
 }
-aside {
+#mapbox {
   width: 100vw; height: 100vh;
   bottom: 0; top: 0; right: -100vw;
   transition: right 1s;
   z-index: 30
-} .deploy {right: 0}
+} .deploy {right: 0 !important}
 footer {
   bottom: 0;
   font-size: .9rem;
