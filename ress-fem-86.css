@@ -136,7 +136,7 @@ article, #important {
   border-radius: 12px 
 }
 article div, article h2 { padding: 4px 13px 4px 13px }
-article div:not(.desc) { padding-left: 35px }
+article div:not(.desc) { padding-left: 38px }
 article div::before { position: absolute; left: 12px }
 #important {
   position: relative;
@@ -174,34 +174,19 @@ footer {
 footer a { text-decoration: none } footer a:hover { text-decoration: underline }
 
 /*************************************** EMOJIS ***************************************/
-.ig::before, .tw::before, .fb::before, .yt::before, .sc::before, .fbi {
-  content: "";
-  width:16px; height:16px;
-  background-size: 16px 16px;
-  display: inline-block;
-  margin-right: 5px;
-  transform: translateY(2px)
+article img {
+	width:1.1rem; height:1.1rem;
+	margin-right: 5px;
+	transform: translateY(2px)
+}
+article div:not(h2) img {
+  display: block;
+  position: absolute;
+  left: 12px;
+  
 }
 .fbi {background-image:url(img/fb.png)}
 .desc {font-style: italic}
-.ig::before {background-image:url(img/ig.png)}
-.tw::before {background-image:url(img/tw.png)}
-.fb::before {background-image:url(img/fb.png)}
-.yt::before {background-image:url(img/yt.png)}
-.sc::before {background-image:url(img/sc.png)}
-.num::before {content:"\01F4DE\00a0";speak-as:digits}
-.mail::before {content:"\01F4E7\00a0"}
-.web::before {content:"\01F4CE\00a0"}
-.loc::before {content:"\01F4EC\00a0"}
-.bus::before {content:"\01F68C\00a0"}
-.time::before {content:"\01F552\00a0"}
-.avis::before {content:"\01F4AC\00a0"}
-.prix::before {content:"\1FA99\00a0"}
-.conv::before {content:"\01F4C3\00a0"}
-.lng::before {content:"\01F5E3\FE0F\00a0"}
-.acc::before {content:"\0267F\00a0"}
-.park::before {content:"\01F17F\FE0F\00a0"}
-.info::before {content:"\2139\FE0F\00a0"}
 
 /**************************************** BUS ****************************************/
 .bus span {
