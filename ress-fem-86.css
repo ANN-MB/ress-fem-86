@@ -47,7 +47,8 @@ hr { border-top: 2px dashed #777; border-bottom: 0 }
 ul { display: block; list-style-type: disc; margin: 0; padding-left: 15px }
 button, input, select { font-family: inherit; font-size: 100%; line-height: 1.15; margin: 0 }
 sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; top: -.5em }
-
+q:before { content: "\00ab\00a0" }
+q:after { content: "\00a0\00bb" }
 /** COLORS **/
 footer, h1, option, #totop, #quitter:hover, #exit:hover { background: #333 }
 footer a, h1, option, #totop, #quitter:hover, #exit:hover, #totop, .bus span { color: #fefefe }
