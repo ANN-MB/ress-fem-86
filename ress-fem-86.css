@@ -34,6 +34,9 @@ body {
   /* background-image: linear-gradient(322deg, #ba4aff, rgba(186, 74, 255, 0) 70%), linear-gradient(178deg, #008aff, rgba(0, 138, 255, 0) 70%), linear-gradient(24deg, #00ffc6, rgba(0, 255, 198, 0) 35%);*/
   background: #d7eeff linear-gradient(45deg, #8ec5fc, #e0c3fc) fixed;
 }
+body::after {
+  content: url(img/acc.png) url(img/acti.png) url(img/avis.png) url(img/bus.png) url(img/conv.png) url(img/cult.png) url(img/doc.png) url(img/fb.png) url(img/heal.png) url(img/host.png) url(img/ig.png) url(img/info.png) url(img/lng.png) url(img/loc.png) url(img/mail.png) url(img/num.png) url(img/pers.png) url(img/prix.png) url(img/righ.png) url(img/sc.png) url(img/soli.png) url(img/sprt.png) url(img/time.png) url(img/tw.png) url(img/web.png);
+}
 body, select, button { font-family: "Public Sans", "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif}
 a {background-color: transparent}
 b, strong {font-weight: bolder}
@@ -245,7 +248,7 @@ article div:not(h2) img {
 .C15 {background:#1b7b6a}
 .C16 {background:#46b052}
 
-.sr-only, label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; border: 0; overflow: hidden; white-space: nowrap; clip: rect(0, 0, 0, 0) }
+.sr-only, label, body::after { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; border: 0; overflow: hidden; white-space: nowrap; clip: rect(0, 0, 0, 0) }
 
 @media screen and (max-width:800px) {
   #numbr { display: block }
