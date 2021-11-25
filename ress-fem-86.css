@@ -30,8 +30,7 @@ html {font-size: 100%}
 body {
   margin: 0; padding: 0 0 30px 0; 
   overflow-x: hidden;
-  line-height: 1.15;
-  /* background-image: linear-gradient(322deg, #ba4aff, rgba(186, 74, 255, 0) 70%), linear-gradient(178deg, #008aff, rgba(0, 138, 255, 0) 70%), linear-gradient(24deg, #00ffc6, rgba(0, 255, 198, 0) 35%);*/
+  line-height: 1.30;
   background: #d7eeff linear-gradient(45deg, #8ec5fc, #e0c3fc) fixed;
 }
 body::after {
@@ -52,11 +51,11 @@ q:after { content: "\00a0\00bb" }
 /** COLORS **/
 footer, h1, option, #totop, #quitter:hover, #exit:hover { background: #333 }
 footer a, h1, option, #totop, #quitter:hover, #exit:hover, #totop, .bus span { color: #fefefe }
-#totop:hover, #exit, article, nav div:hover, nav a:hover { background: #fefefe }
+#totop:hover, #exit, nav div:hover, nav a:hover { background: #fefefe }
 article a:hover, #important a:hover, select, .maplink, article div, #quitter, #exit, #totop:hover { color: #333 }
 article a, #important a { color: #0078A8 }
-nav div, nav a, select {background: #f1f9ff}
-
+article, nav div, nav a {background: linear-gradient(145deg, #e4e8fe, #f8f9ff);}
+select {background: transparent}
 /*** SAMES ***/
 #careContainer, #totop, #important {display:none}
 main, #mymap, h1 {width: 100%}
@@ -132,12 +131,15 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
 }
-article {width: 500px;}
+article {
+  width: 500px;
+}
 article, #important {
   position: relative;
   padding: 5px 0 9px 0;  margin: 11px 1vw;
-  box-shadow: #555 0 2px 4px;
-  border-radius: 12px 
+ box-shadow: #888 0 0 2px, #888 0 3px 0;
+  border-radius: 12px;
+  
 }
 article div, article h2 { padding: 4px 13px 4px 13px }
 article div:not(.desc) { padding-left: 38px }
