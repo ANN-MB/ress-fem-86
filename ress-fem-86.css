@@ -115,7 +115,7 @@ h2 {border-bottom:1px solid #777}
   margin: 2cm;
 }
 @media print { 
-  html, body {width: 21cm;height: 29.7cm}
+  html, body {width:21cm;height:29.7cm}
   main {display: block}
   img {filter: saturate(0)}
   a {text-decoration:none !important; color:#000 !important}
