@@ -1,294 +1,112 @@
 @charset "UTF-8";
-@viewport {
-  width: device-width;
-  zoom: 1
+@font-face {
+  font-family:"Public Sans";font-style:normal;font-weight:normal;
+  src:url("font/PublicSans-Regular.woff2") format("woff2"), url("font/PublicSans-Regular.woff") format("woff");
 }
 @font-face {
-  font-family: "Public Sans";
-  src: url("font/PublicSans-Regular.woff2") format("woff2"),
-       url("font/PublicSans-Regular.woff") format("woff");
-  font-style: normal;
-  font-weight: normal;
+  font-family:"Public Sans";font-style:italic; font-weight:normal;
+  src:url("font/PublicSans-Italic.woff2") format("woff2"), url("font/PublicSans-Italic.woff") format("woff");
 }
 @font-face {
-  font-family: "Public Sans";
-  src: url("font/PublicSans-Italic.woff2") format("woff2"),
-       url("font/PublicSans-Italic.woff") format("woff");
-  font-style: italic;
-  font-weight: normal;
+  font-family:"Public Sans";font-style:normal;font-weight:bold;
+  src:url("font/PublicSans-Bold.woff2") format("woff2"), url("font/PublicSans-Bold.woff") format("woff");
 }
-@font-face {
-  font-family: "Public Sans";
-  src: url("font/PublicSans-Bold.woff2") format("woff2"),
-       url("font/PublicSans-Bold.woff") format("woff");
-  font-style: normal;
-  font-weight: bold;
-}
-
-*, *::before, *::after {box-sizing: border-box}
-html {font-size: 100%}
-body {
-  margin: 0; padding: 0 0 30px 0; 
-  overflow-x: hidden;
-  line-height: 1.30;
-  background: #d7eeff linear-gradient(45deg, #8ec5fc, #e0c3fc) fixed;
-}
-body::after {
-  content: url(img/acc.png) url(img/acti.png) url(img/avis.png) url(img/bus.png) url(img/conv.png) url(img/cult.png) url(img/doc.png) url(img/fb.png) url(img/heal.png) url(img/host.png) url(img/ig.png) url(img/info.png) url(img/lng.png) url(img/loc.png) url(img/mail.png) url(img/num.png) url(img/pers.png) url(img/prix.png) url(img/righ.png) url(img/sc.png) url(img/soli.png) url(img/sprt.png) url(img/time.png) url(img/tw.png) url(img/web.png);
-}
-body, select, button { font-family: "Public Sans", "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif}
-a {background-color: transparent}
-b, strong {font-weight: bolder}
-button { overflow: visible; -webkit-appearance: button }
-button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner { border-style: none; padding: 0 }
-button, select { text-transform: none }
-hr { border-top: 2px dashed #777; border-bottom: 0 }
-ul { display: block; list-style-type: disc; margin: 0; padding-left: 15px }
-button, input, select { font-family: inherit; font-size: 100%; line-height: 1.15; margin: 0 }
-sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; top: -.5em }
-q:before { content: "\00ab\00a0" }
-q:after { content: "\00a0\00bb" }
-/** COLORS **/
-footer, h1, option, #totop, #quitter:hover, #exit:hover { background: #333 }
-footer a, h1, option, #totop, #quitter:hover, #exit:hover, #totop, .bus span { color: #fefefe }
-#totop:hover, #exit, nav div:hover, nav a:hover { background: #fefefe }
-article a:hover, #important a:hover, select, .maplink, article div, #quitter, #exit, #totop:hover { color: #333 }
-article a, #important a { color: #0078A8 }
-article, nav div, nav a {background: linear-gradient(145deg, #e4e8fe, #f8f9ff);}
-select {background: transparent}
-/*** SAMES ***/
+html { box-sizing:border-box;font-size:100%}
+*, *::before, *::after {box-sizing:inherit}
+nav, h1, #important, footer, #totop, #quitter, #exit  {user-select:none}
+body {margin:0;padding:0 0 30px 0;overflow-x:hidden;line-height:1.30}
+body { font-family:"Public Sans", "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif}
+body::after {content:url(img/acc.png) url(img/acti.png) url(img/avis.png) url(img/bus.png) url(img/conv.png) url(img/cult.png) url(img/doc.png) url(img/fb.png) url(img/heal.png) url(img/host.png) url(img/ig.png) url(img/info.png) url(img/lng.png) url(img/loc.png) url(img/mail.png) url(img/num.png) url(img/pers.png) url(img/prix.png) url(img/righ.png) url(img/sc.png) url(img/soli.png) url(img/sprt.png) url(img/time.png) url(img/tw.png) url(img/web.png) url(img/park.png)}
+.sr-only, label, body::after {position:absolute;width:1px;height:1px;padding:0;margin:-1px;border:0;overflow:hidden;white-space:nowrap}
+select, option {font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;line-height:inherit;text-transform:none;margin:0}
+a {background-color:transparent}
+b, strong {font-weight:bolder}
+hr {border-top:2px dashed #777;border-bottom:0 }
+ul {display:block;list-style-type:disc;margin:0;padding-left:15px }
+sup {font-size:75%;line-height:0;position:relative;vertical-align:baseline;top:-.5em }
+q::before {content:"\00ab\00a0"} q::after {content:"\00a0\00bb"}
 #careContainer, #totop, #important {display:none}
-main, #mymap, h1 {width: 100%}
-#exit, #quitter, select, #totop {cursor: pointer}
-nav, .maplink, .l, h1 {text-align: center}
-#quitter, #exit {border: 1px solid #888;font-size: 1.2rem;border-radius: 5px}
-#quitter, h1, main, .bus span  { justify-content: center}
-#quitter, h1, .bus span { align-items: center} 
-#quitter, main {display: flex}
-#quitter {
-  float: right; 
-  margin-left: 5px;
-  box-shadow: #888 0 2px 0;
-  background-color: rgba(255,255,255,0.4)
-}
-#quitter:after {
-  content: "";
-  display: block;
-  padding-bottom: 100%;
-}
-#exit {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-}
-h1 {
-  margin: 0; padding: 7px; 
-  font-size: 1.1rem; font-weight: 500
-}
-h2, h3 {font-size: 1rem}
-h2 {
-  margin: 0 0 5px 0;
-  border-bottom: 1px solid #777;
-}
-h3 {
-  margin: 0; padding: 4px 13px
-}
-
-/********** SELECTORS **********/
-nav {margin: 20px 0 10px 0}
-nav div, nav a {
-  display: inline-block;
-  padding: 5px; margin: 0 10px 8px 0;
-  border-radius: 36px;
-  box-shadow: #888 0 0 2px, #666 0 3px 0;
-}
-nav div:hover, nav a:hover {
-  box-shadow: #888 0 0 2px, #333 0 3px 0;
-  color: #111
-}
-nav div:hover select {
-  background: #fff
-}
-nav a {
-  padding: 6px 12px;
-  text-decoration: none
-}
-nav a:active  {
-  box-shadow: #333 0 0 2px, #3facff 0 1px 0;
-  transform: translateY(2px)
-}
-select, #mymap {
-  height: 100%;
-  border: 0;
-  font-size: 1em
-}
-select {
-  padding-left: 5px;
-  outline: none;
-  width: 100%;
-}
-main {
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-article {
-  width: 500px;
-}
-article, #important {
-  position: relative;
-  padding: 5px 0 9px 0;  margin: 11px 1vw;
- box-shadow: #888 0 0 2px, #888 0 3px 0;
-  border-radius: 12px;
-  
-}
-article div, article h2 { padding: 4px 13px 4px 13px }
-article div:not(.desc) { padding-left: 38px }
-article div::before { position: absolute; left: 12px }
-#important {
-  position: relative;
-  font-size: 1rem;
-  background: linear-gradient(-45deg, rgba(241, 249, 255, .4), rgba(255,255,255,.8));
-  padding: 10px !important;
-  border: 1px solid rgba(255,255,255,0.7)
-}
-#important ul {
-  display: inline-block;
-  vertical-align: top
-}
-#totop, #mapbox, footer {position: fixed}
-#totop {
-  display: block;
-  text-decoration: none;
-  bottom: 15px; right: 15px;
-  padding: 5px;
-  border: 0; border-radius: 10px;
-  font-size: .9rem;
-  z-index: 20
-}
-#mapbox {
-  width: 100vw; height: 100vh;
-  bottom: 0; top: 0; right: -100vw;
-  transition: right 1s;
-  z-index: 30
-} .deploy {right: 0 !important}
-footer {
-  bottom: 0;
-  font-size: .9rem;
-  padding: 3px 5px;
-  border-top-right-radius: 10px
-}
-footer a { text-decoration: none } footer a:hover { text-decoration: underline }
-
-/*************************************** EMOJIS ***************************************/
-article img {
-	width:1.1rem; height:1.1rem;
-	margin-right: 5px;
-	transform: translateY(2px)
-}
-article div:not(h2) img {
-  display: block;
-  position: absolute;
-  left: 12px;
-  
-}
+main, #mymap, h1 {width:100%}
+a, #exit, #quitter, #totop, select {cursor:pointer}
+#quitter, #exit, #totop {font-size:1.2rem;border-radius:7px;text-decoration:none}
+#quitter, main, .bus span {justify-content:center}
+#quitter, h1, .bus span {align-items:center} 
+nav, .maplink, .l, h1 {text-align:center}
+#quitter, main {display:flex}
+#exit {position:absolute;top:15px;right:15px;padding:2px 5px}
+h1 {margin:0;padding:7px;font-size:1.1rem;font-weight:500}
+h2, h3 {font-size:inherit}
+h2 {margin:0 0 5px 0}
+h3 {margin:0;padding:4px 13px}
+main {flex-direction:row;flex-wrap:wrap}
+nav {margin:20px 0 10px 0}
+nav div, nav a {display:inline-block;padding:5px;margin:0 10px 8px 0;border-radius:36px}
+nav a {padding:6px 12px;text-decoration:none}
+nav a:active, #totop:active, #exit:active, #quitter:active {transform:translateY(2px)}
+select, #mymap {height:100%;border:0}
+select {padding-left:5px;outline:none;width:100%;background:transparent}
+article {width:500px;padding:5px 0 9px 0}
+article, #important {position:relative;margin:11px 1vw;border-radius:12px}
+article h2, .desc {padding:4px 13px 4px 13px}
+article div {padding:4px 13px 4px 38px} 
+article div::before {position:absolute;left:12px}
+#important {position:relative;padding:10px}
+#quitter {float:right;margin-left:5px}
+#quitter::after {content:"";display:block;padding-bottom:100%}
+#important ul {display:inline-block;vertical-align:top}
+#totop, #mapbox, footer {position:fixed}
+#totop {display:block;bottom:15px;right:15px;padding:4px 7px;font-size:1rem;z-index:2}
+#mapbox {width:100vw;height:100vh;bottom:0;top:0;right:-100vw;transition:right 1s;z-index:3}
+.deploy {right:0 !important}
+footer {bottom:0;font-size:.9rem;padding:3px 5px;border-top-right-radius:10px;z-index:4}
+footer a {text-decoration:none} footer a:hover {text-decoration:underline}
+article img {width:1.1rem;height:1.1rem;margin-right:5px;transform:translateY(2px)}
+article div:not(h2) img {display:block;position:absolute;left:12px}
 .fbi {background-image:url(img/fb.png)}
-.desc {font-style: italic}
-
-/**************************************** BUS ****************************************/
-.bus span {
-  display: inline-flex;
-  width: 1.1rem; height: 1.1rem;
-  font-size: .7rem; font-weight: bold;
-  border-radius: 50%
-}
-.P3, .PD, .C2, .C3, .P10, .P13, .P27, .P15, .P1E {color: #000 !important}
-/*** POITIERS ***/
-.P1 {background:#00a3db}
-.P1E {background:#83d0f5}
-.P2A {background:#f00}
-.P2B {background:#d71f26}
-.P3 {background:#fff000}
-.P10 {background:#92cfc5}
-.P11 {background:#90277d}
-.P12 {background:#a780ad}
-.P13 {background:#e57fa9}
-.P14 {background:#de3fa2}
-.P15 {background:#9ec83f}
-.P16 {background:#347c86}
-.P17 {background:#c1934f}
-.P20 {background:#82be40}
-.P21 {background:#e78229}
-.P22 {background:#837438}
-.P23 {background:#e26626}
-.P24 {background:#e05a75}
-.P25 {background:#eea829}
-.P27 {background:#a1bcc6}
-.P28 {background:#9d6331}
-.P29 {background:#69b642}
-.P30 {background:#c71066}
-.P31 {background:#07ad98}
-.P32 {background:#347ab3}
-.P33 {background:#a4502b}
-.P34 {background:#573d90}
-.P35 {background:#719b68}
-.PO {background:#e94282}
-.PTER {background:#0000b0;font-size: 7px !important}
-.PCITA {background:#64c800;font-size: 7px !important}
-/*** CHÂTELLERAULT ***/
-.C1, .C2, .C3, .C4, .C5, .C6, .C7, .C10, .C11, .C12, .C13, .C14, .C15, .C16 {border-radius: 0 !important}
-.C1 {background:#de192c}
-.C2 {background:#ff7900}
-.C3 {background:#ffb500}
-.C4 {background:#c90}
-.C5 {background:#0080c2}
-.C6 {background:#00c4f3}
-.C7 {background:#4a55ba}
-.C10 {background:#34b49d}
-.C11 {background:#00a456}
-.C12 {background:#95c44b}
-.C13 {background:#007139}
-.C14 {background:#a69e42}
-.C15 {background:#1b7b6a}
-.C16 {background:#46b052}
-
-.sr-only, label, body::after { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; border: 0; overflow: hidden; white-space: nowrap; clip: rect(0, 0, 0, 0) }
-
+.desc {font-style:italic}
+.bus span {display:inline-flex;width:1.1rem;height:1.1rem;font-size:.7rem;font-weight:bold;border-radius:50%}
+/*********************************************** COLORS ************************************************/
+body {background:#d7eeff linear-gradient(45deg, #8ec5fc, #e0c3fc) fixed}
+article, nav div, nav a, #important, #totop, #quitter, #exit {background:linear-gradient(145deg, #e4e8fe, #f8f9ff)}
+article a, #important a {color:#0078A8}
+footer, h1, option {background:#333}
+nav div:hover, nav a:hover, #quitter:hover, #totop:hover, #exit:hover {background:#fefefe;box-shadow:#888 0 0 2px, #333 0 3px 0;color:#111}
+nav div:hover select {background:#fff}
+footer a, h1, option, .bus span {color:#fefefe}
+body, article a:hover, .maplink, #important a:hover, select, #quitter, #exit, #totop {color:#333}
+nav div, nav a, article, #important, #totop, #quitter, #exit {box-shadow:#888 0 0 2px, #888 0 3px 0}
+nav a:active  {box-shadow:#333 0 0 2px, #3facff 0 1px 0}
+h2 {border-bottom:1px solid #777}
+#totop, #quitter, #exit {border:1px solid #888}
+/********************************************** POITIERS ***********************************************/
+.P1 {background:#00a3db}  .P1E {background:#83d0f5}  .P2A {background:#f00}    .P2B {background:#d71f26}
+.P3 {background:#fff000}  .P10 {background:#92cfc5}  .P11 {background:#90277d} .P12 {background:#a780ad}
+.P13 {background:#e57fa9} .P14 {background:#de3fa2}  .P15 {background:#9ec83f} .P16 {background:#347c86}
+.P17 {background:#c1934f} .P20 {background:#82be40}  .P21 {background:#e78229} .P22 {background:#837438}
+.P23 {background:#e26626} .P24 {background:#e05a75}  .P25 {background:#eea829} .P27 {background:#a1bcc6}
+.P28 {background:#9d6331} .P29 {background:#69b642}  .P30 {background:#c71066} .P31 {background:#07ad98}
+.P32 {background:#347ab3} .P33 {background:#a4502b}  .P34 {background:#573d90} .P35 {background:#719b68}
+.PO {background:#e94282}  .PTER {background:#0000b0} .PCITA {background:#64c800}
+.P3, .PD, .C2, .C3, .P10, .P13, .P27, .P15, .P1E {color:#000 !important}
+.PTER, .PCITA {font-size:.45em !important}
+/******************************************** CHÂTELLERAULT ********************************************/
+.C1, .C2, .C3, .C4, .C5, .C6, .C7, .C10, .C11, .C12, .C13, .C14, .C15, .C16 {border-radius:0 !important}
+.C1 {background:#de192c}  .C2 {background:#ff7900}  .C3 {background:#ffb500}
+.C4 {background:#c90}     .C5 {background:#0080c2}  .C6 {background:#00c4f3}
+.C7 {background:#4a55ba}  .C10 {background:#34b49d} .C11 {background:#00a456}
+.C12 {background:#95c44b} .C13 {background:#007139} .C14 {background:#a69e42} 
+.C15 {background:#1b7b6a} .C16 {background:#46b052}
+/******************************************** MEDIA QUERIES ********************************************/
 @media screen and (max-width:800px) {
-  #numbr { display: block }
+  #numbr {display:block}
 } 
 @media screen and (max-width:450px) {
-  h1 {
-    font-size: .95rem;
-    padding: 5px;
-  }
-  nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    align-content: flex-start;
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-  .maplink:nth-child(1) {
-    display: block;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: auto;
-    align-self: flex-start;
-    margin-right: 10px
-  }
-  .maplink:nth-child(2) {
-    display: block;
-    flex-grow: 1; 
-    flex-shrink: 1;
-    flex-basis: auto;
-    align-self: flex-start
-  }
+  h1 {font-size:.95rem;padding:5px}
+  nav {display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center;align-content:flex-start;margin:10px 15px}
+  .maplink:nth-child(1), .maplink:nth-child(2) {display:block;flex-grow:1;flex-shrink:1;flex-basis:auto;align-self:flex-start}
+  .maplink:nth-child(1) {margin-right:10px}
   h1 img {display:none}
-  footer {padding: 3px 5px}
+  footer {padding:3px 5px}
   nav div, nav a { margin-right:0 }
-  nav div { width: 100% }
-  article:last-of-type { margin-bottom: 25px }
+  nav div { width:100% }
 }
