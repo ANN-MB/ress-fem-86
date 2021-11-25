@@ -110,12 +110,17 @@ h2 {border-bottom:1px solid #777}
   nav div, nav a { margin-right:0 }
   nav div { width:100% }
 }
+@page {
+  size: A4 portrait;
+  margin: 2cm;
+}
 @media print { 
+  html, body {width: 21cm;height: 29.7cm}
   main {display: block}
   img {filter: saturate(0)}
   a {text-decoration:none !important; color:#000 !important}
   body, article, header {color:#000;background:#fff}
-  nav, #important, #totop, .mapbox {display:none}
+  nav, #important, #totop, .mapbox {display:none !important}
   article {font-family:sans-serif;box-shadow:none;break-inside:avoid;background:#fff}
   article, .bus span {border:1px solid #000}
   .fb a, .ig a, .tw a, .sc a, .yt a {font-size:0}
