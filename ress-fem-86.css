@@ -16,7 +16,7 @@ html { box-sizing:border-box;font-size:100%}
 nav, h1, #important, footer, #totop, #quitter, #exit  {user-select:none}
 body {margin:0;padding:0 0 30px 0;overflow-x:hidden;line-height:1.30}
 body { font-family:"Public Sans", "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif}
-body::after {content:url(img/acc.png) url(img/acti.png) url(img/avis.png) url(img/bus.png) url(img/conv.png) url(img/cult.png) url(img/doc.png) url(img/fb.png) url(img/heal.png) url(img/host.png) url(img/ig.png) url(img/info.png) url(img/lng.png) url(img/loc.png) url(img/mail.png) url(img/num.png) url(img/pers.png) url(img/prix.png) url(img/righ.png) url(img/sc.png) url(img/soli.png) url(img/sprt.png) url(img/time.png) url(img/tw.png) url(img/web.png) url(img/park.png)}
+body::after {content:url(img/acc.png) url(img/yt.png) url(img/acti.png) url(img/avis.png) url(img/bus.png) url(img/conv.png) url(img/cult.png) url(img/doc.png) url(img/fb.png) url(img/heal.png) url(img/host.png) url(img/ig.png) url(img/info.png) url(img/lng.png) url(img/loc.png) url(img/mail.png) url(img/num.png) url(img/pers.png) url(img/prix.png) url(img/righ.png) url(img/sc.png) url(img/soli.png) url(img/sprt.png) url(img/time.png) url(img/tw.png) url(img/web.png) url(img/park.png)}
 .sr-only, label, body::after {position:absolute;width:1px;height:1px;padding:0;margin:-1px;border:0;overflow:hidden;white-space:nowrap}
 select, option {font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;line-height:inherit;text-transform:none;margin:0}
 a {background-color:transparent}
