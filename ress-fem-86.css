@@ -54,18 +54,18 @@ article div::before {position:absolute;left:12px}
 #quitter {float:right;margin-left:5px}
 #quitter::after {content:"";display:block;padding-bottom:100%}
 #important ul {display:inline-block;vertical-align:top}
-#totop, #mapbox, footer {position:fixed}
-#totop {display:block;bottom:15px;right:15px;padding:4px 7px;font-size:1rem;z-index:2}
 #mapbox {width:100vw;height:100vh;bottom:0;top:0;right:-100vw;transition:right 1s;z-index:3}
 .deploy {right:0 !important}
-footer {bottom:0;left:0;font-size:.9rem;padding:3px 5px;border-top-right-radius:10px;z-index:4}
-footer a {text-decoration:none} footer a:hover {text-decoration:underline}
 article img {width:1.1rem;height:1.1rem;margin-right:5px;transform:translateY(2px)}
 article div:not(h2) img {display:block;position:absolute;left:12px}
 .fbi {background-image:url(img/fb.png)}
 .desc {font-style:italic}
 .bus span {display:inline-flex;width:1.1rem;height:1.1rem;font-size:.7rem;font-weight:bold;border-radius:50%}
-footer img, h1 img {height: 1.1rem}
+#totop, #mapbox, footer {position:fixed}
+#totop {display:block;bottom:15px;right:15px;padding:4px 7px;font-size:1rem;z-index:2}
+footer {bottom:0;left:0;font-size:.9rem;padding:3px 5px;border-top-right-radius:10px;z-index:4}
+footer a {text-decoration:none} footer a:hover {text-decoration:underline}
+footer img, h1 img {height: 1.1rem;vertical-align:middle}
 /*********************************************** COLORS ************************************************/
 body {background:#d7eeff linear-gradient(45deg, #8ec5fc, #e0c3fc) fixed}
 article, nav div, nav a, #important, #totop, #quitter, #exit {background:linear-gradient(145deg, #e4e8fe, #f8f9ff)}
