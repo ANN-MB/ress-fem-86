@@ -65,7 +65,7 @@ article div:not(h2) img {display:block;position:absolute;left:12px}
 #totop {display:block;bottom:15px;right:15px;padding:4px 7px;font-size:1rem;z-index:2}
 footer {bottom:0;left:0;font-size:.9rem;padding:3px 5px;border-top-right-radius:10px;z-index:4}
 footer a {text-decoration:none} footer a:hover {text-decoration:underline}
-footer img, h1 img {height: 1.1rem;vertical-align:middle}
+footer img, h1 img {height: 1.1rem;vertical-align:middle;transform:translateY(2px)}
 /*********************************************** COLORS ************************************************/
 body {background:#d7eeff linear-gradient(45deg, #8ec5fc, #e0c3fc) fixed}
 article, nav div, nav a, #important, #totop, #quitter, #exit {background:linear-gradient(145deg, #e4e8fe, #f8f9ff)}
