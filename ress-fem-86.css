@@ -65,7 +65,7 @@ article div:not(h2) img {display:block;position:absolute;left:12px}
 .fbi {background-image:url(img/fb.png)}
 .desc {font-style:italic}
 .bus span {display:inline-flex;width:1.1rem;height:1.1rem;font-size:.7rem;font-weight:bold;border-radius:50%}
-footer img {height: 1.1rem}
+footer img, h1 img {height: 1.1rem}
 /*********************************************** COLORS ************************************************/
 body {background:#d7eeff linear-gradient(45deg, #8ec5fc, #e0c3fc) fixed}
 article, nav div, nav a, #important, #totop, #quitter, #exit {background:linear-gradient(145deg, #e4e8fe, #f8f9ff)}
@@ -107,7 +107,7 @@ h2 {border-bottom:1px solid #777}
   .maplink:nth-child(1), .maplink:nth-child(2) {display:block;flex-grow:1;flex-shrink:1;flex-basis:auto;align-self:flex-start}
   .maplink:nth-child(1) {margin-right:10px}
   h1 img {display:none}
-  footer {padding:3px 5px}
+  footer {padding:3px}
   nav div, nav a { margin-right:0 }
   nav div { width:100% }
 }
