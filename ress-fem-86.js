@@ -4,8 +4,8 @@ const mbox = document.getElementById("mapbox"),
       city = document.getElementById("city"),
       carc = document.getElementById("careContainer"),
       nmbr = document.getElementById("numbr"),
-	  impo = document.getElementById("important"),
-	  sort = function() {
+      impo = document.getElementById("important"),
+      sort = function() {
         var nb = 0;
         for (let i = 0; i < artl; i++) {
           if (art[i].getAttribute('data-hashtag').indexOf(cate.value) !== -1 && art[i].getAttribute('data-hashtag').indexOf(care.value) !== -1 && art[i].getAttribute('data-hashtag').indexOf(city.value) !== -1) {
@@ -14,10 +14,10 @@ const mbox = document.getElementById("mapbox"),
           } else {
             art[i].style.display = "none"
           }
-        }	
+        }
         nmbr.innerHTML = 0 == nb ? "(aucun&nbsp;r&eacute;sultat)" : 1 == nb ? "(1&nbsp;r&eacute;sultat)" : "(" + nb + "&nbsp;r&eacute;sultats)";
       },
-	  sAll = function(a)  {
+      sAll = function(a)  {
         if (document.selection) {
           var range = document.body.createTextRange();
           range.moveToElementText(a);
@@ -28,16 +28,16 @@ const mbox = document.getElementById("mapbox"),
           window.getSelection().addRange(range);
         }
       },
-	  closeMap = function() {
-		mbox.className = "mapbox";
+      closeMap = function() {
+        mbox.className = "mapbox";
         document.getElementById("exit").blur();
         stock.focus();
         stock = void 0;
-	  }
+      }
 var art = document.getElementsByTagName("article"),
     artl = art.length,
     stock,
-	clicked;
+    clicked;
 document.addEventListener("click", function(e) {
   var t = e.target;
   if (t.className == "tomap") {
@@ -49,8 +49,8 @@ document.addEventListener("click", function(e) {
     e.preventDefault();
     var trad = t.href.replace(/(.+)#([A-Za-z0-9]+)/,"$2"),
         elem = document.getElementById(trad);
-	elem.style.display = "block";
-	elem.scrollIntoView();
+    elem.style.display = "block";
+    elem.scrollIntoView();
   }
   var a = t.closest("article");
   null !== a ? a !== clicked && (clicked = a) : clicked = null;
@@ -67,12 +67,16 @@ cate.addEventListener("change", function() {
   "phon" == this.value && (city.selectedIndex = 0);
   sort();
 }, false);
+document.getElementById("alph").addEventListener("change", function() {
+  document.getElementById(this.value).scrollIntoView();
+  this.selectedIndex = 0
+}, false);
 window.addEventListener("scroll", function() {
   var ttop = document.getElementById("totop");
   document.body.scrollTop > 600 || document.documentElement.scrollTop > 600 ? ttop.style.display = "block" : ttop.style.display = "none";
 }, false);
 window.addEventListener("DOMContentLoaded", function() {
-  cate.selectedIndex = care.selectedIndex = city.selectedIndex = 0;
+  cate.selectedIndex = care.selectedIndex = city.selectedIndex = alph.selectedIndex = 0;
   nmbr.innerHTML = "(" + artl + "&nbsp;r&eacute;sultats)";
   window.localStorage.getItem("modale") || (impo.style.display = "block");
 },false);
@@ -80,7 +84,7 @@ document.addEventListener("keydown", function(e){
   var key = e.keyCode || e.which;
   if (clicked && true == e.ctrlKey && 65 == key) {
     e.preventDefault();
-	null !== clicked && sAll(clicked);
+    null !== clicked && sAll(clicked);
   }
   if (27 == key) closeMap()
 },false);
