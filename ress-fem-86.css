@@ -62,13 +62,7 @@ footer img, h1 img {height: 1.1rem;transform:translateY(2px)}
 img {border:0}
 #toggle_button {position:absolute;font-size: 1.1rem;padding: 0.3em .8em;margin-top:20px;cursor:pointer;margin-left: 50px}
 svg {transform: rotate(360deg)}
-#toggle-checkbox {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
+#toggle-checkbox {position:absolute;opacity:0;cursor:pointer;height:0;width:0}
 .toggle-slot {
   position: absolute;
   top: 50%;
@@ -92,13 +86,8 @@ svg {transform: rotate(360deg)}
   box-shadow: inset 0px 0px 0px 2px #ffbb52;
   transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
 }
-.sun-icon-wrapper, .moon-icon-wrapper, .sun-icon, .moon-icon {
-  height: 1.5rem;
-  width: 1.5rem;
-}
-#toggle-checkbox:checked ~ .toggle-slot {
-  background-color: #374151;
-}
+.sun-icon-wrapper, .moon-icon-wrapper, .sun-icon, .moon-icon {height:1.5rem;width:1.5rem}
+#toggle-checkbox:checked ~ .toggle-slot {background-color:#374151}
 #toggle-checkbox:checked ~ .toggle-slot .toggle-button {
   background-color: #485367;
   box-shadow: inset 0px 0px 0px 2px white;
@@ -149,7 +138,7 @@ svg {transform: rotate(360deg)}
 @media screen and (max-width:800px) {
   #numbr {display:block}
   h1 {padding-right: 7rem}
-  .toggle-slot {padding-top: 3px;padding-bottom:3px}
+  .toggle-slot {margin-top: 3px;margin-bottom:3px}
 } 
 @media screen and (max-width:450px) {
   h1 {font-size:.95rem;padding:5px}
