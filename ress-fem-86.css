@@ -148,7 +148,8 @@ svg {transform: rotate(360deg)}
 /******************************************** MEDIA QUERIES ********************************************/
 @media screen and (max-width:800px) {
   #numbr {display:block}
-  h1 {margin-right: 7rem}
+  h1 {padding-right: 7rem}
+  .toggle-slot {padding-top: 3px;padding-bottom:3px}
 } 
 @media screen and (max-width:450px) {
   h1 {font-size:.95rem;padding:5px}
@@ -159,6 +160,8 @@ svg {transform: rotate(360deg)}
   footer {padding:3px}
   nav div, nav a { margin-right:0 }
   nav div { width:100% }
+  h1 {padding-right: 7rem}
+  
 }
 @page {size: A4 portrait;margin: 1.5cm}
 @media print { 
