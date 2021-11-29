@@ -8,15 +8,8 @@ const mbox = document.getElementById("mapbox"),
       carc = document.getElementById("careContainer"),
       nmbr = document.getElementById("numbr"),
       impo = document.getElementById("important"),
-	  them = document.getElementById("theme"),
-	  alph = document.getElementById("alph-cont"),
-	  masonry = new Macy({
-        container: "main",
-        mobileFirst: true,
-        columns: 3,
-        margin: {y: 20, x: 20},
-        breakAt: {1500: 3, 940: 2, 520: 1}
-      }),
+      them = document.getElementById("theme"),
+      alph = document.getElementById("alph-cont"),
       sort = function() {
 	    if (cate.selectedIndex !== 0 || care.selectedIndex !== 0 || city.selectedIndex !== 0) {
 	      alph.style.display = "none"
@@ -51,7 +44,10 @@ const mbox = document.getElementById("mapbox"),
         document.getElementById("exit").blur();
         stock.focus();
         stock = void 0;
-      }
+      },
+      isMobileDevice = function { 
+        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1)
+      };
 var art = document.getElementsByTagName("article"),
     artl = art.length,
     stock,
@@ -100,6 +96,15 @@ window.addEventListener("DOMContentLoaded", function() {
   nmbr.innerHTML = "(" + artl + "&nbsp;r&eacute;sultats)";
   window.localStorage.getItem("modale") || (impo.style.display = "block");
   document.getElementById("toggle-checkbox").checked = false;
+  if (!isMobileDevice) {
+    var masonry = new Macy({
+        container: "main",
+        mobileFirst: true,
+        columns: 3,
+        margin: {y: 20, x: 20},
+        breakAt: {1500: 3, 940: 2, 520: 1}
+    })
+  }
 },false);
 document.addEventListener("keydown", function(e){
   var key = e.keyCode || e.which;
@@ -111,14 +116,9 @@ document.addEventListener("keydown", function(e){
 },false);
 
 document.getElementById("toggle-checkbox").addEventListener("click",function(){
-
   if(them.href.match("dark\.css")) {
     them.href = "light.css";
-    this.innerText = "☾ Inverser les contrastes";
-    this.setAttribute("aria-label", "Inverser les contrastes - Passer en texte blanc sur noir");
   } else {
     them.href = "dark.css";
-    this.innerText = "☼ Inverser les contrastes";
-    this.setAttribute("aria-label", "Inverser les contrastes - Passer en texte noir sur blanc");
   }
 },false);
