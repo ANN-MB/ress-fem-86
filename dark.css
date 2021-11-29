@@ -2,7 +2,7 @@ body::before {opacity:1}
 article, nav div, nav a, #important, #totop, #quitter, #exit {background: #242626}
 article a, #important a {color:#8cdeff}
 footer {border-top: 1px solid #ccc;border-right: 1px solid #ccc}
-h1 {border-bottom: 2px solid #ccc}
+header {border-bottom: 2px solid #ccc}
 nav div:hover, nav a:hover, #quitter:hover, #totop:hover, #exit:hover {background:#eee;box-shadow:#888 0 0 2px, #333 0 3px 0;color:#111}
 nav div:hover select, option {color:#333}
 nav div:hover select {background:#fff}

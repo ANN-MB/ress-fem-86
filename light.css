@@ -1,6 +1,6 @@
 article, nav div, nav a, #important, #totop, #quitter, #exit {background:linear-gradient(145deg, #e4e8fe, #f8f9ff)}
 article a, #important a {color:#0078A8}
-footer, h1, option {background:#333}
+footer, header, option {background:#333}
 nav div:hover, nav a:hover, #quitter:hover, #totop:hover, #exit:hover {background:#fefefe;box-shadow:#888 0 0 2px, #333 0 3px 0;color:#111}
 nav div:hover select {background:#fff}
 footer a, h1, option, .bus span {color:#fefefe}
