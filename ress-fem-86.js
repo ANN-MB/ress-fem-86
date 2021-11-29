@@ -51,7 +51,8 @@ const mbox = document.getElementById("mapbox"),
 var art = document.getElementsByTagName("article"),
     artl = art.length,
     stock,
-    clicked;
+    clicked,
+    masonry;
 document.addEventListener("click", function(e) {
   var t = e.target;
   if (t.className == "tomap") {
