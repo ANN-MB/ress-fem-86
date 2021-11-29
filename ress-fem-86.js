@@ -1,3 +1,6 @@
+document.getElementsByTagName("main")[0].style.maxWidth = "90vw";
+document.getElementsByTagName("main")[0].style.margin = "0 auto";
+
 const mbox = document.getElementById("mapbox"),
       cate = document.getElementById("categories"),
       care = document.getElementById("caretakers"),
@@ -5,7 +8,21 @@ const mbox = document.getElementById("mapbox"),
       carc = document.getElementById("careContainer"),
       nmbr = document.getElementById("numbr"),
       impo = document.getElementById("important"),
+	  them = document.getElementById("theme"),
+	  alph = document.getElementById("alph-cont"),
+	  masonry = new Macy({
+        container: "main",
+        mobileFirst: true,
+        columns: 3,
+        margin: {y: 20, x: 20},
+        breakAt: {1500: 3, 940: 2, 520: 1}
+      }),
       sort = function() {
+	    if (cate.selectedIndex !== 0 || care.selectedIndex !== 0 || city.selectedIndex !== 0) {
+	      alph.style.display = "none"
+        } else {
+	      alph.style.display = "inline-block"
+        }
         var nb = 0;
         for (let i = 0; i < artl; i++) {
           if (art[i].getAttribute('data-hashtag').indexOf(cate.value) !== -1 && art[i].getAttribute('data-hashtag').indexOf(care.value) !== -1 && art[i].getAttribute('data-hashtag').indexOf(city.value) !== -1) {
@@ -16,6 +33,7 @@ const mbox = document.getElementById("mapbox"),
           }
         }
         nmbr.innerHTML = 0 == nb ? "(aucun&nbsp;r&eacute;sultat)" : 1 == nb ? "(1&nbsp;r&eacute;sultat)" : "(" + nb + "&nbsp;r&eacute;sultats)";
+        masonry.recalculate(!0, !0);
       },
       sAll = function(a)  {
         if (document.selection) {
@@ -41,6 +59,8 @@ var art = document.getElementsByTagName("article"),
 document.addEventListener("click", function(e) {
   var t = e.target;
   if (t.className == "tomap") {
+	e.preventDefault();
+	document.getElementById("mymap").src = t.href;
     mbox.className += " deploy";
     stock = t;
     document.getElementById("exit").focus();
@@ -79,6 +99,7 @@ window.addEventListener("DOMContentLoaded", function() {
   cate.selectedIndex = care.selectedIndex = city.selectedIndex = alph.selectedIndex = 0;
   nmbr.innerHTML = "(" + artl + "&nbsp;r&eacute;sultats)";
   window.localStorage.getItem("modale") || (impo.style.display = "block");
+  document.getElementById("toggle-checkbox").checked = false;
 },false);
 document.addEventListener("keydown", function(e){
   var key = e.keyCode || e.which;
@@ -87,4 +108,17 @@ document.addEventListener("keydown", function(e){
     null !== clicked && sAll(clicked);
   }
   if (27 == key) closeMap()
+},false);
+
+document.getElementById("toggle-checkbox").addEventListener("click",function(){
+
+  if(them.href.match("dark\.css")) {
+    them.href = "light.css";
+    this.innerText = "☾ Inverser les contrastes";
+    this.setAttribute("aria-label", "Inverser les contrastes - Passer en texte blanc sur noir");
+  } else {
+    them.href = "dark.css";
+    this.innerText = "☼ Inverser les contrastes";
+    this.setAttribute("aria-label", "Inverser les contrastes - Passer en texte noir sur blanc");
+  }
 },false);
