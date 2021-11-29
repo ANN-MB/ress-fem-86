@@ -45,7 +45,7 @@ const mbox = document.getElementById("mapbox"),
         stock.focus();
         stock = void 0;
       },
-      isMobileDevice = function { 
+      isMobileDevice = function() { 
         return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1)
       };
 var art = document.getElementsByTagName("article"),
