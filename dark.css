@@ -1,4 +1,4 @@
-.container::before {opacity:1}
+body::before {opacity:1}
 article, nav div, nav a, #important, #totop, #quitter, #exit, footer {background: #242626}
 article a, #important a {color:#8cdeff}
 footer {border-top: 1px solid #ccc;border-right: 1px solid #ccc}
@@ -14,4 +14,3 @@ h2 {border-bottom:1px solid #777}
 #totop, #quitter, #exit {border:2px solid #888}
 #toggle_button {color:#eee; background-color: #1a1f21;border: 2px dashed #eee}
 #toggle_button:hover, #toggle_button:focus {border: 2px solid #1a1f21;background-color: #eee;color: #1a1f21}
-
