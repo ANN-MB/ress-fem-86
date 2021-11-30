@@ -28,29 +28,24 @@ body {
   overflow-x: hidden;
   font-family: "Public Sans", "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
-body::before {
-  content:"";
+.container {
   background: #d7eeff linear-gradient(45deg, #8ec5fc, #e0c3fc);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  z-index: -2;
 }
-body::after { 
+.container::before { 
   content:"";
-  position: fixed;
-  top: 0; left: 0; bottom: 0; right: 0;
+  position: absolute; top:0; bottom:0; left: 0; right: 0;
   background: #d7eeff linear-gradient(45deg, #232526, #414345);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0; transition: opacity 1s ease;
-  pointer-events: none;
-  z-index: -1
+  background-attachment: inherit;
+  background-repeat: inherit;
+  background-position: inherit;
+  opacity: 0; 
+  transition: opacity 1s ease;
+  z-index:1
 }
+header, footer, main, #mapbox, nav {z-index:2;position:relative}
 header {
   display: flex; position: relative;
   align-items: center; justify-content: space-between
