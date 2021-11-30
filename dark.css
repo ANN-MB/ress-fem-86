@@ -1,4 +1,4 @@
-body::before {opacity:1}
+body::after {opacity:1}
 article, nav div, nav a, #important, #totop, #quitter, #exit, footer {background: #242626}
 article a, #important a {color:#8cdeff}
 footer {border-top: 1px solid #ccc;border-right: 1px solid #ccc}
