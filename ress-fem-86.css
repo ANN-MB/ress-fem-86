@@ -13,7 +13,7 @@
   font-family: "Public Sans"; font-style: normal; font-weight: bold;
   src: url("font/PublicSans-Bold.woff2") format("woff2"), url("font/PublicSans-Bold.woff") format("woff")
 }
-html, body { overflow-scrolling: auto;}
+html, body { -webkit-overflow-scrolling: auto;}
 html {
   box-sizing: border-box;
   font-size: 100%
