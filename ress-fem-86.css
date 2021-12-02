@@ -16,7 +16,6 @@
 html, body { overflow-scrolling: auto;}
 html {
   box-sizing: border-box;
-  overflow: hidden;
   font-size: 100%
 }
 *, *::before, *::after {box-sizing: inherit}
