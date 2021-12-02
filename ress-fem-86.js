@@ -78,9 +78,9 @@ document.getElementById("alph").addEventListener("change", function() {
   document.getElementById(this.value).scrollIntoView();
   this.selectedIndex = 0
 }, false);
-window.addEventListener("scroll", function() {
+document.getElementById("container").addEventListener("scroll", function() {
   var ttop = document.getElementById("totop");
-  document.body.scrollTop > 600 || document.documentElement.scrollTop > 600 ? ttop.style.display = "block" : ttop.style.display = "none";
+  this.scrollTop > 600 ? ttop.style.display = "block" : ttop.style.display = "none";
 }, false);
 window.addEventListener("DOMContentLoaded", function() {
   cate.selectedIndex = care.selectedIndex = city.selectedIndex = alph.selectedIndex = 0;
