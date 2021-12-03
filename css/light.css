@@ -1,0 +1,13 @@
+article, nav div, nav a, #important, #totop, #quitter, #exit {background:linear-gradient(145deg, #e4e8fe, #f8f9ff)}
+article a,  #important a:nth-of-type(2) {color:#0078A8}
+footer, header, option {background:#333}
+nav div:hover, nav a:hover, #quitter:hover, #totop:hover, #exit:hover {background:#fefefe;box-shadow:#888 0 0 2px, #333 0 3px 0;color:#111}
+nav div:hover select {background:#fff}
+footer a, h1, option, .bus span {color:#fefefe}
+body, article a:hover, .maplink, #important a:hover, select, #quitter, #exit, #totop {color:#333}
+nav div, nav a, article, #important, #totop, #quitter, #exit {box-shadow:#888 0 0 2px, #888 0 3px 0}
+nav a:active  {box-shadow:#333 0 0 2px, #3facff 0 1px 0}
+h2 {border-bottom:1px solid #777}
+#totop, #quitter, #exit {border:1px solid #888}
+#toggle_button {border: 2px dashed #1a1f21;background: transparent;color: #1a1f21}
+#toggle_button:hover,#toggle_button:focus {border:2px solid #4c4d4d;background-color:#4c4d4d;color: #eee}
