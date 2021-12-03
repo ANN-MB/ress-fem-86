@@ -8,38 +8,31 @@
     <meta name="robots" content="none" />
     <meta name="author" content="Ann MB" />
     <meta name="description" content="Annuaire, cartographie et agenda associatif militant, institutionnel, médical, sportif et culturel à destination des femmes et des LGBTQI+" />
-    <link rel="preload" href="dark.css" as="style">
-    <link rel="preload" href="fonts/PublicSans-Regular.woff" as="font" type="font/woff">
-    <link rel="preload" href="fonts/PublicSans-Regular.woff2" as="font" type="font/woff2">
-    <link rel="preload" href="fonts/PublicSans-Bold.woff" as="font" type="font/woff">
-    <link rel="preload" href="fonts/PublicSans-Bold.woff2" as="font" type="font/woff2">
-    <link rel="preload" href="fonts/PublicSans-Italic.woff" as="font" type="font/woff">
-    <link rel="preload" href="fonts/PublicSans-Italic.woff2" as="font" type="font/woff2">
     <link rel="icon" href="img/favicon.png" type="image/png" />
     <link rel="next" href="https://ann-mb.github.io/ress-fem-86/cal.html">
-    <link rel="stylesheet" href="ress-fem-86.css" />
-    <link rel="stylesheet" type="text/css" href="light.css" id="theme" />
+    <link rel="stylesheet" href="css/ress-fem-86.css" />
+    <link rel="stylesheet" type="text/css" href="css/light.css" id="theme" />
     <noscript><style>nav div, header label {display:none}</style></noscript>
     <title>Ressources féministe et queer de Poitiers et de la Vienne</title>
   </head>
   <body>
     <div id="container">
-    <header>
+    <header id="top">
       <h1>
         <img src="img/favicon.png" alt="Symbole des genres" />&nbsp;Ressources féministe et queer de Poitiers et de la Vienne
       </h1>
-	  <label for="toggle-checkbox">
-	    <input id="toggle-checkbox" name="toggle-checkbox" type="checkbox" aria-label="Inverser les contrastes" />
-	    <div class="toggle-slot">
+      <label for="toggle-checkbox">
+        <input id="toggle-checkbox" name="toggle-checkbox" type="checkbox" aria-label="Inverser les contrastes" />
+        <div class="toggle-slot">
         <div class="sun-icon-wrapper">
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false"  preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="sun-icon" data-icon="feather-sun" data-inline="false"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2"></path><path d="M12 21v2"></path><path d="M4.22 4.22l1.42 1.42"></path><path d="M18.36 18.36l1.42 1.42"></path><path d="M1 12h2"></path><path d="M21 12h2"></path><path d="M4.22 19.78l1.42-1.42"></path><path d="M18.36 5.64l1.42-1.42"></path></g></svg>
         </div>
         <div class="toggle-button"></div>
-        <div class="moon-icon-wrapper">		    
+        <div class="moon-icon-wrapper">            
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="moon-icon" data-icon="feather-moon" data-inline="false"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"></path></g></svg>
         </div>
-	    </div>
-	  </label>
+        </div>
+      </label>
     </header>
     <div id="important">
       <a id="quitter" aria-label="Fermer la popup">&nbsp;&#x2715;&nbsp;</a>
@@ -56,7 +49,7 @@
       </ul><br/>
       Merci &#x1F642;
     </div>
-    <nav id="top">
+    <nav>
       <a href="http://u.osmfr.org/m/672182/" class="maplink" target="_blank" rel="external noreferrer">&#x1F30D; Voir la carte <span class="sr-only">dans un autre onglet</span></a>
       <a href="cal.html" class="maplink">&#x1F5D3;&#xFE0F; Voir l'agenda</a>
       <div>
@@ -981,7 +974,7 @@
         <div class="web"><img src="img/web.png" alt="Site internet" /> <a href="https://emf.fr/ec3_event/journees-menstrueuses/">https://emf.fr/ec3_event/journees-menstrueuses/</a></div>
         <div class="ig"><img src="img/ig.png" alt="Page Instagram" /> <a href="https://www.instagram.com/lesmenstrueuses/" rel="external noreferrer">@lesmenstrueuses</a></div>
         <div class="tw"><img src="img/tw.png" alt="Page Twitter" /> <a href="https://twitter.com/LesMenstrueuses" rel="external noreferrer">@LesMenstrueuses</a></div>
-      </article>	  
+      </article>      
       <article data-hashtag="care gene 000">
         <h2><img src="img/doc.png" alt="Soignante" /> Alice MERCERON</h2>
         <div class="desc">Généraliste</div>
@@ -1408,8 +1401,8 @@
       <footer><a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" rel="external noreferrer contact" title="License Creative Commons">(cc)</a> <a href="https://ann-mb.carrd.co" rel="external noreferrer contact" title="Site personnel de l'auteurice">Ann MB</a></footer>
       <a href="#top" id="totop" accesskey="h">&#x2191; Revenir en haut <span class="sr-only">de la page</span></a>
       <div id="mapbox"><a id="exit" aria-label="Fermer la carte">&#x2715; Fermer</a><iframe name="map" title="Carte interractive" id="mymap" src="https://umap.openstreetmap.fr/fr/map/cartographie-de-lannuaire-feministe-et-queer-de-po_672182#18/46.7515/0.4834"></iframe></div>
-      <script src="macy.js"></script>
-      <script src="ress-fem-86.js"></script>
+      <script src="js/macy.js"></script>
+      <script src="js/ress-fem-86.js"></script>
     </div>
   </body>
 </html>
