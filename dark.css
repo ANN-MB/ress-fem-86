@@ -15,5 +15,5 @@ h2 {border-bottom:1px solid #777}
 #toggle_button:hover, #toggle_button:focus {border: 2px solid #1a1f21;background-color: #eee;color: #1a1f21}
 footer {border-top:0;border-bottom:1px solid #ccc}
 @media screen and (max-width:450px) {
-  footer {border-top:1px solid #ccc;  border-right:1px solid #ccc}
+  footer {border-top:1px solid #ccc !important;  border-right:1px solid #ccc}
 }
