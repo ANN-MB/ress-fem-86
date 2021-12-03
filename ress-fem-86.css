@@ -211,14 +211,7 @@ article div:not(h2) img {
 .desc {
   font-style: italic
 }
-.bus span {
-  display: inline-flex;
-  width: 1.1rem;
-  height: 1.1rem;
-  font-size: 0.7rem;
-  font-weight: bold;
-  border-radius: 50%
-}
+
 #totop {
   position: fixed;
   bottom: 20px;
@@ -233,17 +226,14 @@ footer {
   left: 0;
   font-size: 0.9rem;
   padding: 3px 5px;
-  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   z-index: 4;
-  transform: translate3d(0, 0, 0);
+  transform-origin: bottom left;
+  transform: rotate(-90deg) translateY(100%);
 }
-footer a {
-  text-decoration: none
-}
-footer a:hover {
-  text-decoration: underline
-}
-footer img, h1 img {
+footer a {text-decoration: none}
+footer a:hover {text-decoration: underline}
+h1 img {
   height: 1.1rem;
   transform: translateY(2px)
 }
@@ -314,6 +304,15 @@ svg {
   opacity: 1;
   transform: translate(3.2rem, 0.1rem) rotate(-15deg)
 }
+
+.bus span {
+  display: inline-flex;
+  width: 1.1rem;
+  height: 1.1rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 50%
+}
 /********************************************** POITIERS ***********************************************/
 .P1 {background:#00a3db}  .P1E {background:#83d0f5}  .P2A {background:#f00}    .P2B {background:#d71f26}
 .P3 {background:#fff000}  .P10 {background:#92cfc5}  .P11 {background:#90277d} .P12 {background:#a780ad}
@@ -346,13 +345,17 @@ svg {
   footer {padding:3px}
   nav div, nav a { margin-right:0 }
   nav div { width:100% }
+	  footer {border-bottom-right-radius: 0;
+	border-top-right-radius: 10px;
+
+  transform: rotate(0) translateY(0);} 
+}
 }
 @page {size: A4 portrait;margin: 1.5cm}
 @media print { 
   html, body {width:21cm;height:29.7cm}
   main {display: block}
   h2 {border:0}
-  img {filter: saturate(0)}
   a {text-decoration:none !important; color:#000 !important}
   body, article, header, h1 {color:#000; background:#fff}
   nav, footer, #important, #totop, #mapbox, .toggle-slot {display:none !important}
