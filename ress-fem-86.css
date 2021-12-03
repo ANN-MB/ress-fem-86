@@ -345,11 +345,7 @@ svg {
   footer {padding:3px}
   nav div, nav a { margin-right:0 }
   nav div { width:100% }
-	  footer {border-bottom-right-radius: 0;
-	border-top-right-radius: 10px;
-
-  transform: rotate(0) translateY(0);} 
-}
+  footer {border-bottom-right-radius: 0;border-top-right-radius: 10px;transform: rotate(0) translateY(0)}
 }
 @page {size: A4 portrait;margin: 1.5cm}
 @media print { 
