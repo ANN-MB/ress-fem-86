@@ -1,6 +1,6 @@
 body::before {opacity:1}
 article, nav div, nav a, #important, #totop, #quitter, #exit, footer {background: #242626}
-article a, #important a {color:#8cdeff}
+article a, #important a:nth-of-type(2) {color:#8cdeff}
 footer {border-top: 1px solid #ccc;border-right: 1px solid #ccc}
 header {border-bottom: 2px solid #ccc}
 nav div:hover, nav a:hover, #quitter:hover, #totop:hover, #exit:hover {background:#eee;box-shadow:#888 0 0 2px, #333 0 3px 0;color:#111}
