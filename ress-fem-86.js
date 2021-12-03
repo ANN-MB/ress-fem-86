@@ -57,7 +57,7 @@ document.addEventListener("click", function(e) {
     var trad = t.href.replace(/(.+)#([A-Za-z0-9]+)/,"$2"),
         elem = document.getElementById(trad);
     elem.style.display = "block";
-    elem.scrollIntoView();
+    elem.scrollIntoView({behavior: "smooth"});
   }
   var a = t.closest("article");
   null !== a ? a !== clicked && (clicked = a) : clicked = null;
@@ -75,7 +75,7 @@ cate.addEventListener("change", function() {
   sort();
 }, false);
 document.getElementById("alph").addEventListener("change", function() {
-  document.getElementById(this.value).scrollIntoView();
+  document.getElementById(this.value).scrollIntoView({behavior: "smooth"});
   this.selectedIndex = 0
 }, false);
 document.getElementById("container").addEventListener("scroll", function() {
@@ -115,6 +115,3 @@ chkb.addEventListener("click",function(){
     them.href = "dark.css";
   }
 },false);
-window.addEventListener("beforeprint", function(e) {
-  masonry.remove();
-}, false);
