@@ -178,7 +178,7 @@ article div:not(h2) img {
   position: absolute;
   left: 12px
 }
-article div img {
+article div img, h2 img {
   width: 1.1rem;
   height: 1.1rem;
   margin-right: 5px;
@@ -194,23 +194,40 @@ h2 {
   margin: 0 0 5px 0;
   border-bottom: 1px solid #777
 }
+
 h3 {
   margin: 0;
   padding: 4px 13px
 }
 
 .desc {font-style: italic}
-.acc img { background-position: 0 0%} .acti img { background-position: 0 5.263158%} 
-.avis img { background-position: 0 10.526316%} .bus img { background-position: 0 15.789474%}
-.web img { background-position: 0 21.052632%} .conv img { background-position: 0 26.315789%} 
-.cult img { background-position: 0 31.578947%} .doc img { background-position: 0 36.842105%} 
-.fb img { background-position: 0 42.105263%} .heal img { background-position: 0 47.368421%} 
-.host img { background-position: 0 52.631579%} .ig img { background-position: 0 57.894737%} 
-.info img { background-position: 0 63.157895%} .lng img { background-position: 0 68.421053%} 
-.loc img { background-position: 0 73.684211%} .mail img { background-position: 0 78.947368%}
-.num img { background-position: 0 84.210526%} .park img { background-position: 0 89.473684%}  
-.pers img { background-position: 0 94.736842%} .prix img { background-position: 0 100%} 
-
+.acc img {background-position: 0 0}
+.acti {background-position: 0 3.846154%}
+.avis img {background-position:0 7.692308%}
+.bus img {background-position:0 11.538462%}
+.web img {background-position:0 15.384615%}
+.conv img {background-position:0 19.230769%}
+.cult {background-position:0 23.076923%}
+.doc {background-position:0 26.923077%}
+.fb img {background-position:0 30.769231%}
+.heal {background-position:0 34.615385%}
+.host {background-position:0 38.461538%}
+.ig img {background-position:0 42.307692%}
+.info img {background-position:0 46.153846%}
+.lng img {background-position:0 50.000000%}
+.loc img {background-position:0 53.846154%}
+.mail img {background-position:0 57.692308%}
+.num img {background-position:0 61.538462%}
+.park img {background-position:0 65.384615%}
+.pers {background-position:0 69.230769%}
+.prix img {background-position:0 73.076923%}
+.time img {background-position:0 76.923077%}
+.sprt {background-position:0 80.769231%}
+.soli {background-position:0 84.615384%}
+.mail img {background-position:0 88.461538%}
+.tw img {background-position:0 92.307692%}
+.sc img {background-position:0 96.153846%}
+.yt img {background-position:0 100%}
 footer {
   position: fixed;
   bottom: 0;
@@ -323,6 +340,7 @@ svg {transform: rotate(360deg)}
   nav, footer, #modale, #totop, #mapbox, .toggle-slot {display:none !important}
   article {font-family:sans-serif;box-shadow:none !important;break-inside: avoid;background: #fff !important;border-radius: 0;width: 100% !important;position: relative !important;top: unset !important;left: unset !important}
   article, .bus span {border:1px solid #555}
+  article div img::before {content:attr(alt) " :";font-size: 1rem}
   .fb a, .ig a, .tw a, .sc a, .yt a {font-size:0}
   .fb a::after, .ig a::after, .tw a::after, .sc a::after, .yt a::after {content:attr(href);font-size: 1rem}
 }
