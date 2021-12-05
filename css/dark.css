@@ -1,0 +1,10 @@
+@charset "UTF-8";
+body, #modale a:nth-of-type(2):hover {color:#ddd}
+body::before {opacity:1 !important}
+header {border-bottom: 2px solid #ccc}
+footer {border-color: #ccc; border-style: solid; border-width: 0 1px 1px 0}
+@media screen and (max-width:450px) {footer {border-width: 1px 1px 0 0}}
+article a, #modale a:nth-of-type(2) {color: #8cdeff}
+article, nav div, nav a, #modale {box-shadow:#eee 0 0 2px, #777 0 3px 0}
+article, nav div, nav a, #modale, .bouton {background: #242626}
+nav div:hover, nav a:hover, .bouton:hover {background:#eee;color: #111;box-shadow: #888 0 0 2px, #333 0 3px 0}
