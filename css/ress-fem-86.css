@@ -8,7 +8,6 @@ html {
   font-size: 100%
 }
 *, *::before, *::after {box-sizing: inherit}
-
 body {
   position: relative;
   margin: 0; padding: 0;
@@ -203,14 +202,14 @@ h3 {
 .desc {font-style: italic}
 .acc img { background-position: 0 0%} .acti img { background-position: 0 5.263158%} 
 .avis img { background-position: 0 10.526316%} .bus img { background-position: 0 15.789474%}
-.conv img { background-position: 0 26.315789%} .cult img { background-position: 0 31.578947%}
-.doc img { background-position: 0 36.842105%} .fb img { background-position: 0 42.105263%}
-.heal img { background-position: 0 47.368421%} .host img { background-position: 0 52.631579%}
-.ig img { background-position: 0 57.894737%} .info img { background-position: 0 63.157895%}
-.lng img { background-position: 0 68.421053%} .loc img { background-position: 0 73.684211%}
-.mail img { background-position: 0 78.947368%} .num img { background-position: 0 84.210526%}
-.park img { background-position: 0 89.473684%}  .pers img { background-position: 0 94.736842%}
-.prix img { background-position: 0 100%} /*footer img { background-position: 0 21.052632%}*/
+.web img { background-position: 0 21.052632%} .conv img { background-position: 0 26.315789%} 
+.cult img { background-position: 0 31.578947%} .doc img { background-position: 0 36.842105%} 
+.fb img { background-position: 0 42.105263%} .heal img { background-position: 0 47.368421%} 
+.host img { background-position: 0 52.631579%} .ig img { background-position: 0 57.894737%} 
+.info img { background-position: 0 63.157895%} .lng img { background-position: 0 68.421053%} 
+.loc img { background-position: 0 73.684211%} .mail img { background-position: 0 78.947368%}
+.num img { background-position: 0 84.210526%} .park img { background-position: 0 89.473684%}  
+.pers img { background-position: 0 94.736842%} .prix img { background-position: 0 100%} 
 
 footer {
   position: fixed;
