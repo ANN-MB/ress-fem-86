@@ -1,22 +1,8 @@
 /* License CC BY-SA 4.0 Ann MB - ann-mb.carrd.co */
 @charset "UTF-8";
-@font-face {
-  font-family: "Public Sans";
-  font-style: normal;
-  font-weight: normal;
-  src: url("font/PublicSans-Regular.woff2") format("woff2"), url("font/PublicSans-Regular.woff") format("woff")
-}
-@font-face {
-  font-family: "Public Sans"; font-style: italic; font-weight: normal;
-  src: url("font/PublicSans-Italic.woff2") format("woff2"), url("font/PublicSans-Italic.woff") format("woff")
-}
-@font-face {
-  font-family: "Public Sans"; font-style: normal; font-weight: bold;
-  src: url("font/PublicSans-Bold.woff2") format("woff2"), url("font/PublicSans-Bold.woff") format("woff")
-}
-:root {
-  color-scheme: light dark;
-}
+@import "light.css" screen;
+@import "dark.css" screen and (prefers-color-scheme: dark);
+:root {color-scheme: light dark}
 html {
   box-sizing: border-box;
   font-size: 100%
@@ -32,7 +18,7 @@ body {
   background: #d7eeff linear-gradient(45deg, #8ec5fc, #e0c3fc) fixed;
   font-family: "Public Sans", "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
-body::after { content: url(img/acc.png) url(img/yt.png) url(img/acti.png) url(img/avis.png) url(img/bus.png) url(img/conv.png) url(img/cult.png) url(img/doc.png) url(img/fb.png) url(img/heal.png) url(img/host.png) url(img/ig.png) url(img/info.png) url(img/lng.png) url(img/loc.png) url(img/mail.png) url(img/num.png) url(img/pers.png) url(img/prix.png) url(img/righ.png) url(img/sc.png) url(img/soli.png) url(img/sprt.png) url(img/time.png) url(img/tw.png) url(img/web.png) url(img/park.png)}
+body::after {content: url(img/sprite.png)}
 body::before {
   content: "";
   display: block; position: absolute;
@@ -42,66 +28,32 @@ body::before {
   opacity: 0; transition: opacity 1s ease; will-change: opacity;
   z-index: -1
 }
+
+/** GLOBAL + RESET **/
+a { background: transparent } a:active, a:hover { outline: 0 }
+b, strong { font-weight: bolder }
+sup { font-size: 75%;line-height: 0;position: relative;vertical-align: baseline;top: -0.5em}
+q::before { content: "\00ab\00a0" } q::after { content: "\00a0\00bb" }
+img {border: 0}
+a, select, .toggle-slot {cursor: pointer}
+.sr-only, nav label, body::after, #toggle-checkbox {position:absolute;width:0;height:0;opacity:0;padding:0;margin:-1px;border:0;overflow:hidden;white-space:nowrap}
+nav, header, #modale, footer, .bouton {user-select: none}
+#careContainer, #totop, #checkbox-box, #modale {display: none}
+/** END **/
+
 #container {
-  height: 100%;
-  width: 100%;
+  height: 100%; width: 100%;
   overflow: auto;
 }
 #container::after {
   content: "";
   display: block;
-  height: 10vh;
-  width: 100%
+  height: 10vh; width: 100%
 }
 header {
   display: flex; position: relative;
-  align-items: center; justify-content: space-between
-}
-select, option {
-  font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit;
-  line-height: inherit;
-  text-transform: none;
-  margin: 0
-}
-a { background: transparent } a:active, a:hover { outline: 0 }
-b, strong { font-weight: bolder }
-hr {
-  box-sizing: content-box;
-  border-top: 2px dashed #777; border-bottom: 0
-}
-ul {
-  display: block;
-  list-style-type: disc;
-  margin: 0;
-  padding-left: 15px
-}
-sup { font-size: 75%;line-height: 0;position: relative;vertical-align: baseline;top: -0.5em}
-q::before { content: "\00ab\00a0" }
-q::after { content: "\00a0\00bb" }
-img {border: 0}
-a, select, .toggle-slot {cursor: pointer}
-.sr-only, nav label, body::after {position:absolute;width:1px;height:1px;padding:0;margin:-1px;border:0;overflow:hidden;white-space:nowrap}
-nav, header, #important, footer, #totop, #quitter, #exit {user-select: none}
-#careContainer, #totop, #important {display: none}
-#quitter, #exit, #totop {
-  font-size: 1.2rem;
-  text-decoration: none;
-  border-radius: 7px
-}
-#quitter, main, .bus span {
-  justify-content: center
-}
-#quitter, .bus span {
-  align-items: center
-}
-nav, .maplink, .l, h1 {
-  text-align: center
-}
-#exit {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  padding: 2px 5px
+  align-items: center; justify-content: space-between;
+  background: #333; color: #fefefe
 }
 h1 {
   display: block;
@@ -112,21 +64,27 @@ h1 {
   font-size: 1.1rem;
   font-weight: 500
 }
-h2, h3 {
-  font-size: inherit
+h1 img {
+  width: 1.1rem; height: 1.1rem;
+  transform: translateY(2px)
 }
-h2 {
-  margin: 0 0 5px 0
+#modale {
+  position: relative;
+  padding: 10px
 }
-h3 {
-  margin: 0;
-  padding: 4px 13px
+#modale ul {
+  display: inline-block;
+  vertical-align: top
 }
-main {
+#exit-modale {
   display: flex;
-  width: 100%;
-  flex-direction: row;
-  flex-wrap: wrap
+  float: right;
+  margin-left: 5px
+}
+#exit-modale::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%
 }
 nav {
   margin: 20px 0 10px 0
@@ -141,12 +99,14 @@ nav a {
   padding: 6px 12px;
   text-decoration: none
 }
-nav a:active, #totop:active, #exit:active, #quitter:active {
+nav a:active, .bouton:active {
   transform: translateY(2px)
 }
-#mymap {
-  width: 100%; height: 100%;
-  border: 0
+select, option {
+  font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit;
+  line-height: inherit;
+  text-transform: none;
+  margin: 0;
 }
 select {
   padding-left: 5px;
@@ -154,7 +114,41 @@ select {
   border: 0;
   outline: none;
   width: 100%;
-  background: transparent
+}
+select, option, nav div:hover select {
+  color: inherit;
+  background: inherit;
+}
+main {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap
+}
+hr {
+  box-sizing: content-box;
+  border-top: 2px dashed #777; border-bottom: 0
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin: 0;
+  padding-left: 15px
+}
+.bouton {
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 7px;
+  border: 1px solid #888
+}
+#exit-modale, main, .bus span {
+  justify-content: center
+}
+#exit-modale, .bus span {
+  align-items: center
+}
+nav, nav a, .l, h1 {
+  text-align: center
 }
 article {
   width: 500px;
@@ -162,7 +156,8 @@ article {
   transition: all 1s ease;
   will-change: top, left;
 }
-article, #important {
+article a:hover, nav a, .bouton {color:inherit}
+article, #modale {
   position: relative;
   margin: 11px 1vw;
   border-radius: 12px;
@@ -178,23 +173,81 @@ article div::before {
   position: absolute;
   left: 12px
 }
-#important {
-  position: relative;
-  padding: 10px
-}
-#quitter {
-  display: flex;
-  float: right;
-  margin-left: 5px
-}
-#quitter::after {
-  content: "";
+article div:not(h2) img {
   display: block;
-  padding-bottom: 100%
+  position: absolute;
+  left: 12px
 }
-#important ul {
-  display: inline-block;
-  vertical-align: top
+article div img, h2 img {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-right: 5px;
+  transform: translateY(2px);
+  max-width: 100%; 
+  background-size: 100%; 
+  background-image: url("../img/sprite.png");
+}
+h2, h3 {
+  font-size: inherit
+}
+h2 {
+  margin: 0 0 5px 0;
+  border-bottom: 1px solid #777
+}
+
+h3 {
+  margin: 0;
+  padding: 4px 13px
+}
+
+.desc {font-style: italic}
+.acc img {background-position: 0 0}
+.acti {background-position: 0 3.846154%}
+.avis img {background-position:0 7.692308%}
+.bus img {background-position:0 11.538462%}
+.web img {background-position:0 15.384615%}
+.conv img {background-position:0 19.230769%}
+.cult {background-position:0 23.076923%}
+.doc {background-position:0 26.923077%}
+.fb img {background-position:0 30.769231%}
+.heal {background-position:0 34.615385%}
+.host {background-position:0 38.461538%}
+.ig img {background-position:0 42.307692%}
+.info img {background-position:0 46.153846%}
+.lng img {background-position:0 50.000000%}
+.loc img {background-position:0 53.846154%}
+.mail img {background-position:0 57.692308%}
+.num img {background-position:0 61.538462%}
+.park img {background-position:0 65.384615%}
+.pers {background-position:0 69.230769%}
+.prix img {background-position:0 73.076923%}
+.time img {background-position:0 76.923077%}
+.sprt {background-position:0 80.769231%}
+.soli {background-position:0 84.615384%}
+.mail img {background-position:0 88.461538%}
+.tw img {background-position:0 92.307692%}
+.sc img {background-position:0 96.153846%}
+.yt img {background-position:0 100%}
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-size: 0.9rem;
+  padding: 2px 4px;
+  border-bottom-right-radius: 10px;
+  z-index: 4;
+  background: #333;
+  transform-origin: bottom left;
+  transform: rotate(-90deg) translateY(100%);
+} footer a {text-decoration: none;color:#fefefe}
+  footer a:hover {text-decoration: underline}
+#totop {
+  position: fixed;
+  bottom: 20px;
+  right: 25px;
+  padding: 4px 7px;
+  font-size: 1rem;
+  z-index: 2
 }
 #mapbox {
   position: fixed;
@@ -206,125 +259,24 @@ article div::before {
   will-change: right;
   transition: right 1s;
   z-index: 3
-}
-.deploy {
-  right: 0 !important
-}
-article img {
-  width: 1.1rem;
-  height: 1.1rem;
-  margin-right: 5px;
-  transform: translateY(2px)
-}
-article div:not(h2) img {
-  display: block;
+} .deploy {right: 0 !important}
+#mymap {
+  width: 100%; height: 100%;
+  border: 0
+} #exit-map {
   position: absolute;
-  left: 12px
+  top: 15px;
+  right: 15px;
+  padding: 2px 5px
 }
-.desc {
-  font-style: italic
-}
-
-#totop {
-  position: fixed;
-  bottom: 20px;
-  right: 25px;
-  padding: 4px 7px;
-  font-size: 1rem;
-  z-index: 2
-}
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  font-size: 0.9rem;
-  padding: 3px 5px;
-  border-bottom-right-radius: 10px;
-  z-index: 4;
-  transform-origin: bottom left;
-  transform: rotate(-90deg) translateY(100%);
-}
-footer a {text-decoration: none}
-footer a:hover {text-decoration: underline}
-h1 img {
-  height: 1.1rem;
-  transform: translateY(2px)
-}
-#toggle_button {
-  position: absolute;
-  font-size: 1.1rem;
-  padding: 0.3em 0.8em;
-  margin-top: 20px;
-  margin-left: 50px
-}
-svg {
-  transform: rotate(360deg)
-}
-#toggle-checkbox {
-  position: absolute;
-  width: 0; height: 0;
-  opacity: 0
-}
-.toggle-slot {
-  position: relative;
-  width: 5rem; height: 2rem;
-  float: right; margin-right: 5px;
-  border: 2px solid #e4e7ec; border-radius: 10rem;
-  background-color: #fff; transition: background-color 250ms;
-}
-.toggle-button {
-  position: absolute;
-  width: 1.5rem; height: 1.5rem;
-  border-radius: 50%;
-  background-color: #ffeccf;
-  box-shadow: inset 0px 0px 0px 2px #ffbb52;
-  transform: translate(3rem, 0.1rem);
-  transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(0.26, 2, 0.46, 0.71)
-}
-.sun-icon-wrapper, .moon-icon-wrapper, .sun-icon, .moon-icon {
-  width: 1.5rem; height: 1.5rem
-}
-#toggle-checkbox:checked ~ .toggle-slot {
-  background: #374151
-}
-#toggle-checkbox:checked ~ .toggle-slot .toggle-button {
-  background: #485367;
-  box-shadow: inset 0px 0px 0px 2px #fff;
-  transform: translate(0.2rem, 0.1rem)
-}
-.sun-icon, .moon-icon, .sun-icon-wrapper, .moon-icon-wrapper {
-  position: absolute
-}
-.sun-icon {color: #ffbb52}
-.moon-icon {color: #fff}
-.sun-icon-wrapper, .moon-icon-wrapper {
-  transform-origin: 50% 50%;
-  transition: opacity 150ms, transform 500ms cubic-bezier(0.26, 2, 0.46, 0.71)
-}
-.sun-icon-wrapper {
-  opacity: 1;
-  transform: translate(0.5rem, 0.1rem) rotate(15deg)
-}
-.moon-icon-wrapper {
-  opacity: 0;
-  transform: translate(1rem, 0.1rem) rotate(0deg)
-}
-#toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
-  opacity: 0;
-  transform: translate(3rem, 0.1rem) rotate(0deg)
-}
-#toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
-  opacity: 1;
-  transform: translate(3.2rem, 0.1rem) rotate(-15deg)
-}
-
 .bus span {
   display: inline-flex;
   width: 1.1rem;
   height: 1.1rem;
   font-size: 0.7rem;
   font-weight: bold;
-  border-radius: 50%
+  border-radius: 50%;
+  color: #fefefe
 }
 /********************************************** POITIERS ***********************************************/
 .P1 {background:#00a3db}  .P1E {background:#83d0f5}  .P2A {background:#f00}    .P2B {background:#d71f26}
@@ -344,20 +296,36 @@ svg {
 .C7 {background:#4a55ba}  .C10 {background:#34b49d} .C11 {background:#00a456}
 .C12 {background:#95c44b} .C13 {background:#007139} .C14 {background:#a69e42} 
 .C15 {background:#1b7b6a} .C16 {background:#46b052}
+/****************************************** DARK THEME BUTTON ******************************************/
+#toggle_button {position: absolute;font-size: 1.1rem;padding: 0.3em 0.8em;margin-top: 20px; margin-left: 50px}
+svg {transform: rotate(360deg)}
+.toggle-slot {position: relative;width: 5rem; height: 2rem;float: right; margin-right: 5px;border: 2px solid #e4e7ec; border-radius: 10rem;background-color: #fff; transition: background-color 250ms}
+.toggle-button {position: absolute;width: 1.5rem; height: 1.5rem;border-radius: 50%;background-color: #ffeccf;box-shadow: inset 0px 0px 0px 2px #ffbb52;transform: translate(3rem, 0.1rem);transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(0.26, 2, 0.46, 0.71)}
+.sun-icon-wrapper, .moon-icon-wrapper, .sun-icon, .moon-icon {width: 1.5rem; height: 1.5rem}
+#toggle-checkbox:checked ~ .toggle-slot {background: #374151}
+#toggle-checkbox:checked ~ .toggle-slot .toggle-button {background: #485367;box-shadow: inset 0px 0px 0px 2px #fff;transform: translate(0.2rem, 0.1rem)}
+.sun-icon, .moon-icon, .sun-icon-wrapper, .moon-icon-wrapper {position: absolute}
+.sun-icon {color: #ffbb52}
+.moon-icon {color: #fff}
+.sun-icon-wrapper, .moon-icon-wrapper {transition: opacity 150ms, transform 500ms cubic-bezier(0.26, 2, 0.46, 0.71)}
+.sun-icon-wrapper {opacity: 1;transform: translate(0.5rem, 0.1rem) rotate(15deg)}
+.moon-icon-wrapper {opacity: 0;transform: translate(1rem, 0.1rem) rotate(0deg)}
+#toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {opacity: 0;transform: translate(3rem, 0.1rem) rotate(0deg)}
+#toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {opacity: 1;transform: translate(3.2rem, 0.1rem) rotate(-15deg)}
 /******************************************** MEDIA QUERIES ********************************************/
-@media screen and (max-width:800px) {
-  #numbr {display:block}
+@media screen and (prefers-reduced-motion: no-preference) {html{scroll-behavior:smooth}}
+@media screen and (max-width:940px) {
+  nav {display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center;align-content:flex-start;margin:10px 15px}
+  nav a:nth-child(1), nav a:nth-child(2) {display:block;flex-grow:1;flex-shrink:1;flex-basis:auto;align-self:flex-start}
+  nav a:nth-child(1) {margin-right:10px}
   .toggle-slot {margin-top: 3px;margin-bottom:3px}
+  nav div, nav a { margin-right:0 }
+  nav div { width:100% }
 } 
 @media screen and (max-width:450px) {
   h1 {font-size:.95rem;padding:5px}
-  nav {display:flex;flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center;align-content:flex-start;margin:10px 15px}
-  .maplink:nth-child(1), .maplink:nth-child(2) {display:block;flex-grow:1;flex-shrink:1;flex-basis:auto;align-self:flex-start}
-  .maplink:nth-child(1) {margin-right:10px}
   h1 img {display:none}
-  footer {padding:3px}
-  nav div, nav a { margin-right:0 }
-  nav div { width:100% }
+  footer {padding:1px 3px}
   footer {border-bottom-right-radius: 0;border-top-right-radius: 10px;transform: rotate(0) translateY(0)}
 }
 @page {size:A4 portrait}
@@ -369,53 +337,10 @@ svg {
   h2 {border-bottom: 1px dashed #333 !important}
   a {text-decoration:none !important; color:#000 !important}
   body, article, header, h1, body::before {color:#000 !important; background:#fff !important}
-  nav, footer, #important, #totop, #mapbox, .toggle-slot {display:none !important}
-  article {font-family:sans-serif;box-shadow:none !important;break-inside: avoid;background: #fff !important;border-radius: 0;width: 100% !important;position: relative !important;top: unset !important;left: unset !important}
-  article, .bus span {border:1px solid #555}
+  nav, footer, #modale, #totop, #mapbox, #checkbox-box, h1 img {display:none !important}
+  article {box-shadow:none !important;break-inside: avoid;border-radius: 0;width: 100% !important;position: relative !important;top: unset !important;left: unset !important}
+  article {border: 2px solid #555 !important}
+  .bus span  {border: 1px solid #777}
   .fb a, .ig a, .tw a, .sc a, .yt a {font-size:0}
   .fb a::after, .ig a::after, .tw a::after, .sc a::after, .yt a::after {content:attr(href);font-size: 1rem}
-}
-@media screen and (prefers-reduced-motion: no-preference) {
-  html{
-    scroll-behavior: smooth;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  body::before {opacity:1}
-  article, nav div, nav a, #important, #totop, #quitter, #exit, footer {background: #242626}
-  article a, #important a:nth-of-type(2) {color:#8cdeff}
-  header {border-bottom: 2px solid #ccc}
-  nav div:hover, nav a:hover, #quitter:hover, #totop:hover, #exit:hover {background:#eee;box-shadow:#888 0 0 2px, #333 0 3px 0;color:#111}
-  nav div:hover select {color:#333}
-  option {background : #333}
-  nav div:hover select {background:#eee}
-  footer a, h1, .bus span, option {color:#fefefe}
-  body, article a:hover, .maplink, #important a:hover, select, #quitter, #exit, #totop {color:#ddd}
-  nav div, nav a, article, #important {box-shadow:#eee 0 0 2px, #777 0 3px 0}
-  nav a:active  {box-shadow:#333 0 0 2px, #3facff 0 1px 0}
-  h2 {border-bottom:1px solid #777}
-  #totop, #quitter, #exit {border:2px solid #888}
-  #toggle_button {color:#eee; background-color: #1a1f21;border: 2px dashed #eee}
-  #toggle_button:hover, #toggle_button:focus {border: 2px solid #1a1f21;background-color: #eee;color: #1a1f21}
-  footer {border-right:1px solid #ccc;border-bottom:1px solid #ccc}
-    @media screen and (max-width:450px) {
-     footer {border-top:1px solid #ccc; border-bottom:0 }
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  article, nav div, nav a, #important, #totop, #quitter, #exit {background:linear-gradient(145deg, #e4e8fe, #f8f9ff)}
-  article a,  #important a:nth-of-type(2) {color:#0078A8}
-  footer, header, option {background:#333}
-  nav div:hover, option, nav a:hover, #quitter:hover, #totop:hover, #exit:hover {background:#fefefe;box-shadow:#888 0 0 2px, #333 0 3px 0;color:#111}
-  nav div:hover select {background:#fff}
-  footer a, h1, .bus span {color:#fefefe}
-  body, article a:hover, .maplink, #important a:hover, select, option, #quitter, #exit, #totop {color:#333}
-  nav div, nav a, article, #important, #totop, #quitter, #exit {box-shadow:#888 0 0 2px, #888 0 3px 0}
-  nav a:active  {box-shadow:#333 0 0 2px, #3facff 0 1px 0}
-  h2 {border-bottom:1px solid #777}
-  #totop, #quitter, #exit {border:1px solid #888}
-  #toggle_button {border: 2px dashed #1a1f21;background: transparent;color: #1a1f21}
-  #toggle_button:hover,#toggle_button:focus {border:2px solid #4c4d4d;background-color:#4c4d4d;color: #eee}
 }
