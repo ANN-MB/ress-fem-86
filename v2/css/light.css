@@ -1,0 +1,14 @@
+@charset "UTF-8";
+body, #modale a:nth-of-type(2):hover {color: #333}
+header {
+  background: rgba(255,255,255,0.4) ;
+  box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset, inset 0 1px 0 rgba(255,255,255,0.7);
+}
+header img {
+  filter: invert(75%)
+}
+article a, #modale a:nth-of-type(2) {color: #0078A8}
+article,  #modale, .bouton {background: linear-gradient(145deg, #e4e8fe, #f8f9ff)}
+article, #modale {box-shadow: #888 0 0 2px, #888 0 3px 0}
+.bouton {box-shadow: #888 0 0 2px, #888 0 2px 0}
+.bouton:hover {background: #fefefe !important}
