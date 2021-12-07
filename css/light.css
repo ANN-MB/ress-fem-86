@@ -1,8 +1,0 @@
-@charset "UTF-8";
-body, #modale a:nth-of-type(2):hover {color: #333}
-article a, #modale a:nth-of-type(2) {color: #0078A8}
-article, nav div, nav a, #modale, .bouton {background: linear-gradient(145deg, #e4e8fe, #f8f9ff)}
-article, nav div, nav a, #modale {box-shadow: #888 0 0 2px, #888 0 3px 0}
-nav a:active {box-shadow: #333 0 0 2px, #3facff 0 1px 0}
-.bouton {box-shadow: #888 0 0 2px, #888 0 2px 0}
-nav div:hover, option, nav a:hover, .bouton:hover {background: #fefefe}
