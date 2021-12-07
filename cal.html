@@ -8,27 +8,51 @@
     <meta name="author" content="Ann MB" />
     <meta name="description" content="Calendrier féministe et queer de Poitiers et de la Vienne" />
     <link rel="icon" type="image/png" href="img/favicon.png" />
-  <link rel="stylesheet" type="text/css" href="css/ress-fem-86.css" />
+    <link rel="stylesheet" type="text/css" href="css/ress-fem-86.css" />
     <link rel="stylesheet" type="text/css" href="css/cal-big.css" />
-        <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
-    <title></title>
-
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+    <title>Calendrier féministes et queer de Poitiers et de la Vienne</title>
   </head>
   <body>
     <div id="container">
       <div id="calendar"></div>
-      
       <div id="panel">
         <div id="panel-title">TITRE</div>
-        <div id="panel-time" class="fa fa-clock-o">TIME</div>
-        <div id="panel-place" class="fa fa-map-marker">LIEU</div>
-        <div id="panel-link" class="fa fa-link">LIEN</div>
-        <div id="panel-desc" class="fa  fa-file-text-o">DESCRIPTION</div>
-        <div id="panel-exit" aria-label="Fermer la popup"><i class="fa  fa-times"></i></div>
-
-
+        <div id="panel-time" class="fa fa-clock-o"></div>
+        <div id="panel-place" class="fa fa-map-marker"></div>
+        <div id="panel-link" class="fa fa-link"></div>
+        <div id="panel-desc" class="fa  fa-file-text-o"></div>
+        <div id="panel-exit" aria-label="Fermer la popup"><i class="fa fa-times"></i></div>
       </div>
   </div>
   <script src="js/calendar.js"></script>
+  <script>
+    function showEvent(a) {
+      var n = a.getAttribute("data-index");
+      var hour = events[n].Time || void 0;
+        if (hour) {
+          if (hour.length == 2) {
+            hour = hour[0]+':'+hour[1]
+          }
+          if (hour.length == 4) {
+            hour = hour[0]+':'+hour[1]+' - '+hour[2]+':'+hour[3]
+          }
+        } else {
+          hour = "Toute la journée"
+        }
+        document.getElementById("panel-title").innerHTML = events[n].Title;
+        document.getElementById("panel-time").innerHTML = hour ;
+        events[n].Place && (document.getElementById("panel-place").innerHTML = events[n].Place);
+        events[n].Link && (document.getElementById("panel-link").innerHTML = '<a href="'+events[n].Link+'">'+events[n].Link+'</a>');
+        events[n].Desc && (document.getElementById("panel-desc").innerHTML = events[n].Desc);
+        document.getElementById("panel").style.bottom ="0"
+      }
+      document.addEventListener("click", function(e) {
+        var t = e.target;
+        t.className == "cld-event" && showEvent(t);
+        (!document.getElementById("panel").contains(t) && t.className !== "cld-event") && (document.getElementById("panel").style.bottom="-100%");
+        t.id == "panel-exit" && (document.getElementById("panel").style.bottom="-100%")
+      }, false);
+    </script>
   </body>
 </html>
