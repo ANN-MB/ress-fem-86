@@ -1,0 +1,143 @@
+.cld-main {
+  background: rgba(255, 255, 255, 0.95);
+  border:1px solid #000
+}
+
+#calendar {
+  
+  top: 0;
+  z-index: 999;
+  display: block;
+  line-height: 1
+}
+
+.cld-main {
+  width: 330px;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.cld-main a {
+  color: #333;
+  font-weight: bold;
+}
+
+.cld-datetime {
+  position: relative;
+  width: 66%;
+  min-width: 100px;
+  max-width: 300px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.cld-datetime .today {
+  position: relative;
+  float: left;
+  width: calc(100% - 40px);
+  margin: auto;
+  text-align: center;
+}
+
+.cld-nav {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+}
+
+.cld-nav {
+  cursor: pointer;
+}
+
+
+.cld-rwd {
+  float: left;
+}
+
+.cld-fwd {
+  float: right;
+}
+
+.cld-nav svg:hover {}
+
+.cld-jours-labels,
+.cld-days {
+  padding-left: 0;
+}
+
+.cld-label,
+.cld-day {
+  display: inline-block;
+  width: 14.28%;
+  text-align: center;
+}
+
+
+
+.cld-day.disableDay {
+  opacity: 0.5;
+}
+
+.cld-day.nextMonth,
+.cld-day.prevMonth {
+  opacity: 0.33;
+}
+
+.cld-number {
+  position: relative;
+  margin: 5px;
+  padding: 5px;
+}
+
+.cld-event {
+  position: absolute;
+  z-index: 5;
+  display: none;
+  top: 30px;
+  left: 0;
+  padding: 5px 10px;
+  background: #fff;
+  white-space: nowrap;
+  border: 1px solid #333;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.cld-number:hover ~ .cld-event, .eventday:hover ~ .cld-event {
+  display: block !important;
+}
+.cld-event::before {
+  content: '';
+  position: absolute;
+  top: -7.5px;
+  left: 7.5px;
+  width: 0;
+  height: 0;
+  border-left: 7.5px solid transparent;
+  border-right: 7.5px solid transparent;
+  border-bottom: 7.5px solid #ccc;
+}
+.cld-number.eventday {
+  display: inline-block;
+  position: relative;
+  height: 1.7rem;
+  width: 1.7rem;
+  cursor: pointer;
+  border-radius: 50px;
+  border: 1px solid #333;
+}
+.cld-day.today .cld-number {
+  display: inline-block;
+  height: 1.7rem;
+  width: 1.7rem;
+  border-radius: 50px;
+  background: #333;
+  color: #fefefe;
+}
+.eventday:hover {
+  background: #333;
+  color: #fefefe
+}
+.today .cld-number.eventday:hover {
+  background: #888;
+}
