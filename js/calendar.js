@@ -174,32 +174,3 @@ function createCalendar(calendar, adjuster) {
   AddDays();
 }
 createCalendar(new Calendar());
-
-function showEvent(a) {
-  var n = a.getAttribute("data-index");
-  var hour = events[n].Time || void 0;
-    if (hour) {
-      if (hour.length == 2) {
-        hour = hour[0]+':'+hour[1]
-      }
-      if (hour.length == 4) {
-        hour = hour[0]+':'+hour[1]+' - '+hour[2]+':'+hour[3]
-      }
-    } else {
-      hour = "Toute la journée"
-    }
-  document.getElementById("panel-title").innerHTML = events[n].Title;
-  document.getElementById("panel-time").innerHTML = hour ;
-  events[n].Place && (document.getElementById("panel-place").innerHTML = events[n].Place);
-  events[n].Link && (document.getElementById("panel-link").innerHTML = '<a href="'+events[n].Link+'">'+events[n].Link+'</a>');
-  events[n].Desc && (document.getElementById("panel-desc").innerHTML = events[n].Desc);
-
-  document.getElementById("panel").style.bottom ="0"
-  
-}
-document.addEventListener("click", function(e) {
-  var t = e.target;
-  t.className == "cld-event" && showEvent(t);
-  (!document.getElementById("panel").contains(t) && t.className !== "cld-event") && (document.getElementById("panel").style.bottom="-100%");
-  t.id == "panel-exit" && (document.getElementById("panel").style.bottom="-100%")
-}, false);
