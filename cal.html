@@ -8,7 +8,6 @@
     <meta name="author" content="Ann MB" />
     <meta name="description" content="Calendrier féministe et queer de Poitiers et de la Vienne" />
     <link rel="icon" type="image/png" href="img/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="css/ress-fem-86.css" />
     <link rel="stylesheet" type="text/css" href="css/cal-big.css" />
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
     <title>Calendrier féministes et queer de Poitiers et de la Vienne</title>
@@ -18,6 +17,7 @@
       <div id="calendar"></div>
       <div id="panel">
         <div id="panel-title">TITRE</div>
+        <div id="panel-day" class="fa fa-calendar"></div>
         <div id="panel-time" class="fa fa-clock-o"></div>
         <div id="panel-place" class="fa fa-map-marker"></div>
         <div id="panel-link" class="fa fa-link"></div>
@@ -40,8 +40,15 @@
         } else {
           hour = "Toute la journée"
         }
+        var day = events[n].RealDate;
+        if (day.length == 3) {
+          day = "Le " + day[0] + " "+ mois[day[1]-1].toLowerCase() + " " + day[2]
+        } else if (day.length == 6) {
+          day = "Du " + day[0] + " "+ mois[day[1]-1].toLowerCase() + " " + day[2] + " au " + day[3] + " "+ mois[day[4]-1].toLowerCase() + " " + day[5];
+        }
         document.getElementById("panel-title").innerHTML = events[n].Title;
         document.getElementById("panel-time").innerHTML = hour ;
+        document.getElementById("panel-day").innerHTML = day ;
         events[n].Place && (document.getElementById("panel-place").innerHTML = events[n].Place);
         events[n].Link && (document.getElementById("panel-link").innerHTML = '<a href="'+events[n].Link+'">'+events[n].Link+'</a>');
         events[n].Desc && (document.getElementById("panel-desc").innerHTML = events[n].Desc);
