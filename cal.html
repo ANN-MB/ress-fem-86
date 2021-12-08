@@ -60,6 +60,29 @@
         (!document.getElementById("panel").contains(t) && t.className !== "cld-event") && (document.getElementById("panel").style.bottom="-100%");
         t.id == "panel-exit" && (document.getElementById("panel").style.bottom="-100%")
       }, false);
+    
+      const jours_ = [null, "lundi", "mardi", "mercredi", "jeudi", "vendredi", "sam", "dim"],
+    	      moiss_ = [null, "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+
+      var auj_ = new Date();
+      var jour_ = auj_.getDate();
+      var jour_ind = (jour_ == 1) ? "1er" : jour_;
+      var jsem_ = auj_.getDay();
+      var jsem_name = jours_[jsem_]
+      var mois_ = auj_.getMonth()+1;
+      var an_ = auj_.getFullYear();
+      var moislen_ = new Date(an_, mois_, 0).getDate();
+      var mois1er_ = new Date(an_, mois_-1, 1).getDay();
+      var moislast_ = new Date(an_, mois_, 0).getDay();
+      var mois1er_name = jours_[new Date(an_, mois_-1, 1).getDay()];
+      var moislast_name = jours_[new Date(an_, mois_, 0).getDay()];
+      var days_before = mois1er_ - 1;
+      var days_after = 7 - moislast_;
+
+      console.log("Aujourd'hui nous sommes le " + jsem_name + " " + jour_ind + " " + moiss_[mois_] + " " + an_ + "\n" +
+                  "Le premier jour du mois est un " + mois1er_name + ". Il y a " + days_before + " jours avant." +
+                  "Le dernier jour du mois est un " + moislast_name + ". Il y a " + days_after + " jours après.")
+    
     </script>
   </body>
 </html>
