@@ -1,6 +1,9 @@
 const element = document.getElementById("calendar"),
+	  mois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+	  jours = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
   events = [{
       "Date": new Date(2021, 12, 09),
+      "RealDate": [9,12,2021,10,12,2021],
       "Title": "Festival Les Menstrueuses",
       "Link": "https://emf.fr/ec3_event/les-menstrueuses/",
       "Place":"Divers lieux, 86000 POITIERS",
@@ -8,6 +11,7 @@ const element = document.getElementById("calendar"),
     },
     {
       "Date": new Date(2021, 12, 09),
+      "RealDate": [9,12,2021],
       "Time": ["14","00"],
       "Title": "« Fluctuations »",
       "Link": "",
@@ -16,6 +20,7 @@ const element = document.getElementById("calendar"),
     },
     {
       "Date": new Date(2021, 12, 10),
+      "RealDate": [9,12,2021,10,12,2021],
       "Title": "Festival Les Menstrueuses",
       "Link": "https://emf.fr/ec3_event/les-menstrueuses/",
       "Place":"Divers lieux, 86000 POITIERS",
@@ -23,6 +28,7 @@ const element = document.getElementById("calendar"),
     },
     {
       "Date": new Date(2021, 12, 11),
+      "RealDate": [9,12,2021],
       "Title": "Liberation Party + concert des Petites Lèvres ",
       "Time": ["21","00"],
       "Desc": "Concert des Petites Lèvres en soutien à l'association LAFL.",
@@ -68,7 +74,6 @@ function createCalendar(calendar, adjuster) {
     datetime.appendChild(rwd);
     var today = document.createElement("div");
     today.className += " today";
-    const mois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
     today.innerHTML = mois[calendar.Selected.Month] + ", " + calendar.Selected.Year;
     datetime.appendChild(today);
     var fwd = document.createElement("div");
@@ -84,7 +89,6 @@ function createCalendar(calendar, adjuster) {
   function AddLabels() {
     var labels = document.createElement("div");
     labels.className = "cld-jours-labels";
-    const jours = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"];
     for (var i = 0; i < jours.length; i++) {
       var label = document.createElement("div");
       label.className += "cld-label";
@@ -107,7 +111,7 @@ function createCalendar(calendar, adjuster) {
     // Previous Month's Days
     for (var i = 0; i < (calendar.Selected.FirstDay); i++) {
       var day = document.createElement("div"),
-        number = DayNumber((calendar.Prev.Days - calendar.Selected.FirstDay) + (i + 1));
+          number = DayNumber((calendar.Prev.Days - calendar.Selected.FirstDay) + (i + 1));
       day.className += "cld-day prevMonth";
       day.appendChild(number);
       days.appendChild(day);
@@ -116,7 +120,7 @@ function createCalendar(calendar, adjuster) {
     // Current Month's Days
     for (var i = 0; i < calendar.Selected.Days; i++) {
       var day = document.createElement("div"),
-        number = DayNumber(i + 1);
+          number = DayNumber(i + 1);
       day.className += "cld-day currMonth";
       day.appendChild(number);
 
@@ -129,6 +133,7 @@ function createCalendar(calendar, adjuster) {
           number.className += " eventday";
           var title = document.createElement("div");
           title.setAttribute("data-index",n)
+          title.setAttribute("data-date",evDate)
 		      var hour = events[n].Time || void 0;
           if (hour) {
             if (hour.length == 2) {
