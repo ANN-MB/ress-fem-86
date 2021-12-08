@@ -59,7 +59,6 @@
   float: right;
 }
 
-.cld-nav svg:hover {}
 
 .cld-jours-labels,
 .cld-days {
@@ -71,6 +70,7 @@
   display: inline-block;
   width: 14.28%;
   text-align: center;
+  position: relative;
 }
 
 
@@ -102,6 +102,12 @@
   border: 1px solid #333;
   border-radius: 5px;
   font-size: 12px;
+  text-align:left;
+}
+.cld-event .hour {
+  font-weight: bold;
+  display:block;
+  
 }
 .cld-number:hover ~ .cld-event, .eventday:hover ~ .cld-event {
   display: block !important;
@@ -115,7 +121,7 @@
   height: 0;
   border-left: 7.5px solid transparent;
   border-right: 7.5px solid transparent;
-  border-bottom: 7.5px solid #ccc;
+  border-bottom: 7.5px solid #333;
 }
 .cld-number.eventday {
   display: inline-block;

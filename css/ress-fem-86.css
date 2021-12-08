@@ -1,5 +1,5 @@
 /* License CC BY-SA 4.0 Ann MB - ann-mb.carrd.co */
-/*https://fontawesome.com/v4.7/cheatsheet/*/
+
 @charset "UTF-8";
 :root {color-scheme: light dark}
 html {
@@ -37,7 +37,7 @@ img {border: 0}
 a, select {cursor: pointer}
 .sr-only, nav label, body::after {position:absolute;width:0;height:0;opacity:0;padding:0;margin:-1px;border:0;overflow:hidden;white-space:nowrap}
 nav, header, #modale, footer, .bouton {user-select: none}
-#totop, /* #checkbox-box,*/ #modale {display: none}
+#totop,  #modale {display: none}
 
 #container {
   height: 100%; width: 100%;
@@ -54,13 +54,7 @@ header {
 header img {
   margin-top: 5px;
 }
-#checkbox-box {
-  position: absolute;
-  right: 2px;
-}
-#checkbox-box {
-  top: 2px
-}
+
 
 h1 {
   margin: 0;
@@ -104,17 +98,18 @@ nav {
   align-items: stretch;
   background: rgba(255,255,255,0.4) ;
 }
-nav div {
+nav > div {
   display: flex;
   align-items: center;
+  position: relative;
   flex: 1 1 auto;
   box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset, inset 0 1px 0 rgba(255,255,255,0.7);
   border: 1px solid rgba(0,0,0,0.1);
 }
-nav a {
+nav > a {
   display: block
 }
-nav div a, nav div select {
+nav > div > a, nav > div > select {
   height:100%;
   padding: 8px;  
   width: 100%;
@@ -151,29 +146,39 @@ select, option, nav div:hover select {
 }
 #numbr {width:100%;text-align:center}
 .box {
-  position: absolute;
-  top:-10px;
   padding: 15px;
   z-index:999;
   background: rgba(255,255,255,0.8) ;
   box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset, inset 0 1px 0 rgba(255,255,255,0.7);
+  position: absolute;
+  display: none;
 }
 #contact-box {
   right:0;
-  width: auto;
-  display:none;
+  top: 100%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 #contact-box a {
   text-decoration: none;
   color: #333;
+}
+#contact-box a i {
+  width: 1.5rem;
+  display: inline-block
 }
 #contact-box a:hover {
   text-decoration: underline
 }
 #calendar-box {
   left:0; right:0;
-	display: flex;
-	display:none;
+  top:-10px;
+}
+#calendar-box > div {
+  margin-right: 20px;
+}
+.inner-container {
+  position:relative;
 }
 main {
   display: flex;
