@@ -98,5 +98,4 @@ window.addEventListener("DOMContentLoaded", function() {
     document.querySelector("main").style.maxWidth = "90vw";
     document.querySelector("main").style.margin = "0 auto";
   }
-  document.getElementById("contact-box").style.top = document.querySelector("header").offsetHeight + document.querySelector("nav").offsetHeight;
 },false);

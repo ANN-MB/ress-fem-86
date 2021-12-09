@@ -1,181 +1,137 @@
-const element = document.getElementById("calendar"),
-	  mois = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
-	  jours = ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
-  events = [{
-      "Date": new Date(2021, 12, 09),
-      "RealDate": [9,12,2021,10,12,2021],
-      "Title": "Festival Les Menstrueuses",
-      "Link": "https://emf.fr/ec3_event/les-menstrueuses/",
-      "Place":"Divers lieux, 86000 POITIERS",
-      "Desc":"Les Menstrueuses, c'est une série d'événements avec des ateliers, des conférences et une journée d'étude pour parler des règles et de leur place dans nos vies<br/>🎟️ Gratuit | sur réservation<br/>Programme et réservation 👉 <a href=\"https://emf.fr/39000\">https://emf.fr/39000</a>"
-    },
-    {
-      "Date": new Date(2021, 12, 09),
-      "RealDate": [9,12,2021],
-      "Time": ["14","00"],
-      "Title": "« Fluctuations »",
-      "Link": "",
-      "Place":"Le Dietrich<br/>34, boulevard Chasseigne<br/>86000 POITIERS",
-      "Desc":"Atelier drag king/queer proposé par Couteau Queer<br/>Expérimentation et transmission autour de la notion de performance de soi par la pratique du drag king/queer.<br/>Déconstruire la masculinité par le maquillage, le costume, l'exagération de la démarche ou des gestes.<br/>Réservation en envoyant à un message à : <a href=\"mailto:couteauqueer@protonmail.com\">couteauqueer@protonmail.com</a><br/><br/>19h : Projection de courts métrages autour du genre et de l’identité (entrée libre)<br/>* Tiresias de Alphée Carreau<br/>* Rois de Olivia Saunier<br/>* L'orage qui se dilate du collectif Fess'tins<br/><br/>Rencontres lectures et discussions avec les auteurices et le collectif Couteau Queer"
-    },
-    {
-      "Date": new Date(2021, 12, 10),
-      "RealDate": [9,12,2021,10,12,2021],
-      "Title": "Festival Les Menstrueuses",
-      "Link": "https://emf.fr/ec3_event/les-menstrueuses/",
-      "Place":"Divers lieux, 86000 POITIERS",
-      "Desc":"Les Menstrueuses, c'est une série d'événements avec des ateliers, des conférences et une journée d'étude pour parler des règles et de leur place dans nos vies<br/>🎟️ Gratuit | sur réservation<br/>Programme et réservation 👉 <a href=\"https://emf.fr/39000\">https://emf.fr/39000</a>"
-    },
-    {
-      "Date": new Date(2021, 12, 11),
-      "RealDate": [9,12,2021],
-      "Title": "Liberation Party + concert des Petites Lèvres ",
-      "Time": ["21","00"],
-      "Desc": "Concert des Petites Lèvres en soutien à l'association LAFL.",
-      "Link": "https://www.facebook.com/events/587753229123100/",
-      "Place": "Le ZINC<br/>196, Grand'rue<br/>86000 POITIERS"
-    }
-  ];
+// License CC BY-SA 4.0 Ann MB - ann-mb.carrd.co
+const days = [null, "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"],
+      months = [null, "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+      calGrid = document.getElementById("cal-grid");
+var allDays = document.getElementsByClassName("cal-curr"),
+	eventsLength = events.length,
+	allDaysLength,
+    thisMonth,
+    nowMonth;
 
-function Calendar(date) {
-  this.Today = new Date();
-  this.Selected = this.Today;
-  this.Today.Month = this.Today.getMonth();
-  this.Today.Year = this.Today.getFullYear();
-  date && (this.Selected = date);
-  this.Selected.Month = this.Selected.getMonth();
-  this.Selected.Year = this.Selected.getFullYear();
-  this.Selected.Days = new Date(this.Selected.Year, (this.Selected.Month + 1), 0).getDate();
-  this.Selected.FirstDay = new Date(this.Selected.Year, (this.Selected.Month), 1).getDay() - 1;
-  this.Selected.LastDay = new Date(this.Selected.Year, (this.Selected.Month + 1), 0).getDay();
-  this.Prev = new Date(this.Selected.Year, (this.Selected.Month - 1), 1);
-  0 == this.Selected.Month && (this.Prev = new Date(this.Selected.Year - 1, 11, 1))
-  this.Prev.Days = new Date(this.Prev.getFullYear(), (this.Prev.getMonth() + 1), 0).getDate();
+function RightTime(a,m,j,h,min) {
+  if (!a && !m && !j && !h && !min) {
+    this.Now = new Date();
+  } else {
+    !m && (m = 1);
+    !j && (j = 1);
+    !h && (h = 0);
+    !min && (min = 0);
+    this.Now = new Date(a, m-1, j, h, min);
+  }
+  this.Day = this.Now.getDate();
+  this.DayInWeek = this.Now.getDay();
+  this.DayInWeekName = days[this.DayInWeek];
+  this.Year = this.Now.getFullYear();
+  this.Month = this.Now.getMonth() + 1;
+  this.MonthName = months[this.Month];
+  this.MonthLength = new Date(this.Year, this.Month, 0).getDate();
+  this.PrevMonthLength = new Date(this.Year, this.Month - 1, 0).getDate();
+  let test1 = new Date(this.Year, this.Month - 1, 1).getDay();
+  this.FirstDayOfMonth = (test1 == 0) ? 7 : test1;
+  this.FirstDayOfMonthName = days[this.FirstDayOfMonth];
+  let test2 = new Date(this.Year, this.Month, 0).getDay();
+  this.LastDayOfMonth = (test2 == 0) ? 7 : test2;
+  this.LastDayOfMonthName = days[this.LastDayOfMonth];
+  this.DaysInWeekPrev = this.FirstDayOfMonth - 1;
+  this.DaysInWeekNext = 7 - this.LastDayOfMonth;
+}
+function showDetails(a) {
+  document.getElementById("cal-details").style.bottom = "0"
+}
+function eventContent(a,evt) {
+  var text ="", shorthour="", longhour="", dayrange="";
+  if (a.TimeStart) {
+    if (a.TimeEnd) {
+	  shorthour = "<b>"+a.TimeStart+" - "+a.TimeEnd+"</b><br/>";
+	  longhour = "de " + a.TimeStart.split(":")[0] + "h" + a.TimeStart.split(":")[1] + " à " + a.TimeEnd.split(":")[0] + "h" + a.TimeEnd.split(":")[1];
+	} else {
+	  shorthour = "<b>"+a.TimeStart+"</b><br/>";
+	  longhour = "à " + a.TimeStart.split(":")[0] + "h" + a.TimeStart.split(":")[1];
+	}
+  }
+  if (a.DayEnd) {
+    dayrange = "Du " + a.DayStart.split("/")[0] + " " + months[a.DayStart.split("/")[1]] + " " + a.DayStart.split("/")[2] + " au " + a.DayEnd.split("/")[0] + " " + months[a.DayEnd.split("/")[1]] + " " + a.DayEnd.split("/")[2]
+  } else {
+    dayrange = "Le " + a.DayStart.split("/")[0] + " " + months[a.DayStart.split("/")[1]] + " " + a.DayStart.split("/")[2];
+  }
+  text += shorthour;
+  text += a.Title;
+  document.getElementById("details-title").innerHTML = a.Title;
+  document.getElementById("details-time").innerHTML = dayrange + ' ' + longhour;
+  document.getElementById("details-place").innerHTML = a.Place || '';
+  document.getElementById("details-link").innerHTML = ('<a href="'+ a.Link +'" rel="external noreferrer">'+a.Link+'</a>') || '';
+  document.getElementById("details-desc").innerHTML = a.Desc.replace(/\[\[(.+?)\]\]/gi,"<a href=\"$1\" rel=\"external noreferrer\">$1</a>");;
+  
+
+  return text
+}
+function generateEvents(a,m,j,day) {
+  for (let i = 0 ; i < eventsLength ; i++) {
+    var eventDate = events[i].DayStart.replace(/^0+/, ""),
+        thisDate = j+"/"+m+"/"+a;
+    if (eventDate == thisDate) {
+	  let evt = document.createElement("div");
+      evt.className += " cal-event"; 
+      evt.addEventListener("click", showDetails);
+	  evt.setAttribute("tabindex","0");
+	  evt.setAttribute("data-index",i)
+	  day.setAttribute("tabindex","0");
+	  day.setAttribute("aria-label", j + " " + months[m] + " " + a);
+	  day.setAttribute("role","gridcell");
+	  evt.innerHTML = eventContent(events[i],evt);
+      day.appendChild(evt);
+    }
+  }
+}
+function generateMonth(y,m) {
+  var date = new RightTime(y,m),
+      b = date.DaysInWeekPrev,
+      f = nowMonth.Day;
+  calGrid.innerHTML = "";
+  calGrid.style.counterReset = "curr-days next-days prev-days " + (date.PrevMonthLength - b);
+  document.getElementById("month-year").innerHTML = date.MonthName + ", " + date.Year;
+
+  for (let i = 0; i < b ; i++) {
+    let el = document.createElement("div");
+    el.className += " cal-prev";
+    calGrid.appendChild(el)
+  }
+  
+  var c = date.MonthLength,
+      v = (nowMonth.Year == date.Year) && (nowMonth.Month == date.Month);
+  for (let i = 0; i < c ; i++) {
+    let el = document.createElement("div");
+    el.className += " cal-curr"; 
+    (v && (i == f - 1)) && (el.className += " cal-today")
+	generateEvents(thisMonth.Year,thisMonth.Month,i+1,el);
+    calGrid.appendChild(el)
+  }
+    
+  var d = date.DaysInWeekNext;
+  for (let i = 0; i < d ; i++) {
+    let el = document.createElement("div");
+    el.className += " cal-next";
+    calGrid.appendChild(el)
+  }
+  allDaysLength = c;
 }
 
-function createCalendar(calendar, adjuster) {
-  if (typeof adjuster !== "undefined") {
-    var newDate = new Date(calendar.Selected.Year, calendar.Selected.Month + adjuster, 1);
-    calendar = new Calendar(newDate);
-    element.innerHTML = "";
-  }
-  var mainSection = document.createElement("div");
-  mainSection.className += "cld-main";
-
-  function AddDateTime() {
-    var datetime = document.createElement("div");
-    datetime.className += "cld-datetime";
-    var rwd = document.createElement("div");
-    rwd.className += " cld-rwd cld-nav";
-    rwd.addEventListener("click", function() {
-      createCalendar(calendar, -1)
-    });
-    rwd.innerHTML = "&#x25C0";
-    datetime.appendChild(rwd);
-    var today = document.createElement("div");
-    today.className += " today";
-    today.innerHTML = mois[calendar.Selected.Month] + ", " + calendar.Selected.Year;
-    datetime.appendChild(today);
-    var fwd = document.createElement("div");
-    fwd.className += " cld-fwd cld-nav";
-    fwd.addEventListener("click", function() {
-      createCalendar(calendar, 1)
-    });
-    fwd.innerHTML = "&#x25B6;";
-    datetime.appendChild(fwd);
-    mainSection.appendChild(datetime)
-  }
-
-  function AddLabels() {
-    var labels = document.createElement("div");
-    labels.className = "cld-jours-labels";
-    for (var i = 0; i < jours.length; i++) {
-      var label = document.createElement("div");
-      label.className += "cld-label";
-      label.innerHTML = jours[i];
-      labels.appendChild(label);
-    }
-    mainSection.appendChild(labels);
-  }
-
-  function AddDays() {
-    function DayNumber(n) {
-      var number = document.createElement("div");
-      number.className += "cld-number";
-      number.innerHTML += n;
-      return number;
-    }
-    var days = document.createElement("div");
-    days.className += "cld-days";
-
-    // Previous Month's Days
-    for (var i = 0; i < (calendar.Selected.FirstDay); i++) {
-      var day = document.createElement("div"),
-          number = DayNumber((calendar.Prev.Days - calendar.Selected.FirstDay) + (i + 1));
-      day.className += "cld-day prevMonth";
-      day.appendChild(number);
-      days.appendChild(day);
-    }
-
-    // Current Month's Days
-    for (var i = 0; i < calendar.Selected.Days; i++) {
-      var day = document.createElement("div"),
-          number = DayNumber(i + 1);
-      day.className += "cld-day currMonth";
-      day.appendChild(number);
-
-      // Check Date against Event Dates
-      for (var n = 0; n < events.length; n++) {
-        var evDate = events[n].Date,
-            toDate = new Date(calendar.Selected.Year, calendar.Selected.Month + 1, (i + 1));
-		  
-        if (evDate.getTime() == toDate.getTime()) {
-          number.className += " eventday";
-          var title = document.createElement("div");
-          title.setAttribute("data-index",n)
-          title.setAttribute("data-date",evDate)
-		      var hour = events[n].Time || void 0;
-          if (hour) {
-            if (hour.length == 2) {
-              hour = '<span class="hour">'+hour[0]+':'+hour[1]+'</span><br/>'
-            }
-            if (hour.length == 4) {
-              hour = '<span class="hour">'+hour[0]+':'+hour[1]+' - '+hour[2]+':'+hour[3]+'</span><br/>'
-            }
-          } else {
-            hour = "";
-          }
-          
-          title.className += "cld-event";
-          title.innerHTML += hour + events[n].Title;
-          day.appendChild(title);
-        }
-		  
-      }
-      if (((i + 1) == calendar.Today.getDate()) && (calendar.Selected.Month == calendar.Today.Month) && (calendar.Selected.Year == calendar.Today.Year)) {
-        day.className += " today";
-      }
-      days.appendChild(day);
-    }
-    // Add Extra Days
-    var c = (calendar.Selected.FirstDay == -1) ? 1 : 0,
-      l = calendar.Selected.LastDay,
-      extraDays;
-    if (l + c !== 0 || l + c !== 7) {
-      extraDays = 7 - l - c
-    }
-    for (var i = 0; i < extraDays; i++) {
-      var day = document.createElement("div"),
-          number = DayNumber(i + 1);
-      day.className += "cld-day nextMonth";
-      day.appendChild(number);
-      days.appendChild(day);
-    }
-    mainSection.appendChild(days);
-  }
-  element.appendChild(mainSection);
-  AddDateTime();
-  AddLabels();
-  AddDays();
+function changeMonth(a) {
+  var m = thisMonth.Month + a,
+      y = thisMonth.Year;
+  m == 13 && (m = 1, y++);
+  m == 0 && (m = 12, y--);
+  thisMonth = new RightTime(y,m);
+  generateMonth(y,m);
 }
-createCalendar(new Calendar());
+
+document.getElementById("go-prev").addEventListener("click", function() {changeMonth(-1)});
+document.getElementById("go-next").addEventListener("click", function() {changeMonth(+1)});
+document.getElementById("details-exit").addEventListener("click", function() {
+  document.getElementById("cal-details").style.bottom = "-100%"
+});
+
+window.addEventListener("DOMContentLoaded", function() {
+  nowMonth = thisMonth = new RightTime();
+  generateMonth();  
+},false);
