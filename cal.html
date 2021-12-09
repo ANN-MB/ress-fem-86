@@ -6,83 +6,38 @@
     <meta name="googlebot" content="noindex" />
     <meta name="robots" content="none" />
     <meta name="author" content="Ann MB" />
-    <meta name="description" content="Calendrier féministe et queer de Poitiers et de la Vienne" />
-    <link rel="icon" type="image/png" href="img/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="css/cal-big.css" />
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
-    <title>Calendrier féministes et queer de Poitiers et de la Vienne</title>
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="css/ress-fem-86.css" />   
+    <link rel="stylesheet" href="css/cal.css" />     
+    <title>Agenda des ressources féministes et queer de Poitiers et de la Vienne</title>
   </head>
   <body>
-    <div id="container">
-      <div id="calendar"></div>
-      <div id="panel">
-        <div id="panel-title">TITRE</div>
-        <div id="panel-day" class="fa fa-calendar"></div>
-        <div id="panel-time" class="fa fa-clock-o"></div>
-        <div id="panel-place" class="fa fa-map-marker"></div>
-        <div id="panel-link" class="fa fa-link"></div>
-        <div id="panel-desc" class="fa  fa-file-text-o"></div>
-        <div id="panel-exit" aria-label="Fermer la popup"><i class="fa fa-times"></i></div>
+    <div id="caltainer">
+      <div class="cal-nav">
+        <div id="go-prev" tabindex="0" role="button">&#x25C0;</div>
+        <div id="month-year"></div>
+        <div id="go-next" tabindex="0" role="button">&#x25B6;</div>
       </div>
-  </div>
-  <script src="js/calendar.js"></script>
-  <script>
-    function showEvent(a) {
-      var n = a.getAttribute("data-index");
-      var hour = events[n].Time || void 0;
-        if (hour) {
-          if (hour.length == 2) {
-            hour = hour[0]+':'+hour[1]
-          }
-          if (hour.length == 4) {
-            hour = hour[0]+':'+hour[1]+' - '+hour[2]+':'+hour[3]
-          }
-        } else {
-          hour = "Toute la journée"
-        }
-        var day = events[n].RealDate;
-        if (day.length == 3) {
-          day = "Le " + day[0] + " "+ mois[day[1]-1].toLowerCase() + " " + day[2]
-        } else if (day.length == 6) {
-          day = "Du " + day[0] + " "+ mois[day[1]-1].toLowerCase() + " " + day[2] + " au " + day[3] + " "+ mois[day[4]-1].toLowerCase() + " " + day[5];
-        }
-        document.getElementById("panel-title").innerHTML = events[n].Title;
-        document.getElementById("panel-time").innerHTML = hour ;
-        document.getElementById("panel-day").innerHTML = day ;
-        events[n].Place && (document.getElementById("panel-place").innerHTML = events[n].Place);
-        events[n].Link && (document.getElementById("panel-link").innerHTML = '<a href="'+events[n].Link+'">'+events[n].Link+'</a>');
-        events[n].Desc && (document.getElementById("panel-desc").innerHTML = events[n].Desc);
-        document.getElementById("panel").style.bottom ="0"
-      }
-      document.addEventListener("click", function(e) {
-        var t = e.target;
-        t.className == "cld-event" && showEvent(t);
-        (!document.getElementById("panel").contains(t) && t.className !== "cld-event") && (document.getElementById("panel").style.bottom="-100%");
-        t.id == "panel-exit" && (document.getElementById("panel").style.bottom="-100%")
-      }, false);
-    
-      const jours_ = [null, "lundi", "mardi", "mercredi", "jeudi", "vendredi", "sam", "dim"],
-    	      moiss_ = [null, "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
-
-      var auj_ = new Date();
-      var jour_ = auj_.getDate();
-      var jour_ind = (jour_ == 1) ? "1er" : jour_;
-      var jsem_ = auj_.getDay();
-      var jsem_name = jours_[jsem_]
-      var mois_ = auj_.getMonth()+1;
-      var an_ = auj_.getFullYear();
-      var moislen_ = new Date(an_, mois_, 0).getDate();
-      var mois1er_ = new Date(an_, mois_-1, 1).getDay();
-      var moislast_ = new Date(an_, mois_, 0).getDay();
-      var mois1er_name = jours_[new Date(an_, mois_-1, 1).getDay()];
-      var moislast_name = jours_[new Date(an_, mois_, 0).getDay()];
-      var days_before = mois1er_ - 1;
-      var days_after = 7 - moislast_;
-
-      console.log("Aujourd'hui nous sommes le " + jsem_name + " " + jour_ind + " " + moiss_[mois_] + " " + an_ + "\n" +
-                  "Le premier jour du mois est un " + mois1er_name + ". Il y a " + days_before + " jours avant." +
-                  "Le dernier jour du mois est un " + moislast_name + ". Il y a " + days_after + " jours après.")
-    
-    </script>
+      <div class="days-names">
+        <div>L<span>un<span>di</span></span></div>
+        <div>M<span>ar<span>di</span></span></div>
+        <div>M<span>er<span>credi</span></span></div>
+        <div>J<span>eu<span>di</span></span></div>
+        <div>V<span>en<span>dredi</span></span></div>
+        <div>S<span>am<span>edi</span></span></div>
+        <div>D<span>im<span>anche</span></span></div>
+      </div>
+      <div id="cal-grid" role="grid"></div>
+	  <div id="cal-details">
+	    <div id="details-title">«&nbsp;Fluctuations&nbsp;»</div>
+		<div id="details-time" class="fa fa-clock">Le 09 décembre 2021 à 14h00</div>
+		<div id="details-place" class="fa fa-map-marker"></div>
+		<div id="details-link" class="fa fa-link"></div>
+		<div id="details-desc" class="fa fa-quote"></div>
+		<div id="details-exit" class="fa fa-cross" role="button" aria-label="Fermer la popup"></div>
+	  </div>
+    </div>
+    <script src="js/events.js"></script>
+    <script src="js/calendar.js"></script>
   </body>
 </html>

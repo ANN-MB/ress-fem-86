@@ -17,7 +17,7 @@
     <noscript><style>nav div:nth-of-type(-n+3) {display:none}</style></noscript>
     <title>Ressources féministe et queer de Poitiers et de la Vienne</title>
   </head>
-  <body>
+  <body class="body">
     <div id="container">
       <header id="top">
         <h1><span class="sr-only">Ressources féministe et queer de Poitiers et de la Vienne</span>
@@ -27,7 +27,7 @@
       <nav>
         <div>
           <i class="fa fa-search"></i>
-          <label for="categories">Choix d'une catégories pour restreindre les résultats</label>
+          <label for="categories" class="sr-only">Choix d'une catégories pour restreindre les résultats</label>
           <select id="categories" name="categories">
             <option value="">Rechercher</option>
             <option value="asso">Associations</option>
@@ -73,7 +73,7 @@
         </div>
         <div>
           <i class="fa fa-building"></i>
-          <label for="city">Choix d'une ville pour restreindre les résultats</label>
+          <label for="city"  class="sr-only">Choix d'une ville pour restreindre les résultats</label>
           <select id="city" name="city">
             <option value="">Ville</option>
             <option value="800">Bignoux</option>
@@ -102,8 +102,8 @@
           </select>
         </div>
         <div id="alph-cont">
-          <i class="fa fa-sort-alpha-asc"></i>
-          <label for="alph">Aller directement à une lettre de l'alphabet</label>
+          <i class="fa fa-az-sort"></i>
+          <label for="alph"  class="sr-only">Aller directement à une lettre de l'alphabet</label>
           <select id="alph" name="alph">
             <option value="">ABC&#x2026;</option>
             <option value="a">A</option>
@@ -137,21 +137,22 @@
           <a href="cal.html" title="" id="agenda">Agenda</a>
         </div>
         <div>
-          <i class="fa fa-address-book"></i>
+          <i class="fa fa-user-o"></i>
           <a href="https://framaforms.org/users/annmb/contact" id="contact" rel="external noreferrer contact" title="Formulaire d'envoi de mail">Contact</a>
           <div class="box" id="contact-box">
             <a href="https://ann-mb.carrd.co" rel="external noreferrer"><i class="fa fa-user-o"></i> Mon site personnel</a><br/>
             <a href="https://framaforms.org/users/annmb/contact" rel="external noreferrer contact"><i class="fa fa-envelope-o"></i> Formulaire de contact</a><br/>
             <a href="https://github.com/ANN-MB/ress-fem-86" rel="external noreferrer"><i class="fa fa-github"></i> Page GitHub du projet</a><br/>
-            <a href="https://www.instagram.com/res.fem.86" rel="external noreferrer"><i class="fa fa-instagram"></i> Page Instagram du projet</a><br/><br/>
-            Licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" rel="external noreferrer" title="License Creative Commons"><i class="fa fa-creative-commons"></i> BY-SA 4.0</a>
+            <a href="https://www.instagram.com/res.fem.86/" rel="external noreferrer"><i class="fa fa-instagram"></i> Page Instagram du projet</a><br/>
+			<a href="https://www.paypal.com/donate/?hosted_button_id=92U2DGNUVUNTA" rel="external noreferrer"><i class="fa fa-paypal"></i> Dons PayPal</a><br/><br/>
+            Licence&nbsp;<a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr" rel="external noreferrer" title="License Creative Commons"><i class="fa fa-creative-commons"></i>&nbsp;BY-SA&nbsp;4.0</a>
           </div>
         </div>
       </nav>
       <div id="modale">
         <a id="exit-modale" class="bouton" aria-label="Fermer la popup">&nbsp;&#x2715;&nbsp;</a>
         <strong>IMPORTANT</strong> : Certaines informations (téléphones, adresses) ne sont pas vérifiées et le seront au fur et à mesure sur mon temps libre.<br/><br/>
-        Dernière mise-à-jour le : 05/12/2021<br/><br/>
+        Dernière mise-à-jour le : 10/12/2021<br/><br/>
         <a href="https://framaforms.org/users/annmb/contact" rel="external noreferrer" title="Lien vers la page de contact">Contactez moi</a> si :&nbsp;
         <ul>
           <li>Vous voulez être référencé&middot;e dans ces ressources</li>
@@ -163,13 +164,13 @@
         </ul>
         <br/>
         Merci &#x1F642;
-      </div>
+      </div><!--
       <div class="inner-container">
         <div class="box" id="calendar-box">
           <div id="calendar"></div>
           <div id="next-events">Prochains événements : </div>
           <a href="cal.html">Voir l'agenda complet</a>
-      </div> 
+      </div> -->
       <div id="numbr"></div>
       <main>
         <article data-hashtag="host asso fami mine 000" id="a">
