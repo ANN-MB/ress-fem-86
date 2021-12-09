@@ -1,0 +1,226 @@
+@charset "utf-8";
+:root {
+  color-scheme: light;
+  --event-bg: #333;
+  --event-color: #fefefe;
+  --grid-bg: transparent;
+  --days-number-color: #333;
+  --days-names-bg: transparent;
+  --nav-bg: transparent;
+}
+html {
+  box-sizing: border-box;
+  font-size: 100%
+}
+*, *::before, *::after {
+  box-sizing:inherit;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #d7eeff linear-gradient(45deg, #8ec5fc, #e0c3fc) fixed;
+  font-family: "Public Sans", "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+body::before {
+  content: "";
+  display: block; position: absolute;
+  height: 100%; min-height: 100vh;
+  left: 0; right: 0;
+  background: #d7eeff linear-gradient(45deg, #232526, #414345) fixed;
+  opacity: 0; transition: opacity 1s ease; will-change: opacity;
+  z-index: -1
+}
+#caltainer {
+  height: 100vh;
+  position: relative;
+}
+#cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(auto-fill, 1fr);
+  min-height: 100vh;
+  background: var(--grid-bg);
+}
+#cal-grid > div {
+  height: 40px;
+  display: inline-block;
+  height: 100%;
+}
+#cal-grid > div, .days-names div {
+  border-bottom: 1px solid var(--borderColor);
+  border-right: 1px solid var(--borderColor);
+}
+#cal-grid > div:nth-child(7n), .days-names div:nth-last-child(1)  {
+  border-right: 0;
+}
+#cal-grid > div:nth-last-child(-n+7) {
+  border-bottom: 0;
+}
+
+#cal-grid > div::before {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  width: 1.5rem; height: 1.5rem;
+  margin: .2rem;
+  font-size: 1rem;
+  text-align:center;
+  color: var(--days-number-color)
+}
+
+.cal-today::before {
+  background: #333;
+  color: #fefefe !important;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+.cal-prev, .cal-next, .cal-curr  {
+  box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset, inset 0 1px 0 rgba(255,255,255,0.7);
+  border: 1px solid rgba(0,0,0,0.1);
+   background: rgba(255,255,255,0.5);  
+}
+
+.cal-prev, .cal-next {
+  opacity: .5 ;
+}
+
+.cal-prev::before {
+  content: counter(prev-days, decimal);
+  counter-increment: prev-days 1;
+}
+
+.cal-curr::before {
+  content: counter(curr-days, decimal);
+  counter-increment: curr-days;
+}
+
+.cal-next::before {
+  content: counter(next-days, decimal);
+  counter-increment: next-days;
+}
+
+.cal-nav,
+.days-names {
+  user-select: none;
+  font-size: 1.1rem
+}
+
+.days-names,
+.cal-nav {
+  display: flex;
+}
+.days-names {
+  background: var(--days-names-bg);
+  border-top: 1px solid var(--borderColor);
+  margin-bottom: .1rem
+}
+.days-names > div {
+  display: inline-block;
+  width: 14.285714286%;
+  text-align: center;
+}
+
+.cal-nav {
+  width: 100%;
+  padding: .2rem 0;
+  background: var(--nav-bg)
+}
+
+.cal-nav > div {
+  display: inline-block;
+}
+
+#month-year {
+  margin: 0 2rem;
+  font-weight: 600
+}
+
+#month-year:first-letter {
+  text-transform: uppercase;
+}
+
+#go-prev,
+#go-next {
+  flex: 1 1 auto;
+  cursor: pointer;
+}
+
+#go-prev:focus,
+#go-next:focus {
+  outline: 1px dashed #fff;
+}
+
+#go-prev {
+  text-align: right
+}
+
+.cal-event {
+  cursor: pointer;
+  background-color: var(--event-bg);
+  color: var(--event-color);
+  border-radius:5px;
+  padding: 2px;
+  display: block;
+  margin: 0 2px 3px 2px;
+  font-size: 1rem;   
+  word-break: break-word;  
+  hyphens: auto;
+}
+.cal-event:focus, .cal-event:hover {
+  color: #333;
+  background: #fefefe
+}
+#cal-details {
+  position: fixed;
+  bottom: -100%;
+  width: 100%;
+  background: #fefefe;
+  color:#333;
+  transition: bottom .5s ease;
+  border-top: 1px solid #333;
+  padding: .5rem 1rem;
+}
+#cal-details > div {
+  margin-bottom: 1rem;
+  
+}
+#details-title {
+ font-size: 1.5rem;
+ font-variant: small-caps;
+}
+
+#details-exit {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align:center;
+  padding-top: .15rem;
+  position: absolute;
+  width: 30px;
+  height: 30px; 
+  background: #fefefe;
+  top: -15px;
+  left: calc(50% - 15px);
+  border-radius: 50px;
+  margin-left: 5px;
+  border: 1px solid #333;
+  cursor: pointer;
+}
+
+#details-exit:hover {
+  color: #fefefe;
+  background: #333;
+}
+
+#cal-details div:not(#details-exit)::before {
+  width: 1.2rem
+}
+@media screen and (max-width:740px) {
+  .days-names > div span span {display:none}
+}
+@media screen and (max-width:300px) {
+  .days-names > div span {display:none}
+}

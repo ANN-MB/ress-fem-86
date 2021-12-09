@@ -1,13 +1,19 @@
 /* License CC BY-SA 4.0 Ann MB - ann-mb.carrd.co */
 
 @charset "UTF-8";
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 :root {color-scheme: light dark}
 html {
   box-sizing: border-box;
   font-size: 100%
 }
 *, *::before, *::after {box-sizing: inherit}
-body {
+.body {
   position: relative;
   margin: 0; padding: 0;
   line-height: 1.3;
@@ -17,7 +23,7 @@ body {
   background: #d7eeff linear-gradient(45deg, #8ec5fc, #e0c3fc) fixed;
   font-family: "Public Sans", "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
-body::after {content: url(img/sprite.png) url(img/logo.png)}
+.body::after {content: url(img/sprite.png) url(img/logo.png)}
 body::before {
   content: "";
   display: block; position: absolute;
@@ -35,7 +41,6 @@ sup { font-size: 75%;line-height: 0;position: relative;vertical-align: baseline;
 q::before { content: "\00ab\00a0" } q::after { content: "\00a0\00bb" }
 img {border: 0}
 a, select {cursor: pointer}
-.sr-only, nav label, body::after {position:absolute;width:0;height:0;opacity:0;padding:0;margin:-1px;border:0;overflow:hidden;white-space:nowrap}
 nav, header, #modale, footer, .bouton {user-select: none}
 #totop,  #modale {display: none}
 
@@ -80,7 +85,7 @@ h1 {
 }
 nav, header {transition: background 1s ease}
 h1 img {transition: filter 1s ease}
-nav div:hover {
+nav > div:hover {
   background: #fff !important
 }
 nav div:hover select,  nav div:hover a{
@@ -148,7 +153,7 @@ select, option, nav div:hover select {
 .box {
   padding: 15px;
   z-index:999;
-  background: rgba(255,255,255,0.8) ;
+  background: #fefefe;
   box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset, inset 0 1px 0 rgba(255,255,255,0.7);
   position: absolute;
   display: none;
@@ -160,8 +165,10 @@ select, option, nav div:hover select {
   overflow: hidden;
 }
 #contact-box a {
+  display: inline-block;
   text-decoration: none;
   color: #333;
+  margin-bottom: .7rem;
 }
 #contact-box a i {
   width: 1.5rem;
@@ -348,23 +355,99 @@ h3 {
 .C12 {background:#95c44b} .C13 {background:#007139} .C14 {background:#a69e42} 
 .C15 {background:#1b7b6a} .C16 {background:#46b052}
 /*** COLORS ***/
-body, #modale a:nth-of-type(2):hover {color: #333}
+.body, #modale a:nth-of-type(2):hover {color: #333}
 header {
   background: rgba(255,255,255,0.4) ;
   box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset, inset 0 1px 0 rgba(255,255,255,0.7);
 }
-
-header img {
-  filter: invert(75%)
-}
+header img { filter: invert(75%)}
 article a, #modale a:nth-of-type(2) {color: #0078A8}
 article,  #modale, .bouton {background: linear-gradient(145deg, #e4e8fe, #f8f9ff)}
 article, #modale {box-shadow: #888 0 0 2px, #888 0 3px 0}
 .bouton {box-shadow: #888 0 0 2px, #888 0 2px 0}
 .bouton:hover {background: #fefefe !important}
+
+.fa::before {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-lg { /* makes the font 33% larger relative to the icon container */
+  font-size: 1.33333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.fa-search::before {content:"\f002"}
+.fa-building::before {content:"\f1ad"}
+.fa-az-sort::before {content:"\f15d"}
+.fa-map-signs::before {content:"\f277"}
+.fa-calendar::before {content:"\f073"}
+.fa-github::before {content:"\f09b"}
+.fa-envelope-o::before {content:"\f0e0"}
+.fa-user-o::before {content:"\f2b9"}
+.fa-instagram::before {content:"\f16d"}
+.fa-creative-commons::before {content:"\f25e"}
+.fa-etsy::before { content: "\f2d7" }
+.fa-facebook::before { content: "\f082" }
+.fa-soundcloud::before { content: "\f1be" }
+.fa-deviantart::before { content: "\f1bd" }
+.fa-spotify::before { content: "\f1bc" }
+.fa-paypal::before { content: "\f1ed" }
+.fa-bus::before { content: "\f207" }
+.fa-transgender::before { content: "\f225" }
+.fa-justice::before { content: "\f24e" }
+.fa-link::before { content: "\f0c1" }
+.fa-link2::before { content: "\f0c6" }
+.fa-quote::before { content: "\f10d";font-size:2rem;padding-right:2.1rem;float:left; }
+.fa-quote::after { content: "\f10e"; font-size:2rem;padding-left:.2rem} 
+.fa-spinner::before { content: "\f110" }
+.fa-youtube::before { content: "\f16a" }
+.fa-wheelchair::before { content: "\f193" }
+.fa-bubble-plain::before { content: "\f27a" }
+.fa-bubble::before { content: "\f27b" }
+.fa-parking::before { content: "\f288" }
+.fa-euro::before { content: "\f153" }
+.fa-acti::before {content: "\f0a1" }
+.fa-trophy::before {content: "\f091" }
+.fa-phone::before {content: "\f095" }
+.fa-work::before {content: "\f0b1" }
+.fa-science::before {content: "\f0c3" }
+.fa-doctor::before {content: "\f0f0" }
+.fa-stetoscope::before {content: "\f0f1" }
+.fa-health::before {content: "\f0fa" }
+.fa-cross::before {content: "\f067"; transform: rotate(45deg) }
+.fa-clock::before {content: "\f017" }
+.fa-comment::before {content: "\f040" }
+.fa-person::before {content: "\f007"}
+.fa-shelter::before {content: "\f015"}
+.fa-solidarity::before {content: "\f0c0"}
+.fa-map-marker::before {content: "\f041"}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
 @media (prefers-color-scheme: dark) {
-  body, #modale a:nth-of-type(2):hover {color:#ddd}
-  body::before {opacity:1 !important}
+  .body, #modale a:nth-of-type(2):hover {color:#ddd}
+  .body::before {opacity:1 !important}
   h1 {background: #333}
   header {border-bottom: 1px solid #efefef}
   h1 img {filter:none}
@@ -374,6 +457,7 @@ article, #modale {box-shadow: #888 0 0 2px, #888 0 3px 0}
   article, #modale, .bouton {background: #242626}
   nav div:hover, nav div:hover select, .bouton:hover {color: #111}
   .num img {filter:invert(1)}
+  #contact-box, #contact-box a {color: #fefefe }
 }
 @media screen and (prefers-reduced-motion: no-preference) {html{scroll-behavior:smooth}}
 @media screen and (max-width:940px) {
@@ -387,13 +471,13 @@ article, #modale {box-shadow: #888 0 0 2px, #888 0 3px 0}
 }
 @page {size:A4 portrait}
 @media print { 
-  html, body {height:auto !important; overflow:auto !important}
+  html, .body {height:auto !important; overflow:auto !important}
   #container {overflow: hidden}
   main {display: block; height: auto !important}
   h1 {border:0}
   h2 {border-bottom: 1px dashed #333 !important}
   a {text-decoration:none !important; color:#000 !important}
-  body, article, header, h1, body::before {color:#000 !important; background:#fff !important}
+  .body, article, header, h1, .body::before {color:#000 !important; background:#fff !important}
   nav, footer, #modale, #totop, #mapbox, h1 img {display:none !important}
   article {box-shadow:none !important;break-inside: avoid;border-radius: 0;width: 100% !important;position: relative !important;top: unset !important;left: unset !important}
   article {border: 2px solid #555 !important}
