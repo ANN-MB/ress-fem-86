@@ -1,13 +1,23 @@
 // Calendar by Ann MB - License CC BY-SA 4.0 - ann-mb.carrd.co
-const days = [null, "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"],
-      months = [null, "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
-      calGrid = document.getElementById("cal-grid");
+
 var allDays = document.getElementsByClassName("cal-curr"),
-    eventsLength = events.length,
+    eventsLength = events.length, // events are in the events.js file
     thisMonth,
     nowMonth;
-
-function RightTime(a,m,j,h,min) {
+const 
+$ = (id) => { return document.getElementById(id) },
+days = [null, "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"],
+months = [null, "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+calGrid = $("cal-grid"),
+details = $("cal-details"),
+sleep = (ms) => {
+  return new Promise(resolve => setTimeout(resolve, ms))
+},
+correctHeight = () => {
+  var vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", vh+"px");
+};
+RightTime = function(a,m,j,h,min) {
   if (!a && !m && !j && !h && !min) {
     this.Now = new Date();
   } else {
@@ -18,8 +28,8 @@ function RightTime(a,m,j,h,min) {
     this.Now = new Date(a, m-1, j, h, min);
   }
   this.Day = this.Now.getDate();
-  //this.DayInWeek = this.Now.getDay();
-  //this.DayInWeekName = days[this.DayInWeek];
+  this.DayInWeek = this.Now.getDay();
+  this.DayInWeekName = days[this.DayInWeek];
   this.Year = this.Now.getFullYear();
   this.Month = this.Now.getMonth() + 1;
   this.MonthName = months[this.Month];
@@ -33,17 +43,18 @@ function RightTime(a,m,j,h,min) {
   //this.LastDayOfMonthName = days[this.LastDayOfMonth];
   this.DaysInWeekPrev = this.FirstDayOfMonth - 1;
   this.DaysInWeekNext = 7 - this.LastDayOfMonth;
-}
-function showDetails(a) {
+},
+showDetails = function(a) {
   a = events[a];
-  document.getElementById("details-title").innerHTML = a.Title;
-  document.getElementById("details-time").innerHTML = new getTimeText(a).DayRange + ' ' + (new getTimeText(a).LongHour || '');
-  document.getElementById("details-place").innerHTML = a.Place || '';
-  document.getElementById("details-link").innerHTML = a.Link ? ('<a href="'+ a.Link +'" rel="external noreferrer">'+a.Link+'</a>') : '';
-  document.getElementById("details-desc").innerHTML = a.Desc.replace(/\[\[(.+?)\]\]/gi,"<a href=\"$1\" rel=\"external noreferrer\">$1</a>");; 
-  document.getElementById("cal-details").style.bottom = "0";
-}
-function getTimeText(a) {
+  $("details-title").innerHTML = a.Title;
+  $("details-time").innerHTML = new getTimeText(a).DayRange + ' ' + (new getTimeText(a).LongHour || '');
+  $("details-place").innerHTML = a.Place || '';
+  $("details-link").innerHTML = a.Link ? ('<a href="'+ a.Link +'" rel="external noreferrer">'+a.Link+'</a>') : '';
+  $("details-desc").innerHTML = a.Desc ? (a.Desc.replace(/\[\[(.+?)\]\]/gi,"<a href=\"$1\" rel=\"external noreferrer\">$1</a>")) : ''; 
+  details.style.bottom = "0";
+  details.setAttribute("aria-hidden","false");
+},
+getTimeText = function(a) {
   var shorthour, longhour, dayrange;
   if (a.TimeStart) {
     if (a.TimeEnd) {
@@ -59,42 +70,42 @@ function getTimeText(a) {
   } else {
     dayrange = "Le " + a.DayStart.split("/")[0] + " " + months[a.DayStart.split("/")[1]] + " " + a.DayStart.split("/")[2];
   }
-  this.ShortHour = shorthour;
   this.LongHour = longhour;
   this.DayRange = dayrange;
-}
-function generateEvents(a,m,j,day) {
-  for (let i = 0 ; i < eventsLength ; i++) {
-    var eventDate = events[i].DayStart.replace(/^0+/, ""),
+},
+generateEvents = async function(a,m,j,day) {
+  for (let i = eventsLength ; i--;) {
+    var eventDate = events[i].DayStart,
         thisDate = j+"/"+m+"/"+a;
     if (eventDate == thisDate) {
       let evt = document.createElement("a");
-      evt.className += " cal-event"; 
+      evt.className += " cal-event" + (events[i].Type ? (" evt-"+(events[i].Type).toLowerCase()) : "");
       evt.setAttribute("data-index", i);
       evt.setAttribute("href","#");
       evt.addEventListener("click", function(e){e.preventDefault();showDetails(i)});
       day.setAttribute("tabindex","0");
-      day.setAttribute("aria-label", j + " " + months[m] + " " + a);
+      day.setAttribute("aria-label", thisMonth.DayInWeekName + " " + j + " " + months[m] + " " + a);
       day.setAttribute("role","gridcell");
-      evt.innerHTML = (new getTimeText(events[i]).ShortHour || '') + events[i].Title;
+      var shorthour=events[i].TimeStart?events[i].TimeEnd?"<b>"+events[i].TimeStart+" - "+events[i].TimeEnd+"</b><br/>":"<b>"+events[i].TimeStart+"</b><br/>":"";
+      evt.innerHTML = shorthour + events[i].Title;
       day.appendChild(evt);
     }
+    await sleep(5)
   }
-}
-function generateMonth(y,m) {
+},
+generateMonth = function(y,m) {
   var date = new RightTime(y,m),
       b = date.DaysInWeekPrev,
       f = nowMonth.Day;
   calGrid.innerHTML = "";
   calGrid.style.counterReset = "curr-days next-days prev-days " + (date.PrevMonthLength - b);
-  document.getElementById("month-year").innerHTML = date.MonthName + ", " + date.Year;
+  $("month-year").innerHTML = date.MonthName + ", " + date.Year;
   document.title = "Calendrier - " + date.MonthName + ", " + date.Year;
   for (let i = 0; i < b ; i++) {
     let el = document.createElement("div");
     el.className += " cal-prev";
     calGrid.appendChild(el)
   }
-  
   var c = date.MonthLength,
       v = (nowMonth.Year == date.Year) && (nowMonth.Month == date.Month);
   for (let i = 0; i < c ; i++) {
@@ -104,37 +115,33 @@ function generateMonth(y,m) {
     generateEvents(thisMonth.Year,thisMonth.Month,i+1,el);
     calGrid.appendChild(el)
   }
-    
   var d = date.DaysInWeekNext;
   for (let i = 0 ; i < d ; i++) {
     let el = document.createElement("div");
     el.className += " cal-next";
     calGrid.appendChild(el)
   }
-}
-
-function changeMonth(a) {
+},
+changeMonth = function(a) {
   var m = thisMonth.Month + a,
       y = thisMonth.Year;
   m == 13 && (m = 1, y++);
   m == 0 && (m = 12, y--);
   thisMonth = new RightTime(y,m);
   generateMonth(y,m);
-}
+};
 
-document.getElementById("go-prev").addEventListener("click", function(e) {e.preventDefault();changeMonth(-1)},false);
-document.getElementById("go-next").addEventListener("click", function(e) {e.preventDefault();changeMonth(+1)},false);
-document.getElementById("details-exit").addEventListener("click", function(e) {
+$("go-prev").addEventListener("click", function(e) {e.preventDefault();changeMonth(-1)},false);
+$("go-next").addEventListener("click", function(e) {e.preventDefault();changeMonth(+1)},false);
+$("details-exit").addEventListener("click", function(e) {
   e.preventDefault();
-  document.getElementById("cal-details").style.bottom = "-100%";
+  details.style.bottom = "-100%";
+  details.setAttribute("aria-hidden","true");
 });
-function correctHeight(){
-  var vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", vh+"px");
-}
+
 window.addEventListener("DOMContentLoaded", function() {
   nowMonth = thisMonth = new RightTime();
   generateMonth();
   correctHeight();
 },false);
-window.addEventListener("resize", correctHeight)
+window.addEventListener("resize", correctHeight);
