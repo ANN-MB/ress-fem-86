@@ -6,18 +6,17 @@
     <meta name="googlebot" content="noindex" />
     <meta name="robots" content="none" />
     <meta name="author" content="Ann MB" />
-    <meta name="description" content="" />
-    <link rel="stylesheet" href="css/ress-fem-86.css" />   
+    <meta name="description" content="Calendrier" />
     <link rel="stylesheet" href="css/cal.css" />     
     <title>Agenda des ressources féministes et queer de Poitiers et de la Vienne</title>
   </head>
   <body>
     <div id="caltainer">
-      <div class="cal-nav">
-        <div id="go-prev" tabindex="0" role="button">&#x25C0;</div>
+      <nav class="cal-nav">
+        <a href="" id="go-prev" aria-label="Aller au mois précédent">&#x25C0;</a>
         <div id="month-year"></div>
-        <div id="go-next" tabindex="0" role="button">&#x25B6;</div>
-      </div>
+        <a href="" id="go-next" aria-label="Aller au mois suivant">&#x25B6;</a>
+      </nav>
       <div class="days-names">
         <div>L<span>un<span>di</span></span></div>
         <div>M<span>ar<span>di</span></span></div>
@@ -28,15 +27,15 @@
         <div>D<span>im<span>anche</span></span></div>
       </div>
       <div id="cal-grid" role="grid"></div>
-	  <div id="cal-details">
-	    <div id="details-title">«&nbsp;Fluctuations&nbsp;»</div>
-		<div id="details-time" class="fa fa-clock">Le 09 décembre 2021 à 14h00</div>
-		<div id="details-place" class="fa fa-map-marker"></div>
-		<div id="details-link" class="fa fa-link"></div>
-		<div id="details-desc" class="fa fa-quote"></div>
-		<div id="details-exit" class="fa fa-cross" role="button" aria-label="Fermer la popup"></div>
-	  </div>
-    </div>
+      <div id="cal-details">
+      <div id="details-title"></div>
+      <div id="details-time" class="fa fa-clock"></div>
+          <div id="details-place" class="fa fa-map-marker"></div>
+          <div id="details-link" class="fa fa-link"></div>
+          <div id="details-desc" class="fa fa-quote"></div>
+          <a href="#" id="details-exit" class="fa fa-cross" aria-label="Fermer la popup"></a>
+        </div>
+      </div>
     <script src="js/events.js"></script>
     <script src="js/calendar.js"></script>
   </body>
