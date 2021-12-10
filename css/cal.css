@@ -24,7 +24,6 @@
   --soft-white: #fefefe;
   --borderColor: transparent;
   --links: #0078A8;
-
 }
 
 html {
@@ -49,6 +48,13 @@ body::before {
   background: #d7eeff linear-gradient(45deg, #232526, #414345) fixed;
   opacity: 0; transition: opacity 1s ease; will-change: opacity;
   z-index: -1
+}
+#noscript {
+  margin-top: 2em;
+  font-size: 2em;
+  color: #700;
+  width: 100%;
+  text-align:center
 }
 #caltainer {
   position: relative;
@@ -186,10 +192,10 @@ body::before {
   cursor: pointer;
   position: relative;
   overflow:hidden;
-  background: var(--soft-black);
-  color: var(--soft-white);
+  background: #8EC5FC;
+  color: #fefefe;
   border-radius:5px;
-  padding: 2px;
+  padding: 4px;
   display: block;
   margin: 0 2px 3px 2px;
   font-size: 1rem;   
@@ -200,12 +206,12 @@ body::before {
   box-shadow: 0px 0px 0px #333;
 }
 .evt-national {
-  background: #00a9ff;
+  background: #76BF9E;
   color: #fefefe !important;
 }
 .evt-fest {
-  background: #FFC300;
-  color: #111 !important;
+  background: #E0938C;
+  color: #333 !important;
 }
 .evt-politic {
   background: #ff5583;
@@ -213,11 +219,10 @@ body::before {
 .evt-conference {
   background: #03bd9e;
 }
-
 .cal-event:hover {
   transform: scale(1.2);
   box-shadow: 0px 4px 7px rgba(0,0,0,.4);
-  z-index: 1000
+  z-index: 888
 }
 .cal-event:focus {
   outline: 2px dashed #fff;
