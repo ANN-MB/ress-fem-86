@@ -40,7 +40,9 @@ body::before {
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(auto-fill, 1fr);
   min-height: 100vh;
+  height:100%
   background: var(--grid-bg);
+
 }
 #cal-grid > div {
   height: 40px;
