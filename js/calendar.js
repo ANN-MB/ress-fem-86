@@ -36,6 +36,12 @@ function RightTime(a,m,j,h,min) {
   this.DaysInWeekNext = 7 - this.LastDayOfMonth;
 }
 function showDetails(a) {
+  a = events[a];
+  document.getElementById("details-title").innerHTML = a.Title;
+  document.getElementById("details-time").innerHTML = dayrange + ' ' + longhour;
+  document.getElementById("details-place").innerHTML = a.Place || '';
+  document.getElementById("details-link").innerHTML = ('<a href="'+ a.Link +'" rel="external noreferrer">'+a.Link+'</a>') || '';
+  document.getElementById("details-desc").innerHTML = a.Desc.replace(/\[\[(.+?)\]\]/gi,"<a href=\"$1\" rel=\"external noreferrer\">$1</a>");; 
   document.getElementById("cal-details").style.bottom = "0"
 }
 function eventContent(a,evt) {
@@ -56,13 +62,6 @@ function eventContent(a,evt) {
   }
   text += shorthour;
   text += a.Title;
-  document.getElementById("details-title").innerHTML = a.Title;
-  document.getElementById("details-time").innerHTML = dayrange + ' ' + longhour;
-  document.getElementById("details-place").innerHTML = a.Place || '';
-  document.getElementById("details-link").innerHTML = ('<a href="'+ a.Link +'" rel="external noreferrer">'+a.Link+'</a>') || '';
-  document.getElementById("details-desc").innerHTML = a.Desc.replace(/\[\[(.+?)\]\]/gi,"<a href=\"$1\" rel=\"external noreferrer\">$1</a>");;
-  
-
   return text
 }
 function generateEvents(a,m,j,day) {
@@ -72,7 +71,7 @@ function generateEvents(a,m,j,day) {
     if (eventDate == thisDate) {
 	  let evt = document.createElement("div");
       evt.className += " cal-event"; 
-      evt.addEventListener("click", showDetails);
+      evt.addEventListener("click", function(){showDetails(i)});
 	  evt.setAttribute("tabindex","0");
 	  evt.setAttribute("data-index",i)
 	  day.setAttribute("tabindex","0");
