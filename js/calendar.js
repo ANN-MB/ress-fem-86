@@ -3,8 +3,8 @@ const days = [null, "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi",
       months = [null, "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
       calGrid = document.getElementById("cal-grid");
 var allDays = document.getElementsByClassName("cal-curr"),
-	eventsLength = events.length,
-	allDaysLength,
+    eventsLength = events.length,
+    allDaysLength,
     thisMonth,
     nowMonth;
 
@@ -69,15 +69,15 @@ function generateEvents(a,m,j,day) {
     var eventDate = events[i].DayStart.replace(/^0+/, ""),
         thisDate = j+"/"+m+"/"+a;
     if (eventDate == thisDate) {
-	  let evt = document.createElement("div");
+      let evt = document.createElement("div");
       evt.className += " cal-event"; 
       evt.addEventListener("click", function(){showDetails(i)});
-	  evt.setAttribute("tabindex","0");
-	  evt.setAttribute("data-index",i)
-	  day.setAttribute("tabindex","0");
-	  day.setAttribute("aria-label", j + " " + months[m] + " " + a);
-	  day.setAttribute("role","gridcell");
-	  evt.innerHTML = eventContent(events[i],evt);
+      evt.setAttribute("tabindex","0");
+      evt.setAttribute("data-index",i)
+      day.setAttribute("tabindex","0");
+      day.setAttribute("aria-label", j + " " + months[m] + " " + a);
+      day.setAttribute("role","gridcell");
+      evt.innerHTML = eventContent(events[i],evt);
       day.appendChild(evt);
     }
   }
@@ -102,7 +102,7 @@ function generateMonth(y,m) {
     let el = document.createElement("div");
     el.className += " cal-curr"; 
     (v && (i == f - 1)) && (el.className += " cal-today")
-	generateEvents(thisMonth.Year,thisMonth.Month,i+1,el);
+    generateEvents(thisMonth.Year,thisMonth.Month,i+1,el);
     calGrid.appendChild(el)
   }
     
