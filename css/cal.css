@@ -1,12 +1,30 @@
 @charset "utf-8";
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.fa::before {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.fa-link::before { content: "\f0c1" }
+.fa-quote::before { content: "\f10d";font-size:2rem; padding-right:2.1rem; float:left; }
+.fa-cross::before {content: "\f067"; transform: rotate(45deg) }
+.fa-clock::before {content: "\f017" }
+.fa-map-marker::before {content: "\f041"}
+
 :root {
-  color-scheme: light;
-  --event-bg: #333;
-  --event-color: #fefefe;
-  --grid-bg: transparent;
-  --days-number-color: #333;
-  --days-names-bg: transparent;
-  --nav-bg: transparent;
+  color-scheme: light dark;
+  --soft-black: #333;
+  --soft-white: #fefefe;
+  --borderColor: transparent;
+  --links: #0078A8;
 }
 html {
   box-sizing: border-box;
@@ -17,9 +35,10 @@ html {
 }
 body {
   margin: 0; padding: 0;
-  height: 100vh; overflow:hidden;
+  height: 100vh; overflow: hidden;
   background: #d7eeff linear-gradient(45deg, #8ec5fc, #e0c3fc) fixed;
   font-family: "Public Sans", "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: var(--soft-black);
 }
 body::before {
   content: "";
@@ -31,18 +50,17 @@ body::before {
   z-index: -1
 }
 #caltainer {
-  overflow: auto;
   position: relative;
   height: 100%;
+  overflow: auto;
 }
+
 #cal-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(auto-fill, 1fr);
   min-height: 100vh;
-  height:100%
-  background: var(--grid-bg);
-
+  height:110%
 }
 #cal-grid > div {
   height: 40px;
@@ -69,20 +87,18 @@ body::before {
   margin: .2rem;
   font-size: 1rem;
   text-align:center;
-  color: var(--days-number-color)
 }
 
 .cal-today::before {
-  background: #333;
-  color: #fefefe !important;
+  background: var(--soft-black);
+  color: var(--soft-white) !important;
   border-radius: 50%;
-  border: 1px solid #000;
 }
 
 .cal-prev, .cal-next, .cal-curr  {
   box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset, inset 0 1px 0 rgba(255,255,255,0.7);
   border: 1px solid rgba(0,0,0,0.1);
-   background: rgba(255,255,255,0.5);  
+  background: rgba(255,255,255,0.5);  
 }
 
 .cal-prev, .cal-next {
@@ -115,7 +131,6 @@ body::before {
   display: flex;
 }
 .days-names {
-  background: var(--days-names-bg);
   border-top: 1px solid var(--borderColor);
   margin-bottom: .1rem
 }
@@ -128,7 +143,6 @@ body::before {
 .cal-nav {
   width: 100%;
   padding: .2rem 0;
-  background: var(--nav-bg)
 }
 
 .cal-nav > div {
@@ -148,6 +162,10 @@ body::before {
 #go-next {
   flex: 1 1 auto;
   cursor: pointer;
+  border: 0;
+  background: transparent;
+  color: var(--soft-black);
+  text-decoration: none
 }
 
 #go-prev:focus,
@@ -158,11 +176,14 @@ body::before {
 #go-prev {
   text-align: right
 }
+#go-next {
+ text-align: left;
+}
 
 .cal-event {
   cursor: pointer;
-  background-color: var(--event-bg);
-  color: var(--event-color);
+  background: var(--soft-black);
+  color: var(--soft-white);
   border-radius:5px;
   padding: 2px;
   display: block;
@@ -170,24 +191,29 @@ body::before {
   font-size: 1rem;   
   word-break: break-word;  
   hyphens: auto;
+  text-decoration: none;
 }
 .cal-event:focus, .cal-event:hover {
-  color: #333;
-  background: #fefefe
+  color: var(--soft-black);
+  background: var(--soft-white)
 }
 #cal-details {
   position: fixed;
   bottom: -100%;
   width: 100%;
-  background: #fefefe;
-  color:#333;
+  background: var(--soft-white);
+  color: var(--soft-black);
   transition: bottom .5s ease;
-  border-top: 1px solid #333;
+  border-top: 1px solid var(--soft-black);
   padding: .9rem 1rem .5rem 1rem;
+  z-index: 999;
+  text-decoration: none
 }
 #cal-details > div {
   margin-bottom: 1rem;
-  
+}
+#cal-details a {
+  color: var(--links)
 }
 #details-title {
  font-size: 1.5rem;
@@ -199,25 +225,30 @@ body::before {
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  text-align:center;
+  text-align: center;
   padding-top: .15rem;
   position: absolute;
   width: 30px;
   height: 30px; 
-  background: #fefefe;
+  background: var(--soft-white);
   top: -15px;
   left: calc(50% - 15px);
   border-radius: 50px;
   margin-left: 5px;
-  border: 1px solid #333;
+  border: 1px solid var(--soft-black);
   cursor: pointer;
+  text-decoration: none;
 }
-
+#details-exit::before {
+  color: var(--soft-black);
+}
 #details-exit:hover {
-  color: #fefefe;
-  background: #333;
+  color: var(--soft-white);
+  background: var(--soft-black);
 }
-
+#details-exit:hover::before {
+  color: var(--soft-white);
+}
 #cal-details div:not(#details-exit)::before {
   width: 1.2rem
 }
@@ -226,4 +257,18 @@ body::before {
 }
 @media screen and (max-width:300px) {
   .days-names > div span {display:none}
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --soft-black: #fefefe;
+    --soft-white: #333;
+    --borderColor: #fefefe;
+    --links: #8cdeff
+  }
+  body::before {opacity:1 !important}
+  .cal-prev, .cal-next, .cal-curr  {
+    box-shadow: none;
+    background: transparent;
+  }
 }

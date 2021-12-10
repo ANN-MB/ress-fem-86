@@ -367,6 +367,7 @@ article, #modale {box-shadow: #888 0 0 2px, #888 0 3px 0}
 .bouton {box-shadow: #888 0 0 2px, #888 0 2px 0}
 .bouton:hover {background: #fefefe !important}
 
+/**************************************** FONT AWESOME ****************************************/
 .fa::before {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
@@ -403,7 +404,7 @@ article, #modale {box-shadow: #888 0 0 2px, #888 0 3px 0}
 .fa-link::before { content: "\f0c1" }
 .fa-link2::before { content: "\f0c6" }
 .fa-quote::before { content: "\f10d";font-size:2rem;padding-right:2.1rem;float:left; }
-.fa-quote::after { content: "\f10e"; font-size:2rem;padding-left:.2rem} 
+/*.fa-quote::after { content: "\f10e"; font-size:2rem;padding-left:.2rem} */
 .fa-spinner::before { content: "\f110" }
 .fa-youtube::before { content: "\f16a" }
 .fa-wheelchair::before { content: "\f193" }
