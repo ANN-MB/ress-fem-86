@@ -128,8 +128,13 @@ document.getElementById("details-exit").addEventListener("click", function(e) {
   e.preventDefault();
   document.getElementById("cal-details").style.bottom = "-100%";
 });
-
+function correctHeight(){
+  var vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", vh+"px");
+}
 window.addEventListener("DOMContentLoaded", function() {
   nowMonth = thisMonth = new RightTime();
   generateMonth();
+  correctHeight();
 },false);
+window.addEventListener("resize", correctHeight)
