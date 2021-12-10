@@ -38,14 +38,14 @@ function RightTime(a,m,j,h,min) {
 function showDetails(a) {
   a = events[a.getAttribute("data-index")];
   document.getElementById("details-title").innerHTML = a.Title;
-  document.getElementById("details-time").innerHTML = dayrange + ' ' + longhour;
+  document.getElementById("details-time").innerHTML = new getTimeText(a).DayRange + ' ' + (new getTimeText(a).LongHour || '');
   document.getElementById("details-place").innerHTML = a.Place || '';
-  document.getElementById("details-link").innerHTML = ('<a href="'+ a.Link +'" rel="external noreferrer">'+a.Link+'</a>') || '';
+  document.getElementById("details-link").innerHTML = a.Link ? ('<a href="'+ a.Link +'" rel="external noreferrer">'+a.Link+'</a>') : '';
   document.getElementById("details-desc").innerHTML = a.Desc.replace(/\[\[(.+?)\]\]/gi,"<a href=\"$1\" rel=\"external noreferrer\">$1</a>");; 
-  document.getElementById("cal-details").style.bottom = "0"
+  document.getElementById("cal-details").style.bottom = "0";
 }
-function eventContent(a,evt) {
-  var text ="", shorthour="", longhour="", dayrange="";
+function getTimeText(a) {
+  var shorthour, longhour, dayrange;
   if (a.TimeStart) {
     if (a.TimeEnd) {
 	  shorthour = "<b>"+a.TimeStart+" - "+a.TimeEnd+"</b><br/>";
@@ -60,9 +60,9 @@ function eventContent(a,evt) {
   } else {
     dayrange = "Le " + a.DayStart.split("/")[0] + " " + months[a.DayStart.split("/")[1]] + " " + a.DayStart.split("/")[2];
   }
-  text += shorthour;
-  text += a.Title;
-  return text
+  this.ShortHour = shorthour;
+  this.LongHour = longhour;
+  this.DayRange = dayrange;
 }
 function generateEvents(a,m,j,day) {
   for (let i = 0 ; i < eventsLength ; i++) {
@@ -77,7 +77,7 @@ function generateEvents(a,m,j,day) {
       day.setAttribute("tabindex","0");
       day.setAttribute("aria-label", j + " " + months[m] + " " + a);
       day.setAttribute("role","gridcell");
-      evt.innerHTML = eventContent(events[i],evt);
+      evt.innerHTML = (new getTimeText(events[i]).ShortHour || '') + events[i].Title;
       day.appendChild(evt);
     }
   }
