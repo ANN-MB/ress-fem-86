@@ -36,7 +36,7 @@ function RightTime(a,m,j,h,min) {
   this.DaysInWeekNext = 7 - this.LastDayOfMonth;
 }
 function showDetails(a) {
-  a = events[a];
+  a = events[a.getAttribute("data-index")];
   document.getElementById("details-title").innerHTML = a.Title;
   document.getElementById("details-time").innerHTML = dayrange + ' ' + longhour;
   document.getElementById("details-place").innerHTML = a.Place || '';
@@ -73,7 +73,7 @@ function generateEvents(a,m,j,day) {
       evt.className += " cal-event"; 
       evt.setAttribute("tabindex","0");
       evt.setAttribute("data-index",i)
-      evt.addEventListener("click", function(){showDetails(evt.getAttribute("data-index"))});
+      evt.addEventListener("click", function(){showDetails(this)});
       day.setAttribute("tabindex","0");
       day.setAttribute("aria-label", j + " " + months[m] + " " + a);
       day.setAttribute("role","gridcell");
