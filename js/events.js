@@ -1,6 +1,8 @@
 // IMPORTANT
 // Format correct pour les dates : 9/2/2022. Incorrect : 09/02/2022.
 // Format correct pour les heures : 08:22. Incorrect : 08h22.
+// All possibles entries are : Title, DayStart, DayEnd, TimeStart, TimeEnd, Link, Place, Desc (for description)
+// and Type. For "Type", add a style in "cal.css" on this model : .evt-fest {background: gold}
 
 const events = [{
   "Title": "Festival Les Menstrueuses",
