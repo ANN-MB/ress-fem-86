@@ -6,9 +6,11 @@
     <meta name="googlebot" content="noindex" />
     <meta name="robots" content="none" />
     <meta name="author" content="Ann MB" />
-    <meta name="description" content="Calendrier" />
+    <meta name="description" content="Agenda des ressources féministes et queer de Poitiers et de la Vienne" />
+    <meta name="color-scheme" content="dark light" />
+    <link rel="icon" href="img/favicon.png" type="image/png" />
     <link rel="stylesheet" href="css/cal.css" />     
-    <title>Agenda des ressources féministes et queer de Poitiers et de la Vienne</title>
+    <title>Calendrier</title>
   </head>
   <body>
     <div id="caltainer">
@@ -26,8 +28,9 @@
         <div>S<span>am<span>edi</span></span></div>
         <div>D<span>im<span>anche</span></span></div>
       </div>
+      <div id="noscript">Chargement du calendrier...<br/><small>S'il ne s'affiche pas c'est que JavaScript est désactivé.</small></div>
       <div id="cal-grid" role="grid"></div>
-      <div id="cal-details" aria-hidden="true">
+      <div id="cal-details" aria-hidden="true" tabindex="0">
         <div class="scrollable">
         <div id="details-title"></div>
         <div id="details-time" class="fa fa-clock"></div>
@@ -38,7 +41,7 @@
         <a href="#" id="details-exit" class="fa fa-cross" aria-label="Fermer la popup"></a>
       </div>
     </div>
-	  <script src="js/events.js"></script>
+    <script src="js/events.js"></script>
     <script src="js/calendar.js"></script>
   </body>
 </html>
