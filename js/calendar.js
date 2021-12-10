@@ -71,9 +71,9 @@ function generateEvents(a,m,j,day) {
     if (eventDate == thisDate) {
       let evt = document.createElement("div");
       evt.className += " cal-event"; 
-      evt.addEventListener("click", function(){showDetails(i)});
       evt.setAttribute("tabindex","0");
       evt.setAttribute("data-index",i)
+      evt.addEventListener("click", function(){showDetails(evt.getAttribute("data-index"))});
       day.setAttribute("tabindex","0");
       day.setAttribute("aria-label", j + " " + months[m] + " " + a);
       day.setAttribute("role","gridcell");
