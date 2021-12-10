@@ -1,10 +1,9 @@
-// License CC BY-SA 4.0 Ann MB - ann-mb.carrd.co
+// Calendar by Ann MB - License CC BY-SA 4.0 - ann-mb.carrd.co
 const days = [null, "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"],
       months = [null, "janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
       calGrid = document.getElementById("cal-grid");
 var allDays = document.getElementsByClassName("cal-curr"),
     eventsLength = events.length,
-    allDaysLength,
     thisMonth,
     nowMonth;
 
@@ -19,8 +18,8 @@ function RightTime(a,m,j,h,min) {
     this.Now = new Date(a, m-1, j, h, min);
   }
   this.Day = this.Now.getDate();
-  this.DayInWeek = this.Now.getDay();
-  this.DayInWeekName = days[this.DayInWeek];
+  //this.DayInWeek = this.Now.getDay();
+  //this.DayInWeekName = days[this.DayInWeek];
   this.Year = this.Now.getFullYear();
   this.Month = this.Now.getMonth() + 1;
   this.MonthName = months[this.Month];
@@ -28,15 +27,15 @@ function RightTime(a,m,j,h,min) {
   this.PrevMonthLength = new Date(this.Year, this.Month - 1, 0).getDate();
   let test1 = new Date(this.Year, this.Month - 1, 1).getDay();
   this.FirstDayOfMonth = (test1 == 0) ? 7 : test1;
-  this.FirstDayOfMonthName = days[this.FirstDayOfMonth];
+  //this.FirstDayOfMonthName = days[this.FirstDayOfMonth];
   let test2 = new Date(this.Year, this.Month, 0).getDay();
   this.LastDayOfMonth = (test2 == 0) ? 7 : test2;
-  this.LastDayOfMonthName = days[this.LastDayOfMonth];
+  //this.LastDayOfMonthName = days[this.LastDayOfMonth];
   this.DaysInWeekPrev = this.FirstDayOfMonth - 1;
   this.DaysInWeekNext = 7 - this.LastDayOfMonth;
 }
 function showDetails(a) {
-  a = events[a.getAttribute("data-index")];
+  a = events[a];
   document.getElementById("details-title").innerHTML = a.Title;
   document.getElementById("details-time").innerHTML = new getTimeText(a).DayRange + ' ' + (new getTimeText(a).LongHour || '');
   document.getElementById("details-place").innerHTML = a.Place || '';
@@ -48,12 +47,12 @@ function getTimeText(a) {
   var shorthour, longhour, dayrange;
   if (a.TimeStart) {
     if (a.TimeEnd) {
-	  shorthour = "<b>"+a.TimeStart+" - "+a.TimeEnd+"</b><br/>";
-	  longhour = "de " + a.TimeStart.split(":")[0] + "h" + a.TimeStart.split(":")[1] + " à " + a.TimeEnd.split(":")[0] + "h" + a.TimeEnd.split(":")[1];
-	} else {
-	  shorthour = "<b>"+a.TimeStart+"</b><br/>";
-	  longhour = "à " + a.TimeStart.split(":")[0] + "h" + a.TimeStart.split(":")[1];
-	}
+      shorthour = "<b>"+a.TimeStart+" - "+a.TimeEnd+"</b><br/>";
+      longhour = "de " + a.TimeStart.split(":")[0] + "h" + a.TimeStart.split(":")[1] + " à " + a.TimeEnd.split(":")[0] + "h" + a.TimeEnd.split(":")[1];
+    } else {
+      shorthour = "<b>"+a.TimeStart+"</b><br/>";
+      longhour = "à " + a.TimeStart.split(":")[0] + "h" + a.TimeStart.split(":")[1];
+    }
   }
   if (a.DayEnd) {
     dayrange = "Du " + a.DayStart.split("/")[0] + " " + months[a.DayStart.split("/")[1]] + " " + a.DayStart.split("/")[2] + " au " + a.DayEnd.split("/")[0] + " " + months[a.DayEnd.split("/")[1]] + " " + a.DayEnd.split("/")[2]
@@ -69,11 +68,11 @@ function generateEvents(a,m,j,day) {
     var eventDate = events[i].DayStart.replace(/^0+/, ""),
         thisDate = j+"/"+m+"/"+a;
     if (eventDate == thisDate) {
-      let evt = document.createElement("div");
+      let evt = document.createElement("a");
       evt.className += " cal-event"; 
-      evt.setAttribute("tabindex","0");
-      evt.setAttribute("data-index",i)
-      evt.addEventListener("click", function(){showDetails(this)});
+      evt.setAttribute("data-index", i);
+      evt.setAttribute("href","#");
+      evt.addEventListener("click", function(e){e.preventDefault();showDetails(i)});
       day.setAttribute("tabindex","0");
       day.setAttribute("aria-label", j + " " + months[m] + " " + a);
       day.setAttribute("role","gridcell");
@@ -89,7 +88,7 @@ function generateMonth(y,m) {
   calGrid.innerHTML = "";
   calGrid.style.counterReset = "curr-days next-days prev-days " + (date.PrevMonthLength - b);
   document.getElementById("month-year").innerHTML = date.MonthName + ", " + date.Year;
-
+  document.title = "Calendrier - " + date.MonthName + ", " + date.Year;
   for (let i = 0; i < b ; i++) {
     let el = document.createElement("div");
     el.className += " cal-prev";
@@ -107,12 +106,11 @@ function generateMonth(y,m) {
   }
     
   var d = date.DaysInWeekNext;
-  for (let i = 0; i < d ; i++) {
+  for (let i = 0 ; i < d ; i++) {
     let el = document.createElement("div");
     el.className += " cal-next";
     calGrid.appendChild(el)
   }
-  allDaysLength = c;
 }
 
 function changeMonth(a) {
@@ -124,13 +122,14 @@ function changeMonth(a) {
   generateMonth(y,m);
 }
 
-document.getElementById("go-prev").addEventListener("click", function() {changeMonth(-1)});
-document.getElementById("go-next").addEventListener("click", function() {changeMonth(+1)});
-document.getElementById("details-exit").addEventListener("click", function() {
-  document.getElementById("cal-details").style.bottom = "-100%"
+document.getElementById("go-prev").addEventListener("click", function(e) {e.preventDefault();changeMonth(-1)},false);
+document.getElementById("go-next").addEventListener("click", function(e) {e.preventDefault();changeMonth(+1)},false);
+document.getElementById("details-exit").addEventListener("click", function(e) {
+  e.preventDefault();
+  document.getElementById("cal-details").style.bottom = "-100%";
 });
 
 window.addEventListener("DOMContentLoaded", function() {
   nowMonth = thisMonth = new RightTime();
-  generateMonth();  
+  generateMonth();
 },false);
