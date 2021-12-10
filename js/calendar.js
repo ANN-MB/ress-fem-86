@@ -1,9 +1,10 @@
-// Calendar by Ann MB - License CC BY-SA 4.0 - ann-mb.carrd.co
+// Calendrier par Ann MB - Licence CC BY-SA 4.0 - ann-mb.carrd.co
 
 var allDays = document.getElementsByClassName("cal-curr"),
-    eventsLength = events.length, // events are in the events.js file
+    eventsLength = events.length, // see events.js file
     thisMonth,
-    nowMonth;
+    nowMonth,
+    storeFocus;
 const 
 $ = (id) => { return document.getElementById(id) },
 days = [null, "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"],
@@ -11,7 +12,7 @@ months = [null, "janvier", "février", "mars", "avril", "mai", "juin", "juillet"
 calGrid = $("cal-grid"),
 details = $("cal-details"),
 sleep = (ms) => {
-  return new Promise(resolve => setTimeout(resolve, ms))
+  return new Promise(resolve => setTimeout(resolve, ms));
 },
 correctHeight = () => {
   var vh = window.innerHeight * 0.01;
@@ -44,7 +45,7 @@ RightTime = function(a,m,j,h,min) {
   this.DaysInWeekPrev = this.FirstDayOfMonth - 1;
   this.DaysInWeekNext = 7 - this.LastDayOfMonth;
 },
-showDetails = function(a) {
+showDetails = function(a,b) {
   a = events[a];
   $("details-title").innerHTML = a.Title;
   $("details-time").innerHTML = new getTimeText(a).DayRange + ' ' + (new getTimeText(a).LongHour || '');
@@ -53,22 +54,27 @@ showDetails = function(a) {
   $("details-desc").innerHTML = a.Desc ? (a.Desc.replace(/\[\[(.+?)\]\]/gi,"<a href=\"$1\" rel=\"external noreferrer\">$1</a>")) : ''; 
   details.style.bottom = "0";
   details.setAttribute("aria-hidden","false");
+  details.focus();
+  storeFocus = b;
 },
 getTimeText = function(a) {
-  var shorthour, longhour, dayrange;
   if (a.TimeStart) {
     if (a.TimeEnd) {
-      shorthour = "<b>"+a.TimeStart+" - "+a.TimeEnd+"</b><br/>";
-      longhour = "de " + a.TimeStart.split(":")[0] + "h" + a.TimeStart.split(":")[1] + " à " + a.TimeEnd.split(":")[0] + "h" + a.TimeEnd.split(":")[1];
+      var s = a.TimeStart.split(":"), t = a.TimeEnd.split(":"),
+          shorthour = "<b>"+a.TimeStart+" - "+a.TimeEnd+"</b><br/>",
+          longhour = "de " + s[0] + "h" + s[1] + " à " + t[0] + "h" + t[1];
     } else {
-      shorthour = "<b>"+a.TimeStart+"</b><br/>";
-      longhour = "à " + a.TimeStart.split(":")[0] + "h" + a.TimeStart.split(":")[1];
+      var s = a.TimeStart.split(":"),
+          shorthour = "<b>"+a.TimeStart+"</b><br/>",
+          longhour = "à " + a.TimeStart.split(":")[0] + "h" + a.TimeStart.split(":")[1];
     }
   }
   if (a.DayEnd) {
-    dayrange = "Du " + a.DayStart.split("/")[0] + " " + months[a.DayStart.split("/")[1]] + " " + a.DayStart.split("/")[2] + " au " + a.DayEnd.split("/")[0] + " " + months[a.DayEnd.split("/")[1]] + " " + a.DayEnd.split("/")[2]
+    var s = a.DayStart.split("/"), t = a.DayEnd.split("/"),
+        dayrange = "Du " + s[0] + " " + months[s[1]] + " " + s[2] + " au " + t[0] + " " + months[t[1]] + " " + t[2]
   } else {
-    dayrange = "Le " + a.DayStart.split("/")[0] + " " + months[a.DayStart.split("/")[1]] + " " + a.DayStart.split("/")[2];
+    var s = a.DayStart.split("/"),
+        dayrange = "Le " + s[0] + " " + months[s[1]] + " " + s[2];
   }
   this.LongHour = longhour;
   this.DayRange = dayrange;
@@ -82,7 +88,7 @@ generateEvents = async function(a,m,j,day) {
       evt.className += " cal-event" + (events[i].Type ? (" evt-"+(events[i].Type).toLowerCase()) : "");
       evt.setAttribute("data-index", i);
       evt.setAttribute("href","#");
-      evt.addEventListener("click", function(e){e.preventDefault();showDetails(i)});
+      evt.addEventListener("click", function(e){e.preventDefault();showDetails(i,this)});
       day.setAttribute("tabindex","0");
       day.setAttribute("aria-label", thisMonth.DayInWeekName + " " + j + " " + months[m] + " " + a);
       day.setAttribute("role","gridcell");
@@ -137,11 +143,14 @@ $("details-exit").addEventListener("click", function(e) {
   e.preventDefault();
   details.style.bottom = "-100%";
   details.setAttribute("aria-hidden","true");
+  storeFocus.focus();
+  storeFocus = void 0;
 });
 
 window.addEventListener("DOMContentLoaded", function() {
   nowMonth = thisMonth = new RightTime();
   generateMonth();
   correctHeight();
+  $("noscript").style.display = "none";
 },false);
 window.addEventListener("resize", correctHeight);
