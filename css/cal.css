@@ -1,9 +1,8 @@
 @charset "utf-8";
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  src: url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), 
+       url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff');
 }
 .fa::before {
   display: inline-block;
@@ -25,7 +24,9 @@
   --soft-white: #fefefe;
   --borderColor: transparent;
   --links: #0078A8;
+
 }
+
 html {
   box-sizing: border-box;
   font-size: 100%;
@@ -183,6 +184,8 @@ body::before {
 
 .cal-event {
   cursor: pointer;
+  position: relative;
+  overflow:hidden;
   background: var(--soft-black);
   color: var(--soft-white);
   border-radius:5px;
@@ -193,10 +196,31 @@ body::before {
   word-break: break-word;  
   hyphens: auto;
   text-decoration: none;
+  transition: transform .4s ease, box-shadow .4s ease;
+  box-shadow: 0px 0px 0px #333;
 }
-.cal-event:focus, .cal-event:hover {
-  color: var(--soft-black);
-  background: var(--soft-white)
+.evt-national {
+  background: #00a9ff;
+  color: #fefefe !important;
+}
+.evt-fest {
+  background: #FFC300;
+  color: #111 !important;
+}
+.evt-politic {
+  background: #ff5583;
+}
+.evt-conference {
+  background: #03bd9e;
+}
+
+.cal-event:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 4px 7px rgba(0,0,0,.4);
+  z-index: 1000
+}
+.cal-event:focus {
+  outline: 2px dashed #fff;
 }
 #cal-details {
   position: fixed;
@@ -209,13 +233,13 @@ body::before {
   padding: .9rem 0 .5rem 1rem;
   z-index: 999;
   height: calc(100% - 15px);
+  border-radius: 5px 5px 0 0
 }
 .scrollable {
   overflow:auto;
-  height: 100%;
-  padding-right:1rem;
+  height: 100%
 }
-#cal-details > div {
+.scrollable > div {
   margin-bottom: 1rem;
 }
 #cal-details a {
