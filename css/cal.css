@@ -12,11 +12,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.fa-link::before { content: "\f0c1" }
-.fa-quote::before { content: "\f10d";font-size:2rem; padding-right:2.1rem; float:left; }
+.fa-link:not(:empty)::before { content: "\f0c1" }
+.fa-quote:not(:empty)::before { content: "\f10d";font-size:2rem; padding-right:2.1rem; float:left; }
 .fa-cross::before {content: "\f067"; transform: rotate(45deg) }
-.fa-clock::before {content: "\f017" }
-.fa-map-marker::before {content: "\f041"}
+.fa-clock:not(:empty)::before {content: "\f017" }
+.fa-map-marker:not(:empty)::before {content: "\f041"}
 
 :root {
   color-scheme: light dark;
@@ -240,6 +240,7 @@ body::before {
   height: calc(100% - 15px);
   border-radius: 5px 5px 0 0
 }
+
 .scrollable {
   overflow:auto;
   height: 100%
