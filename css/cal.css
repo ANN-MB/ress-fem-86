@@ -31,8 +31,9 @@ body::before {
   z-index: -1
 }
 #caltainer {
-  overflow-y: scroll;
+  overflow: auto;
   position: relative;
+  height: 100%;
 }
 #cal-grid {
   display: grid;
