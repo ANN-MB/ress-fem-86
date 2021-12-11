@@ -222,7 +222,6 @@ ul {
 article {
   width: 500px;
   padding: 5px 0 9px 0;
-  transition: all 1s ease;
   will-change: top, left;
 }
 article a:hover, nav a, .bouton {color:inherit}
