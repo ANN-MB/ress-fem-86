@@ -278,15 +278,15 @@ h3 {
 .conv img {background-position:0 19.230769%}
 .cult {background-position:0 23.076923%}
 .doc {background-position:0 26.923077%}
-.fb img {background-position:0 30.769231%}
+.fb, .fb img {background-position:0 30.769231%}
 .heal {background-position:0 34.615385%}
 .host {background-position:0 38.461538%}
-.ig img {background-position:0 42.307692%}
+.ig, .ig img {background-position:0 42.307692%}
 .info img {background-position:0 46.153846%}
 .lng img {background-position:0 50.000000%}
 .loc img {background-position:0 53.846154%}
 .mail img {background-position:0 57.692308%}
-.num img {background-position:0 61.538462%}
+.num, .num img {background-position:0 61.538462%}
 .park img {background-position:0 65.384615%}
 .pers {background-position:0 69.230769%}
 .prix img {background-position:0 73.076923%}
