@@ -17,9 +17,11 @@ html {
   box-sizing: border-box;
   font-size: 100%;
 }
+
 *, *::before, *::after {
   box-sizing:inherit;
 }
+
 body {
   margin: 0; padding: 0;
   height: 100vh; overflow: hidden;
@@ -27,6 +29,7 @@ body {
   font-family: "Public Sans", "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   color: var(--soft-black);
 }
+
 body::before {
   content: "";
   display: block; position: absolute;
@@ -36,6 +39,7 @@ body::before {
   opacity: 0; transition: opacity 1s ease; will-change: opacity;
   z-index: -1
 }
+
 #noscript {
   margin-top: 2em;
   font-size: 2em;
@@ -43,6 +47,7 @@ body::before {
   width: 100%;
   text-align:center
 }
+
 #caltainer {
   position: relative;
   height: 100vh;
@@ -57,18 +62,22 @@ body::before {
   min-height: 100vh;
   height:100%;
 }
+
 #cal-grid > div {
   height: 40px;
   display: inline-block;
   height: 100%;
 }
+
 #cal-grid > div, .days-names div {
   border-bottom: 1px solid var(--borderColor);
   border-right: 1px solid var(--borderColor);
 }
+
 #cal-grid > div:nth-child(7n), .days-names div:nth-last-child(1)  {
   border-right: 0;
 }
+
 #cal-grid > div:nth-last-child(-n+7) {
   border-bottom: 0;
 }
@@ -77,7 +86,6 @@ body::before {
   display: flex;
   justify-content: center;
   align-content: center;
-  flex-direction: column;
   width: 1.5rem; height: 1.5rem;
   margin: .2rem;
   font-size: 1rem;
@@ -88,10 +96,11 @@ body::before {
   background: var(--soft-black);
   color: var(--soft-white) !important;
   border-radius: 50%;
+
 }
 
 .cal-prev, .cal-next, .cal-curr  {
-  box-shadow: 0 1px 0 white inset, inset 0 1px 0 rgba(255,255,255,0.7);
+  box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset, inset 0 1px 0 rgba(255,255,255,0.7);
   border: 1px solid rgba(0,0,0,0.1);
   background: rgba(255,255,255,0.5);  
 }
@@ -115,20 +124,20 @@ body::before {
   counter-increment: next-days;
 }
 
-.cal-nav,
-.days-names {
+.cal-nav, .days-names {
   user-select: none;
   font-size: 1.1rem
 }
 
-.days-names,
-.cal-nav {
+.days-names, .cal-nav {
   display: flex;
 }
+
 .days-names {
   border-top: 1px solid var(--borderColor);
   margin-bottom: .1rem
 }
+
 .days-names > div {
   display: inline-block;
   width: 14.285714286%;
@@ -153,8 +162,7 @@ body::before {
   text-transform: uppercase;
 }
 
-#go-prev,
-#go-next {
+#go-prev, #go-next {
   flex: 1 1 auto;
   cursor: pointer;
   border: 0;
@@ -163,18 +171,15 @@ body::before {
   text-decoration: none
 }
 
-#go-prev:focus,
-#go-next:focus {
+#go-prev:focus, #go-next:focus {
   outline: 1px dashed #fff;
 }
-
 #go-prev {
   text-align: right
 }
 #go-next {
  text-align: left;
 }
-
 .cal-event {
   cursor: pointer;
   position: relative;
@@ -191,14 +196,49 @@ body::before {
   text-decoration: none;
   transition: transform .4s ease, box-shadow .4s ease;
   box-shadow: 0px 0px 0px #333;
+}/*
+.cal-event:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 4px 7px rgba(0,0,0,.4);
+  z-index: 888
+}*/
+.cal-event:focus {
+  outline: 2px dashed #fff;
+}
+/*.cal-event.multi {
+  visibility: hidden;
+}
+.cal-event.first-day {
+  position: absolute;
+  width: calc(100vw * 4 * 14.285714286);
+  margin-left: 0
+}*/
+.pos-s {
+  border-radius: 5px 0 0 5px;
+  margin-right: -1px;
+  padding-right: 2px;
+}
+.pos-m {
+  border-radius: 0;
+  margin-right: -1px;
+  margin-left: -1px;
+  padding-left: 2px;
+  padding-right: 2px;
+  color: rgba(0,0,0,0) !important
+}
+.pos-e {
+  border-radius: 0 5px 5px 0;
+  margin-left:-1px;
+  padding-left:2px;
+  color: rgba(0,0,0,0) !important
 }
 .evt-national {
   background: #76BF9E;
-  color: #fefefe !important;
+  color: #fefefe ;
 }
 .evt-fest {
   background: #E0938C;
-  color: #333 !important;
+  color: #333 ;
 }
 .evt-politic {
   background: #ff5583;
@@ -206,14 +246,7 @@ body::before {
 .evt-conference {
   background: #03bd9e;
 }
-.cal-event:hover {
-  transform: scale(1.2);
-  box-shadow: 0px 4px 7px rgba(0,0,0,.4);
-  z-index: 888
-}
-.cal-event:focus {
-  outline: 2px dashed #fff;
-}
+
 #cal-details {
   position: fixed;
   bottom: -100%;
@@ -275,6 +308,20 @@ body::before {
 #cal-details div:not(#details-exit)::before {
   width: 1.2rem
 }
+/*
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  #caltainer {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+	height:100vw;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+}*/
+
 .fa::before {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
@@ -295,20 +342,7 @@ body::before {
 @media screen and (max-width:300px) {
   .days-names > div span {display:none}
 }
-/*
-@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
-  html {
-    transform: rotate(-90deg);
-    transform-origin: left top;
-    width: 100vh;
-    height: 100vw;
-    overflow-x: hidden;
-    position: absolute;
-    top: 100%;
-    left: 0;
-  }
-}
-*/
+
 @media (prefers-color-scheme: dark) {
   :root {
     --soft-black: #fefefe;
