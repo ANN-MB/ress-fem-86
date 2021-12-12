@@ -1,23 +1,16 @@
 // Calendrier par Ann MB - Licence CC BY-SA 4.0 - ann-mb.carrd.co
-
 var 
 allDays = document.getElementsByClassName("cal-curr"),
 eventsLength = events.length, //voir events.js
-thisMonth,
-nowMonth,
-storeFocus;
+thisMonth, nowMonth, storeFocus;
 const 
 $ = (id) => { return document.getElementById(id) },
 days = [null, "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"],
 months = [null, "janvier", "f\u00e9vrier", "mars", "avril", "mai", "juin", "juillet", "ao\u00fbt", "septembre", "octobre", "novembre", "d\u00e9cembre"],
 calGrid = $("cal-grid"),
 details = $("cal-details"),
-sleep = (ms) => {
-  return new Promise(r => setTimeout(r, ms));
-},
-correctHeight = () => {
-  var vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty("--vh", vh+"px");
+sleep = (ms) => {return new Promise(r => setTimeout(r, ms));},
+correctHeight = () => {document.documentElement.style.setProperty("--vh", (window.innerHeight * 0.01)+"px");
 },
 RightTime = function(a,m,j,h,min) {
   a || m || j || h || min ? (!m && (m = 1), !j && (j = 1), !h && (h = 0), !min && (min = 0), this.Now = new Date(a, m - 1, j, h, min)) : this.Now = new Date();
@@ -60,31 +53,27 @@ showDetails = (a,b) => {
   details.focus();
   storeFocus = b;
 },
-generateEvents = async (a,m,j,day) => {
+generateEvents = async (a,m,j,d) => {
   for (let i = eventsLength ; i--;) {
-    var x = events[i],
-        eventDate = x.DayStart,
-        thisDate = j+"/"+m+"/"+a;
+    var x = events[i], eventDate = x.DayStart, thisDate = j+"/"+m+"/"+a;
     if (eventDate == thisDate) {
       let evt = document.createElement("a");
       evt.className += " cal-event" + (x.Type ? (" evt-"+(x.Type).toLowerCase()) : "");
       evt.setAttribute("data-index", i);
       evt.setAttribute("href","#");
       evt.addEventListener("click", function(e){e.preventDefault();showDetails(i,this)});
-      day.setAttribute("tabindex","0");
-      day.setAttribute("aria-label", thisMonth.DayInWeekName + " " + j + " " + months[m] + " " + a);
-      day.setAttribute("role","gridcell");
+      d.setAttribute("tabindex","0");
+      d.setAttribute("aria-label", thisMonth.DayInWeekName + " " + j + " " + months[m] + " " + a);
+      d.setAttribute("role","gridcell");
       var shorthour = x.TimeStart ? x.TimeEnd ? "<b>"+x.TimeStart+" - "+x.TimeEnd+"</b><br/>" : "<b>"+x.TimeStart+"</b><br/>" : "";
       evt.innerHTML = shorthour + x.Title;
-      day.appendChild(evt);
+      d.appendChild(evt);
     }
     await sleep(5)
   }
 },
 generateMonth = (y,m) => {
-  var date = new RightTime(y,m),
-      b = date.DaysInWeekPrev,
-      f = nowMonth.Day;
+  var date = new RightTime(y,m), b = date.DaysInWeekPrev, f = nowMonth.Day;
   calGrid.innerHTML = "";
   calGrid.style.counterReset = "curr-days next-days prev-days " + (date.PrevMonthLength - b);
   $("month-year").innerHTML = date.MonthName + ", " + date.Year;
@@ -94,8 +83,7 @@ generateMonth = (y,m) => {
     el.className += " cal-prev";
     calGrid.appendChild(el)
   }
-  var c = date.MonthLength,
-      v = nowMonth.Year == date.Year && nowMonth.Month == date.Month;
+  var c = date.MonthLength, v = nowMonth.Year == date.Year && nowMonth.Month == date.Month;
   for (let i = 0; i < c ; i++) {
     let el = document.createElement("div");
     el.className += " cal-curr"; 
@@ -112,8 +100,7 @@ generateMonth = (y,m) => {
 },
 changeMonth = (a,e) => {
   e.preventDefault();
-  var m = thisMonth.Month + a,
-      y = thisMonth.Year;
+  var m = thisMonth.Month + a, y = thisMonth.Year;
   13 == m && (m = 1, y++);
   0 == m && (m = 12, y--);
   thisMonth = new RightTime(y,m);
@@ -134,6 +121,6 @@ window.addEventListener("DOMContentLoaded", function() {
   nowMonth = thisMonth = new RightTime();
   generateMonth();
   correctHeight();
-  $("noscript").style.display = "none";
+  $("noscript") && ($("noscript").style.display = "none");
 },!1);
 window.addEventListener("resize", correctHeight);
