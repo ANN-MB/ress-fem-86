@@ -9,7 +9,6 @@ const mbox = document.getElementById("mapbox"),
       cate = document.getElementById("categories"),
       city = document.getElementById("city"),
       nmbr = document.getElementById("numbr"),
-      impo = document.getElementById("modale"),
       alph = document.getElementById("alph-cont"),
       exit = document.getElementById("exit-map"),
       cttb = document.getElementById("contact-box"),
@@ -53,7 +52,6 @@ const mbox = document.getElementById("mapbox"),
 document.addEventListener("click", function(e) {
   var t = e.target, a = t.closest("article");
   t == exit && closeMap();
-  t.id == "exit-modale" && (impo.style.display = "none", window.localStorage.setItem("modale", !0));
   t.id == "totop" && (e.preventDefault(), document.querySelector("header").scrollIntoView({behavior:"smooth"}));
   t.id == "contact" && (e.preventDefault(), (cttb.style.display=="block")?(cttb.style.display="none"):(cttb.style.display="block"));
   //t.id == "agenda" && (e.preventDefault(),document.getElementById("calendar-box").style.display="block",document.getElementById("contact-box").style.display="none");
@@ -85,7 +83,6 @@ document.addEventListener("keydown", function(e){
 window.addEventListener("DOMContentLoaded", function() {
   cate.selectedIndex = city.selectedIndex = alph.selectedIndex = 0;
   nmbr.innerHTML = "(" + artl + "&nbsp;r&eacute;sultats)";
-  window.localStorage.getItem("modale") || (impo.style.display = "block");
 },false);
 
 window.addEventListener("load", function(event) {
