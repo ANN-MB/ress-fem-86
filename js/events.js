@@ -1,4 +1,5 @@
 const evt = [
+
 {
   "Title": "«&nbsp;Fluctuations&nbsp;»",
   "DayStart": "9/12/2021",
@@ -23,6 +24,23 @@ const evt = [
   "Link": "https://www.facebook.com/events/58775322912310/",
   "Place": "Le ZINC<br/>196, Grand'rue<br/>86000 POITIERS"
 },
+{
+  "Title": "Exposition : Satire graphique et féminisme en Espagne (1975-2020)<br/><b>jusqu'au 30 janvier</b>",
+  "DayStart": "2/12/2021",
+  "Place":"UFR Lettres & Langues de l'université de Poitiers",
+  "Link":"https://cutt.ly/iYFhaOD",
+  "Desc":"",
+  "Type":"Expo"
+},
+{
+  "Title": "Festival Égale à égal",
+  "DayStart": "1/12/2021",
+  "DayEnd": "10/12/2021",
+  "Place":"Divers lieux - Poitiers",
+  "Link":"https://www.festivalegaleaegal.com/",
+  "Desc":"5<sup>ème</sup> ÉDITION<br/>À l'initiative d'HF Nouvelle Aquitaine, égalité femme homme dans les arts et la culture",
+  "Type":"Fest"
+},	
 {
   "Title": "Journée du souvenir de l'Holocauste",
   "DayStart": "20/1/2022",
