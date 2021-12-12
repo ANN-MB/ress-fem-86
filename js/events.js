@@ -1,12 +1,5 @@
-const events = [{
-  "Title": "Festival Les Menstrueuses",
-  "DayStart": "9/12/2021",
-  "DayEnd": "10/12/2021",
-  "Type" : "Fest",
-  "Link": "https://emf.fr/ec3_event/les-menstrueuses/",
-  "Place":"Divers lieux, 86000 POITIERS",
-  "Desc":"Les Menstrueuses, c'est une série d'événements avec des ateliers, des conférences et une journée d'étude pour parler des règles et de leur place dans nos vies\n🎟️ Gratuit | sur réservation\nProgramme et réservation 👉 [[https://emf.fr/39000]]"
-}, {
+const evt = [
+{
   "Title": "«&nbsp;Fluctuations&nbsp;»",
   "DayStart": "9/12/2021",
   "TimeStart": "14:00",
@@ -15,12 +8,12 @@ const events = [{
 },
 {
   "Title": "Festival Les Menstrueuses",
-  "DayStart": "10/12/2021",
+  "DayStart": "9/12/2021",
   "DayEnd": "10/12/2021",
   "Type" : "Fest",
   "Link": "https://emf.fr/ec3_event/les-menstrueuses/",
   "Place":"Divers lieux, 86000 POITIERS",
-  "Desc":"Les Menstrueuses, c'est une série d'événements avec des ateliers, des conférences et une journée d'étude pour parler des règles et de leur place dans nos vies<br/>🎟️ Gratuit | sur réservation<br/>Programme et réservation 👉 <a href=\"https://emf.fr/39000\">https://emf.fr/39000</a>"
+  "Desc":"Les Menstrueuses, c'est une série d'événements avec des ateliers, des conférences et une journée d'étude pour parler des règles et de leur place dans nos vies\n🎟️ Gratuit | sur réservation\nProgramme et réservation 👉 [[https://emf.fr/39000]]"
 },
 {
   "Title": "Liberation Party + concert des Petites Lèvres ",
