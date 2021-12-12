@@ -47,6 +47,14 @@ const evt = [
   "Type" : "National"
 },
 {
+  "Title": "Exposition : Satire graphique et féminisme en Espagne (1975-2020)",
+  "DayStart": "1/1/2022",
+  "DayEnd": "30/1/2022",
+  "Place":"UFR Lettres & Langues de l'université de Poitiers",
+  "Link":"https://cutt.ly/iYFhaOD",
+  "Type":"Expo"
+},
+{
   "Title": "Journée internationale des femmes et des filles de science",
   "DayStart": "11/2/2022",
   "Type" : "National"

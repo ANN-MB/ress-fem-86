@@ -25,10 +25,9 @@ RightTime = function(a,m,j,h,min) {
   this.DaysInWeekNext = 7 - this.LastDayOfMonth;
 };
 
-var events = [];
-var lolL = evt.length
+var events = [], evtL = evt.length;
 
-for (var i = 0 ; i < lolL; i++) {
+for (var i = 0 ; i < evtL; i++) {
   if (evt[i].DayEnd) {
     var start = evt[i].DayStart.split("/");
     var end = evt[i].DayEnd.split("/")[0];
@@ -43,12 +42,8 @@ for (var i = 0 ; i < lolL; i++) {
       
 	    if (newe.DayStart == evt[i].DayStart) {
         newe.pos = "s";
-        /*if (duration > 8 - firstDayOfEvent) {
-          newe.long = 8 - firstDayOfEvent
-        }  */
       } else if (newe.DayStart == evt[i].DayEnd) {
         newe.pos = "e";
-        //newe.long = 1
       } else { 
         newe.pos = "m";
       }
@@ -175,4 +170,3 @@ window.addEventListener("DOMContentLoaded", function() {
   $("noscript").style.display = "none";
 },!1);
 window.addEventListener("resize", correctHeight);
-
