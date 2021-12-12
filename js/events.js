@@ -1,5 +1,4 @@
 const evt = [
-
 {
   "Title": "«&nbsp;Fluctuations&nbsp;»",
   "DayStart": "9/12/2021",
