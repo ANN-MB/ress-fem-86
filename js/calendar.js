@@ -1,34 +1,4 @@
 // Calendrier par Ann MB - Licence CC BY-SA 4.0 - ann-mb.carrd.co
-
-var events = [];
-var lolL = evt.length
-
-for (var i = 0 ; i < lolL; i++) {
-  if (evt[i].DayEnd) {
-    var start = evt[i].DayStart.split("/");
-    var end = evt[i].DayEnd.split("/")[0];
-    var duration = end - start[0] + 1;
-    
-	for (var j = 0 ; j < duration ; j++) {
-      var newe = Object.assign({}, evt[i])
-	  newe.DayStart = end - j + "/" + start[1] + "/" + start[2];
-	  if (newe.DayStart == evt[i].DayStart) { newe.pos = "s"} else
-	  if (newe.DayStart == evt[i].DayEnd) { newe.pos = "e" } else 
-      { newe.pos = "m" }
-
-	  events.push(newe)
-    }
-  }	else {
-	events.push(evt[i])
-  }
-}
-console.log(events)
-var 
-allDays = document.getElementsByClassName("cal-curr"),
-eventsLength = events.length, //voir events.js
-thisMonth,
-nowMonth,
-storeFocus;
 const 
 $ = (id) => { return document.getElementById(id) },
 days = [null, "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"],
@@ -40,7 +10,7 @@ correctHeight = () => { document.documentElement.style.setProperty("--vh", (wind
 RightTime = function(a,m,j,h,min) {
   a || m || j || h || min ? (!m && (m = 1), !j && (j = 1), !h && (h = 0), !min && (min = 0), this.Now = new Date(a, m - 1, j, h, min)) : this.Now = new Date();
   this.Day = this.Now.getDate();
-  this.DayInWeek = this.Now.getDay();
+  this.DayInWeek = 0 == this.Now.getDay() ? 7 : this.Now.getDay();
   this.DayInWeekName = days[this.DayInWeek];
   this.Year = this.Now.getFullYear();
   this.Month = this.Now.getMonth() + 1;
@@ -53,9 +23,57 @@ RightTime = function(a,m,j,h,min) {
   this.LastDayOfMonth = (0 == test2) ? 7 : test2;
   this.DaysInWeekPrev = this.FirstDayOfMonth - 1;
   this.DaysInWeekNext = 7 - this.LastDayOfMonth;
-},
-showDetails = (a,b) => {
-  a = events[a];
+};
+
+var events = [];
+var lolL = evt.length
+
+for (var i = 0 ; i < lolL; i++) {
+  if (evt[i].DayEnd) {
+    var start = evt[i].DayStart.split("/");
+    var end = evt[i].DayEnd.split("/")[0];
+    var duration = end - start[0] + 1;
+    var firstDayOfEvent = new RightTime(start[2],start[1],start[0]).DayInWeek;
+  
+    for (var j = 0 ; j < duration ; j++) {
+      var newe = Object.assign({}, evt[i])
+      var diw = new RightTime(start[2],start[1],end-j).DayInWeek;
+      
+	    newe.DayStart = end - j + "/" + start[1] + "/" + start[2];
+      
+	    if (newe.DayStart == evt[i].DayStart) {
+        newe.pos = "s";
+        /*if (duration > 8 - firstDayOfEvent) {
+          newe.long = 8 - firstDayOfEvent
+        }  */
+      } else if (newe.DayStart == evt[i].DayEnd) {
+        newe.pos = "e";
+        //newe.long = 1
+      } else { 
+        newe.pos = "m";
+      }
+      1 == diw && (newe.long = 1)
+      newe.index = i
+      events.push(newe)
+    }
+  }	else {
+    var newe = Object.assign({}, evt[i])
+    newe.index = i;
+	  events.push(newe)
+  }
+}
+
+var 
+allDays = document.getElementsByClassName("cal-curr"),
+eventsLength = events.length,
+thisMonth,
+nowMonth,
+storeFocus;
+
+const showDetails = (a,e) => {
+  e.preventDefault();
+  storeFocus = a;
+  a = evt[a.getAttribute("data-index")];
   if (a.TimeStart) {
     if (a.TimeEnd) {
       var s = a.TimeStart.split(":"), t = a.TimeEnd.split(":"), longhour = "de " + s[0] + "h" + s[1] + " \u00e0 " + t[0] + "h" + t[1];
@@ -74,30 +92,31 @@ showDetails = (a,b) => {
   $("details-link").innerHTML = a.Link ? ('<a href="'+ a.Link +'" rel="external noreferrer">'+a.Link+'</a>') : '';
   $("details-desc").innerHTML = a.Desc ? (a.Desc.replace(/\[\[(.+?)\]\]/gi,"<a href=\"$1\" rel=\"external noreferrer\">$1</a>")) : ''; 
   details.style.bottom = "0";
-  details.setAttribute("aria-hidden","!1");
+  details.setAttribute("aria-hidden","false");
   details.focus();
-  storeFocus = b;
+  
 },
 generateEvents = async (a,m,j,day) => {
   for (let i = eventsLength ; i--;) {
     var x = events[i], eventDate = x.DayStart, thisDate = j+"/"+m+"/"+a;
     if (eventDate == thisDate) {
-      let evt = document.createElement("a");
-      evt.className += " cal-event" + (x.Type ? (" evt-"+(x.Type).toLowerCase()) : "");
+      let evnt = document.createElement("a");
+      evnt.className += " cal-event" + (x.Type ? (" evt-"+(x.Type).toLowerCase()) : "");
       if (x.DayEnd) {
-	    "s" == x.pos && (evt.className += " pos-s")
-	    "m" == x.pos && (evt.className += " pos-m")
-	    "e" == x.pos && (evt.className += " pos-e")
-	  }
-      evt.setAttribute("data-index", i);
-      evt.setAttribute("href","#");
-      evt.addEventListener("click", function(e){e.preventDefault();showDetails(i,this)});
+	      "s" == x.pos && (evnt.className += " pos-s")
+	      "m" == x.pos && (evnt.className += " pos-m")
+	      "e" == x.pos && (evnt.className += " pos-e")
+	    }
+      evnt.setAttribute("data-index", x.index);
+      evnt.setAttribute("href","#");
+      evnt.addEventListener("click", function(e){showDetails(this,e)});
+      x.long && (evnt.className += " long long-"+x.long)
       day.setAttribute("tabindex","0");
       day.setAttribute("aria-label", thisMonth.DayInWeekName + " " + j + " " + months[m] + " " + a);
       day.setAttribute("role","gridcell");
       var shorthour = x.TimeStart ? x.TimeEnd ? "<b>"+x.TimeStart+" - "+x.TimeEnd+"</b><br/>" : "<b>"+x.TimeStart+"</b><br/>" : "";
-      evt.innerHTML = shorthour + x.Title;
-      day.appendChild(evt);
+      evnt.innerHTML = shorthour + '<div class="evt-title">'+x.Title+'</div>';
+      day.appendChild(evnt);
     }
     await sleep(5)
   }
