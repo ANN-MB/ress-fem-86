@@ -13,7 +13,7 @@ html {
   font-size: 100%
 }
 *, *::before, *::after {box-sizing: inherit}
-.body {
+body {
   position: relative;
   margin: 0; padding: 0;
   line-height: 1.3;
@@ -23,7 +23,7 @@ html {
   background: #d7eeff linear-gradient(45deg, #8ec5fc, #e0c3fc) fixed;
   font-family: "Public Sans", "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
-.body::after {content: url(img/sprite.png) url(img/logo.png)}
+body::after {content: url(img/sprite.png) url(img/logo.png)}
 body::before {
   content: "";
   display: block; position: absolute;
@@ -88,7 +88,7 @@ h1 img {transition: filter 1s ease}
 nav > div:hover {
   background: #fff !important
 }
-nav div:hover select,  nav div:hover a{
+nav > div:hover select,  nav > div:hover a{
   background: transparent
 }
 nav {
@@ -145,7 +145,7 @@ select {
   border: 0;
   outline: none;
 }
-select, option, nav div:hover select {
+select, option, nav > div:hover select {
   color: inherit;
   background: transparent;
 }
@@ -354,7 +354,7 @@ h3 {
 .C12 {background:#95c44b} .C13 {background:#007139} .C14 {background:#a69e42} 
 .C15 {background:#1b7b6a} .C16 {background:#46b052}
 /*** COLORS ***/
-.body, #modale a:nth-of-type(2):hover {color: #333}
+body, #modale a:nth-of-type(2):hover {color: #333}
 header {
   background: rgba(255,255,255,0.4) ;
   box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset, inset 0 1px 0 rgba(255,255,255,0.7);
@@ -446,8 +446,8 @@ article, #modale {box-shadow: #888 0 0 2px, #888 0 3px 0}
   clip: auto;
 }
 @media (prefers-color-scheme: dark) {
-  .body, #modale a:nth-of-type(2):hover {color:#ddd}
-  .body::before {opacity:1 !important}
+  body, #modale a:nth-of-type(2):hover {color:#ddd}
+  body::before {opacity:1 !important}
   h1 {background: #333}
   header {border-bottom: 1px solid #efefef}
   h1 img {filter:none}
@@ -471,13 +471,13 @@ article, #modale {box-shadow: #888 0 0 2px, #888 0 3px 0}
 }
 @page {size:A4 portrait}
 @media print { 
-  html, .body {height:auto !important; overflow:auto !important}
+  html, body {height:auto !important; overflow:auto !important}
   #container {overflow: hidden}
   main {display: block; height: auto !important}
   h1 {border:0}
   h2 {border-bottom: 1px dashed #333 !important}
   a {text-decoration:none !important; color:#000 !important}
-  .body, article, header, h1, .body::before {color:#000 !important; background:#fff !important}
+  body, article, header, h1, body::before {color:#000 !important; background:#fff !important}
   nav, footer, #modale, #totop, #mapbox, h1 img {display:none !important}
   article {box-shadow:none !important;break-inside: avoid;border-radius: 0;width: 100% !important;position: relative !important;top: unset !important;left: unset !important}
   article {border: 2px solid #555 !important}

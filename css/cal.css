@@ -4,19 +4,6 @@
   src: url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), 
        url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff');
 }
-.fa::before {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.fa-link:not(:empty)::before { content: "\f0c1" }
-.fa-quote:not(:empty)::before { content: "\f10d";font-size:2rem; padding-right:2.1rem; float:left; }
-.fa-cross::before {content: "\f067"; transform: rotate(45deg) }
-.fa-clock:not(:empty)::before {content: "\f017" }
-.fa-map-marker:not(:empty)::before {content: "\f041"}
 
 :root {
   color-scheme: light dark;
@@ -104,7 +91,7 @@ body::before {
 }
 
 .cal-prev, .cal-next, .cal-curr  {
-  box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset, inset 0 1px 0 rgba(255,255,255,0.7);
+  box-shadow: 0 1px 0 white inset, inset 0 1px 0 rgba(255,255,255,0.7);
   border: 1px solid rgba(0,0,0,0.1);
   background: rgba(255,255,255,0.5);  
 }
@@ -288,12 +275,27 @@ body::before {
 #cal-details div:not(#details-exit)::before {
   width: 1.2rem
 }
+.fa::before {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.fa-link:not(:empty)::before { content: "\f0c1" }
+.fa-quote:not(:empty)::before { content: "\f10d";font-size:2rem; padding-right:2.1rem; float:left; }
+.fa-cross::before {content: "\f067"; transform: rotate(45deg) }
+.fa-clock:not(:empty)::before {content: "\f017" }
+.fa-map-marker:not(:empty)::before {content: "\f041"}
+
 @media screen and (max-width:740px) {
   .days-names > div span span {display:none}
 }
 @media screen and (max-width:300px) {
   .days-names > div span {display:none}
-}/*
+}
+/*
 @media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
   html {
     transform: rotate(-90deg);
@@ -305,7 +307,8 @@ body::before {
     top: 100%;
     left: 0;
   }
-}*/
+}
+*/
 @media (prefers-color-scheme: dark) {
   :root {
     --soft-black: #fefefe;
