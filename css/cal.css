@@ -104,7 +104,7 @@ body::before {
 }
 
 .cal-prev, .cal-next, .cal-curr  {
-  box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset, inset 0 1px 0 rgba(255,255,255,0.7);
+  box-shadow: 0 1px 0 white inset, inset 0 1px 0 rgba(255,255,255,0.7);
   border: 1px solid rgba(0,0,0,0.1);
   background: rgba(255,255,255,0.5);  
 }
@@ -245,9 +245,6 @@ body::before {
   padding-left:2px;
   overflow:hidden;
 }
-
-
-
 .evt-national {
   background: #76BF9E;
   color: #fefefe ;
@@ -367,8 +364,14 @@ body::before {
     --links: #8cdeff
   }
   body::before {opacity:1 !important}
-  .cal-prev, .cal-next, .cal-curr  {
-    box-shadow: none;
-    background: transparent;
+  #cal-grid {
+    margin-top: -2px
   }
+  #cal-grid > div  {
+    box-shadow: none;
+    border-top:0
+  }
+  .days-names, .days-names {border:0}
+  .cal-curr { background: transparent}
+  .cal-prev, .cal-next   { background: rgba(255,255,255,.3)}
 }

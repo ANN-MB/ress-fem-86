@@ -13,6 +13,16 @@ html {
   font-size: 100%
 }
 *, *::before, *::after {box-sizing: inherit}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
 body {
   position: relative;
   margin: 0; padding: 0;
@@ -20,6 +30,7 @@ body {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  color: #333;
   background: #d7eeff linear-gradient(45deg, #8ec5fc, #e0c3fc) fixed;
   font-family: "Public Sans", "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
@@ -35,14 +46,23 @@ body::before {
 }
 
 /** GLOBAL + RESET **/
-a { background: transparent } a:active, a:hover { outline: 0 }
+a { background: transparent } a:active, a:hover, select { outline: 0 }
+select, option {
+  font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit;
+  line-height: inherit;
+  text-transform: none;
+  margin: 0;
+}
+select, option, nav > div:hover select {color: inherit;background: transparent}
+select {border: 0}
 b, strong { font-weight: bolder }
 sup { font-size: 75%;line-height: 0;position: relative;vertical-align: baseline;top: -0.5em}
 q::before { content: "\00ab\00a0" } q::after { content: "\00a0\00bb" }
 img {border: 0}
 a, select {cursor: pointer}
-nav, header, #modale, footer, .bouton {user-select: none}
-#totop,  #modale {display: none}
+nav, header, footer, .bouton {user-select: none}
+
+
 
 #container {
   height: 100%; width: 100%;
@@ -54,39 +74,39 @@ nav, header, #modale, footer, .bouton {user-select: none}
   height: 10vh; width: 100%
 }
 header {
+  background: #d3dcfd linear-gradient(45deg, #bbdcfd, #ecdbfd) fixed;
+  z-index: 2;
   position: relative;
 }
 header img {
-  margin-top: 5px;
+  margin-top: .2rem;
+  filter: invert(75%)
 }
-
-
-h1 {
-  margin: 0;
-}
-
-#modale {
-  position: relative;
-  padding: 10px
-}
-#modale ul {
-  display: inline-block;
-  vertical-align: top
-}
-#exit-modale {
-  display: flex;
-  float: right;
-  margin-left: 5px
-}
-#exit-modale::after {
-  content: "";
-  display: block;
-  padding-bottom: 100%
-}
-nav, header {transition: background 1s ease}
+h1 {margin: 0;text-align: center}
 h1 img {transition: filter 1s ease}
+h2, h3 {font-size: inherit}
+h2 {
+  margin: 0 0 5px 0;
+  border-bottom: 1px solid #777
+}
+h3 {
+  margin: 0;
+  padding: 4px 13px
+}
+hr {
+  box-sizing: content-box;
+  border-top: 2px dashed #777; border-bottom: 0
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin: 0;
+  padding-left: 15px
+}
+
+nav, header {transition: background 1s ease}
 nav > div:hover {
-  background: #fff !important
+  background: rgba(255,255,255,.8) !important
 }
 nav > div:hover select,  nav > div:hover a{
   background: transparent
@@ -97,27 +117,32 @@ nav {
   width: 100%;
   flex-direction: row;
 	display: flex;
+  position: relative;
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-content: flex-start;
   align-items: stretch;
-  background: rgba(255,255,255,0.4) ;
+  background: #d3dcfd linear-gradient(45deg, #bbdcfd, #ecdbfd) fixed;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  z-index: 1;
 }
 nav > div {
   display: flex;
   align-items: center;
   position: relative;
   flex: 1 1 auto;
-  box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset, inset 0 1px 0 rgba(255,255,255,0.7);
-  border: 1px solid rgba(0,0,0,0.1);
+  border-top: 1px solid rgba(0,0,0,.05);
+}
+
+nav > div:not(:last-child) {
+ border-right: 1px solid rgba(0,0,0,.15)
 }
 nav > a {
   display: block
 }
-nav > div > a, nav > div > select {
-  height:100%;
+nav > div > a, nav div select {
+  width: 100%; height:100%;
   padding: 8px;  
-  width: 100%;
   text-transform: uppercase
 }
 nav div i {
@@ -126,29 +151,16 @@ nav div i {
 nav select {
  text-align:center;
 }
-#city, #categories {
- flex: 1 1 auto;
-} 
 nav a {
-  text-decoration: none
+  text-decoration: none;
+  text-align: center
 }
 nav a:active, .bouton:active {
   transform: translateY(2px)
 }
-select, option {
-  font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit;
-  line-height: inherit;
-  text-transform: none;
-  margin: 0;
-}
-select {
-  border: 0;
-  outline: none;
-}
-select, option, nav > div:hover select {
-  color: inherit;
-  background: transparent;
-}
+#city, #categories {
+ flex: 1 1 auto;
+} 
 #numbr {width:100%;text-align:center}
 .box {
   padding: 15px;
@@ -184,51 +196,39 @@ select, option, nav > div:hover select {
 #calendar-box > div {
   margin-right: 20px;
 }
-.inner-container {
-  position:relative;
-}
 main {
   display: flex;
-  position:relative;
+  position: relative;
   width: 100%;
   flex-direction: row;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  justify-content: center
 }
-hr {
-  box-sizing: content-box;
-  border-top: 2px dashed #777; border-bottom: 0
-}
-ul {
-  display: block;
-  list-style-type: disc;
-  margin: 0;
-  padding-left: 15px
-}
+
 .bouton {
   font-size: 1.2rem;
   text-decoration: none;
   border-radius: 7px;
-  border: 1px solid #888
+  border: 1px solid #888;
+  background: linear-gradient(145deg, #e4e8fe, #f8f9ff);
+  box-shadow: #888 0 0 2px, #888 0 2px 0
 }
-#exit-modale, main, .bus span {
-  justify-content: center
-}
-#exit-modale, .bus span {
-  align-items: center
-}
- nav a, .l, h1 {
-  text-align: center
-}
+.bouton:hover {background: #fefefe !important}
+
+
 article {
   width: 500px;
   padding: 5px 0 9px 0;
   will-change: top, left;
+  background: linear-gradient(145deg, #e4e8fe, #f8f9ff);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
+article a {color: #0078A8}
 article a:hover, nav a, .bouton {color:inherit}
 article, #modale {
   position: relative;
   margin: 11px 1vw;
-  border-radius: 12px;
+  border-radius: 5px;
   will-change: top, left, background, color;
 }
 article h2, .desc {
@@ -255,18 +255,7 @@ article div img, h2 img {
   background-size: 100%; 
   background-image: url("../img/sprite.png");
 }
-h2, h3 {
-  font-size: inherit
-}
-h2 {
-  margin: 0 0 5px 0;
-  border-bottom: 1px solid #777
-}
 
-h3 {
-  margin: 0;
-  padding: 4px 13px
-}
 
 .desc {font-style: italic}
 .acc img {background-position: 0 0}
@@ -297,14 +286,14 @@ h3 {
 .sc img {background-position:0 96.153846%}
 .yt img {background-position:0 100%}
 
-
 #totop {
   position: fixed;
   bottom: 20px;
   right: 25px;
   padding: 4px 7px;
   font-size: 1rem;
-  z-index: 2
+  z-index: 2;
+  display: none
 }
 #mapbox {
   position: fixed;
@@ -333,9 +322,11 @@ h3 {
   font-size: 0.7rem;
   font-weight: bold;
   border-radius: 50%;
-  color: #fefefe
+  color: #fefefe;
+  align-items: center;
+  justify-content: center
 }
-/********************************************** POITIERS ***********************************************/
+
 .P1 {background:#00a3db}  .P1E {background:#83d0f5}  .P2A {background:#f00}    .P2B {background:#d71f26}
 .P3 {background:#fff000}  .P10 {background:#92cfc5}  .P11 {background:#90277d} .P12 {background:#a780ad}
 .P13 {background:#e57fa9} .P14 {background:#de3fa2}  .P15 {background:#9ec83f} .P16 {background:#347c86}
@@ -346,129 +337,47 @@ h3 {
 .PO {background:#e94282}  .PTER {background:#0000b0} .PCITA {background:#64c800}
 .P3, .PD, .C2, .C3, .P10, .P13, .P27, .P15, .P1E {color:#000 !important}
 .PTER, .PCITA {font-size:.45em !important}
-/******************************************** CHÂTELLERAULT ********************************************/
+
 .C1, .C2, .C3, .C4, .C5, .C6, .C7, .C10, .C11, .C12, .C13, .C14, .C15, .C16 {border-radius:0 !important}
 .C1 {background:#de192c}  .C2 {background:#ff7900}  .C3 {background:#ffb500}
 .C4 {background:#c90}     .C5 {background:#0080c2}  .C6 {background:#00c4f3}
 .C7 {background:#4a55ba}  .C10 {background:#34b49d} .C11 {background:#00a456}
 .C12 {background:#95c44b} .C13 {background:#007139} .C14 {background:#a69e42} 
 .C15 {background:#1b7b6a} .C16 {background:#46b052}
-/*** COLORS ***/
-body, #modale a:nth-of-type(2):hover {color: #333}
-header {
-  background: rgba(255,255,255,0.4) ;
-  box-shadow: 0 1px 0 white inset, 0 -1px 0 #d5d5d5 inset, inset 0 1px 0 rgba(255,255,255,0.7);
-}
-header img { filter: invert(75%)}
-article a, #modale a:nth-of-type(2) {color: #0078A8}
-article,  #modale, .bouton {background: linear-gradient(145deg, #e4e8fe, #f8f9ff)}
-article, #modale {box-shadow: #888 0 0 2px, #888 0 3px 0}
-.bouton {box-shadow: #888 0 0 2px, #888 0 2px 0}
-.bouton:hover {background: #fefefe !important}
 
-/**************************************** FONT AWESOME ****************************************/
 .fa::before {
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
+  font: normal normal normal 1rem FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.fa-ig::before {content:"\f16d"}          .fa-search::before {content:"\f002"}
+.fa-info::before {content:"\f05a"}        .fa-building::before {content:"\f1ad"}
+.fa-az-sort::before {content:"\f15d"}     .fa-map-signs::before {content:"\f277"}
+.fa-cal::before {content:"\f073"}         .fa-gh::before {content:"\f09b"}
+.fa-mail::before {content:"\f0e0"}        .fa-user::before {content:"\f2b9"}
+.fa-cc::before {content:"\f25e"}          .fa-pp::before { content: "\f1ed" }
 
-.fa-lg { /* makes the font 33% larger relative to the icon container */
-  font-size: 1.33333333em;
-  line-height: 0.75em;
-  vertical-align: -15%;
-}
-.fa-search::before {content:"\f002"}
-.fa-building::before {content:"\f1ad"}
-.fa-az-sort::before {content:"\f15d"}
-.fa-map-signs::before {content:"\f277"}
-.fa-calendar::before {content:"\f073"}
-.fa-github::before {content:"\f09b"}
-.fa-envelope-o::before {content:"\f0e0"}
-.fa-user-o::before {content:"\f2b9"}
-.fa-instagram::before {content:"\f16d"}
-.fa-creative-commons::before {content:"\f25e"}
-.fa-etsy::before { content: "\f2d7" }
-.fa-facebook::before { content: "\f082" }
-.fa-soundcloud::before { content: "\f1be" }
-.fa-deviantart::before { content: "\f1bd" }
-.fa-spotify::before { content: "\f1bc" }
-.fa-paypal::before { content: "\f1ed" }
-.fa-bus::before { content: "\f207" }
-.fa-transgender::before { content: "\f225" }
-.fa-justice::before { content: "\f24e" }
-.fa-link::before { content: "\f0c1" }
-.fa-link2::before { content: "\f0c6" }
-.fa-quote::before { content: "\f10d";font-size:2rem;padding-right:2.1rem;float:left; }
-/*.fa-quote::after { content: "\f10e"; font-size:2rem;padding-left:.2rem} */
-.fa-spinner::before { content: "\f110" }
-.fa-youtube::before { content: "\f16a" }
-.fa-wheelchair::before { content: "\f193" }
-.fa-bubble-plain::before { content: "\f27a" }
-.fa-bubble::before { content: "\f27b" }
-.fa-parking::before { content: "\f288" }
-.fa-euro::before { content: "\f153" }
-.fa-acti::before {content: "\f0a1" }
-.fa-trophy::before {content: "\f091" }
-.fa-phone::before {content: "\f095" }
-.fa-work::before {content: "\f0b1" }
-.fa-science::before {content: "\f0c3" }
-.fa-doctor::before {content: "\f0f0" }
-.fa-stetoscope::before {content: "\f0f1" }
-.fa-health::before {content: "\f0fa" }
-.fa-cross::before {content: "\f067"; transform: rotate(45deg) }
-.fa-clock::before {content: "\f017" }
-.fa-comment::before {content: "\f040" }
-.fa-person::before {content: "\f007"}
-.fa-shelter::before {content: "\f015"}
-.fa-solidarity::before {content: "\f0c0"}
-.fa-map-marker::before {content: "\f041"}
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-.sr-only-focusable:active,
-.sr-only-focusable:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
-}
 @media (prefers-color-scheme: dark) {
-  body, #modale a:nth-of-type(2):hover {color:#ddd}
+  body  {color:#ddd}
   body::before {opacity:1 !important}
   h1 {background: #333}
   header {border-bottom: 1px solid #efefef}
-  h1 img {filter:none}
-  article a, #modale a:nth-of-type(2) {color: #8cdeff}
-  article, #modale {box-shadow:#eee 0 0 2px, #777 0 3px 0}
-  nav div {border:0;background:#333 !important; box-shadow:none !important;border: 1px solid #ccc }
-  article, #modale, .bouton {background: #242626}
+  h1 img {filter:invert(5%)}
+  article a {color: #8cdeff}
+  article {box-shadow:#eee 0 0 2px, #777 0 3px 0}
+  nav {box-shadow: none}
+  nav div {background:#333 !important; box-shadow:none !important;border-right: 1px solid #ccc;border-bottom: 1px solid #ccc }
+  article, .bouton {background: #242626}
   nav div:hover, nav div:hover select, .bouton:hover {color: #111}
   .num img {filter:invert(1)}
   #contact-box, #contact-box a {color: #fefefe }
 }
 @media screen and (prefers-reduced-motion: no-preference) {html{scroll-behavior:smooth}}
-@media screen and (max-width:940px) {
-  nav {flex-wrap:wrap}
-  h1 img {transform: translateX(-15px)}
-  nav div {box-shadow:none}
-} 
-@media screen and (max-width:490px) {
-  h1 {padding:5px}
-  h1 img {max-width: 75vw}
-}
+@media screen and (max-width:940px) {nav {flex-wrap: wrap} nav div {box-shadow: none}} 
+@media screen and (max-width:490px) {h1 {padding:5px} h1 img {max-width: 75vw}}
 @page {size:A4 portrait}
 @media print { 
   html, body {height:auto !important; overflow:auto !important}
@@ -478,7 +387,7 @@ article, #modale {box-shadow: #888 0 0 2px, #888 0 3px 0}
   h2 {border-bottom: 1px dashed #333 !important}
   a {text-decoration:none !important; color:#000 !important}
   body, article, header, h1, body::before {color:#000 !important; background:#fff !important}
-  nav, footer, #modale, #totop, #mapbox, h1 img {display:none !important}
+  nav, footer,  #totop, #mapbox, h1 img {display:none !important}
   article {box-shadow:none !important;break-inside: avoid;border-radius: 0;width: 100% !important;position: relative !important;top: unset !important;left: unset !important}
   article {border: 2px solid #555 !important}
   .bus span  {border: 1px solid #777}
