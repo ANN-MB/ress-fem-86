@@ -73,10 +73,7 @@ document.getElementById("container").addEventListener("scroll", function() {
 
 document.addEventListener("keydown", function(e){
   var key = e.keyCode || e.which;
-  if (clicked && true == e.ctrlKey && 65 == key) {
-    e.preventDefault();
-    null !== clicked && selectAll(clicked);
-  }
+  clicked && true == e.ctrlKey && 65 == key && (e.preventDefault(), null !== clicked && selectAll(clicked));
   27 == key && closeMap();
 },false);
 
@@ -97,7 +94,7 @@ window.addEventListener("load", function(event) {
     document.querySelector("main").style.maxWidth = "90vw";
     document.querySelector("main").style.margin = "0 auto";
 	setTimeout(function(){
-		 var sheet = document.createElement("style")
+       var sheet = document.createElement("style");
        sheet.innerHTML = "article {transition: all 1s ease}";
        document.getElementsByTagName('head')[0].appendChild(sheet); 
 	},3000)
