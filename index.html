@@ -134,11 +134,11 @@
         </div>
         <div>
           <i class="fa fa-cal"></i>
-          <a href="cal.html" title="" id="agenda">Agenda</a>
+	      <a href="cal.html" title="" id="agenda">Agenda <span id="incoming"></span></a>
         </div>
         <div>
           <i class="fa fa-info"></i>
-          <a href="https://framaforms.org/users/annmb/contact" id="contact">Infos</a>
+          <a href="#" id="contact">Infos</a>
           <div class="box" id="contact-box">
             <a href="https://ann-mb.carrd.co" rel="external noreferrer"><i class="fa fa-user"></i> Mon site personnel</a><br/>
             <a href="https://framaforms.org/users/annmb/contact" rel="external noreferrer contact"><i class="fa fa-mail"></i> Formulaire de contact</a><br/>
@@ -150,7 +150,7 @@
           </div>
         </div>
       </nav>
-      <div id="calendar-box" class="box">
+      <div id="calendar-box">
         <div id="caltainer">
           <div class="cal-nav">
             <a href="#" id="go-prev" aria-label="Aller au mois précédent">&#x25C0;</a>
@@ -171,14 +171,15 @@
         </div>
         <div id="cal-details" aria-hidden="true" tabindex="0">
           <div class="scrollable">
-          <div id="details-title"></div>
-          <div id="details-time" class="fa fa-clock"></div>
-          <div id="details-place" class="fa fa-map-marker"></div>
-          <div id="details-link" class="fa fa-link"></div>
-          <div id="details-desc" class="fa fa-quote"></div>
+            <div id="details-title"></div>
+            <div id="details-time" class="fa fa-clock"></div>
+            <div id="details-place" class="fa fa-map-marker"></div>
+            <div id="details-link" class="fa fa-link"></div>
+            <div id="details-desc" class="fa fa-quote"></div>
+          </div>
+          <a href="#" id="details-exit" class="fa fa-cross" aria-label="Fermer la popup"></a>
         </div>
-        <a href="#" id="details-exit" class="fa fa-cross" aria-label="Fermer la popup"></a>
-        </div></div>
+      </div>
       <div id="numbr"></div>
       <main>
         <article data-hashtag="host asso fami mine 000" id="a">
@@ -1447,8 +1448,8 @@
           <div class="avis"><img src="img/1.gif" alt="Avis de patientes et patients" /> <q>Est en effet trans-friendly mais ne s'y connaît pas vraiment en termes de dosages.. traitements à prendre.. (elle m'a demandé elle-même d'ajouter ceci sur la carte)</q>  – <i>avis posté sur Fransgenre le 23/09/2021</i></div>
         </article>
       </main>
-      <a href="#top" class="bouton" id="totop" accesskey="h">&#x2191; Revenir en haut <span class="sr-only">de la page</span></a>
-      <div id="mapbox"><a id="exit-map" class="bouton" aria-label="Fermer la carte">&#x2715; Fermer</a><iframe name="map" title="Carte interractive" id="mymap" src="https://umap.openstreetmap.fr/fr/map/cartographie-de-lannuaire-feministe-et-queer-de-po_672182#18/46.7515/0.4834"></iframe></div>
+      <a href="#top" id="totop" accesskey="h">&#x2191; Revenir en haut <span class="sr-only">de la page</span></a>
+      <div id="mapbox"><a id="exit-map"  aria-label="Fermer la carte">&#x2715; Fermer</a><iframe name="map" title="Carte interractive" id="mymap" src="https://umap.openstreetmap.fr/fr/map/cartographie-de-lannuaire-feministe-et-queer-de-po_672182#18/46.7515/0.4834"></iframe></div>
     </div>
     <script src="js/ress-fem-86.js"></script>
     <script src="js/events.js"></script>
