@@ -1,5 +1,5 @@
 // Calendrier par Ann MB - Licence CC BY-SA 4.0 - ann-mb.carrd.co
-var evtL = evt.length, events = [], eventsLength, thisMonth, nowMonth, storeFocus;
+var evtL = evt.length, events = [], eventsLength, thisMonth, nowMonth, storeFocus, soonEvents = 0;
 const 
 $ = (id) => { return document.getElementById(id) },
 days = [null, "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"],
@@ -113,9 +113,9 @@ changeMonth = (a,e) => {
 };
 
 for (var i = 0 ; i < evtL; i++) {
+  var start = evt[i].DayStart.split("/");
   if (evt[i].DayEnd) {
-    var start = evt[i].DayStart.split("/"),
-        end = evt[i].DayEnd.split("/")[0],
+    var end = evt[i].DayEnd.split("/")[0],
         duration = end - start[0] + 1;  
     for (var j = 0 ; j < duration ; j++) {
       var newe = Object.assign({}, evt[i])
@@ -134,13 +134,19 @@ for (var i = 0 ; i < evtL; i++) {
   }	else {
     var newe = Object.assign({}, evt[i])
     newe.index = i;
-	  events.push(newe)
+	events.push(newe)
   }
+  if (start[1] == new RightTime().Month && start[2] == new RightTime().Year && start[0] >= new RightTime().Day) {
+    soonEvents++
+  }
+    
   if (i == evtL - 1) {
     nowMonth = thisMonth = new RightTime();
-    eventsLength = events.length
+    eventsLength = events.length;
     generateMonth();
-    $("noscript").style.display = "none"; 
+    console.log(soonEvents)
+    $("noscript") && ($("noscript").style.display = "none");
+	($("incoming") && soonEvents > 0) && ($("incoming").innerHTML = soonEvents);
   }
 }
 
