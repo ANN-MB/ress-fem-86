@@ -1,9 +1,4 @@
 @charset "utf-8";
-@font-face {
-  font-family: 'FontAwesome';
-  src: url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), 
-       url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff');
-}
 
 :root {
   color-scheme: light dark;
@@ -12,89 +7,106 @@
   --borderColor: transparent;
   --links: #0078A8;
 }
+*, *::before, *::after {box-sizing:border-box}
 
 html {
-  box-sizing: border-box;
-  font-size: 100%;
+font-size: 100%;
 }
-
-*, *::before, *::after {
-  box-sizing:inherit;
-}
-
-body {
+  body {
   margin: 0; padding: 0;
   height: 100vh; overflow: hidden;
   background: #d7eeff linear-gradient(45deg, #8ec5fc, #e0c3fc) fixed;
   font-family: "Public Sans", "fira_sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   color: var(--soft-black);
-}
+  }
+    body::before {
+    content: "";
+    display: block; position: absolute;
+    height: 100%; min-height: 100vh;
+    left: 0; right: 0;
+    background: #d7eeff linear-gradient(45deg, #232526, #414345) fixed;
+    opacity: 0; transition: opacity 1s ease; will-change: opacity;
+    z-index: -1
+    }
+    #caltainer {
+    position: relative;
+    height: 100vh; height: calc(var(--vh, 1vh) * 100);
+    overflow-x: hidden; overflow-y: auto
+    }
 
-body::before {
-  content: "";
-  display: block; position: absolute;
-  height: 100%; min-height: 100vh;
-  left: 0; right: 0;
-  background: #d7eeff linear-gradient(45deg, #232526, #414345) fixed;
-  opacity: 0; transition: opacity 1s ease; will-change: opacity;
-  z-index: -1
-}
+      .cal-nav {
+      display: flex;
+      width: 100%;
+      padding: .2rem 0;
+      font-size: 1.1rem
+      user-select: none;     
+      }
+        .cal-nav > div {
+        display: inline-block;
+        }
+      .days-names {
+      display: flex;
+      user-select: none;
+      font-size: 1.1rem;
+      border-top: 1px solid var(--borderColor);
+      margin-bottom: .1rem
+      }
+        .days-names > div {
+        display: inline-block;
+        width: 14.285714286%;
+        text-align: center;
+        border-bottom: 1px solid var(--borderColor);
+        border-right: 1px solid var(--borderColor);
+        }
+      #noscript {
+      margin-top: 2em;
+      font-size: 2em;
+      color: #700;
+      width: 100%;
+      text-align:center
+      }
+      #cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(auto-fill, 1fr);
+      min-height: 100vh;
+      height:100%;
+      min-width: 0
+      }
+        #cal-grid > div {
+        display: inline-block;
+        height: 100%;
+        max-width: 14.285714286vw;
+        border-bottom: 1px solid var(--borderColor);
+        border-right: 1px solid var(--borderColor);
+        }
+        #cal-grid > div:nth-child(7n), .days-names div:nth-last-child(1)  {
+        border-right: 0;
+        }
+        #cal-grid > div:nth-last-child(-n+7) {
+        border-bottom: 0;
+        }
+          #cal-grid > div::before {
+          display: flex;
+          flex-direction: column; justify-content: center;  align-content: center;
+          width: 1.5rem; height: 1.5rem;
+          margin: .2rem;
+          font-size: 1rem; text-align:center         
+        }
 
-#noscript {
-  margin-top: 2em;
-  font-size: 2em;
-  color: #700;
-  width: 100%;
-  text-align:center
-}
 
-#caltainer {
-  position: relative;
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-  overflow-y: auto;
-  overflow-x: hidden;
-}
 
-#cal-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: repeat(auto-fill, 1fr);
-  min-height: 100vh;
-  height:100%;
-  min-width: 0
-}
 
-#cal-grid > div {
-  height: 40px;
-  display: inline-block;
-  height: 100%;
-  max-width: 14.285714286vw;
-}
 
-#cal-grid > div, .days-names div {
-  border-bottom: 1px solid var(--borderColor);
-  border-right: 1px solid var(--borderColor);
-}
 
-#cal-grid > div:nth-child(7n), .days-names div:nth-last-child(1)  {
-  border-right: 0;
-}
 
-#cal-grid > div:nth-last-child(-n+7) {
-  border-bottom: 0;
-}
 
-#cal-grid > div::before {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-content: center;
-  width: 1.5rem; height: 1.5rem;
-  margin: .2rem;
-  font-size: 1rem;
-  text-align:center;
-}
+
+
+
+
+
+
 
 .cal-today::before {
   background: var(--soft-black);
@@ -128,34 +140,11 @@ body::before {
   counter-increment: next-days;
 }
 
-.cal-nav, .days-names {
-  user-select: none;
-  font-size: 1.1rem
-}
 
-.days-names, .cal-nav {
-  display: flex;
-}
 
-.days-names {
-  border-top: 1px solid var(--borderColor);
-  margin-bottom: .1rem
-}
 
-.days-names > div {
-  display: inline-block;
-  width: 14.285714286%;
-  text-align: center;
-}
 
-.cal-nav {
-  width: 100%;
-  padding: .2rem 0;
-}
 
-.cal-nav > div {
-  display: inline-block;
-}
 
 #month-year {
   margin: 0 2rem;
@@ -200,12 +189,7 @@ body::before {
   transition: transform .4s ease, box-shadow .4s ease;
   box-shadow: 0px 0px 0px #333;
 }
-/*
-.cal-event:hover {
-  transform: scale(1.2);
-  box-shadow: 0px 4px 7px rgba(0,0,0,.4);
-  z-index: 888
-}*/
+
 .cal-event:focus {
   outline: 2px dashed #fff;
 }
@@ -335,20 +319,6 @@ body::before {
   }
 }*/
 
-.fa::before {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-.fa-link:not(:empty)::before { content: "\f0c1" }
-.fa-quote:not(:empty)::before { content: "\f10d";font-size:2rem; padding-right:2.1rem; float:left; }
-.fa-cross::before {content: "\f067"; transform: rotate(45deg) }
-.fa-clock:not(:empty)::before {content: "\f017" }
-.fa-map-marker:not(:empty)::before {content: "\f041"}
-
 @media screen and (max-width:740px) {
   .days-names > div span span {display:none}
 }
@@ -375,3 +345,21 @@ body::before {
   .cal-curr { background: transparent}
   .cal-prev, .cal-next   { background: rgba(255,255,255,.3)}
 }
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), 
+       url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff');
+}
+.fa::before {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.fa-link:not(:empty)::before { content: "\f0c1" }
+.fa-quote:not(:empty)::before { content: "\f10d";font-size:2rem; padding-right:2.1rem; float:left; }
+.fa-cross::before {content: "\f067"; transform: rotate(45deg) }
+.fa-clock:not(:empty)::before {content: "\f017" }
+.fa-map-marker:not(:empty)::before {content: "\f041"}

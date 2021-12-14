@@ -221,7 +221,7 @@ font-size: 100%
           border-bottom: 1px solid #777
           }
           .desc {
-          font-style: italic
+          font-style: italic;
           padding: 4px 13px 4px 13px
           }
           h3 {
@@ -236,9 +236,16 @@ font-size: 100%
       position: fixed; display: none;
       right: 25px; bottom: 20px;
       padding: 4px 7px;
-      font-size: 1rem;
+      text-decoration: none;
+      border: 1px solid #888; border-radius: 7px;
+      font-size: 1rem; color:inherit;
+      background: linear-gradient(145deg, #e4e8fe, #f8f9ff);
+      box-shadow: #888 0 0 2px, #888 0 2px 0;
       z-index: 2;
+      user-select: none
       }
+      #totop:hover {background: #fefefe}
+      #totop:active {transform: translateY(2px)}
       #mapbox {
       position: fixed;
       width: 100vw;  height: 100vh;
@@ -254,20 +261,16 @@ font-size: 100%
           #exit-map {
           position: absolute;
           top: 15px; right: 15px;
-          padding: 2px 5px
-          }
-          #exit-map, #totop {
-          font-size: 1.2rem;
-          text-decoration: none;
-          border-radius: 7px;
-          border: 1px solid #888;
+          padding: 2px 5px;
+          font-size: 1.2rem; text-decoration: none;       
+          color:inherit; border: 1px solid #888; border-radius: 7px;
           background: linear-gradient(145deg, #e4e8fe, #f8f9ff);
           box-shadow: #888 0 0 2px, #888 0 2px 0;
-          color:inherit;
+          cursor: pointer;
           user-select: none
           }
-          #exit-map:active, #totop:hover {background: #fefefe !important}
-          #exit-map:hover, #totop:active {transform: translateY(2px)}
+          #exit-map:active {background: #fefefe !important}
+          #exit-map:hover {transform: translateY(2px)}
 
 @media (prefers-color-scheme: dark) {
   body  {color:#ddd}
