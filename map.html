@@ -1,3 +1,4 @@
+<!-- License CC BY-SA 4.0 Ann MB - ann-mb.carrd.co -->
 <!DOCTYPE html>
 <html lang="fr-FR">
   <head>
@@ -6,24 +7,22 @@
     <meta name="googlebot" content="noindex" />
     <meta name="robots" content="none" />
     <meta name="author" content="Ann MB" />
-    <meta name="description" content="Cartographie des ressources féministes et queer de Poitiers et de la Vienne" />
-    <meta name="color-scheme" content="dark light" />
-	  <meta name="referrer" content="no-referrer" />
+    <meta name="description" content="Annuaire, cartographie et agenda associatif militant, institutionnel, médical, sportif et culturel à destination des femmes et des LGBTQI+" />
+    <meta name="color-scheme" content="light" />
+    <meta name="referrer" content="no-referrer" />
     <link rel="icon" href="img/favicon.png" type="image/png" />
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-      }
-      iframe {
-        width: 100vw;
-        height: 100vh;
-      }
-    </style>   
-    <title>Cartographie</title>
+    <link rel="stylesheet" href="css/ress-fem-86.css" />
+	<link rel="stylesheet" href="css/leaflet.css" />
+    <noscript></noscript>
+    <title>Cartographie des ressources féministe et queer de Poitiers et de la Vienne</title>
   </head>
-  <body>  
-    <iframe src="https://umap.openstreetmap.fr/fr/map/cartographie-de-lannuaire-feministe-et-queer-de-po_672182?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=none&captionBar=false&fullscreenControl=null" allowfullscreen></iframe>
+  <body>
+    <div id="container">
+     <div id="mymap"></div>
+    </div>
+	<script src="js/markers.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/map.js"></script>
   </body>
 </html>
+
