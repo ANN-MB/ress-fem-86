@@ -1,7 +1,7 @@
-#container::before, #container::after {
+.mapbody #container::before, .mapbody #container::after {
 display :none
 }
-body::after {
+.mapbody::after {
   content:"";
   position: absolute;
   bottom: .5rem;
