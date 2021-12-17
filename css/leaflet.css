@@ -1,7 +1,7 @@
-.mapbody #container::before, .mapbody #container::after {
-display :none
+.bodymap #container::before, .bodymap  #container::after {
+  display :none
 }
-.mapbody::after {
+.bodymap::after {
   content:"";
   position: absolute;
   bottom: .5rem;
