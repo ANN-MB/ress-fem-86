@@ -1,3 +1,74 @@
+var menses = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "category":"menses",
+        "title":"Boîte à dons de protections périodiques - Square des Flageolles",
+        "address": "rue des Flageolles / rue de la Tête Noire - 86000 POITIERS",
+        "info": "La boîte se trouve dans la boîte à livres du Square des Flageolles"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [0.343457,46.584832]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "category":"menses",
+        "address": "16 ter, Rue de la Regratterie - 86000 POITIERS",
+        "title": "Boîte à dons de protections périodiques - L'envers du bocal",
+        "info": "La boîte se trouve dans les toilettes de l'établissement\nHoraires d'ouverture : \nlundi- mardi : fermé\nmercredi - jeudi : 12h00-22h00\nvendredi - samedi : 12h00-23h00\ndimanche : 14h30-20h00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [0.342445,46.583337]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "category":"menses",
+        "title":"Boîte à dons de protections périodiques - Le Zinc",
+        "address": "196, Grand'Rue - 86000 POITIERS",
+        "info": "La boîte se trouve dans les toilettes de l'établissement\nHoraires d'ouverture : \nmardi - mercredi - jeudi - vendredi - samedi : 18h00-02h00\ndimanche -lundi : fermé"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [0.345039,46.58286]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "category":"menses",
+        "title": "Boîte à dons de protections périodiques - Crafty Brewpub",
+        "address":"20, place Charles de Gaulle - 86000 POITIERS",
+        "info": "Vérifier si les nouveaux propriétaires participent toujours à l'opération.<br/>La boîte se trouve dans les toilettes de l'établissement<br/>Horaires d'ouverture : <br/>lundi- mardi - mercredi - jeudi - vendredi - samedi : 16h00-02h00<br/>dimanche : fermé"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [0.345285,46.583397]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "category":"menses", 
+        "address": "64, rue de la Cathédrale - 86000 POITIERS",
+        "title": "Boîte à dons de protections périodiques - Sweet Time & Company",
+        "info": "La boîte se trouve dans les toilettes de l'établissement\nHoraires d'ouverture : \nmardi - mercredi - jeudi - vendredi - samedi : 10h30-19h00\ndimanche - lundi : fermé"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [0.34388,46.582478]
+      }
+    }
+  ]
+}
+
 var geojson = [{
     "type": "Feature",
     "properties": {
@@ -395,6 +466,7 @@ var geojson = [{
   {
     "type": "Feature",
     "properties": {
+      "category":"support",
       "title": "Groupe de parole <q>Violences conjugales, agressions sexuelles</q>",
       "address": "AUDACIA - 6, place Sainte-Croix<br/>86000 POITIERS<br/>1<sup>er</sup> étage",
       "phone": "09 61 33 82 90 (Estelle BERNARD - [[https://www.audacia-asso.fr|AUDACIA]])<br/>05 49 88 04 41 (Amélie BORDES - CIDFF)",
@@ -538,7 +610,7 @@ var geojson = [{
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [0.3386729, 46.5801769]
+      "coordinates": [0.34119, 46.58011]
     }
   },
   {
@@ -623,7 +695,7 @@ var geojson = [{
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [0.34368, 46.58332]
+      "coordinates": [0.34306, 46.58348]
     }
   },
   {
@@ -787,7 +859,7 @@ var geojson = [{
     },
   "geometry": {
       "type": "Point",
-      "coordinates": [0.33888, 46.5773641]
+      "coordinates": [0.34108, 46.57736]
     }
   },
   {

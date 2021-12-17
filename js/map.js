@@ -1,18 +1,14 @@
 var map = L.map('mymap', {
-    zoomSnap: 0.25
+    zoomSnap: 0.5
 }).fitBounds([
   [46.19709708576172, -0.9106632928479332],
   [47.05997975442446, 1.7422818877878934]
 ]).setView([46.63025794928896, 0.41580929746996015], 9.5);
 
-
-
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   minZoom: 9
 }).addTo(map);
-
-
 
 L.Map = L.Map.extend({
   openPopup: function(popup) {
@@ -51,7 +47,7 @@ var popmaps = function(feature, layer) {
 var makeIcon = L.Icon.extend({
   options: {
     iconSize: [25, 41], // size of the icon
-    iconAnchor: [8, 8], // point of the icon which will correspond to marker's location
+    iconAnchor: [12, 20], // point of the icon which will correspond to marker's location
     popupAnchor: [0, 0] // point from which the popup should open relative to the iconAnchor
   }
 });
@@ -69,6 +65,17 @@ L.geoJson(geojson, {
   onEachFeature: popmaps
 }).addTo(map);
 
+L.geoJson(menses, {
+  pointToLayer: function(feature, latlng) {
+    let icon = new makeIcon({iconUrl: "./img/marker-"+(feature.properties.category || "icon")+".png"})
 
+    return L.marker(latlng, {
+      icon: icon,
+	    riseOnHover: true
+    });
+
+  },
+  onEachFeature: popmaps
+}).addTo(map);
 
 // var mappos = L.Permalink.getMapLocation();
