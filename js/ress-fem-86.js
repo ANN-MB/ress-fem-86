@@ -94,7 +94,7 @@ window.addEventListener("DOMContentLoaded", function() {
 },false);
 
 window.addEventListener("load", function(event) {
-  /*if(isDesktop) {
+  if(isDesktop) {
     masonry = new Macy({
       container: "main",
       mobileFirst: true,
@@ -109,5 +109,5 @@ window.addEventListener("load", function(event) {
        sheet.innerHTML = "article {transition: all 1s ease}";
        document.getElementsByTagName('head')[0].appendChild(sheet); 
 	},3000);
-  }*/
+  }
 });
