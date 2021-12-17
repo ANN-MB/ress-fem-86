@@ -49,7 +49,15 @@ const mbox = document.getElementById("mapbox"),
         var elem = document.querySelector(t.getAttribute("href"));
         elem.style.display = "block";
         elem.scrollIntoView({behavior:"smooth"});
-      };
+      },
+	  toMap = function(e,a) {
+        e.preventDefault();
+        var loc = a.getAttribute("data-latlng").split("/")
+        mbox.className += " deploy"
+        stock = t;
+        exit.focus();
+	    map.setView([loc[0], loc[1]],18);
+	  }
    
 document.addEventListener("click", function(e) {
   var t = e.target, a = t.closest("article");
@@ -57,7 +65,7 @@ document.addEventListener("click", function(e) {
   t.id == "totop" && (e.preventDefault(), document.querySelector("nav").scrollIntoView({behavior:"smooth"}));
   t.id == "contact" && (e.preventDefault(), (cttb.style.display=="block")?(cttb.style.display="none"):(cttb.style.display="block",calb.style.display="none"));
   t.id == "agenda" && isDesktop && (e.preventDefault(), (calb.style.display=="flex")?(calb.style.display="none"):(calb.style.display="flex", cttb.style.display="none"));
-  t.className == "tomap" && (e.preventDefault(), document.getElementById("mymap").src = t.href, mbox.className += " deploy", stock = t, exit.focus());
+  t.className == "tomap" && (toMap(e,t));
   t.className == "goto" && (e.preventDefault(),  goTo(t));
   null !== a ? a !== clicked && (clicked = a) : clicked = null;
 }, false);
@@ -86,7 +94,7 @@ window.addEventListener("DOMContentLoaded", function() {
 },false);
 
 window.addEventListener("load", function(event) {
-  if(isDesktop) {
+  /*if(isDesktop) {
     masonry = new Macy({
       container: "main",
       mobileFirst: true,
@@ -101,5 +109,5 @@ window.addEventListener("load", function(event) {
        sheet.innerHTML = "article {transition: all 1s ease}";
        document.getElementsByTagName('head')[0].appendChild(sheet); 
 	},3000);
-  }
+  }*/
 });

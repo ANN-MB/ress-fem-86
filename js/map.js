@@ -1,9 +1,18 @@
-var map = L.map('mymap').setView([46.5829, 0.3531], 13);
+var map = L.map('mymap', {
+    zoomSnap: 0.25
+}).fitBounds([
+  [46.19709708576172, -0.9106632928479332],
+  [47.05997975442446, 1.7422818877878934]
+]).setView([46.63025794928896, 0.41580929746996015], 9.5);
+
+
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   minZoom: 9
 }).addTo(map);
+
+
 
 L.Map = L.Map.extend({
   openPopup: function(popup) {
@@ -46,71 +55,20 @@ var makeIcon = L.Icon.extend({
     popupAnchor: [0, 0] // point from which the popup should open relative to the iconAnchor
   }
 });
-var health = new makeIcon({
-  iconUrl: "./img/marker-health.png"
-});
-var marker = new makeIcon({
-  iconUrl: "./img/marker-icon.png"
-});
-var right = new makeIcon({
-  iconUrl: "./img/marker-right.png"
-});
-var doctor = new makeIcon({
-  iconUrl: "./img/marker-doc.png"
-});
-var acti = new makeIcon({
-  iconUrl: "./img/marker-acti.png"
-});
-var host = new makeIcon({
-  iconUrl: "./img/marker-host.png"
-});
-var sport = new makeIcon({
-  iconUrl: "./img/marker-sport.png"
-});
-var testing = new makeIcon({
-  iconUrl: "./img/marker-testing.png"
-});
-
 
 L.geoJson(geojson, {
   pointToLayer: function(feature, latlng) {
-    let icon;
-    switch (feature.properties.category) {
-      case 'health':
-        icon = health;
-        break;
-      case 'right':
-        icon = right;
-        break;
-      case 'activism':
-        icon = acti;
-        break;
-      case 'doctor':
-        icon = doctor;
-        break;
-      case 'host':
-        icon = host;
-        break;
-      case 'sport':
-        icon = sport;
-        break;
-      case 'testing':
-        icon = testing;
-        break;
-      default:
-        icon = marker;
-    }
+    let icon = new makeIcon({iconUrl: "./img/marker-"+(feature.properties.category || "icon")+".png"})
 
     return L.marker(latlng, {
-      icon: icon
+      icon: icon,
+	    riseOnHover: true
     });
 
   },
   onEachFeature: popmaps
 }).addTo(map);
 
-map.fitBounds([
-  [46.295713, -0.836334],
-  [47.203709, 1.800385]
-]);
+
+
 // var mappos = L.Permalink.getMapLocation();

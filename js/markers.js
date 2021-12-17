@@ -512,6 +512,7 @@ var geojson = [{
   {
     "type": "Feature",
     "properties": {
+      "category": "official",
       "title": "Valérie LAMARCHE",
       "description": "Déléguée Départementale aux Droits des Femmes et à l'Égalité de la Vienne DDDFE",
       "address": "DDCS<br/>4, rue Micheline Ostermeyer<br/>BP 10560<br/>86021 POITIERS CEDEX",
@@ -523,6 +524,21 @@ var geojson = [{
     "geometry": {
       "type": "Point",
       "coordinates": [0.3846, 46.5809]
+    }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+	  "category": "official",
+      "title": "Alexandra DUVAL",
+      "description": "Conseillère municipale féministe déléguée à l'Action sociale et égalité des droits et vice-présidente de Grand Poitiers",
+      "twitter": "https://www.twitter.com/alexduv",
+      "facebook": "https://www.facebook.com/alexandra.duv",
+      "instagram": "https://www.instagram.com/alexandra_duvv",
+    },
+    "geometry": {
+      "type": "Point",
+      "coordinates": [0.3386729, 46.5801769]
     }
   },
   {
@@ -547,6 +563,7 @@ var geojson = [{
   {
     "type": "Feature",
     "properties": {
+      "category":"solidarity",
       "title": "Maison des Solidarités de proximité de Loudun",
       "address": "14, boulevard du 8 mai<br/>86206 LOUDUN",
       "phone": "05 49 98 10 83",
@@ -562,6 +579,7 @@ var geojson = [{
   {
     "type": "Feature",
     "properties": {
+      "category":"solidarity",
       "title": "MDS de proximité de Montmorillon (Gouex, Lathus, Lussac-les-Châteaux, Civaux, ...)",
       "address": "2, avenue Jean Moulin<br/>86500 MONTMORILLON",
       "phone": "05 49 91 08 37 (accueil)<br/>05 49 91 11 03 (Protection Maternelle Infantile)<br/>05 49 88 04 41 (CIDFF)",
@@ -692,6 +710,7 @@ var geojson = [{
   {
     "type": "Feature",
     "properties": {
+      "category":"solidarity",
       "title": "SANZA",
       "description": "Association de médiation sociale et culturelle, notamment avec et auprès des personnes racisées. Nombreux projets dédiés aux femmes.",
       "address": "90, avenue Georges Pompidou<br/>86000 POITIERS",
@@ -851,6 +870,7 @@ var geojson = [{
   {
   "type": "Feature",
   "properties": {
+    "category":"health",
     "title": "Centre de planification et d’éducation familiale (CPEF)",
     "description": "Consultations concernant la contraception et contraception d'urgence, prévention des IST, entretiens avec psychologue et conseillère conjugale, test de grossesse, demande d'interruption volontaire de grossesse.",
     "phone": "05 49 44 44 56<br/>05 49 44 48 31",
@@ -990,6 +1010,7 @@ var geojson = [{
 {
   "type": "Feature",
   "properties": {
+    "category":"solidarity",
     "title": "CIDFF de la Vienne - Poitiers",
     "description": "Centre d'Information sur les Droits des Femmes et des Familles",
     "phone": "05 49 88 04 41<br/>05 49 62 84 26",
@@ -1010,6 +1031,7 @@ var geojson = [{
 {
   "type": "Feature",
   "properties": {
+    "category":"solidarity",
     "title": "CIDFF de la Vienne - Antenne du secteur de Montmorillon",
     "description": "Centre d'Information sur les Droits des Femmes et des Familles",
     "phone": "05 49 88 04 41",
@@ -1028,6 +1050,7 @@ var geojson = [{
 {
   "type": "Feature",
   "properties": {
+    "category":"solidarity",
     "title": "CIDFF de la Vienne - Antenne du secteur de Châtellerault (Loudun, etc.)",
     "description": "Centre d'Information sur les Droits des Femmes et des Familles",
     "phone": "05 49 93 57 67",
@@ -1048,6 +1071,7 @@ var geojson = [{
 {
   "type": "Feature",
   "properties": {
+    "category":"solidarity",
     "title": "Maison Départementale de la Solidarité de Poitiers",
     "description": "",
     "phone": "05 49 41 97 00",
@@ -1067,6 +1091,7 @@ var geojson = [{
 {
   "type": "Feature",
   "properties": {
+    "category":"solidarity",
     "title": "Maison Départementale de la Solidarité de Poitiers - Antenne médico-sociale des Couronneries",
     "description": "",
     "phone": "05 49 38 27 20",
@@ -1084,6 +1109,7 @@ var geojson = [{
 {
   "type": "Feature",
   "properties": {
+    "category":"solidarity",
     "title": "Maison Départementale de la Solidarité de Poitiers - Antenne médico-sociale de Bel Air",
     "description": "",
     "phone": "05 49 37 00 19",
@@ -1101,6 +1127,7 @@ var geojson = [{
 {
   "type": "Feature",
   "properties": {
+    "category":"solidarity",
     "title": "Maison Départementale de la Solidarité de Poitiers - Antenne médico-sociale des Trois Cités",
     "description": "",
     "phone": "05 49 01 37 40",
@@ -1118,6 +1145,7 @@ var geojson = [{
 {
   "type": "Feature",
   "properties": {
+    "category":"solidarity",
     "title": "Maison Départementale de la Solidarité de Poitiers - Antenne médico-sociale de Beaulieu",
     "description": "",
     "phone": "05 49 61 44 53",
@@ -1227,6 +1255,7 @@ var geojson = [{
 {
   "type": "Feature",
   "properties": {
+    "category":"solidarity",
     "title": "SAVI 86 / PRISM",
     "description": "Service d'aide aux victimes de la Vienne",
     "address":"16, rue de la Demi-Lune<br/>86000 POITIERS",
@@ -1245,6 +1274,7 @@ var geojson = [{
 {
   "type": "Feature",
   "properties": {
+    "category":"solidarity",
     "title": "SAVI 86 / PRISM - antenne de Châtellerault",
     "description": "Service d'aide aux victimes de la Vienne",
     "address":"Mairie de Châtellerault<br/>78, boulevard Blossac<br/>86100 CHÂTELLERAULT",
@@ -1262,6 +1292,7 @@ var geojson = [{
 {
   "type": "Feature",
   "properties": {
+    "category":"solidarity",
     "title": "SAVI 86 / PRISM - antenne de Saint-Éloi",
     "description": "Service d'aide aux victimes de la Vienne",
     "address":"CRIJ<br/>45, place Charles-de-Gaulle<br/>86000 POITIERS",
@@ -1279,6 +1310,7 @@ var geojson = [{
 {
   "type": "Feature",
   "properties": {
+    "category":"solidarity",
     "title": "SAVI 86 / PRISM - antenne de Saint-Éloi",
     "description": "Service d'aide aux victimes de la Vienne",
     "phone": "05 49 00 26 52<br/>05 49 88 01 13",
@@ -1296,6 +1328,7 @@ var geojson = [{
 {
   "type": "Feature",
   "properties": {
+    "category":"solidarity",
     "title": "SAVI 86 / PRISM - antenne de Loudun",
     "description": "Service d'aide aux victimes de la Vienne",
     "address":"Mairie de Loudun<br/>1, rue Gambetta<br/>86200 LOUDUN",
@@ -1310,6 +1343,7 @@ var geojson = [{
 {
   "type": "Feature",
   "properties": {
+    "category":"solidarity",
     "title": "SAVI 86 / PRISM - antenne de Montmorillon",
     "description": "Service d'aide aux victimes de la Vienne",
     "address":"CCAS de Montmorillon<br/>4, rue des Recollets<br/>86500 MONTMORILLON",
@@ -1324,6 +1358,7 @@ var geojson = [{
 {
   "type": "Feature",
   "properties": {
+    "category":"solidarity",
     "title": "SAVI 86 / PRISM - antenne de Civray",
     "description": "Service d'aide aux victimes de la Vienne",
     "address":"Mairie de Civray<br/>12, place de Gaulle<br/>86400 CIVRAY",
