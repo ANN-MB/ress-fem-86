@@ -678,3 +678,60 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	margin-left: -12px;
 	border-right-color: #fff;
 }
+
+.marker-pin {
+  width: 35px;
+  height: 35px;
+  border-radius: 50% 50% 50% 0;
+  position: absolute;
+  
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -15px 0 0 -15px;
+  z-index: 1
+}
+
+.marker-pin::before {
+    content: "";
+    width: 28px;
+    height: 28px;
+    margin: 3px 0 0 3px;
+	transform: rotate(45deg);
+    background-size: 500%;
+	background-image: url(../img/markers-sprite.png);
+    position: absolute;
+    border-radius: 50%;
+	z-index:2
+}
+.m-default .marker-pin{background-color: #a3a3a3 }
+.m-host .marker-pin{background-color: #d252b9 }
+.m-doctor .marker-pin{background-color: #0067a3 }
+.m-culture .marker-pin{background-color: #728224 }
+.m-right .marker-pin{background-color: #f3952f }
+.m-sport .marker-pin{background-color: #5b396b}
+.m-testing .marker-pin{background-color: #eb7d7f }
+.m-solidarity .marker-pin{background-color: #ff8e7f }
+.m-health .marker-pin{background-color: #d63e2a }
+.m-menses .marker-pin{background-color: #a23336 }
+.m-activism .marker-pin{background-color: #303030}
+.m-work .marker-pin{background-color: #426776}
+.m-support .marker-pin{background-color: #ffca91}
+.m-science .marker-pin{background-color: #38aadd}
+.m-official .marker-pin{background-color: #575757}
+.m-default .marker-pin::before {background-position: 0 0}
+.m-host .marker-pin::before {background-position: 25% 0}
+.m-doctor .marker-pin::before {background-position: 50% 0}
+.m-culture .marker-pin::before {background-position: 75% 0}
+.m-right .marker-pin::before {background-position: 100% 0}
+.m-sport .marker-pin::before {background-position: 0 50%}
+.m-testing .marker-pin::before {background-position: 25% 50%}
+.m-solidarity .marker-pin::before {background-position: 50% 50%}
+.m-health .marker-pin::before {background-position: 75% 50%}
+.m-menses .marker-pin::before {background-position: 100% 50%}
+.m-activism .marker-pin::before {background-position: 0 100%}
+.m-work .marker-pin::before {background-position: 25 100%}
+.m-support .marker-pin::before {background-position: 50% 100%}
+.m-science .marker-pin::before {background-position: 75% 100%}
+.m-official .marker-pin::before {background-position: 100% 100%}
+
