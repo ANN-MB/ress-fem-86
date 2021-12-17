@@ -75,6 +75,7 @@ font-size: 100%;
       }
         #cal-grid > div {
         display: inline-block;
+		position:relative;
         height: 100%;
         max-width: 14.285714286vw;
         border-bottom: 1px solid var(--borderColor);
@@ -139,10 +140,23 @@ font-size: 100%;
   content: counter(next-days, decimal);
   counter-increment: next-days;
 }
-
-
-
-
+#cal-grid > div::after {
+  position: absolute;
+  bottom: .2rem;
+  right: .2rem
+}
+.zod-1::after {content:"\2652"}
+.zod-2::after {content:"\2653"}
+.zod-3::after {content:"\2648"}
+.zod-4::after {content:"\2649"}
+.zod-5::after {content:"\264A"}
+.zod-6::after {content:"\264B"}
+.zod-7::after {content:"\264C"}
+.zod-8::after {content:"\264D"}
+.zod-9::after {content:"\264E"}
+.zod-10::after {content:"\264F"}
+.zod-11::after {content:"\2650"}
+.zod-12::after {content:"\2651"}
 
 
 

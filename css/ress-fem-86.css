@@ -157,10 +157,6 @@ font-size: 100%
           article div {
           padding: 4px 13px 4px 38px
           }
-            article div::before {
-            position: absolute;
-            left: 12px
-            }
             ul {
             margin: 0; padding-left: 15px;
             }
@@ -184,20 +180,21 @@ font-size: 100%
             font-size: 0.7rem; font-weight: bold; color: #fefefe;
             border-radius: 50%;
             }
-            .acc img {background-position: 0 0} .acti {background-position: 0 3.846154%}
-            .avis img {background-position:0 7.692308%} .bus img {background-position:0 11.538462%}
-            .web img {background-position:0 15.384615%} .conv img {background-position:0 19.230769%}
+            .acc img, .acc::before {background-position: 0 0} .acti {background-position: 0 3.846154%}
+            .avis img, .avis::before {background-position:0 7.692308%} .bus img, .bus::before {background-position:0 11.538462%}
+            .web img, .web::before {background-position:0 15.384615%} .conv img, .conv::before {background-position:0 19.230769%}
             .cult {background-position:0 23.076923%} .doc {background-position:0 26.923077%}
-            .fb, .fb img {background-position:0 30.769231%} .heal {background-position:0 34.615385%}
-            .host {background-position:0 38.461538%} .ig, .ig img {background-position:0 42.307692%}
-            .info img {background-position:0 46.153846%} .lng img {background-position:0 50.000000%}
-            .loc img {background-position:0 53.846154%} .mail img {background-position:0 57.692308%}
-            .num, .num img {background-position:0 61.538462%} .park img {background-position:0 65.384615%}
-            .pers {background-position:0 69.230769%} .prix img {background-position:0 73.076923%}
-            .time img {background-position:0 76.923077%} .sprt {background-position:0 80.769231%}
-            .soli {background-position:0 84.615384%} .mail img {background-position:0 88.461538%}
-            .tw img {background-position:0 92.307692%} .sc img {background-position:0 96.153846%}
-            .yt img {background-position:0 100%}
+            .fb, .fb img, .fb::before {background-position:0 30.769231%} .heal {background-position:0 34.615385%}
+            .host {background-position:0 38.461538%} .ig, .ig img, .ig::before {background-position:0 42.307692%}
+            .info img, .info::before {background-position:0 46.153846%} .lng img, .lng::before {background-position:0 50.000000%}
+            .loc img, .loc::before {background-position:0 53.846154%} .mail img, .mail::before {background-position:0 57.692308%}
+            .num, .num img, .num::before {background-position:0 61.538462%} .park img, .park::before {background-position:0 65.384615%}
+            .pers {background-position:0 69.230769%} .prix img, .prix::before  {background-position:0 73.076923%}
+            .time img, .time::before {background-position:0 76.923077%} .sprt {background-position:0 80.769231%}
+            .soli {background-position:0 84.615384%} .mail img, .mail::before {background-position:0 88.461538%}
+            .tw img, .tw::before {background-position:0 92.307692%} .sc img, .sc::before {background-position:0 96.153846%}
+            .yt img, .yt::before {background-position:0 100%}
+			
             .P1 {background:#00a3db}  .P1E {background:#83d0f5}  .P2A {background:#f00}    .P2B {background:#d71f26}
             .P3 {background:#fff000}  .P10 {background:#92cfc5}  .P11 {background:#90277d} .P12 {background:#a780ad}
             .P13 {background:#e57fa9} .P14 {background:#de3fa2}  .P15 {background:#9ec83f} .P16 {background:#347c86}
