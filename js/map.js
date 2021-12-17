@@ -44,38 +44,39 @@ var popmaps = function(feature, layer) {
     "<div class=\"avis\">" + (prop.avis || "").replace(/\[\[(.+?)\|(.+?)\]\]/gi, "<a href=\"$1\">$2</a>") + "</div>";
   layer.bindPopup(String(popUp));
 }
-var makeIcon = L.Icon.extend({
-  options: {
-    iconSize: [25, 41], // size of the icon
-    iconAnchor: [12, 20], // point of the icon which will correspond to marker's location
-    popupAnchor: [0, 0] // point from which the popup should open relative to the iconAnchor
-  }
-});
 
 L.geoJson(geojson, {
   pointToLayer: function(feature, latlng) {
-    let icon = new makeIcon({iconUrl: "./img/marker-"+(feature.properties.category || "icon")+".png"})
-
-    return L.marker(latlng, {
+   var icon = L.divIcon({
+     iconSize: [35,35],
+	 iconAnchor: [17,35], 
+	 className: 'm-'+(feature.properties.category || "default"),
+	 popupAnchor: [0, 0],
+     html:'<div class="marker-pin"></div>'
+   });
+   return L.marker(latlng, {
       icon: icon,
 	    riseOnHover: true
     });
-
   },
   onEachFeature: popmaps
 }).addTo(map);
 
 L.geoJson(menses, {
   pointToLayer: function(feature, latlng) {
-    let icon = new makeIcon({iconUrl: "./img/marker-"+(feature.properties.category || "icon")+".png"})
-
-    return L.marker(latlng, {
+   var icon = L.divIcon({
+     iconSize: [35,35],
+	 iconAnchor: [17,35], 
+	 className: 'm-'+(feature.properties.category || "default"),
+	 popupAnchor: [0, 0],
+     html:'<div class="marker-pin"></div>'
+   });
+   return L.marker(latlng, {
       icon: icon,
 	    riseOnHover: true
     });
-
   },
   onEachFeature: popmaps
 }).addTo(map);
-
-// var mappos = L.Permalink.getMapLocation();
+/*https://www.datavis.fr/index.php?page=leaflet-control*/
+/*https://www.datavis.fr/index.php?page=leaflet-firstmap*/
