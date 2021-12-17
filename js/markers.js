@@ -438,7 +438,7 @@ var geojson = [{
       "bus": "<span class=\"PCITA\">CITA</span> Carnot<br/><span class=\"P2A\">2A</span> <span class=\"PO\">O</span> <span class=\"P12\">12</span> <span class=\"P13\">13</span> <span class=\"P15\">15</span> Victor Hugo",
       "email": "maya.hallay@larylab.fr",
       "url": "https://larylab.fr",
-      "twitter": "[[https://twitter.com/hallaymaya|@hallaymaya]]",
+      "twitter": "https://twitter.com/hallaymaya",
       "facebook": "https://www.facebook.com/lary.lab.1",
       "prix": "50€ par séance. Prévoir entre 5 à 20 séances maximum.",
       "conv": "Ne prend pas L'ALD",
