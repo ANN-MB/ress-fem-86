@@ -10,7 +10,7 @@ const evt = [
   "Title": "Festival Les Menstrueuses",
   "DayStart": "9/12/2021",
   "DayEnd": "10/12/2021",
-  "Type" : "Fest",
+  "Type" : "fest",
   "Link": "https://emf.fr/ec3_event/les-menstrueuses/",
   "Place":"Divers lieux, 86000 POITIERS",
   "Desc":"Les Menstrueuses, c'est une série d'événements avec des ateliers, des conférences et une journée d'étude pour parler des règles et de leur place dans nos vies\n🎟️ Gratuit | sur réservation\nProgramme et réservation 👉 [[https://emf.fr/39000]]"
@@ -29,7 +29,7 @@ const evt = [
   "Place":"UFR Lettres & Langues de l'université de Poitiers",
   "Link":"https://cutt.ly/iYFhaOD",
   "Desc":"",
-  "Type":"Expo"
+  "Type":"expo"
 },
 {
   "Title": "Festival Égale à égal",
@@ -38,12 +38,12 @@ const evt = [
   "Place":"Divers lieux - Poitiers",
   "Link":"https://www.festivalegaleaegal.com/",
   "Desc":"5<sup>ème</sup> ÉDITION<br/>À l'initiative d'HF Nouvelle Aquitaine, égalité femme homme dans les arts et la culture",
-  "Type":"Fest"
+  "Type":"fest"
 },	
 {
   "Title": "Journée du souvenir de l'Holocauste",
   "DayStart": "20/1/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Exposition : Satire graphique et féminisme en Espagne (1975-2020)",
@@ -51,151 +51,151 @@ const evt = [
   "DayEnd": "30/1/2022",
   "Place":"UFR Lettres & Langues de l'université de Poitiers",
   "Link":"https://cutt.ly/iYFhaOD",
-  "Type":"Expo"
+  "Type":"expo"
 },
 {
   "Title": "Journée internationale des femmes et des filles de science",
   "DayStart": "11/2/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée internationale contre le harcèlement",
   "DayStart": "25/2/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée Zéro Discriminations",
   "DayStart": "1/3/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée internationale pour le droit des femmes",
   "DayStart": "8/3/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée internationale de la visibilité trans",
   "DayStart": "31/3/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée internationale de l'asexualité",
   "DayStart": "6/4/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Jour du Silence",
   "DayStart": "23/4/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée de la visibilité lesbienne",
   "DayStart": "26/4/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée internationale contre l'homophobie et la transphobie",
   "DayStart": "17/5/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée de la visibilité pansexuelle et panromantique",
   "DayStart": "24/5/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée d'action pour la santé des femmes et de l'hygiène menstruelle",
   "DayStart": "28/5/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Nuit du Souvenir du Pulse (Orlando)",
   "DayStart": "12/6/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Commémoration de Stonewall",
   "DayStart": "28/6/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée internationale des personnes non-binaires",
   "DayStart": "14/7/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée internationale du drag",
   "DayStart": "16/7/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée internationale de la femme africaine",
   "DayStart": "31/7/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée de la bisexualité",
   "DayStart": "23/9/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée mondiale du droit à l'avortement",
   "DayStart": "28/9/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée du Coming Out & Journée internationale des filles",
   "DayStart": "11/10/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée des pronoms",
   "DayStart": "19/10/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée de la visibilité intersexe",
   "DayStart": "26/10/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée des parents de trans",
   "DayStart": "5/11/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée de la solidarité intersexe",
   "DayStart": "8/11/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée contre le harcèlement",
   "DayStart": "18/11/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée du souvenir trans (TDOR)",
   "DayStart": "20/11/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée internationale contre les violences faites aux femmes",
   "DayStart": "25/11/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée de la visibilité Ace (asexualité)",
   "DayStart": "26/11/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée mondiale de lutte contre le SIDA",
   "DayStart": "1/12/2022",
-  "Type" : "National"
+  "Type" : "national"
 },
 {
   "Title": "Journée internationale des droits humains",
   "DayStart": "10/12/2022",
-  "Type" : "National"
+  "Type" : "national"
 }
 ];
