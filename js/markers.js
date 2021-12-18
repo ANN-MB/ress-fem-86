@@ -707,6 +707,7 @@ var geojson = [
   {
     "type": "Feature",
     "properties": {
+      "category":"activism",
       "title": "Planning Familial de la Vienne",
       "description": "Le Planning milite pour le droit à l'éducation à la sexualité, à la contraception, à l'avortement, à l'égalité femmes - hommes et combat toutes formes de violences et de discriminations.",
       "address": "20, rue Fief des Hausses<br/>86000 POITIERS",
@@ -840,7 +841,7 @@ var geojson = [
       "type": "Point",
       "coordinates": [0.35940, 46.59007]
     }
-  },
+  }/*,
   {
     "type": "Feature",
     "properties": {
@@ -856,7 +857,7 @@ var geojson = [
       "type": "Point",
       "coordinates": [0.34108, 46.57736]
     }
-  },
+  }*/,
   {
     "type": "Feature",
     "properties": {
