@@ -174,61 +174,7 @@ font-size: 100%
             background-image: url("../img/sprite.png");
             }
             article div a {color: #0078A8} article div a:hover {color:inherit}
-            .bus span {
-            display: inline-flex;  align-items: center; justify-content: center;
-            width: 1.1rem; height: 1.1rem;
-            font-size: 0.7rem; font-weight: bold; color: #fefefe;
-            border-radius: 50%;
-            }
-            .acc img, .acc::before {background-position: 0 0} .acti {background-position: 0 3.846154%}
-            .avis img, .avis::before {background-position:0 7.692308%} .bus img, .bus::before {background-position:0 11.538462%}
-            .web img, .web::before {background-position:0 15.384615%} .conv img, .conv::before {background-position:0 19.230769%}
-            .cult {background-position:0 23.076923%} .doc {background-position:0 26.923077%}
-            .fb, .fb img, .fb::before {background-position:0 30.769231%} .heal {background-position:0 34.615385%}
-            .host {background-position:0 38.461538%} .ig, .ig img, .ig::before {background-position:0 42.307692%}
-            .info img, .info::before {background-position:0 46.153846%} .lng img, .lng::before {background-position:0 50.000000%}
-            .loc img, .loc::before {background-position:0 53.846154%} .mail img, .mail::before {background-position:0 57.692308%}
-            .num, .num img, .num::before {background-position:0 61.538462%} .park img, .park::before {background-position:0 65.384615%}
-            .pers {background-position:0 69.230769%} .prix img, .prix::before  {background-position:0 73.076923%}
-            .time img, .time::before {background-position:0 76.923077%} .sprt {background-position:0 80.769231%}
-            .soli {background-position:0 84.615384%} .mail img, .mail::before {background-position:0 88.461538%}
-            .tw img, .tw::before {background-position:0 92.307692%} .sc img, .sc::before {background-position:0 96.153846%}
-            .yt img, .yt::before {background-position:0 100%}
-			
-            .P1 {background:#00a3db}  .P1E {background:#83d0f5}  .P2A {background:#f00}    .P2B {background:#d71f26}
-            .P3 {background:#fff000}  .P10 {background:#92cfc5}  .P11 {background:#90277d} .P12 {background:#a780ad}
-            .P13 {background:#e57fa9} .P14 {background:#de3fa2}  .P15 {background:#9ec83f} .P16 {background:#347c86}
-            .P17 {background:#c1934f} .P20 {background:#82be40}  .P21 {background:#e78229} .P22 {background:#837438}
-            .P23 {background:#e26626} .P24 {background:#e05a75}  .P25 {background:#eea829} .P27 {background:#a1bcc6}
-            .P28 {background:#9d6331} .P29 {background:#69b642}  .P30 {background:#c71066} .P31 {background:#07ad98}
-            .P32 {background:#347ab3} .P33 {background:#a4502b}  .P34 {background:#573d90} .P35 {background:#719b68}
-            .PO {background:#e94282}  .PTER {background:#0000b0} .PCITA {background:#64c800}
-            .P3, .PD, .C2, .C3, .P10, .P13, .P27, .P15, .P1E {color:#000 !important}
-            .PTER, .PCITA {font-size:.45em !important}
-            .C1, .C2, .C3, .C4, .C5, .C6, .C7, .C10, .C11, .C12, .C13, .C14, .C15, .C16 {border-radius:0 !important}
-            .C1 {background:#de192c}  .C2 {background:#ff7900}  .C3 {background:#ffb500}
-            .C4 {background:#c90}     .C5 {background:#0080c2}  .C6 {background:#00c4f3}
-            .C7 {background:#4a55ba}  .C10 {background:#34b49d} .C11 {background:#00a456}
-            .C12 {background:#95c44b} .C13 {background:#007139} .C14 {background:#a69e42} 
-            .C15 {background:#1b7b6a} .C16 {background:#46b052}
-          h2 {
-          padding: 4px 13px 4px 13px;
-          margin: 0 0 5px 0;
-          font-size: inherit;
-          border-bottom: 1px solid #777
-          }
-          .desc {
-          font-style: italic;
-          padding: 4px 13px 4px 13px
-          }
-          h3 {
-          margin: 0; padding: 4px 13px;
-          font-size: inherit
-          }
-          hr {
-          box-sizing: content-box;
-          border-top: 2px dashed #777; border-bottom: 0
-          }
+            /** fiches **/ 
       #totop {
       position: fixed; display: none;
       right: 25px; bottom: 20px;
@@ -255,6 +201,7 @@ font-size: 100%
         width: 100%; height: 100%;
         border: 0;
         } 
+          .command {display: none !important}
           #exit-map {
           position: absolute;
           top: 15px; right: 15px;
