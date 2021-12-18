@@ -662,6 +662,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	border-right-color: #fff;
 }
 
+
 .marker-pin {
   width: 35px;
   height: 35px;
@@ -695,6 +696,14 @@ svg.leaflet-image-layer.leaflet-interactive path {
   left: 9px;
   transform: rotate(45deg);
   z-index: 1
+}
+.shadow {
+  position: absolute;
+  width: 35px;
+  height: 16px;
+  background: url(../img/markers-shadow.png);
+  bottom: -17px;
+  left: 11px
 }
 .m-default .marker-pin{background-color: #a3a3a3 }
 .m-host .marker-pin{background-color: #d252b9 }
