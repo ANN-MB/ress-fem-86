@@ -10,7 +10,7 @@ var geojson = [
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [0.343457,46.584832]
+        "coordinates": [0.343397,46.584869]
       }
     },
     {
@@ -83,7 +83,7 @@ var geojson = [
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [0.34606, 46.58351]
+      "coordinates": [0.345919, 46.583409]
     }
   },
   {
@@ -161,7 +161,7 @@ var geojson = [
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [0.34398, 46.58456]
+      "coordinates": [0.343789, 46.584574]
     }
   },
   {
@@ -240,7 +240,7 @@ var geojson = [
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [0.35177, 46.58077]
+      "coordinates": [0.351315, 46.580725]
     }
   },
   {
@@ -306,7 +306,7 @@ var geojson = [
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [0.86870, 46.42509]
+      "coordinates": [0.868917, 46.425031]
     }
   },
   {
@@ -389,7 +389,7 @@ var geojson = [
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [0.35190, 46.58076]
+      "coordinates": [0.351594, 46.580703]
     }
   },
   {
@@ -407,7 +407,7 @@ var geojson = [
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [0.35156, 46.58070]
+      "coordinates": [0.351245, 46.580921]
     }
   },
   {
@@ -695,7 +695,7 @@ var geojson = [
     },
     "geometry": {
       "type": "Point",
-      "coordinates": [0.34306, 46.58348]
+      "coordinates": [0.342823, 46.583343]
     }
   },
   {
@@ -1277,7 +1277,7 @@ var geojson = [
   },
   "geometry": {
     "type": "Point",
-    "coordinates": [0.29516,46.29691]
+    "coordinates": [0.295429,46.296710]
   }
 },
 {
@@ -1366,7 +1366,7 @@ var geojson = [
   "type": "Feature",
   "properties": {
     "category":"solidarity",
-    "title": "SAVI 86 / PRISM - antenne de Saint-Éloi",
+    "title": "SAVI 86 / PRISM - CRIJ de Poitiers",
     "description": "Service d'aide aux victimes de la Vienne",
     "address":"CRIJ<br/>45, place Charles-de-Gaulle<br/>86000 POITIERS",
     "phone": "05 49 00 26 52<br/>05 49 88 01 13",
@@ -1425,7 +1425,7 @@ var geojson = [
 },
   "geometry": {
     "type": "Point",
-    "coordinates": [0.86874,46.42504]
+    "coordinates": [0.868665,46.424964]
   }
 },
 {
@@ -1440,7 +1440,7 @@ var geojson = [
 },
   "geometry": {
     "type": "Point",
-    "coordinates": [0.29516,46.29691]
+    "coordinates": [0.295450,46.296977]
   }
 },
 {
