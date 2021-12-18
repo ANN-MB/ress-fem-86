@@ -1,6 +1,4 @@
-var menses = {
-  "type": "FeatureCollection",
-  "features": [
+var geojson = [
     {
       "type": "Feature",
       "properties": {
@@ -65,11 +63,8 @@ var menses = {
         "type": "Point",
         "coordinates": [0.34388,46.582478]
       }
-    }
-  ]
-}
-
-var geojson = [{
+    },
+    {
     "type": "Feature",
     "properties": {
       "category":"host",

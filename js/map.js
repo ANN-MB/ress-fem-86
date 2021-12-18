@@ -1,5 +1,5 @@
 var map = L.map('mymap', {
-    zoomSnap: 0.5
+  zoomSnap: 0.5
 }).fitBounds([
   [46.19709708576172, -0.9106632928479332],
   [47.05997975442446, 1.7422818877878934]
@@ -7,7 +7,8 @@ var map = L.map('mymap', {
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  minZoom: 9
+  minZoom: 9,
+  accessToken: ''
 }).addTo(map);
 
 L.Map = L.Map.extend({
@@ -25,7 +26,7 @@ var popmaps = function(feature, layer) {
   var prop = feature.properties,
     popUp = "<h2>" + prop.title + "</h2>" +
     "<div class=\"desc\">" + (prop.description || "").replace(/\[\[(.+?)\|(.+?)\]\]/gi, "<a href=\"$1\">$2</a>") + "</div>" +
-    "<div class=\"num\">" + (prop.phone || "").replace(/\[\[(.+?)\|(.+?)\]\]/gi, "<a href=\"$1\">$2</a>").replace(/(?:\+33|0)([0-9 ]+)/g, "<a href=\"tel:+33$1\">0$1</a>").replace(/0([0-9])([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})/g, "0$1 $2 $3 $4 $5") + "</div>" +
+    "<div class=\"num\">" + (prop.phone || "").replace(/\[\[(.+?)\|(.+?)\]\]/gi, "<a href=\"$1\">$2</a>").replace(/(?:\+33|0)([0-9 ]{3,})/g, "<a href=\"tel:+33$1\">0$1</a>").replace(/0([0-9])([0-9]{2})([0-9]{2})([0-9]{2})([0-9]{2})/g, "0$1 $2 $3 $4 $5") + "</div>" +
     "<div class=\"mail\">" + (prop.email || "").replace(/([A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,})/gi, "<a href=\"mailto:$1\">$1</a>") + "</div>" +
     "<div class=\"web\">" + (prop.url || "").replace(/(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi, "<a href=\"$1\">$1</a>") + "</div>" +
     "<div class=\"loc\">" + (prop.address || "") + "</div>" +
@@ -45,38 +46,77 @@ var popmaps = function(feature, layer) {
   layer.bindPopup(String(popUp));
 }
 
-L.geoJson(geojson, {
+var main = L.geoJson(geojson, {
   pointToLayer: function(feature, latlng) {
-   var icon = L.divIcon({
-     iconSize: [35,35],
-	 iconAnchor: [17,35], 
-	 className: 'm-'+(feature.properties.category || "default"),
-	 popupAnchor: [0, 0],
-     html:'<div class="marker-pin"></div>'
-   });
-   return L.marker(latlng, {
+    var icon = L.divIcon({
+      iconSize: [35, 35],
+      iconAnchor: [17, 35],
+      className: 'm-' + (feature.properties.category || "default"),
+      popupAnchor: [0, 0],
+      html: '<div class="marker-pin"></div>'
+    });
+    return L.marker(latlng, {
       icon: icon,
-	    riseOnHover: true
+      riseOnHover: true
     });
   },
   onEachFeature: popmaps
 }).addTo(map);
 
-L.geoJson(menses, {
-  pointToLayer: function(feature, latlng) {
-   var icon = L.divIcon({
-     iconSize: [35,35],
-	 iconAnchor: [17,35], 
-	 className: 'm-'+(feature.properties.category || "default"),
-	 popupAnchor: [0, 0],
-     html:'<div class="marker-pin"></div>'
-   });
-   return L.marker(latlng, {
-      icon: icon,
-	    riseOnHover: true
-    });
-  },
-  onEachFeature: popmaps
-}).addTo(map);
-/*https://www.datavis.fr/index.php?page=leaflet-control*/
 /*https://www.datavis.fr/index.php?page=leaflet-firstmap*/
+
+
+
+
+var cats = [];
+
+function getCat(cats, cat) {
+  for (var i = cats.length; i--;) {
+    if (cats[i]["label"] === cat) {
+      return cats[i];
+    }
+  }
+  return;
+}
+for (var i = 0; i < geojson.length; i++) {
+  var cat = getCat(cats, geojson[i].properties.category);
+    
+  if (cat === undefined) {
+    cat = {
+      "id": "m-"+geojson[i].properties.category,
+      "label": geojson[i].properties.category
+    }
+    cats.push(cat);
+  }
+}
+
+var command = L.control({position: 'topright'});
+command.onAdd = function(map) {
+  var div = L.DomUtil.create('div', 'command');
+  div.innerHTML += '<h3>Filtre</h3>'
+  + '<label for="m-menses"><input id="m-menses" type="checkbox" class="chk-filter" checked />Boîtes à don menstruelles</label>'
+  + '<label for="m-host"><input id="m-host" type="checkbox" class="chk-filter" checked />Hébergement</label>'
+  + '<label for="m-testing"><input id="m-testing" type="checkbox" class="chk-filter" checked />Dépistage IST</label>'
+  + '<label for="m-doctor"><input id="m-doctor" type="checkbox" class="chk-filter" checked />Soignant&middot;es</label>'
+  + '<label for="m-sport"><input id="m-sport" type="checkbox" class="chk-filter" checked />Sport</label>'
+  + '<label for="m-activism"><input id="m-activism" type="checkbox" class="chk-filter" checked />Militer</label>'
+  + '<label for="m-health"><input id="m-health" type="checkbox" class="chk-filter" checked />Santé</label>'
+  + '<label for="m-culture"><input id="m-culture" type="checkbox" class="chk-filter" checked />Culturel</label>'
+  + '<label for="m-support"><input id="m-support" type="checkbox" class="chk-filter" checked />Groupe de parole</label>'
+  + '<label for="m-official"><input id="m-official" type="checkbox" class="chk-filter" checked />Élues</label>'
+  + '<label for="m-solidarity"><input id="m-solidarity" type="checkbox" class="chk-filter" checked />Solidarité</label>'
+  + '<label for="m-right"><input id="m-right" type="checkbox" class="chk-filter" checked />Droit & Justice</label>'
+  return div;
+};
+command.addTo(map);
+
+document.addEventListener("click", function(e){
+  if (e.target.className == "chk-filter") {
+    var el = document.getElementsByClassName(e.target.id),
+        ell = el.length,
+        c = e.target.checked;   
+    for (var i = 0 ; i < ell; i++){
+       el[i].style.display = c ? "block" : "none";
+    }
+  } 
+}, false);
