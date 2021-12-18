@@ -5,7 +5,8 @@ var geojson = [
         "category":"menses",
         "title":"Boîte à dons de protections périodiques - Square des Flageolles",
         "address": "rue des Flageolles / rue de la Tête Noire - 86000 POITIERS",
-        "info": "La boîte se trouve dans la boîte à livres du Square des Flageolles"
+        "info": "La boîte se trouve dans la boîte à livres du Square des Flageolles",
+	"time": "Du 1<sup>er</sup> novembre au 31 mars : 8h00 - 18h00<br/>Du 1<sup>er</sup> avril au 31 octobre : de 8h00 à 20h00"
       },
       "geometry": {
         "type": "Point",
@@ -18,7 +19,8 @@ var geojson = [
         "category":"menses",
         "address": "16 ter, Rue de la Regratterie - 86000 POITIERS",
         "title": "Boîte à dons de protections périodiques - L'envers du bocal",
-        "info": "La boîte se trouve dans les toilettes de l'établissement\nHoraires d'ouverture : \nlundi- mardi : fermé\nmercredi - jeudi : 12h00-22h00\nvendredi - samedi : 12h00-23h00\ndimanche : 14h30-20h00"
+        "info": "La boîte se trouve dans les toilettes de l'établissement",
+	"time": "mercredi - jeudi : 12h00 - 22h00<br/>vendredi - samedi : 12h00 - 23h00<br/>dimanche : 14h30 - 20h00"
       },
       "geometry": {
         "type": "Point",
@@ -31,7 +33,8 @@ var geojson = [
         "category":"menses",
         "title":"Boîte à dons de protections périodiques - Le Zinc",
         "address": "196, Grand'Rue - 86000 POITIERS",
-        "info": "La boîte se trouve dans les toilettes de l'établissement\nHoraires d'ouverture : \nmardi - mercredi - jeudi - vendredi - samedi : 18h00-02h00\ndimanche -lundi : fermé"
+        "info": "La boîte se trouve dans les toilettes de l'établissement",
+	"time": "du mardi au samedi : 18h00 - 02h00"
       },
       "geometry": {
         "type": "Point",
@@ -44,7 +47,8 @@ var geojson = [
         "category":"menses",
         "title": "Boîte à dons de protections périodiques - Crafty Brewpub",
         "address":"20, place Charles de Gaulle - 86000 POITIERS",
-        "info": "Vérifier si les nouveaux propriétaires participent toujours à l'opération.<br/>La boîte se trouve dans les toilettes de l'établissement<br/>Horaires d'ouverture : <br/>lundi- mardi - mercredi - jeudi - vendredi - samedi : 16h00-02h00<br/>dimanche : fermé"
+        "info": "Vérifier si les nouveaux propriétaires participent toujours à l'opération.<br/>La boîte se trouve dans les toilettes de l'établissement",
+	"time": "du lundi au samedi : 16h00 - 02h00"
       },
       "geometry": {
         "type": "Point",
@@ -57,7 +61,8 @@ var geojson = [
         "category":"menses", 
         "address": "64, rue de la Cathédrale - 86000 POITIERS",
         "title": "Boîte à dons de protections périodiques - Sweet Time & Company",
-        "info": "La boîte se trouve dans les toilettes de l'établissement\nHoraires d'ouverture : \nmardi - mercredi - jeudi - vendredi - samedi : 10h30-19h00\ndimanche - lundi : fermé"
+        "info": "La boîte se trouve dans les toilettes de l'établissement",
+	"time" : "du mardi au samedi : 10h30 - 19h00"
       },
       "geometry": {
         "type": "Point",
