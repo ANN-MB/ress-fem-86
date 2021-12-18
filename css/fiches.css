@@ -1,5 +1,7 @@
 @charset "UTF-8";
-
+ul {
+  margin: 0; padding-left: 15px;
+}
 .bus span {
   display: inline-flex;  align-items: center; justify-content: center;
   width: 1.1rem; height: 1.1rem;
