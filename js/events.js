@@ -1,5 +1,14 @@
 const evt = [
 {
+  "Title": "«&nbsp;les Déjantées&nbsp;», permanence de réparation de vélos",
+  "DayStart": "3/12/2021",
+  "TimeStart": "18:00",
+  "TimeEnd": "20:00",
+  "Link":"https://www.facebook.com/events/280129067229604",
+  "Place":"L'atelier du petit plateau<br/>33, place Henri Barbusse<br/>86000 POITIERS",
+  "Desc":"Permanence en mixité choisie ! Pour les femmes et personnes trans."
+},
+{
   "Title": "«&nbsp;Fluctuations&nbsp;»",
   "DayStart": "9/12/2021",
   "TimeStart": "14:00",
@@ -30,6 +39,15 @@ const evt = [
   "Link":"https://cutt.ly/iYFhaOD",
   "Desc":"",
   "Type":"expo"
+},
+{
+  "Title": "«&nbsp;les Déjantées&nbsp;», permanence de réparation de vélos",
+  "DayStart": "4/2/2022",
+  "TimeStart": "18:00",
+  "TimeEnd": "20:00",
+  "Link":"https://www.facebook.com/events/280129067229604",
+  "Place":"L'atelier du petit plateau<br/>33, place Henri Barbusse<br/>86000 POITIERS",
+  "Desc":"Permanence en mixité choisie ! Pour les femmes et personnes trans."
 },
 {
   "Title": "Festival Égale à égal",
@@ -79,6 +97,15 @@ const evt = [
   "Type" : "national"
 },
 {
+  "Title": "«&nbsp;les Déjantées&nbsp;», permanence de réparation de vélos",
+  "DayStart": "1/4/2022",
+  "TimeStart": "18:00",
+  "TimeEnd": "20:00",
+  "Link":"https://www.facebook.com/events/280129067229604",
+  "Place":"L'atelier du petit plateau<br/>33, place Henri Barbusse<br/>86000 POITIERS",
+  "Desc":"Permanence en mixité choisie ! Pour les femmes et personnes trans."
+},
+{
   "Title": "Journée internationale de l'asexualité",
   "DayStart": "6/4/2022",
   "Type" : "national"
@@ -107,6 +134,15 @@ const evt = [
   "Title": "Journée d'action pour la santé des femmes et de l'hygiène menstruelle",
   "DayStart": "28/5/2022",
   "Type" : "national"
+},
+{
+  "Title": "«&nbsp;les Déjantées&nbsp;», permanence de réparation de vélos",
+  "DayStart": "3/6/2022",
+  "TimeStart": "18:00",
+  "TimeEnd": "20:00",
+  "Link":"https://www.facebook.com/events/280129067229604",
+  "Place":"L'atelier du petit plateau<br/>33, place Henri Barbusse<br/>86000 POITIERS",
+  "Desc":"Permanence en mixité choisie ! Pour les femmes et personnes trans."
 },
 {
   "Title": "Nuit du Souvenir du Pulse (Orlando)",
