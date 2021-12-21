@@ -1,5 +1,3 @@
-/*jslint esnext:true*/
-/*jslint es6:true*/ 
 // Calendrier par Ann MB - Licence CC BY-SA 4.0 - ann-mb.carrd.co
 class RightTime {
   ml = [null, 31, [28,29], 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
