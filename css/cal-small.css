@@ -186,7 +186,9 @@
       #details-exit/*, #details-time, #details-desc, #details-place, #details-link*/ {
       display: none;
       }
-    
+.moon {
+display: none
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --soft-black: #fefefe;

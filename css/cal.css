@@ -68,19 +68,22 @@ font-size: 100%;
       #cal-grid {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
-      grid-template-rows: repeat(auto-fill, 1fr);
+      grid-template-rows: repeat(auto-fill, 1fr) ;
       min-height: 100vh;
       height:100%;
       min-width: 0
       }
         #cal-grid > div {
         display: inline-block;
-		position:relative;
+	      position:relative;       
         height: 100%;
         max-width: 14.285714286vw;
         border-bottom: 1px solid var(--borderColor);
         border-right: 1px solid var(--borderColor);
         }
+        #cal-grid > div:empty {
+        min-height:14.2857142857vw
+        }       
         #cal-grid > div:nth-child(7n), .days-names div:nth-last-child(1)  {
         border-right: 0;
         }
@@ -94,32 +97,23 @@ font-size: 100%;
           margin: .2rem;
           font-size: 1rem; text-align:center         
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        #cal-grid > div::after {
+        position: absolute;
+        bottom: 0rem; right: .2rem;
+        font-size: 1.5rem
+        }
 
 .cal-today::before {
   background: var(--soft-black);
   color: var(--soft-white) !important;
   border-radius: 50%;
-
+  padding: 2px 0 0 2px
 }
 
 .cal-prev, .cal-next, .cal-curr  {
   box-shadow: 0 1px 0 white inset, inset 0 1px 0 rgba(255,255,255,0.7);
   border: 1px solid rgba(0,0,0,0.1);
-  background: rgba(255,255,255,0.5);  
+  background-color: rgba(255,255,255,0.5);  
 }
 
 .cal-prev, .cal-next {
@@ -140,23 +134,18 @@ font-size: 100%;
   content: counter(next-days, decimal);
   counter-increment: next-days;
 }
-#cal-grid > div::after {
-  position: absolute;
-  bottom: .2rem;
-  right: .2rem
+.moon {
+ position: absolute;
+ top: .3rem;
+ right: .2rem;
 }
-.zod-1::after {content:"\2652"}
-.zod-2::after {content:"\2653"}
-.zod-3::after {content:"\2648"}
-.zod-4::after {content:"\2649"}
-.zod-5::after {content:"\264A"}
-.zod-6::after {content:"\264B"}
-.zod-7::after {content:"\264C"}
-.zod-8::after {content:"\264D"}
-.zod-9::after {content:"\264E"}
-.zod-10::after {content:"\264F"}
-.zod-11::after {content:"\2650"}
-.zod-12::after {content:"\2651"}
+.moon.full {
+ filter: drop-shadow(0 0 2px #000);
+}
+.zod-1::after {content:"\2652\fe0e"} .zod-2::after {content:"\2653\fe0e"} .zod-3::after {content:"\2648\fe0e"}
+.zod-4::after {content:"\2649\fe0e"} .zod-5::after {content:"\264a\fe0e"} .zod-6::after {content:"\264b\fe0e"}
+.zod-7::after {content:"\264c\fe0e"} .zod-8::after {content:"\264d\fe0e"} .zod-9::after {content:"\264e\fe0e"}
+.zod-10::after {content:"\264f\fe0e"} .zod-11::after {content:"\2650\fe0e"} .zod-12::after {content:"\2651\fe0e"}
 
 
 
