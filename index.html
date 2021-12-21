@@ -13,9 +13,9 @@
     <link rel="icon" href="img/favicon.png" type="image/png" />
     <link rel="next" href="https://ann-mb.github.io/ress-fem-86/agenda/index.html" />
     <link rel="next" href="https://ann-mb.github.io/ress-fem-86/carte/index.html" />
-    <link rel="stylesheet" href="css/ress-fem-86.css" />
-    <link rel="stylesheet" href="css/cal-small.css" />
-    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="agenda/cal-small.css" />
+    <link rel="stylesheet" href="carte/leaflet.css" />
     <noscript><style>nav div:nth-of-type(-n+3) {display:none}</style></noscript>
     <title>Ressources féministe et queer de Poitiers et de la Vienne</title>
   </head>
@@ -103,7 +103,7 @@
             <option value="190">Vouillé</option>
           </select>
         </div>
-        <div id="alph-cont">
+        <div id="az-go">
           <i class="fa fa-az-sort"></i>
           <label for="alph" class="sr-only">Aller directement à une lettre de l'alphabet</label>
           <select id="alph" name="alph">
@@ -169,7 +169,7 @@
             <div>D<span>im</span></div>
           </div>
           <div id="cal-grid" role="grid"></div>
-          <div class="complet"><a href="cal.html">voir l'agenda complet</a></div>
+          <div class="complet"><a href="agenda/">voir l'agenda complet</a></div>
         </div>
         <div id="cal-details" aria-hidden="true" tabindex="0">
           <div class="scrollable">
@@ -1453,11 +1453,11 @@
       <a href="#top" id="totop" accesskey="h">&#x2191; Revenir en haut <span class="sr-only">de la page</span></a>
       <div id="mapbox"><a id="exit-map"  aria-label="Fermer la carte">&#x2715; Fermer</a><div id="mymap"></div></div>
     </div>
-	  <script src="js/leaflet.js"></script>
-    <script src="js/markers.js"></script>
-    <script src="js/map.js"></script>
-    <script src="js/events.js"></script>
-    <script src="js/calendar.js"></script>
-    <script src="js/ress-fem-86.js"></script>
+	<script src="carte/leaflet.js"></script>
+    <script src="carte/marqueurs.js"></script>
+    <script src="carte/map.js"></script>
+    <script src="agenda/events.js"></script>
+    <script src="agenda/agenda.js"></script>
+    <script src="ress-fem-86.js"></script>
   </body>
 </html>
