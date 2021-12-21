@@ -1,11 +1,5 @@
 const evt = [
 {
-  "Title": "Noel",
-  "DayStart": "24/12/2021",
-  "TimeStart": "23:59",
-  "Desc":"PUTIN"
-},
-{
   "Title": "«&nbsp;les Déjantées&nbsp;», permanence de réparation de vélos",
   "DayStart": "3/12/2021",
   "TimeStart": "18:00",
