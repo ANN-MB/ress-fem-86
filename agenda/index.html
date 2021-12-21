@@ -1,0 +1,49 @@
+<!-- License CC BY-SA 4.0 Ann MB - ann-mb.carrd.co -->
+<!DOCTYPE html>
+<html lang="fr-FR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
+    <meta name="googlebot" content="noindex" />
+    <meta name="robots" content="none" />
+    <meta name="author" content="Ann MB" />
+    <meta name="description" content="Agenda des ressources féministes et queer de Poitiers et de la Vienne" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="referrer" content="no-referrer" />
+    <link rel="icon" href="../img/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="../css/cal.css" />     
+    <title>Calendrier</title>
+  </head>
+  <body>
+    <div id="caltainer">
+      <nav class="cal-nav">
+        <a href="#" id="go-prev" aria-label="Aller au mois précédent">&#x25C0;</a>
+        <div id="month-year"></div>
+        <a href="#" id="go-next" aria-label="Aller au mois suivant">&#x25B6;</a>
+      </nav>
+      <div class="days-names">
+        <div>L<span>un<span>di</span></span></div>
+        <div>M<span>ar<span>di</span></span></div>
+        <div>M<span>er<span>credi</span></span></div>
+        <div>J<span>eu<span>di</span></span></div>
+        <div>V<span>en<span>dredi</span></span></div>
+        <div>S<span>am<span>edi</span></span></div>
+        <div>D<span>im<span>anche</span></span></div>
+      </div>
+      <div id="noscript">Chargement du calendrier...<br/><small>S'il ne s'affiche pas c'est que JavaScript est désactivé.</small></div>
+      <div id="cal-grid" role="grid"></div>
+      <div id="cal-details" aria-hidden="true" tabindex="0">
+        <div class="scrollable">
+        <div id="details-title"></div>
+        <div id="details-time" class="fa fa-clock"></div>
+        <div id="details-place" class="fa fa-map-marker"></div>
+        <div id="details-link" class="fa fa-link"></div>
+        <div id="details-desc" class="fa fa-quote"></div>
+        </div>
+        <a href="#" id="details-exit" class="fa fa-cross" aria-label="Fermer la popup"></a>
+      </div>
+    </div>
+    <script src="../js/events.js"></script>
+    <script src="../js/calendar.js"></script>
+  </body>
+</html>
