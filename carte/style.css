@@ -746,7 +746,6 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .command {
   padding: 4px 6px;
   background: white;
-  font: 14px/16px Arial, Helvetica, sans-serif;
   background: rgba(255,255,255,0.9);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
@@ -782,4 +781,18 @@ svg.leaflet-image-layer.leaflet-interactive path {
 }
 .lab.down::before {
   content:"🔽"
+}
+
+@media (prefers-color-scheme: dark) {
+  .command, .leaflet-popup-content-wrapper {
+  background: #333;
+  color: #efefef; 
+  }
+  .leaflet-popup-content-wrapper a {
+	  color: #8cdeff
+  }
+  .command {
+	  background: rgba(80,80,80,0.9);
+  }
+
 }

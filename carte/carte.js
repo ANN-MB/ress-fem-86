@@ -42,8 +42,8 @@ var popmaps = function(feature, layer) {
     "<div class=\"fb\">" + (prop.facebook || "").replace(/(?:https?:\/\/www\.facebook\.com\/)?@?([a-zé_0-9-.]+)\/?/gi, "<a href=\"https://www.facebook.com/$1\">@$1</a>") + "</div>" +
     "<div class=\"tw\">" + (prop.twitter || "").replace(/(?:https?:\/\/www\.twitter\.com\/)?@?([a-z_0-9-.]+)\/?/gi, "<a href=\"https://www.twitter.com/$1\">@$1</a>") + "</div>" +
     "<div class=\"ig\">" + (prop.instagram || "").replace(/(?:https?:\/\/www\.instagram\.com\/)?@?([a-z_0-9-.]+)\/?/gi, "<a href=\"https://www.instagram.com/$1\">@$1</a>") + "</div>" +
-    "<div class=\"yt\">" + (prop.youtube || "") + "</div>" +
-    "<div class=\"sc\">" + (prop.soundcloud || "") + "</div>" +
+    "<div class=\"yt\">" + (prop.youtube || "").replace(/\[\[(.+?)\|(.+?)\]\]/gi, "<a href=\"$1\">$2</a>") + "</div>" +
+    "<div class=\"sc\">" + (prop.soundcloud || "").replace(/\[\[(.+?)\|(.+?)\]\]/gi, "<a href=\"$1\">$2</a>") + "</div>" +
     "<div class=\"prix\">" + (prop.prix || "") + "</div>" +
     "<div class=\"conv\">" + (prop.conv || "") + "</div>" +
     "<div class=\"lng\">" + (prop.language || "") + "</div>" +
