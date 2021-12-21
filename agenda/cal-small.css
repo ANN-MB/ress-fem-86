@@ -145,7 +145,7 @@
       .complet a:hover {
       color: inherit      
       }
-    .moon {
+    .moon, .zod {
     display: none
     }
   #cal-details {
