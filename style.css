@@ -109,6 +109,7 @@ font-size: 100%
           display: block; position: relative;
           width: 1.1rem; height: 1.1rem;
           float: right;
+		  line-height: 1rem;
           color: #fff; background: #1E90FF;
           border-radius: 3px
           }
@@ -272,16 +273,16 @@ font-size: 100%
 
 @media (prefers-color-scheme: dark) {
   body  {color:#ddd}
-  body::before {opacity:1 !important}
+  body::before {opacity:1}
   h1 {background: #333}
   header {border-bottom: 1px solid #efefef}
   h1 img {filter:invert(5%)}
-  article a {color: #8cdeff}
+  article div a {color: #8cdeff}
   article {box-shadow:#eee 0 0 2px, #777 0 3px 0}
   nav {box-shadow: none}
   nav div {background:#333 !important; box-shadow:none !important;border-right: 1px solid #ccc;border-bottom: 1px solid #ccc }
   article, .bouton {background: #242626}
-  nav div:hover, nav div:hover select, .bouton:hover {color: #111}
+  nav > div:hover {background: rgba(255,255,255,.8) !important;color: #111}
   .num img {filter:invert(1)}
   #contact-box, #contact-box a {color: #fefefe }
 }
