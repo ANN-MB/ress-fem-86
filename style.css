@@ -171,7 +171,7 @@ font-size: 100%
             transform: translateY(2px);
             max-width: 100%; 
             background-size: 100%; 
-            background-image: url("../img/sprite.png");
+            background-image: url("img/sprite.png");
             }
             article div a {color: #0078A8} article div a:hover {color:inherit}
             .bus span {
