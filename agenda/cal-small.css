@@ -32,12 +32,13 @@
       display: inline-block;
       }
      #go-prev, #go-next {
-     flex: 1 1 auto;
+     /*flex: 1 1 auto;
      cursor: pointer;
      border: 0;
      background: transparent;
      color: var(--soft-black);
-     text-decoration: none
+     text-decoration: none*/
+	 display: none
      }
      #go-prev:focus, #go-next:focus {
      outline: 1px dashed #fff;
@@ -46,14 +47,17 @@
      text-align: right
      }
      #month-year {
-     margin: 0 2rem;
+     text-align: center;
+	 width: 100%;
+	 font-weight: 600;
      }
+	   #month-year:first-letter {
+       text-transform: uppercase;
+       }
      #go-next {
      text-align: left;
      } 
-       #month-year:first-letter {
-       text-transform: uppercase;
-       }
+       
     .days-names {
     display: flex;
     user-select: none;
@@ -61,12 +65,14 @@
     border-top: 1px solid var(--borderColor);
     margin: 6px 0 8px 0
     }
-      .days-names > div {
+      .days-names div {
       display: inline-block;
       width: 14.285714286%;
       text-align: center;
       }
-
+      .days-names div span span {
+      display: none;
+      }
     #cal-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
@@ -194,9 +200,13 @@
     --soft-black: #fefefe;
     --soft-white: #333;
   }
-  #caltainer {
-    background: var(--soft-white)
+  #calendar-box {
+	background: var(--soft-white) !important
   }
+  #caltainer, #cal-details {
+    background: rgba(255,255,255,.1) !important
+  }
+  #caltainer a, #cal-details a {color:#8cdeff}
   body::before {opacity:1 !important}
   .cal-prev, .cal-next, .cal-curr  {
     box-shadow: none;

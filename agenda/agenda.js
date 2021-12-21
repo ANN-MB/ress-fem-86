@@ -1,3 +1,5 @@
+/*jslint esnext:true*/
+/*jslint es6:true*/ 
 // Calendrier par Ann MB - Licence CC BY-SA 4.0 - ann-mb.carrd.co
 class RightTime {
   ml = [null, 31, [28,29], 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -10,8 +12,7 @@ class RightTime {
     this.locale = navigator.languages != undefined ? navigator.languages[0] : navigator.language;
   }
   get Months() {
-    var baseDate = new Date(1900,0); // just a January   
-    var months = [null];
+    var baseDate = new Date(1900,0), months = [null];
     for(var i = 1; i < 13; i++) {       
       months.push(baseDate.toLocaleDateString(this.locale, { month: 'long' }));
       baseDate.setMonth(i);   
@@ -20,8 +21,7 @@ class RightTime {
     return months
   }
   get DaysOfWeek() {
-    var baseDate = new Date(1900, 0, 1); // just a Monday
-    var weekDays = [null];
+    var baseDate = new Date(1900, 0, 1), weekDays = [null];
     for(var i = 0; i < 7; i++) {       
       weekDays.push(baseDate.toLocaleDateString(this.locale, { weekday: 'long' }));
       baseDate.setDate(baseDate.getDate() + 1);       
@@ -64,7 +64,7 @@ class RightTime {
       get NextFull() { return this.Age > 14.765294427 ? 44.29588328 - this.Age : 14.765294427 - this.Age },
       get NextNew() { return 29.530588853 - this.Age },
       get Number() { let mn = Math.round((this.Age * 8) / 29.530588853); return mn >= 8 ? 0 : mn },
-      get Name() { return ["Nouvelle Lune", "Premier Croissant", "Premier quartier", "Gibeuse ascendante", "Pleine Lune", "Gibeuse descendante", "Dernier Quartier", "Dernier Croissant"][this.Number] },
+      get Name() { return ["Nouvelle Lune", "Premier Croissant", "Premier quartier", "Gibbeuse ascendante", "Pleine Lune", "Gibbeuse descendante", "Dernier Quartier", "Dernier Croissant"][this.Number] },
       get Emote() { return ["\u{1F311}","\u{1F312}","\u{1F313}","\u{1F314}","\u{1F315}","\u{1F316}","\u{1F317}","\u{1F318}"][this.Number] }
     }
   }
@@ -87,7 +87,7 @@ const
 $ = (id) => { return document.getElementById(id) },
 calGrid = $("cal-grid"),
 details = $("cal-details"),
-//sleep = (m) => { return new Promise(r => setTimeout(r, m)) },
+sleep = (m) => { return new Promise(r => setTimeout(r, m)) },
 correctHeight = () => { document.documentElement.style.setProperty("--vh", (window.innerHeight * 0.01)+"px") },
 exitDetails = (e) => {
   e.preventDefault();
@@ -121,8 +121,16 @@ showDetails = (a,e) => {
   details.setAttribute("aria-hidden","false");
   details.focus();
 },
+generateWeek = () => {
+  var arr = thisMonth.DaysOfWeek, arrl = arr.length,
+      dys = document.querySelector(".days-names").querySelectorAll("div");
+  for (let i = 0 ; i < arrl - 1 ; i++) {
+    dys[i].innerHTML = arr[i + 1].replace(/([a-z]{1})([a-z]{2})([a-z]+)/i,"$1<span>$2<span>$3</span></span>")
+  }
+},
+// uncomment all if a lot of events to process
 generateMonth = (y,m) => {
-  function generateEvents(a,m,j,d) {
+  /*async*/ function generateEvents(a,m,j,d) {
     for (let i = eventsLength ; i--;) {
       var x = events[i], eventDate = x.DayStart, thisDate = j+"/"+m+"/"+a;
       if (eventDate == thisDate) {
@@ -139,7 +147,7 @@ generateMonth = (y,m) => {
         evnt.innerHTML = (x.TimeStart ? x.TimeEnd ? "<b>"+x.TimeStart+" - "+x.TimeEnd+"</b><br/>" : "<b>"+x.TimeStart+"</b><br/>" : "") + '<div class="evt-title">'+x.Title+'</div>';
         d.appendChild(evnt);
       }
-      //await sleep(5)
+      //await sleep(5);
     }
   }
   var date = thisMonth, b = date.DaysInWeekPrev; 
@@ -155,7 +163,7 @@ generateMonth = (y,m) => {
 
   var c = date.MonthLength, v = nowMonth.Year == date.Year && nowMonth.Month == date.Month, f = nowMonth.Day,
       fmd = Math.round(1 + new RightTime(date.Year, date.Month, 1).Moon.NextFull),
-      nmd = Math.round(1 + new RightTime(date.Year, date.Month, 1).Moon.NextNew)
+      nmd = Math.round(1 + new RightTime(date.Year, date.Month, 1).Moon.NextNew);
   for (let i = 0; i < c ; i++) {
     let el = document.createElement("div");
     el.className += " cal-curr"; 
@@ -207,10 +215,10 @@ for (var i = 0 ; i < evtL; i++) {
   }
   if (i == evtL - 1) {
     eventsLength = events.length;
+	generateWeek();
     generateMonth(nowMonth.Year,nowMonth.Month);
   }
 }
-
 window.addEventListener("DOMContentLoaded", function(){
   correctHeight();  
   $("go-prev").addEventListener("click", function(e) {changeMonth(-1,e)},!1);

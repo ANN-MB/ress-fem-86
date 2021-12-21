@@ -81,6 +81,9 @@ font-size: 100%;
         border-bottom: 1px solid var(--borderColor);
         border-right: 1px solid var(--borderColor);
         }
+		.days-names > div:first-letter {
+        text-transform: uppercase
+        }
       #noscript {
       margin-top: 2em;
       font-size: 2em;
@@ -98,7 +101,7 @@ font-size: 100%;
       }
         #cal-grid > div {
         display: inline-block;
-	      position:relative;       
+	    position:relative;       
         height: 100%;
         max-width: 14.285714286vw;
         border-bottom: 1px solid var(--borderColor);
@@ -308,7 +311,7 @@ font-size: 100%;
     box-shadow: none;
     border-top:0
   }
-  .days-names, .days-names {border:0}
+  .days-names {border:0}
   .cal-curr { background: transparent}
   .cal-prev, .cal-next   { background: rgba(255,255,255,.3)}
   .moon {filter: drop-shadow(0 0 3px #fff);}
