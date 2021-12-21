@@ -1,24 +1,41 @@
 // Calendrier par Ann MB - Licence CC BY-SA 4.0 - ann-mb.carrd.co
-const 
-days = [null, "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"],
-ml = [null, 31, [28,29], 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
-months = [null, "janvier", "f\u00e9vrier", "mars", "avril", "mai", "juin", "juillet", "ao\u00fbt", "septembre", "octobre", "novembre", "d\u00e9cembre"];
-
 class RightTime {
+  ml = [null, 31, [28,29], 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   constructor(a,m,j,h,min) {
-    a || m || j || h || min ? (!m && (m = 1), !j && (j = 1), !h && (h = 0), !min && (min = 0), 
-                               this.Now = new Date(a, m - 1, j, h, min)) : this.Now = new Date();
+    0 !== arguments.length ? (!m && (m = 1), !j && (j = 1), !h && (h = 0), !min && (min = 0), 
+    this.Now = new Date(a, m - 1, j, h, min)) : this.Now = new Date();
     this.Year = this.Now.getFullYear();
     this.Month = this.Now.getMonth() + 1;
     this.Day = this.Now.getDate();
+    this.locale = navigator.languages != undefined ? navigator.languages[0] : navigator.language;
   }
-  get DayInWeek() { return 0 == this.Now.getDay() ? 7 : this.Now.getDay() }
-  get DayInWeekName() { return days[this.DayInWeek] }
+  get Months() {
+    var baseDate = new Date(1900,0); // just a January   
+    var months = [null];
+    for(var i = 1; i < 13; i++) {       
+      months.push(baseDate.toLocaleDateString(this.locale, { month: 'long' }));
+      baseDate.setMonth(i);   
+    }
+    Object.freeze(months);
+    return months
+  }
+  get DaysOfWeek() {
+    var baseDate = new Date(1900, 0, 1); // just a Monday
+    var weekDays = [null];
+    for(var i = 0; i < 7; i++) {       
+      weekDays.push(baseDate.toLocaleDateString(this.locale, { weekday: 'long' }));
+      baseDate.setDate(baseDate.getDate() + 1);       
+    }
+    Object.freeze(weekDays);
+    return weekDays
+  }
+  get DayOfWeek() { return 0 == this.Now.getDay() ? 7 : this.Now.getDay() }
+  get DayOfWeekName() { return this.DaysOfWeek[this.DayOfWeek] }
   get DayOfYear() { return Math.floor((this.Now - new Date(this.Year, 0, 0)) / 86400000) }
   get IsBissextile() { return ((this.Year % 4 === 0 && this.Year % 100 > 0) || (this.Year % 400 === 0)) ? 1 : 0 }
-  get MonthName() { return months[this.Month] }
-  get MonthLength() { return this.Month == 2 ? ml[this.Month][this.IsBissextile] : ml[this.Month] }
-  get PrevMonthLength() {return this.Month -1 == 2 ? ml[this.Month - 1][this.IsBissextile] : ml[this.Month -1]}
+  get MonthName() { return this.Months[this.Month] }
+  get MonthLength() { return this.Month == 2 ? this.ml[this.Month][this.IsBissextile] : this.ml[this.Month] }
+  get PrevMonthLength() {return this.Month -1 == 0 ? 31 : this.Month -1 == 2 ? this.ml[this.Month - 1][this.IsBissextile] : this.ml[this.Month -1]}
   get FirstDayOfMonth() {
     let test1 = new Date(this.Year, this.Month - 1, 1).getDay();
     return (0 == test1) ? 7 : test1
@@ -45,10 +62,11 @@ class RightTime {
     }
   }
   get Moon() {
+    var x = this.Year, y = this.Month, z = this.Day;
     return {
       get Age() {
-        var d = this.Year, b = this.Month, c = this.Day;
-        d = void 0 === d ? new Date() : new Date(d,b,c);
+        var d = x, b = y, c = z;
+        d = void 0 === d ? new Date() : new Date(d,b-1,c);
         var b = d.getTime();
         d = d.getTimezoneOffset();
         b = (b / 86400000 - d / 1440 - 10962.6) / 29.530588853;
@@ -114,9 +132,9 @@ showDetails = (a,e) => {
     }
   }
   if (a.DayEnd) {
-    var s = a.DayStart.split("/"), t = a.DayEnd.split("/"), dayrange = "Du " + s[0] + " " + months[s[1]] + " " + s[2] + " au " + t[0] + " " + months[t[1]] + " " + t[2]
+    var s = a.DayStart.split("/"), t = a.DayEnd.split("/"), dayrange = "Du " + s[0] + " " + thisMonth.Months[s[1]] + " " + s[2] + " au " + t[0] + " " + thisMonth.Months[t[1]] + " " + t[2]
   } else {
-    var s = a.DayStart.split("/"), dayrange = "Le " + s[0] + " " + months[s[1]] + " " + s[2];
+    var s = a.DayStart.split("/"), dayrange = "Le " + s[0] + " " + thisMonth.Months[s[1]] + " " + s[2];
   }
   $("details-title").innerHTML = a.Title;
   $("details-time").innerHTML = dayrange + ' ' + (longhour || '');
@@ -134,7 +152,7 @@ generateMonth = (y,m) => {
       if (eventDate == thisDate) {
         let evnt = document.createElement("a");
         d.setAttribute("tabindex","0");
-        d.setAttribute("aria-label", thisMonth.DayInWeekName + " " + j + " " + months[m] + " " + a);
+        d.setAttribute("aria-label", thisMonth.DayOfWeekName + " " + j + " " + thisMonth.Months[m] + " " + a);
         d.setAttribute("role","gridcell");
         evnt.className += " cal-event" + (x.Type ? (" evt-"+x.Type) : "");
         x.DayEnd && x.pos && (evnt.className += " pos-" + x.pos);
@@ -159,13 +177,19 @@ generateMonth = (y,m) => {
     calGrid.appendChild(el)
   }
   
+  /** preshot moon **/
+  var fullmoonday = Math.round(1 + new RightTime(date.Year, date.Month, 1).Moon.NextFull)
+  var newmoonday = Math.round(1 + new RightTime(date.Year, date.Month, 1).Moon.NextNew)
+  
+  
   var c = date.MonthLength, v = nowMonth.Year == date.Year && nowMonth.Month == date.Month, f = nowMonth.Day;
   for (let i = 0; i < c ; i++) {
     let el = document.createElement("div");
     el.className += " cal-curr"; 
     (v && (i == f - 1)) && (el.className += " cal-today");
-	  (thisMonth.Month == date.Month && (i == date.ZodiacDay - 1) && (el.className += " zod-"+date.Month))
-
+	  i == date.Zodiac.Bound - 1 && (el.className += " zod-"+date.Month)
+    if (i == fullmoonday -1) { let el2 = document.createElement("div"); el2.className = "moon full"; el2.innerHTML = "\u{1F315}"; el.appendChild(el2) }
+    if (i == newmoonday -1) { let el2 = document.createElement("div"); el2.className = "moon"; el2.innerHTML = "\u{1F311}" ;el.appendChild(el2)}
     /** moon **/
     
     generateEvents(thisMonth.Year,thisMonth.Month,i+1,el);
@@ -196,7 +220,7 @@ for (var i = 0 ; i < evtL; i++) {
       var newe = Object.assign({}, evt[i])
 	    newe.DayStart = end - j + "/" + start[1] + "/" + start[2];
 	    newe.pos = newe.DayStart==evt[i].DayStart?"s":newe.DayStart==evt[i].DayEnd?"e":"m";
-      1 == (new RightTime(start[2],start[1],end-j).DayInWeek) && (newe.long = 1) // too much recursions
+      1 == (new RightTime(start[2],start[1],end-j).DayOfWeek) && (newe.long = 1) // too much recursions
       newe.index = i;
       events.push(newe);
     }

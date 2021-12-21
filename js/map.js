@@ -74,7 +74,8 @@ var command = L.control({position: 'topright'});
 
 command.onAdd = function(map) {
   var div = L.DomUtil.create('div', 'command');
-  div.innerHTML += '<h3>Filtre</h3>'
+  div.innerHTML += '<h3>Filtrer</h3>'
+  + '<label for="exit-command" class="lab"><input type="checkbox" id="exit-command" /></label>'
   + '<label for="m-menses"><input id="m-menses" type="checkbox" class="chk-filter" checked />Boîtes à don menstruelles</label>'
   + '<label for="m-host"><input id="m-host" type="checkbox" class="chk-filter" checked />Hébergement</label>'
   + '<label for="m-testing"><input id="m-testing" type="checkbox" class="chk-filter" checked />Dépistage IST</label>'
@@ -90,7 +91,7 @@ command.onAdd = function(map) {
   return div;
 };
 command.addTo(map);
-
+const addStyles = (el, styles) => Object.assign(el.style, styles);
 /* add events to all checkbox */
 document.addEventListener("click", function(e){
   if (e.target.className == "chk-filter") {
@@ -100,5 +101,9 @@ document.addEventListener("click", function(e){
     } else {
       [...el].forEach(x => (x.style.display = "none"));
     }
+  }
+  if (e.target.id == "exit-command") {
+    document.querySelector(".command").classList.toggle("hide")
+    document.querySelector(".lab").classList.toggle("down")
   }
 }, false);
