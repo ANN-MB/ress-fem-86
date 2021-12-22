@@ -54,6 +54,10 @@ font-size: 100%;
 		#go-prev:focus, #go-next:focus {
         outline: 1px dashed #fff;
         }
+		#go-prev.hide, #go-next.hide {
+        visibility: hidden;
+	    pointer-events: none;
+        }
 		#go-prev {
         text-align: right
         }

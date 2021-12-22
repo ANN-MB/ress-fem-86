@@ -79,7 +79,16 @@ class RightTime {
     return new RightTime(d.getFullYear(), d.getMonth()+1, d.getDate())
   }
 }
-var nowMonth, thisMonth, evtL = evt.length, events = [], eventsLength, storeFocus, soonEvents = 0;
+var nowMonth, 
+    thisMonth, 
+    evtL = evt.length, 
+    events = [], eventsLength, 
+    storeFocus, 
+    soonEvents = 0,
+    minMonth = [2021,12],
+    showMoonPhases = true,
+    showZodiacs = true;
+  
 nowMonth = thisMonth = new RightTime();
 
 const
@@ -154,6 +163,7 @@ generateMonth = () => {
     }
   }
   var date = thisMonth, b = date.DaysInWeekPrev; 
+  calendarBoudaries(date.Year,date.Month);
   calGrid.innerHTML = '';
   calGrid.style.counterReset = `curr-days next-days prev-days ${date.PrevMonthLength - b}`;
   $('month-year').innerHTML = `${date.MonthName}, ${date.Year}`;
@@ -173,9 +183,9 @@ generateMonth = () => {
     el.className += ' cal-curr';
     switch (i+1) {
       case f : { v && (el.className += ' cal-today'); break }
-      case fmd : { let el2 = document.createElement('div'); el2.className = 'moon full'; el2.innerHTML = '\u{1F315}'; el.appendChild(el2); break}
-      case nmd : { let el3 = document.createElement('div'); el3.className = 'moon new'; el3.innerHTML = '\u{1F311}' ;el.appendChild(el3); break}
-      case date.Zodiac.Bound : { let el4 = document.createElement('div'); el4.className = 'zod'; el4.innerHTML = `<span>${date.Zodiac.Name}</span> ${date.Zodiac.Emote}&#xfe0e;`; el.appendChild(el4);break}
+      case fmd : { if (showMoonPhases) {let el2 = document.createElement('div'); el2.className = 'moon full'; el2.innerHTML = '\u{1F315}'; el.appendChild(el2)} break}
+      case nmd : { if (showMoonPhases) {let el3 = document.createElement('div'); el3.className = 'moon new'; el3.innerHTML = '\u{1F311}' ; el.appendChild(el3)} break}
+      case date.Zodiac.Bound : { if (showZodiacs) {let el4 = document.createElement('div'); el4.className = 'zod'; el4.innerHTML = `<span>${date.Zodiac.Name}</span> ${date.Zodiac.Emote}&#xfe0e;`; el.appendChild(el4)} break}
     }
     generateEvents(thisMonth.Year,thisMonth.Month,i+1,el);
     calGrid.appendChild(el)
@@ -185,6 +195,28 @@ generateMonth = () => {
     let el = document.createElement('div');
     el.className += ' cal-next';
     calGrid.appendChild(el)
+  }
+},
+calendarBoudaries = (y,m) => {
+  if (typeof minMonth !== 'undefined') {
+    if (y == minMonth[0] && m == minMonth[1]) {
+      $('go-prev').classList.add('hide');
+      $('go-prev').setAttribute('aria-hidden','true');
+    }
+    else {
+      $('go-prev').classList.remove('hide')
+      $('go-prev').removeAttribute('aria-hidden','false');
+    }
+  }
+  if (typeof maxMonth !== 'undefined') {
+    if (y == maxMonth[0] && m == maxMonth[1]) {
+      $('go-next').classList.add('hide');
+      $('go-next').setAttribute('aria-hidden','true');
+    }
+    else {
+      $('go-next').classList.remove('hide')
+      $('go-next').removeAttribute('aria-hidden','false');
+    }
   }
 },
 changeMonth = (a,e) => {
