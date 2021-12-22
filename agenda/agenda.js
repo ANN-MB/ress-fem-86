@@ -1,6 +1,6 @@
-// Calendrier par Ann MB - Licence CC BY-SA 4.0 - ann-mb.carrd.co
+// Agenda par Ann MB - Licence CC BY-SA 4.0 - ann-mb.carrd.co
+'use strict';
 class RightTime {
-  ml = [null, 31, [28,29], 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   constructor(a,m,j,h,min) {
     0 !== arguments.length ? (!m && (m = 1), !j && (j = 1), !h && (h = 0), !min && (min = 0), 
     this.Now = new Date(a, m - 1, j, h, min)) : this.Now = new Date();
@@ -32,6 +32,7 @@ class RightTime {
   get DayOfYear() { return Math.floor((this.Now - new Date(this.Year, 0, 0)) / 86400000) }
   get IsBissextile() { return ((this.Year % 4 === 0 && this.Year % 100 > 0) || (this.Year % 400 === 0)) ? 1 : 0 }
   get MonthName() { return this.Months[this.Month] }
+  ml = [null, 31, [28,29], 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   get MonthLength() { return this.Month == 2 ? this.ml[this.Month][this.IsBissextile] : this.ml[this.Month] }
   get PrevMonthLength() {return this.Month -1 == 0 ? 31 : this.Month -1 == 2 ? this.ml[this.Month - 1][this.IsBissextile] : this.ml[this.Month -1]}
   get FirstDayOfMonth() { let test1 = new Date(this.Year, this.Month - 1, 1).getDay(); return (0 == test1) ? 7 : test1 }
@@ -41,9 +42,9 @@ class RightTime {
   get Zodiac() {
     var m = this.Month;  
     return {
-      get Emote() { return [null,"\u2652","\u2653","\u2648","\u2649","\u264A","\u264B","\u264C","\u264D","\u264E","\u264F","\u2650","\u2651"][m] },
+      get Emote() { return [null,'\u2652','\u2653','\u2648','\u2649','\u264a','\u264b','\u264c','\u264d','\u264e','\u264f','\u2650','\u2651'][m] },
       get Bound() { return [null, 21, 20, 21, 21, 21, 22, 23, 23, 23, 23, 21, 20][m] },
-      get Name() { return [null,"verseau","poissons","b\u00e9lier","taureau","g\u00e9meaux", "cancer","lion","vierge","balance","scorpion","sagittaire","capricorne"][m] }
+      get Name() { return [null,'verseau','poissons','b\u00e9lier','taureau','g\u00e9meaux','cancer','lion','vierge','balance','scorpion','sagittaire','capricorne'][m] }
     }
   }
   get Moon() {
@@ -52,7 +53,7 @@ class RightTime {
       get Age() {
         var d = x, b = y, c = z;
         d = void 0 === d ? new Date() : new Date(d,b-1,c);
-        var b = d.getTime();
+        b = d.getTime();
         d = d.getTimezoneOffset();
         b = (b / 86400000 - d / 1440 - 10962.6) / 29.530588853;
         b -= Math.floor(b);
@@ -62,8 +63,8 @@ class RightTime {
       get NextFull() { return this.Age > 14.765294427 ? 44.29588328 - this.Age : 14.765294427 - this.Age },
       get NextNew() { return 29.530588853 - this.Age },
       get Number() { let mn = Math.round((this.Age * 8) / 29.530588853); return mn >= 8 ? 0 : mn },
-      get Name() { return ["Nouvelle Lune", "Premier Croissant", "Premier quartier", "Gibbeuse ascendante", "Pleine Lune", "Gibbeuse descendante", "Dernier Quartier", "Dernier Croissant"][this.Number] },
-      get Emote() { return ["\u{1F311}","\u{1F312}","\u{1F313}","\u{1F314}","\u{1F315}","\u{1F316}","\u{1F317}","\u{1F318}"][this.Number] }
+      get Name() { return ['Nouvelle Lune', 'Premier Croissant', 'Premier quartier', 'Gibbeuse ascendante', 'Pleine Lune', 'Gibbeuse descendante', 'Dernier Quartier', 'Dernier Croissant'][this.Number] },
+      get Emote() { return ['\u{1F311}','\u{1F312}','\u{1F313}','\u{1F314}','\u{1F315}','\u{1F316}','\u{1F317}','\u{1F318}'][this.Number] }
     }
   }
   get WeekOfYear() {
@@ -72,7 +73,7 @@ class RightTime {
     var week1 = new Date(date.getFullYear(), 0, 4);
     return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000 - 3 + (week1.getDay() + 6) % 7) / 7);
   }
-  ShiftDays = (n) => {
+  ShiftDays(n) {
     let d = new Date(this.Year,this.Month-1,this.Day);
     d.setDate(d.getDate() + n);
     return new RightTime(d.getFullYear(), d.getMonth()+1, d.getDate())
@@ -83,101 +84,106 @@ nowMonth = thisMonth = new RightTime();
 
 const
 $ = (id) => { return document.getElementById(id) },
-calGrid = $("cal-grid"),
-details = $("cal-details"),
-sleep = (m) => { return new Promise(r => setTimeout(r, m)) },
-correctHeight = () => { document.documentElement.style.setProperty("--vh", (window.innerHeight * 0.01)+"px") },
+calGrid = $('cal-grid'),
+details = $('cal-details'),
+//sleep = (m) => { return new Promise(r => setTimeout(r, m)) },
+correctHeight = () => { document.documentElement.style.setProperty('--vh', (window.innerHeight * 0.01)+'px') },
 exitDetails = (e) => {
   e.preventDefault();
-  details.style.bottom = "-100%";
-  details.setAttribute("aria-hidden","true");
+  details.style.bottom = '-100%';
+  details.setAttribute('aria-hidden','true');
   storeFocus.focus();
   storeFocus = void 0;
 },
 showDetails = (a,e) => {
   e.preventDefault();
   storeFocus = a;
-  a = evt[a.getAttribute("data-index")];
+  a = evt[a.getAttribute('data-index')];
   if (a.TimeStart) {
+    var s = a.TimeStart.split(':'), longhour;
     if (a.TimeEnd) {
-      var s = a.TimeStart.split(":"), t = a.TimeEnd.split(":"), longhour = "de " + s[0] + "h" + s[1] + " \u00e0 " + t[0] + "h" + t[1];
+      var t = a.TimeEnd.split(':');
+      longhour = `de ${s[0]}h${s[1]} \u00e0 ${t[0]}h${t[1]}`;
     } else {
-      var s = a.TimeStart.split(":"), longhour = "\u00e0 " + a.TimeStart.split(":")[0] + "h" + a.TimeStart.split(":")[1];
+      longhour = `\u00e0 ${s[0]}h${s[1]}`;
     }
   }
+  var u = a.DayStart.split('/'), dr;
   if (a.DayEnd) {
-    var s = a.DayStart.split("/"), t = a.DayEnd.split("/"), dayrange = "Du " + s[0] + " " + thisMonth.Months[s[1]] + " " + s[2] + " au " + t[0] + " " + thisMonth.Months[t[1]] + " " + t[2]
+    var v = a.DayEnd.split('/'),
+        r = thisMonth.Months;
+        dr = `Du ${u[0]} ${r[u[1]]} ${u[2]} au ${v[0]} ${r[v[1]]} ${v[2]}`
   } else {
-    var s = a.DayStart.split("/"), dayrange = "Le " + s[0] + " " + thisMonth.Months[s[1]] + " " + s[2];
+    dr = `Le ${u[0]} ${thisMonth.Months[u[1]]} ${u[2]}`;
   }
-  $("details-title").innerHTML = a.Title;
-  $("details-time").innerHTML = dayrange + ' ' + (longhour || '');
-  $("details-place").innerHTML = a.Place || '';
-  $("details-link").innerHTML = a.Link ? ('<a href="'+ a.Link +'" rel="external noreferrer">'+a.Link+'</a>') : '';
-  $("details-desc").innerHTML = a.Desc ? (a.Desc.replace(/\[\[(.+?)\]\]/gi,"<a href=\"$1\" rel=\"external noreferrer\">$1</a>")) : ''; 
-  details.style.bottom = "0";
-  details.setAttribute("aria-hidden","false");
+  $('details-title').innerHTML = a.Title;
+  $('details-time').innerHTML = dr + ' ' + (longhour || '');
+  $('details-place').innerHTML = a.Place || '';
+  $('details-link').innerHTML = a.Link ? (`<a href="${a.Link}" rel="external noreferrer">${a.Link}</a>`) : '';
+  $('details-desc').innerHTML = a.Desc ? (a.Desc.replace(/\[\[(.+?)\]\]/gi,'<a href="$1" rel="external noreferrer">$1</a>')) : ''; 
+  details.style.bottom = '0';
+  details.setAttribute('aria-hidden','false');
   details.focus();
 },
 generateWeek = () => {
   var arr = thisMonth.DaysOfWeek, arrl = arr.length,
-      dys = document.querySelector(".days-names").querySelectorAll("div");
+      dys = document.querySelector('.days-names').querySelectorAll('div');
   for (let i = 0 ; i < arrl - 1 ; i++) {
-    dys[i].innerHTML = arr[i + 1].replace(/([a-z]{1})([a-z]{2})([a-z]+)/i,"$1<span>$2<span>$3</span></span>")
+    dys[i].innerHTML = arr[i + 1].replace(/([a-z]{1})([a-z]{2})([a-z]+)/i,'$1<span>$2<span>$3</span></span>')
   }
 },
-// uncomment all if a lot of events to process
-generateMonth = (y,m) => {
+generateMonth = () => {
   /*async*/ function generateEvents(a,m,j,d) {
     for (let i = eventsLength ; i--;) {
-      var x = events[i], eventDate = x.DayStart, thisDate = j+"/"+m+"/"+a;
+      var x = events[i], eventDate = x.DayStart, thisDate = j+'/'+m+'/'+a;
       if (eventDate == thisDate) {
-        let evnt = document.createElement("a");
-        d.setAttribute("tabindex","0");
-        d.setAttribute("aria-label", thisMonth.DayOfWeekName + " " + j + " " + thisMonth.Months[m] + " " + a);
-        d.setAttribute("role","gridcell");
-        evnt.className += " cal-event" + (x.Type ? (" evt-"+x.Type) : "");
-        x.DayEnd && x.pos && (evnt.className += " pos-" + x.pos);
-        x.long && (evnt.className += " long long-"+x.long)
-        evnt.setAttribute("data-index", x.index);
-        evnt.setAttribute("href","#");
-        evnt.addEventListener("click", function(e){showDetails(this,e)});
-        evnt.innerHTML = (x.TimeStart ? x.TimeEnd ? "<b>"+x.TimeStart+" - "+x.TimeEnd+"</b><br/>" : "<b>"+x.TimeStart+"</b><br/>" : "") + '<div class="evt-title">'+x.Title+'</div>';
+        let evnt = document.createElement('a');
+        d.setAttribute('tabindex','0');
+        d.setAttribute('aria-label', `${thisMonth.DayOfWeekName} ${j} ${thisMonth.Months[m]} ${a}`);
+        d.setAttribute('role','gridcell');
+        evnt.className += ' cal-event' + (x.Type ? ` evt-${x.Type}` : '');
+        x.DayEnd && x.pos && (evnt.className += ` pos-${x.pos}`);
+        x.long && (evnt.className += ` long long-${x.long}`)
+        evnt.setAttribute('data-index', x.index);
+        evnt.setAttribute('href','#');
+        evnt.addEventListener('click', function(e) { showDetails(this,e) });
+        evnt.innerHTML = (x.TimeStart ? x.TimeEnd ? `<b>${x.TimeStart} - ${x.TimeEnd}</b><br/>` : `<b>${x.TimeStart}</b><br/>` : '') + `<div class="evt-title">${x.Title}</div>`;
         d.appendChild(evnt);
       }
       //await sleep(5);
     }
   }
   var date = thisMonth, b = date.DaysInWeekPrev; 
-  calGrid.innerHTML = "";
-  calGrid.style.counterReset = "curr-days next-days prev-days " + (date.PrevMonthLength - b);
-  $("month-year").innerHTML = date.MonthName + ", " + date.Year;
-  document.title = "Calendrier - " + date.MonthName + ", " + date.Year;
+  calGrid.innerHTML = '';
+  calGrid.style.counterReset = `curr-days next-days prev-days ${date.PrevMonthLength - b}`;
+  $('month-year').innerHTML = `${date.MonthName}, ${date.Year}`;
+  document.title = `Calendrier - ${date.MonthName}, ${date.Year}`;
   for (let i = 0; i < b ; i++) {
-    let el = document.createElement("div");
-    el.className += " cal-prev";
+    let el = document.createElement('div');
+    el.className += ' cal-prev';
     calGrid.appendChild(el)
   }
 
   var c = date.MonthLength, v = nowMonth.Year == date.Year && nowMonth.Month == date.Month, f = nowMonth.Day,
       fmd = Math.round(1 + new RightTime(date.Year, date.Month, 1).Moon.NextFull),
       nmd = Math.round(1 + new RightTime(date.Year, date.Month, 1).Moon.NextNew);
+
   for (let i = 0; i < c ; i++) {
-    let el = document.createElement("div");
-    el.className += " cal-curr"; 
-	switch (i+1) {
-      case f : v && (el.className += " cal-today"); break;
-	  case fmd : let el2 = document.createElement("div"); el2.className = "moon full"; el2.innerHTML = "\u{1F315}"; el.appendChild(el2);break;
-	  case nmd : let el3 = document.createElement("div"); el3.className = "moon new"; el3.innerHTML = "\u{1F311}" ;el.appendChild(el3); break;
-	  case date.Zodiac.Bound : let el4 = document.createElement("div"); el4.className = "zod"; el4.innerHTML = "<span>"+date.Zodiac.Name+"</span> "+date.Zodiac.Emote+"&#xfe0e;"; el.appendChild(el4);break; 
-	}
+    let el = document.createElement('div');
+    el.className += ' cal-curr';
+    switch (i+1) {
+      case f : { v && (el.className += ' cal-today'); break }
+      case fmd : { let el2 = document.createElement('div'); el2.className = 'moon full'; el2.innerHTML = '\u{1F315}'; el.appendChild(el2); break}
+      case nmd : { let el3 = document.createElement('div'); el3.className = 'moon new'; el3.innerHTML = '\u{1F311}' ;el.appendChild(el3); break}
+      case date.Zodiac.Bound : { let el4 = document.createElement('div'); el4.className = 'zod'; el4.innerHTML = `<span>${date.Zodiac.Name}</span> ${date.Zodiac.Emote}&#xfe0e;`; el.appendChild(el4);break}
+    }
     generateEvents(thisMonth.Year,thisMonth.Month,i+1,el);
     calGrid.appendChild(el)
   }
   var d = date.DaysInWeekNext;
   for (let i = 0 ; i < d ; i++) {
-    let el = document.createElement("div");
-    el.className += " cal-next";
+    let el = document.createElement('div');
+    el.className += ' cal-next';
     calGrid.appendChild(el)
   }
 },
@@ -190,39 +196,41 @@ changeMonth = (a,e) => {
   generateMonth(y,m);
 };
 
-for (var i = 0 ; i < evtL; i++) {
-  var start = evt[i].DayStart.split("/");
-  if (evt[i].DayEnd) {
-    var end = evt[i].DayEnd.split("/")[0],
-        duration = end - start[0] + 1;  
-    for (var j = 0 ; j < duration ; j++) {
-      var newe = Object.assign({}, evt[i])
-	    newe.DayStart = end - j + "/" + start[1] + "/" + start[2];
-	    newe.pos = newe.DayStart==evt[i].DayStart?"s":newe.DayStart==evt[i].DayEnd?"e":"m";
-      1 == (new RightTime(start[2],start[1],end-j).DayOfWeek) && (newe.long = 1) // too much recursions
+function init() {
+  for (var i = 0 ; i < evtL; i++) {
+    var start = evt[i].DayStart.split('/');
+    if (evt[i].DayEnd) {
+      var end = evt[i].DayEnd.split('/')[0],
+          duration = end - start[0] + 1;  
+      for (var j = 0 ; j < duration ; j++) {
+        let newe = Object.assign({}, evt[i])
+        newe.DayStart = end - j + '/' + start[1] + '/' + start[2];
+        newe.pos = newe.DayStart == evt[i].DayStart ? 's' : newe.DayStart == evt[i].DayEnd ? 'e' : 'm';
+        1 == (new RightTime(start[2],start[1],end-j).DayOfWeek) && (newe.long = 1) // too much recursions
+        newe.index = i;
+        events.push(newe);
+      }
+    } else {
+      let newe = Object.assign({}, evt[i])
       newe.index = i;
-      events.push(newe);
+      events.push(newe)
     }
-  }	else {
-    var newe = Object.assign({}, evt[i])
-    newe.index = i;
-	  events.push(newe)
+    if (start[1] == nowMonth.Month && start[2] == nowMonth.Year && start[0] >= nowMonth.Day) {
+      soonEvents++
+    }
+    if (i == evtL - 1) {
+      eventsLength = events.length;
+      generateWeek();
+      generateMonth(nowMonth.Year,nowMonth.Month);
+    }
   }
-  if (start[1] == nowMonth.Month && start[2] == nowMonth.Year && start[0] >= nowMonth.Day) {
-    soonEvents++
-  }
-  if (i == evtL - 1) {
-    eventsLength = events.length;
-	generateWeek();
-    generateMonth(nowMonth.Year,nowMonth.Month);
-  }
+  $('go-prev').addEventListener('click', function(e) {changeMonth(-1,e)},!1);
+  $('go-next').addEventListener('click', function(e) {changeMonth(1,e)},!1);
+  $('details-exit').addEventListener('click', function(e) { exitDetails(e) },!1);
 }
-window.addEventListener("DOMContentLoaded", function(){
-  correctHeight();  
-  $("go-prev").addEventListener("click", function(e) {changeMonth(-1,e)},!1);
-  $("go-next").addEventListener("click", function(e) {changeMonth(1,e)},!1);
-  $("details-exit").addEventListener("click", function(e) { exitDetails(e) });
-  ($("incoming") && soonEvents > 0) && ($("incoming").innerHTML = soonEvents);
-  $("noscript") && ($("noscript").style.display = "none");
-});
-window.addEventListener("resize", correctHeight);
+window.addEventListener('DOMContentLoaded', function(){
+  init();
+  correctHeight();
+  ($('incoming') && soonEvents > 0) && ($('incoming').innerHTML = soonEvents);
+},!1);
+window.addEventListener('resize', correctHeight, !1);
