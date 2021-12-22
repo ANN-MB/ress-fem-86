@@ -1,21 +1,20 @@
-.bodymap #container::before, .bodymap  #container::after {
+.mapbody #container::before, .mapbody #container::after {
   display :none
 }
-.bodymap::after {
-  content:"";
+
+.mapbody::after {
+  content: "";
   position: absolute;
   bottom: .5rem;
-  left: .5rem;
+  left: 0rem;
   background: center / contain no-repeat url(../img/logo.png);
-  width: 300px;
+  width: 400px;
   height: 50px;
   pointer-events: none;
   z-index: 1000;
-  filter: invert(100%);
-  opacity: .5
-  
+  opacity: 0.5;
+  mix-blend-mode: overlay;
 }
-/* required styles */
 
 .leaflet-pane,
 .leaflet-tile,
@@ -32,7 +31,7 @@
 	top: 0;
 }
 .leaflet-container {
-	overflow: hidden;
+  overflow: hidden;
 }
 .leaflet-tile,
 .leaflet-marker-icon,
@@ -267,7 +266,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 /* visual tweaks */
 
 .leaflet-container {
-	background: #ddd;
+	background: rgba(0,0,0,0.5);
 	outline: 0;
 }
 .leaflet-container a {

@@ -1,6 +1,6 @@
 var map = L.map('mymap', {
   zoomSnap: 0.5
-}).setView([46.63025794928896, 0.41580929746996015], 9.5);
+}).setView([46.60090935180355, 0.5818611371071515], 9.5);
 
 var 
 light = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -8,24 +8,16 @@ light = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   minZoom: 9.5,
   maxZoom: 18
 }),
-dark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-  minZoom: 9,
-  maxZoom: 18
-});
-  
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  dark.addTo(map);
-} else {
-  light.addTo(map);
-}
+geom = {
+  "type":"Polygon",
+  "coordinates":[[[0.192947,46.070849],[0.170288,46.184109],[0.08377,46.277208],[-0.019226,46.637651],[-0.131836,46.832483],[-0.213547,47.114533],[-0.028152,47.09537],[0.045319,47.14443],[0.275345,47.05609],[0.324097,46.942762],[0.599442,46.961979],[0.644073,46.971819],[0.911179,46.682421],[0.902252,46.593316],[1.154938,46.501701],[1.218796,46.370148],[0.803375,46.087043],[0.192947,46.070849]]]
+},
+boundaryLayer = L.TileLayer.BoundaryCanvas.createFromLayer(light, {
+  boundary: geom, 
+  trackAttribution: true
+}).addTo(map);
 
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-  var newC = e.matches ? 'dark' : 'light',
-      oldC = e.matches ? 'light' : 'dark';
-  map.removeLayer(window[oldC]);
-  map.addLayer(window[newC]);
-});
+
 
 var popmaps = function(feature, layer) {
   var prop = feature.properties,
@@ -67,8 +59,6 @@ main = L.geoJson(geojson, {
   onEachFeature: popmaps
 }).addTo(map);
 
-map.fitBounds(main.getBounds());
-
 var command = L.control({position: 'topright'});
 
 command.onAdd = function() {
@@ -91,7 +81,7 @@ command.onAdd = function() {
 };
 command.addTo(map);
 
-document.addEventListener('click', function(e){
+document.addEventListener('click', (e) => {
   if ('chk-filter' == e.target.className) {
     var el = document.getElementsByClassName(e.target.id);
     if (e.target.checked) {
