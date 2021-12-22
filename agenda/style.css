@@ -43,7 +43,7 @@ font-size: 100%;
         .cal-nav > div {
         display: inline-block;
         }
-		#go-prev, #go-next {
+        #go-prev, #go-next {
         flex: 1 1 auto;
         cursor: pointer;
         border: 0;
@@ -51,17 +51,17 @@ font-size: 100%;
         color: var(--soft-black);
         text-decoration: none
         }
-		#go-prev:focus, #go-next:focus {
+        #go-prev:focus, #go-next:focus {
         outline: 1px dashed #fff;
         }
-		#go-prev.hide, #go-next.hide {
+        #go-prev.hide, #go-next.hide {
         visibility: hidden;
-	    pointer-events: none;
+        pointer-events: none;
         }
-		#go-prev {
+        #go-prev {
         text-align: right
         }
-		#month-year {
+        #month-year {
         margin: 0 2rem;
         font-weight: 600
         }
@@ -85,7 +85,7 @@ font-size: 100%;
         border-bottom: 1px solid var(--borderColor);
         border-right: 1px solid var(--borderColor);
         }
-		.days-names > div:first-letter {
+        .days-names > div:first-letter {
         text-transform: uppercase
         }
       #noscript {
@@ -105,7 +105,7 @@ font-size: 100%;
       }
         #cal-grid > div {
         display: inline-block;
-	    position:relative;       
+        position:relative;       
         height: 100%;
         max-width: 14.285714286vw;
         border-bottom: 1px solid var(--borderColor);
@@ -155,13 +155,13 @@ font-size: 100%;
           .cal-event {
           display: block;
           position: relative;
-		  margin: 0 2px 3px 2px; padding: 4px;
+          margin: 0 2px 3px 2px; padding: 4px;
           color: #fefefe; background: #8EC5FC;
           font-size: 1rem; hyphens: auto; word-break: break-word; text-decoration: none;
           border-radius:5px;
           box-shadow: 0px 0px 0px #333;
-		  cursor: pointer;
-		  transition: transform .4s ease, box-shadow .4s ease;
+          cursor: pointer;
+          transition: transform .4s ease, box-shadow .4s ease;
           }
           .cal-event:focus {
           outline: 2px dashed #fff;
@@ -202,41 +202,40 @@ font-size: 100%;
           }
           .evt-conference {
           background: #03bd9e;
-          }	  
-		  .moon {
-		  position: absolute;
-		  top: .3rem; right: .2rem;
-		  cursor: pointer;
-		  user-select: none;
-		  }
-		  .moon.full:hover::before {
+          }    
+      .moon {
+      position: absolute;
+      top: .3rem; right: .2rem;
+      cursor: pointer;
+      user-select: none;
+      }
+      .moon.full:hover::before {
           content: "Pleine Lune "
-		  }
-		  .moon.new:hover::before {
-          content: "Nouvelle Lune "
-		  }
-		  .zod {
-          position: absolute;
-          bottom: .2rem; right: .2rem;
-          font-size: 1.3rem;
-		  cursor: pointer;
-          user-select: none;
-          }
-		    .zod:hover > span {
-            display: inline-block;
-			}
-		    .zod > span {
-            display: none;
-			font-size: 1rem;
-		    }
-			  .zod > span:first-letter {
-              text-transform: uppercase;
-		      }
-		  /*.long .evt-title {
-		  position: relative;
-		  z-index: 2
-		  }*/
-
+      }
+      .moon.new:hover::before {
+      content: "Nouvelle Lune "
+      }
+      .zod {
+      position: absolute;
+      bottom: .2rem; right: .2rem;
+      font-size: 1.3rem;
+      cursor: pointer;
+      user-select: none;
+      }
+      .zod:hover > span {
+      display: inline-block;
+      }
+      .zod > span {
+      display: none;
+      font-size: 1rem;
+      }
+        .zod > span:first-letter {
+        text-transform: uppercase;
+        }
+      /*.long .evt-title {
+      position: relative;
+      z-index: 2
+      }*/
       #cal-details {
       position: fixed;
       bottom: -100%;
@@ -268,11 +267,11 @@ font-size: 100%;
           #details-exit {
           display: flex; 
           justify-content: center; align-content: center; flex-direction: column;
-		  position: absolute;
-		  top: -15px; left: calc(50% - 15px);
+          position: absolute;
+          top: -15px; left: calc(50% - 15px);
           width: 30px; height: 30px; 
           margin-left: 5px;
-		  padding-top: .15rem;
+          padding-top: .15rem;
           text-align: center;
           text-decoration: none;
           background: var(--soft-white);
@@ -355,7 +354,7 @@ font-size: 100%;
     transform: rotate(-90deg);
     transform-origin: left top;
     width: 100vh;
-	height:100vw;
+    height:100vw;
     overflow-x: hidden;
     position: absolute;
     top: 100%;
