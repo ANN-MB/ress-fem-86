@@ -64,6 +64,24 @@ const evt = [
   "Type" : "national"
 },
 {
+  "Title": "WEE! - MANSFIELD.TYA, Zaho De Sagazan",
+  "DayStart": "20/1/2022",
+  "TimeStart":"21:00",
+  "Place":"Le Confort Moderne<br/>185, rue du faubourg du Pont Neuf - 86000 POITIERS",
+  "Link":"https://www.confort-moderne.fr/fr/agenda/event/WEE-MANSFIELDTYA-Zaho-De-Sagazan/2625",
+  "Desc":"Concert organisé en coproduction avec le TAP - Théâtre Auditorium de Poitiers dans le cadre de la carte blanche : Warrior Amor à mort.", 
+  "Type":"fest"
+},
+{
+  "Title": "WEE! - Culture Club",
+  "DayStart": "22/1/2022",
+  "TimeStart":"22:30",
+  "Place":"Le Confort Moderne<br/>185, rue du faubourg du Pont Neuf - 86000 POITIERS",
+  "Link":"https://www.confort-moderne.fr/fr/agenda/event/WEE-Culture-Club/2658",
+  "Desc":"Concerts de Ha Kyoon, Crystallmess, Rebeka Warrior , U.R.TRAX organisés en coproduction avec le TAP - Théâtre Auditorium de Poitiers dans le cadre de la carte blanche : Warrior Amor à mort.", 
+  "Type":"fest"
+},
+{
   "Title": "Exposition : Satire graphique et féminisme en Espagne (1975-2020)",
   "DayStart": "1/1/2022",
   "DayEnd": "30/1/2022",
@@ -85,6 +103,14 @@ const evt = [
   "Title": "Journée Zéro Discriminations",
   "DayStart": "1/3/2022",
   "Type" : "national"
+},
+{
+  "Title": "Vélorution 62 : Journée du matrimoine",
+  "DayStart": "6/3/2022",
+  "TimeStart":"15:00",
+  "Desc":"Comme l'an dernier, à l'occasion de la journée internationale des droits des femmes (8 mars), la Vélorution Poitiers organise une journée du Matrimoine. Le but ? Mettre en avant des femmes connues ou non de Poitiers.",
+  "Place":"Place du Maréchal Leclerc - 86000 POITIERS",
+  "Link":"https://www.facebook.com/events/741085680181240/"
 },
 {
   "Title": "Journée internationale pour le droit des femmes",
