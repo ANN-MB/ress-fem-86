@@ -104,12 +104,16 @@ font-size: 100%
           }
           #city, #categories {
           flex: 1 1 auto
-          } 
+          }
+          #incoming:empty {
+          display:none;
+          }
           #incoming:not(:empty) {
-          display: block; position: relative;
+          display: flex; position: relative;
+          justify-content: center;   
+          align-items:center;
           width: 1.1rem; height: 1.1rem;
           float: right;
-		  line-height: 1rem;
           color: #fff; background: #1E90FF;
           border-radius: 3px
           }
