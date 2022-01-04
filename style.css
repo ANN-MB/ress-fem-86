@@ -2,7 +2,7 @@
 
 :root {color-scheme: light dark}
 *, *::before, *::after {box-sizing: border-box}
-.sr-only {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0}
+.sr-only,body::after {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0}
 a {background: transparent} a:active, a:hover {outline: 0}
 select, option {font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; text-transform: none; margin: 0}
 sup {font-size: 75%;line-height: 0;position: relative;vertical-align: baseline;top: -0.5em}
