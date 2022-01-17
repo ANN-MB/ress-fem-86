@@ -67,18 +67,9 @@ const evt = [
   "Title": "WEE! - MANSFIELD.TYA, Zaho De Sagazan",
   "DayStart": "20/1/2022",
   "TimeStart":"21:00",
-  "Place":"Le Confort Moderne<br/>185, rue du faubourg du Pont Neuf - 86000 POITIERS",
+  "Place":"Théâtre Auditorium de Poitiers<br/>1, boulevard de Verdun - 86000 POITIERS",
   "Link":"https://www.confort-moderne.fr/fr/agenda/event/WEE-MANSFIELDTYA-Zaho-De-Sagazan/2625",
   "Desc":"Concert organisé en coproduction avec le TAP - Théâtre Auditorium de Poitiers dans le cadre de la carte blanche : Warrior Amor à mort.", 
-  "Type":"fest"
-},
-{
-  "Title": "WEE! - Culture Club",
-  "DayStart": "22/1/2022",
-  "TimeStart":"22:30",
-  "Place":"Le Confort Moderne<br/>185, rue du faubourg du Pont Neuf - 86000 POITIERS",
-  "Link":"https://www.confort-moderne.fr/fr/agenda/event/WEE-Culture-Club/2658",
-  "Desc":"Concerts de Ha Kyoon, Crystallmess, Rebeka Warrior , U.R.TRAX organisés en coproduction avec le TAP - Théâtre Auditorium de Poitiers dans le cadre de la carte blanche : Warrior Amor à mort.", 
   "Type":"fest"
 },
 {
