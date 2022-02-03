@@ -215,18 +215,19 @@ font-size: 100%
             .C7 {background:#4a55ba}	.C10 {background:#34b49d}	.C11 {background:#00a456}
             .C12 {background:#95c44b}	.C13 {background:#007139}	.C14 {background:#a69e42} 
             .C15 {background:#1b7b6a}	.C16 {background:#46b052}
+          h2, h3, .desc {
+          padding: 4px 13px;
+          }
           h2 {
-          padding: 4px 13px 4px 13px;
           margin: 0 0 5px 0;
           font-size: inherit;
           border-bottom: 1px solid #777
           }
           .desc {
           font-style: italic;
-          padding: 4px 13px 4px 13px
           }
           h3 {
-          margin: 0; padding: 4px 13px;
+          margin: 0; 
           font-size: inherit
           }
           hr {
@@ -239,7 +240,7 @@ font-size: 100%
       padding: 4px 7px;
       text-decoration: none;
       border: 1px solid #888; border-radius: 7px;
-      font-size: 1rem; color:inherit;
+      font-size: 1rem; color: inherit;
       background: linear-gradient(145deg, #e4e8fe, #f8f9ff);
       box-shadow: #888 0 0 2px, #888 0 2px 0;
       z-index: 2;
