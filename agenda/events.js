@@ -105,7 +105,7 @@ const evt = [
   "Type" : "national"
 },
 {
-  "Title": "Vélorution 62 : Journée du matrimoine",
+  "Title": "Girls Tech Days",
   "DayStart": "4/3/2022",
   "DayEnd": "5/3/2022",
   "TimeStart": "10:00",
