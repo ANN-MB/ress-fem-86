@@ -81,6 +81,15 @@ const evt = [
   "Type":"expo"
 },
 {
+  "Title": "Projection-débat sur les femmes dans la résistance en Charente",
+  "DayStart": "7/2/2022",
+  "TimeStart":"20:00",
+  "TimeEnd":"22:30",
+  "Place":"Cinéma Le Capitole - 3, place Émile Roux - CONFOLENS",
+  "Desc":"Débat à l’issue de la projection du film « Blanche et Marie  » sur le thème les Femmes dans la Résistance en Charente. Cette initiative, en particulier dans le contexte d’aujourd’hui, revêt une dimension mémorielle historique et politique très importante.",
+  "Link":"https://web86.info/events/event/projection-et-debat-sur-les-femmes-dans-la-resistance-en-charente/"
+},
+{
   "Title": "Journée internationale des femmes et des filles de science",
   "DayStart": "11/2/2022",
   "Type" : "national"
@@ -94,6 +103,15 @@ const evt = [
   "Title": "Journée Zéro Discriminations",
   "DayStart": "1/3/2022",
   "Type" : "national"
+},
+{
+  "Title": "Vélorution 62 : Journée du matrimoine",
+  "DayStart": "4/3/2022",
+  "DayEnd": "5/3/2022",
+  "TimeStart": "10:00",
+  "Desc":"Le CNFF, l’Union européenne des Femmes, en partenariat avec de nombreux acteurs locaux de Poitiers, proposent d’organiser ces deux jours afin de sensibiliser les jeunes, et notamment les jeunes femmes, sur le numérique, la formation, la facilitation de l’accès aux métiers du numérique, tout en y intégrant l’aspect numérique éthique/ durable et en faisant de la prévention aux dérives liées au développement du numérique.<br/><br/>PROGRAMME :<br/><br/>VENDREDI 4 MARS<br/>Ateliers sur le numérique réservés aux scolaires.<br/>Lieu : À Cobalt et à l'Espace Mendès France<br/><br/>SAMEDI 5 MARS<br/>Journée ouverte au grand public à l'Hôtel de ville de Poitiers.",
+  "Place":"Divers, voir description",
+  "Link":"https://www.facebook.com/events/1003616103882521/"
 },
 {
   "Title": "Vélorution 62 : Journée du matrimoine",
