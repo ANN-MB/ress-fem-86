@@ -114,6 +114,15 @@ const evt = [
   "Link":"https://www.facebook.com/events/1003616103882521/"
 },
 {
+  "Title": "Conférence-débat autour du film « Le souffle de Martha » au Vigeant ",
+  "DayStart": "4/3/2022",
+  "TimeStart": "19:00",
+  "TimeEnd": "22:30",
+  "Desc":"Dans le cadre de la Journée internationale des droits des femmes, les communistes de la cellule Jacqueline RIFFAUD (territoire d’Availles, l’Isle Jourdain, Moussac, Millac, Le Vigeant, Adriers, Queaux) organisent une conférence débat autour du film « Le souffle de Martha » (film  de François PERLIER), avec la participation de Pierre OUTTERYCK, historien et biographe de Martha DESRUMAUX, ouvrière, syndicaliste, communiste, résistante et déportée à Ravensbruck, élue à la libération.<br/><br/><b><u>Thème du débat :</u></b> exemple d’engagement d’un femme dans la lutte pour l’émancipation humaine. Assemblée largement ouverte au public. Nous invitons tous les camarades du Front de Gauche à participer à cette initiative.<br/><br/><b>Vendredi 4 mars, Salle des Pradelles, Le Vigeant</b><ul><li>19 h 00 – accueil et visite de l’exposition</li><li>19 h 45 – projection du film</li><li>21 h 00 – conférence de Pierre OUTTERYCK</li><li>22 h 00 – verre de la Fraternité</li><li>22 h 30 – clôture de la soirée</li></ul>",
+  "Place":"https://web86.info/events/event/conference-debat-autour-du-film-le-souffle-de-martha-au-vigeant/",
+  "Link":"https://www.facebook.com/events/1003616103882521/"
+},  
+{
   "Title": "Vélorution 62 : Journée du matrimoine",
   "DayStart": "6/3/2022",
   "TimeStart":"15:00",
@@ -124,7 +133,7 @@ const evt = [
 {
   "Title": "Queer Week",
   "DayStart": "7/3/2022",
-  "DayStart": "11/3/2022",
+  "DayEnd": "11/3/2022",
   "Desc":"Organisé par l'association VOLAR. Pas davantage d'informations pour le moment.",
   "Link":"https://www.facebook.com/VolarScpo"
 },  
