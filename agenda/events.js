@@ -37,7 +37,6 @@ const evt = [
   "DayStart": "2/12/2021",
   "Place":"UFR Lettres & Langues de l'université de Poitiers",
   "Link":"https://cutt.ly/iYFhaOD",
-  "Desc":"",
   "Type":"expo"
 },
 {
@@ -140,7 +139,8 @@ const evt = [
   "DayStart": "7/3/2022",
   "DayEnd": "11/3/2022",
   "Desc":"Organisé par l'association VOLAR. Pas davantage d'informations pour le moment.",
-  "Link":"https://www.facebook.com/VolarScpo"
+  "Link":"https://www.facebook.com/VolarScpo",
+  "Type" : "fest"
 },  
 
 {
