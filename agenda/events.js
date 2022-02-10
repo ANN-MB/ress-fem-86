@@ -122,6 +122,13 @@ const evt = [
   "Link":"https://www.facebook.com/events/741085680181240/"
 },
 {
+  "Title": "Queer Week",
+  "DayStart": "7/3/2022",
+  "DayStart": "11/3/2022",
+  "Desc":"Organisé par l'association VOLAR. Pas davantage d'informations pour le moment.",
+  "Link":"https://www.facebook.com/VolarScpo"
+},  
+{
   "Title": "Journée internationale pour le droit des femmes",
   "DayStart": "8/3/2022",
   "Type" : "national"
