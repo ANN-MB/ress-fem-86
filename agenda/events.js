@@ -94,6 +94,15 @@ const evt = [
   "Type" : "national"
 },
 {
+  "Title": "Groupe de Parole en non-mixité trans",
+  "Desc": "Avec l'association Transmission 86.<br/>Tu es trans et tu veux échanger ?<br/>Inscription obligatoire (remplir le formulaire en ligne pour avoir toutes les informations - voir lien).",
+  "Link": "https://forms.gle/emVJ4sguXcFvkevK9",
+  "DayStart": "23/2/2022",
+  "TimeStart":"18:30",
+  "TimeEnd":"20:00",
+  "Place": "Poitiers Jeunes - 49, rue de la Cathédrale - 86000 POITIERS"
+},
+{
   "Title": "Journée internationale contre le harcèlement",
   "DayStart": "25/2/2022",
   "Type" : "national"
