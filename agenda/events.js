@@ -94,6 +94,14 @@ const evt = [
   "Type" : "national"
 },
 {
+  "Title": "Vide-dressing",
+  "DayStart": "17/2/2022",
+  "TimeStart": "10:00",
+  "TimeEnd": "19:00",
+  "Place":"11, rue Saint Cyprien - 86000 POITIERS",
+  "Desc":"En soutien à l'exposition <i>Identité et Résistance</i> qui se déroulera lors de la Queer Week."
+},
+{
   "Title": "Groupe de Parole en non-mixité trans",
   "Desc": "Avec l'association Transmission 86.<br/>Tu es trans et tu veux échanger ?<br/>Inscription obligatoire (remplir le formulaire en ligne pour avoir toutes les informations - voir lien).",
   "Link": "https://forms.gle/emVJ4sguXcFvkevK9",
@@ -147,7 +155,7 @@ const evt = [
   "DayStart": "7/3/2022",
   "DayEnd": "11/3/2022",
   "Desc":"Organisé par l'association VOLAR. Pas davantage d'informations pour le moment.",
-  "Link":"https://www.facebook.com/VolarScpo",
+  "Link":"https://www.instagram.com/p/CZ9x93ysVP9/",
   "Type" : "fest"
 },  
 
