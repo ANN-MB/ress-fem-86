@@ -151,6 +151,12 @@ const evt = [
   "Type" : "national"
 },
 {
+  "Title": "Déferlante pour l'égalité",
+  "DayStart": "8/3/2022",
+  "Link":"https://web86.info/wp-content/uploads/2022/02/Appel-unitaire-8-mars-2022.pdf",
+  "Desc":"L'appel unitaire avec les premières signatures pour un appel à la grève (voir le lien). La déclinaison locale de cet appel national arrivera rapidement et sera diffusé largement via les réseaux militants locaux. Prenez déjà date pour mardi 8 mars 2022… "
+},
+{
   "Title": "Queer Week",
   "DayStart": "7/3/2022",
   "DayEnd": "11/3/2022",
