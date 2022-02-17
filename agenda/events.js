@@ -157,6 +157,15 @@ const evt = [
   "Desc":"L'appel unitaire avec les premières signatures pour un appel à la grève (voir le lien). La déclinaison locale de cet appel national arrivera rapidement et sera diffusé largement via les réseaux militants locaux. Prenez déjà date pour mardi 8 mars 2022… "
 },
 {
+  "Title": "Queer Exhibit",
+  "DayStart": "8/3/2022",
+  "DayEnd": "13/3/2022",
+  "TimeStart": "18:00",
+  "TimeStart": "21:00",
+  "Desc":"Exposition &laquo; Identités et Résistances &raquo;.<br/><br/>Entrée à prix libre.<br/><br/>VERNISSAGE LE 8 MARS À 19H",
+  "Place":"Le Bloc - 19, rue Saint Grégoire - 86000 POITIERS"
+},
+{
   "Title": "Queer Week",
   "DayStart": "7/3/2022",
   "DayEnd": "11/3/2022",
