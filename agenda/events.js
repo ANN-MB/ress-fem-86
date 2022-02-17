@@ -157,6 +157,14 @@ const evt = [
   "Desc":"L'appel unitaire avec les premières signatures pour un appel à la grève (voir le lien). La déclinaison locale de cet appel national arrivera rapidement et sera diffusé largement via les réseaux militants locaux. Prenez déjà date pour mardi 8 mars 2022… "
 },
 {
+  "Title": "Queer Week",
+  "DayStart": "7/3/2022",
+  "DayEnd": "11/3/2022",
+  "Desc":"Organisé par l'association VOLAR. Pas davantage d'informations pour le moment.",
+  "Link":"https://www.instagram.com/p/CZ9x93ysVP9/",
+  "Type" : "fest"
+},  
+{
   "Title": "Queer Exhibit",
   "DayStart": "8/3/2022",
   "DayEnd": "13/3/2022",
@@ -165,15 +173,6 @@ const evt = [
   "Desc":"Exposition &laquo; Identités et Résistances &raquo;.<br/><br/>Entrée à prix libre.<br/><br/>VERNISSAGE LE 8 MARS À 19H",
   "Place":"Le Bloc - 19, rue Saint Grégoire - 86000 POITIERS"
 },
-{
-  "Title": "Queer Week",
-  "DayStart": "7/3/2022",
-  "DayEnd": "11/3/2022",
-  "Desc":"Organisé par l'association VOLAR. Pas davantage d'informations pour le moment.",
-  "Link":"https://www.instagram.com/p/CZ9x93ysVP9/",
-  "Type" : "fest"
-},  
-
 {
   "Title": "Journée internationale de la visibilité trans",
   "DayStart": "31/3/2022",
