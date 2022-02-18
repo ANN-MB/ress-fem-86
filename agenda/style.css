@@ -38,7 +38,7 @@ font-size: 100%;
       width: 100%;
       padding: .2rem 0;
       font-size: 1.1rem
-      user-select: none;     
+      user-select: none;
       }
         .cal-nav > div {
         display: inline-block;
@@ -105,7 +105,7 @@ font-size: 100%;
       }
         #cal-grid > div {
         display: inline-block;
-        position:relative;       
+        position:relative;
         height: 100%;
         max-width: 14.285714286vw;
         border-bottom: 1px solid var(--borderColor);
@@ -113,7 +113,7 @@ font-size: 100%;
         }
         #cal-grid > div:empty {
         min-height:14.2857142857vw
-        }       
+        }
         #cal-grid > div:nth-child(7n), .days-names div:nth-last-child(1)  {
         border-right: 0;
         }
@@ -125,12 +125,12 @@ font-size: 100%;
           flex-direction: column; justify-content: center;  align-content: center;
           width: 1.5rem; height: 1.5rem;
           margin: .2rem;
-          font-size: 1rem; text-align:center         
+          font-size: 1rem; text-align:center
           }
           .cal-prev, .cal-next, .cal-curr  {
           box-shadow: 0 1px 0 white inset, inset 0 1px 0 rgba(255,255,255,0.7);
           border: 1px solid rgba(0,0,0,0.1);
-          background-color: rgba(255,255,255,0.5);  
+          background-color: rgba(255,255,255,0.5);
           }
           .cal-prev, .cal-next {
           opacity: .5 ;
@@ -165,7 +165,7 @@ font-size: 100%;
           }
           .cal-event:focus {
           outline: 2px dashed #fff;
-          } 
+          }
           .pos-s {
           border-radius: 5px 0 0 5px;
           margin-right: -1px;
@@ -202,7 +202,7 @@ font-size: 100%;
           }
           .evt-conference {
           background: #03bd9e;
-          }    
+          }
       .moon {
       position: absolute;
       top: .3rem; right: .2rem;
@@ -265,11 +265,11 @@ font-size: 100%;
           }
 
           #details-exit {
-          display: flex; 
+          display: flex;
           justify-content: center; align-content: center; flex-direction: column;
           position: absolute;
           top: -15px; left: calc(50% - 15px);
-          width: 30px; height: 30px; 
+          width: 30px; height: 30px;
           margin-left: 5px;
           padding-top: .15rem;
           text-align: center;
@@ -319,11 +319,11 @@ font-size: 100%;
   .cal-prev, .cal-next   { background: rgba(255,255,255,.3)}
   .moon {filter: drop-shadow(0 0 3px #fff);}
   .moon.full {filter: drop-shadow(0 0 3px #fff);}
-  
+
 }
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), 
+  src: url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),
        url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff');
 }
 .fa::before {

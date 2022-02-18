@@ -56,7 +56,7 @@ const evt = [
   "Link":"https://www.festivalegaleaegal.com/",
   "Desc":"5<sup>ème</sup> ÉDITION<br/>À l'initiative d'HF Nouvelle Aquitaine, égalité femme homme dans les arts et la culture",
   "Type":"fest"
-},	
+},
 {
   "Title": "Journée du souvenir de l'Holocauste",
   "DayStart": "20/1/2022",
@@ -68,7 +68,7 @@ const evt = [
   "TimeStart":"21:00",
   "Place":"Théâtre Auditorium de Poitiers<br/>1, boulevard de Verdun - 86000 POITIERS",
   "Link":"https://www.confort-moderne.fr/fr/agenda/event/WEE-MANSFIELDTYA-Zaho-De-Sagazan/2625",
-  "Desc":"Concert organisé en coproduction avec le TAP - Théâtre Auditorium de Poitiers dans le cadre de la carte blanche : Warrior Amor à mort.", 
+  "Desc":"Concert organisé en coproduction avec le TAP - Théâtre Auditorium de Poitiers dans le cadre de la carte blanche : Warrior Amor à mort.",
   "Type":"fest"
 },
 {
@@ -108,7 +108,8 @@ const evt = [
   "DayStart": "23/2/2022",
   "TimeStart":"18:30",
   "TimeEnd":"20:00",
-  "Place": "Poitiers Jeunes - 49, rue de la Cathédrale - 86000 POITIERS"
+  "Place": "Poitiers Jeunes - 49, rue de la Cathédrale - 86000 POITIERS",
+  "Geo": "46.5820492;0.3424063"
 },
 {
   "Title": "Journée internationale contre le harcèlement",
@@ -126,8 +127,10 @@ const evt = [
   "TimeStart": "19:00",
   "TimeEnd": "22:30",
   "Desc":"Dans le cadre de la Journée internationale des droits des femmes, les communistes de la cellule Jacqueline RIFFAUD (territoire d’Availles, l’Isle Jourdain, Moussac, Millac, Le Vigeant, Adriers, Queaux) organisent une conférence débat autour du film « Le souffle de Martha » (film  de François PERLIER), avec la participation de Pierre OUTTERYCK, historien et biographe de Martha DESRUMAUX, ouvrière, syndicaliste, communiste, résistante et déportée à Ravensbruck, élue à la libération.<br/><br/><b><u>Thème du débat :</u></b> Exemple d’engagement d’une femme dans la lutte pour l’émancipation humaine.<br/><br/>Assemblée largement ouverte au public.<br/><br/>Nous invitons tous les camarades du Front de Gauche à participer à cette initiative.<br/><br/><b>Vendredi 4 mars, Salle des Pradelles, Le Vigeant</b><ul><li>19 h 00 – accueil et visite de l’exposition</li><li>19 h 45 – projection du film</li><li>21 h 00 – conférence de Pierre OUTTERYCK</li><li>22 h 00 – verre de la Fraternité</li><li>22 h 30 – clôture de la soirée</li></ul>",
-  "Place":"https://web86.info/events/event/conference-debat-autour-du-film-le-souffle-de-martha-au-vigeant/"
-}, 
+  "Link":"https://web86.info/events/event/conference-debat-autour-du-film-le-souffle-de-martha-au-vigeant/",
+  "Place":"Salle des Pradelles - 7, place Saint-Georges - 86150 Le Vigeant",
+  "Geo":"46.2250684;0.6467625"
+},
 {
   "Title": "Girls Tech Days",
   "DayStart": "4/3/2022",
@@ -143,7 +146,8 @@ const evt = [
   "TimeStart":"15:00",
   "Desc":"Comme l'an dernier, à l'occasion de la journée internationale des droits des femmes (8 mars), la Vélorution Poitiers organise une journée du Matrimoine. Le but ? Mettre en avant des femmes connues ou non de Poitiers.",
   "Place":"Place du Maréchal Leclerc - 86000 POITIERS",
-  "Link":"https://www.facebook.com/events/741085680181240/"
+  "Link":"https://www.facebook.com/events/741085680181240/",
+  "Geo":"46.5800119;0.3376787"
 },
 {
   "Title": "Journée internationale pour le droit des femmes",
@@ -163,7 +167,7 @@ const evt = [
   "Desc":"Organisé par l'association VOLAR. Pas davantage d'informations pour le moment.",
   "Link":"https://www.instagram.com/p/CZ9x93ysVP9/",
   "Type" : "fest"
-},  
+},
 {
   "Title": "Queer Exhibit",
   "DayStart": "8/3/2022",
@@ -171,7 +175,8 @@ const evt = [
   "TimeStart": "18:00",
   "TimeStart": "21:00",
   "Desc":"Exposition &laquo; Identités et Résistances &raquo;.<br/><br/>Entrée à prix libre.<br/><br/>VERNISSAGE LE 8 MARS À 19H",
-  "Place":"Le Bloc - 19, rue Saint Grégoire - 86000 POITIERS"
+  "Place":"Le Bloc - 19, rue Saint Grégoire - 86000 POITIERS",
+  "Geo":"46.5761019;0.336987"
 },
 {
   "Title": "Journée internationale de la visibilité trans",
@@ -185,7 +190,8 @@ const evt = [
   "TimeEnd": "20:00",
   "Link":"https://www.facebook.com/events/280129067229604",
   "Place":"L'atelier du petit plateau<br/>33, place Henri Barbusse<br/>86000 POITIERS",
-  "Desc":"Permanence en mixité choisie ! Pour les femmes et personnes trans."
+  "Desc":"Permanence en mixité choisie ! Pour les femmes et personnes trans.",
+  "Geo":"46.5760514;0.3360265"
 },
 {
   "Title": "Journée internationale de l'asexualité",
@@ -224,7 +230,8 @@ const evt = [
   "TimeEnd": "20:00",
   "Link":"https://www.facebook.com/events/280129067229604",
   "Place":"L'atelier du petit plateau<br/>33, place Henri Barbusse<br/>86000 POITIERS",
-  "Desc":"Permanence en mixité choisie ! Pour les femmes et personnes trans."
+  "Desc":"Permanence en mixité choisie ! Pour les femmes et personnes trans.",
+  "Geo":"46.5760514;0.3360265"
 },
 {
   "Title": "Nuit du Souvenir du Pulse (Orlando)",

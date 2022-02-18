@@ -2,7 +2,7 @@
 'use strict';
 class RightTime {
   constructor(a,m,j,h,min) {
-    0 !== arguments.length ? (!m && (m = 1), !j && (j = 1), !h && (h = 0), !min && (min = 0), 
+    0 !== arguments.length ? (!m && (m = 1), !j && (j = 1), !h && (h = 0), !min && (min = 0),
     this.Now = new Date(a, m - 1, j, h, min)) : this.Now = new Date();
     this.Year = this.Now.getFullYear();
     this.Month = this.Now.getMonth() + 1;
@@ -11,18 +11,18 @@ class RightTime {
   }
   get Months() {
     var baseDate = new Date(1900,0), months = [null];
-    for(var i = 1; i < 13; i++) {       
+    for(var i = 1; i < 13; i++) {
       months.push(baseDate.toLocaleDateString(this.locale, { month: 'long' }));
-      baseDate.setMonth(i);   
+      baseDate.setMonth(i);
     }
     Object.freeze(months);
     return months
   }
   get DaysOfWeek() {
     var baseDate = new Date(1900, 0, 1), weekDays = [null];
-    for(var i = 0; i < 7; i++) {       
+    for(var i = 0; i < 7; i++) {
       weekDays.push(baseDate.toLocaleDateString(this.locale, { weekday: 'long' }));
-      baseDate.setDate(baseDate.getDate() + 1);       
+      baseDate.setDate(baseDate.getDate() + 1);
     }
     Object.freeze(weekDays);
     return weekDays
@@ -40,7 +40,7 @@ class RightTime {
   get DaysInWeekPrev() { return this.FirstDayOfMonth - 1 }
   get DaysInWeekNext() { return 7 - this.LastDayOfMonth }
   get Zodiac() {
-    var m = this.Month;  
+    var m = this.Month;
     return {
       get Emote() { return [null,'\u2652','\u2653','\u2648','\u2649','\u264a','\u264b','\u264c','\u264d','\u264e','\u264f','\u2650','\u2651'][m] },
       get Bound() { return [null, 21, 20, 21, 21, 21, 22, 23, 23, 23, 23, 21, 20][m] },
@@ -79,16 +79,16 @@ class RightTime {
     return new RightTime(d.getFullYear(), d.getMonth()+1, d.getDate())
   }
 }
-var nowMonth, 
-    thisMonth, 
-    evtL = evt.length, 
-    events = [], eventsLength, 
-    storeFocus, 
+var nowMonth,
+    thisMonth,
+    evtL = evt.length,
+    events = [], eventsLength,
+    storeFocus,
     soonEvents = 0,
     minMonth = [2021,12],
     showMoonPhases = true,
     showZodiacs = true;
-  
+
 nowMonth = thisMonth = new RightTime();
 
 const
@@ -129,7 +129,8 @@ showDetails = (a,e) => {
   $('details-time').innerHTML = dr + ' ' + (longhour || '');
   $('details-place').innerHTML = a.Place || '';
   $('details-link').innerHTML = a.Link ? (`<a href="${a.Link}" rel="external noreferrer">${a.Link}</a>`) : '';
-  $('details-desc').innerHTML = a.Desc ? (a.Desc.replace(/\[\[(.+?)\]\]/gi,'<a href="$1" rel="external noreferrer">$1</a>')) : ''; 
+  $('details-desc').innerHTML = a.Desc ? (a.Desc.replace(/\[\[(.+?)\]\]/gi,'<a href="$1" rel="external noreferrer">$1</a>')) : '';
+  $('details-dl').setAttribute('data-dl',storeFocus.getAttribute('data-index'))
   details.style.bottom = '0';
   details.setAttribute('aria-hidden','false');
   details.focus();
@@ -162,7 +163,7 @@ generateMonth = () => {
       //await sleep(5);
     }
   }
-  var date = thisMonth, b = date.DaysInWeekPrev; 
+  var date = thisMonth, b = date.DaysInWeekPrev;
   calendarBoudaries(date.Year,date.Month);
   calGrid.innerHTML = '';
   calGrid.style.counterReset = `curr-days next-days prev-days ${date.PrevMonthLength - b}`;
@@ -232,8 +233,8 @@ function init() {
   for (var i = 0 ; i < evtL; i++) {
     var start = evt[i].DayStart.split('/');
     if (evt[i].DayEnd) {
-      var end = evt[i].DayEnd.split('/')[0],
-          duration = end - start[0] + 1;  
+      let end = evt[i].DayEnd.split('/')[0],
+          duration = end - start[0] + 1;
       for (var j = 0 ; j < duration ; j++) {
         let newe = Object.assign({}, evt[i])
         newe.DayStart = end - j + '/' + start[1] + '/' + start[2];
@@ -260,6 +261,135 @@ function init() {
   $('go-next').addEventListener('click', function(e) {changeMonth(1,e)},!1);
   $('details-exit').addEventListener('click', function(e) { exitDetails(e) },!1);
 }
+
+function ical_download(a) {
+  let details = evt[a],
+      offset = ("0" + ((new Date()).getTimezoneOffset() / 60)).slice(-2),
+      daystart = details.DayStart.split("/"),
+      dayend = details.DayEnd ? details.DayEnd.split("/") : false,
+      end,
+      start;
+
+  var vstart = daystart[2] + (0 + daystart[1]).slice(-2) + (0 + daystart[0]).slice(-2);
+
+  if (details.TimeStart) {
+    let tz = ';TZID=Europe/Paris:'
+    let split1 = details.TimeStart.split(':');
+    start = tz + vstart + 'T' + split1[0] + split1[1] + '00';
+
+    if (details.TimeEnd) {
+      end = tz + (dayend
+                   ? dayend[2] + (0 + dayend[1]).slice(-2) + (0 + dayend[0]).slice(-2)
+                   : vstart
+                 )
+               + 'T' + details.TimeEnd.replace(':','') + '00';
+
+    } else {
+        end = tz + (dayend
+                     ? dayend[2] + (0 + dayend[1]).slice(-2) + (0 + dayend[0]).slice(-2)
+                     : vstart
+                   ) +
+              'T' +
+              split1[0] + split1[1] + '00'
+    }
+  } else {
+    start = ';VALUE=DATE:' + vstart;
+    if (dayend) {
+      end = ';VALUE=DATE:' + dayend[2] + (0 + dayend[1]).slice(-2) + (0 + dayend[0]).slice(-2);
+    } else {
+      end = ';VALUE=DATE:' + daystart[2] + (0 + daystart[1]).slice(-2) + ('0' + (+daystart[0]+1)).slice(-2);
+    }
+  }
+
+	const _save = function(fileURL) {
+    var filename = details.Title.normalize("NFD").replace(/[\u0300-\u036f]/gi, '').replace(/[ ']/gi,'_').replace(/&[a-z]+;/gi,'').replace(/[^\w]/gi,'').substring(0, 20) +'.ics'
+		if (!window.ActiveXObject) {
+			var save = document.createElement('a');
+			save.href = fileURL;
+			save.target = '_blank';
+			save.download = filename || 'unknown';
+
+			var evt = new MouseEvent('click', {
+				'view': window,
+				'bubbles': true,
+				'cancelable': false
+			});
+			save.dispatchEvent(evt);
+
+			(window.URL || window.webkitURL).revokeObjectURL(save.href);
+		}
+
+		// for IE < 11
+		else if (!!window.ActiveXObject && document.execCommand) {
+			var _window = window.open(fileURL, '_blank');
+			_window.document.close();
+			_window.document.execCommand('SaveAs', true, filename || fileURL)
+			_window.close();
+		}
+	}
+
+
+	var now = new Date(),
+      uid = 'event-'+now.getTime()+'@ressfem86',
+      loc = (details.Place ? details.Place.replace(/<br\/>/g,' - ') : ''),
+      link = details.Link ? details.Link : '',
+      title = details.Title.replace(/&nbsp;/g,' '),
+      geo = details.Geo ? details.Geo : '',
+      dtstamp = now.toISOString().replace(/([0-9]+)-([0-9]+)-([0-9]+)T([0-9]+):([0-9]+):([0-9]+)\.([0-9]+)Z/g,'$1$2$3T$4$500'),
+      ics_lines =
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//annmb.github.io/ress-fem-86/agenda//Ann MB//FR
+X-WR-CALNAME:Ressources Féministes Queer 86
+NAME:Feed Title
+X-WR-TIMEZONE:Europe/Paris
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Europe/Paris
+TZURL:http://tzurl.org/zoneinfo-outlook/Europe/Paris
+X-LIC-LOCATION:Europe/Paris
+BEGIN:DAYLIGHT
+TZNAME:CEST
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:CET
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:${uid}
+DTSTAMP:${dtstamp}
+DTSTART${start},
+DTEND${end},
+SUMMARY:${title},
+LOCATION:${loc}
+GEO:${geo}
+URL:${link}
+SEQUENCE:0
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:${title}
+TRIGGER:-P1D
+END:VALARM
+END:VEVENT
+END:VCALENDAR`,
+
+  dlurl = 'data:text/calendar;utf8,' + encodeURIComponent(ics_lines);
+
+	_save(dlurl);
+}
+
+document.getElementById('details-dl').addEventListener('click', function(){
+  ical_download(this.getAttribute('data-dl'))
+});
+
 window.addEventListener('DOMContentLoaded', function(){
   init();
   correctHeight();
