@@ -335,6 +335,7 @@ function ical_download(a) {
       link = details.Link ? details.Link : '',
       title = details.Title.replace(/&nbsp;/g,' '),
       geo = details.Geo ? details.Geo : '',
+      desc = details.Desc ? details.Desc : '',
       dtstamp = now.toISOString().replace(/([0-9]+)-([0-9]+)-([0-9]+)T([0-9]+):([0-9]+):([0-9]+)\.([0-9]+)Z/g,'$1$2$3T$4$500'),
       ics_lines =
 `BEGIN:VCALENDAR
@@ -366,9 +367,10 @@ END:VTIMEZONE
 BEGIN:VEVENT
 UID:${uid}
 DTSTAMP:${dtstamp}
-DTSTART${start},
-DTEND${end},
-SUMMARY:${title},
+DTSTART${start}
+DTEND${end}
+SUMMARY:${title}
+DESCRIPTION:${desc}
 LOCATION:${loc}
 GEO:${geo}
 URL:${link}
@@ -379,11 +381,10 @@ DESCRIPTION:${title}
 TRIGGER:-P1D
 END:VALARM
 END:VEVENT
-END:VCALENDAR`,
+END:VCALENDAR`;
 
-  dlurl = 'data:text/calendar;utf8,' + encodeURIComponent(ics_lines);
-
-	_save(dlurl);
+  var dlurl = 'data:text/calendar;utf8,' + encodeURIComponent(ics_lines);
+  _save(dlurl);
 }
 
 document.getElementById('details-dl').addEventListener('click', function(){
