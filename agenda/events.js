@@ -112,13 +112,6 @@ const evt = [
   "Geo": "46.5820492;0.3424063"
 },
 {
-  "Title": "Dinette LGBTQIA+",
-  "DayStart": "23/2/2022",
-  "Place":"L'envers du Bocal - 16ter, rue de la Regratterie - 86000 Poitiers",
-  "Desc":"Organisé par Transmission 86<br/><br/>Viens rencontrer  les autres personnes queer de Poitiers autour d'une boisson chaude !<br/><br/>Pense à t'inscrire par message sur Instagram (@transmission.86)",
-  "Geo":"46.5834849;0.3423213"
-},
-{
   "Title": "Journée internationale contre le harcèlement",
   "DayStart": "25/2/2022",
   "Type" : "national"
