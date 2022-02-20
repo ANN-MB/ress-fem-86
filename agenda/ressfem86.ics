@@ -41,21 +41,6 @@ TRIGGER:-P1D
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:event-1645220536130@ressfem86
-DTSTAMP:20220218T214200
-DTSTART;VALUE=DATE:20220223
-DTEND;VALUE=DATE:20220224
-SUMMARY:Dinette LGBTQIA+
-LOCATION:L'envers du Bocal - 16ter, rue de la Regratterie - 86000 Poitiers
-GEO:46.5834849;0.3423213
-SEQUENCE:0
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Organisé par Transmission 86  Viens rencontrer  les autres personnes queer de Poitiers autour d'une boisson chaude !  Pense à t'inscrire par message sur Instagram (@transmission.86)
-TRIGGER:-P1D
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:event-1645220536131@ressfem86
 DTSTAMP:20220218T214200
 DTSTART;VALUE=DATE:20220225
