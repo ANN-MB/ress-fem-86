@@ -199,13 +199,22 @@ const evt = [
   "DayStart": "31/3/2022",
   "Type" : "national"
 },
-  {
+{
   "Title": "Dinette LGBTQIA+",
   "DayStart": "16/3/2022",
   "TimeStart":"17:00",
   "Place":"L'envers du Bocal - 16ter, rue de la Regratterie - 86000 Poitiers",
   "Desc":"Organisé par Transmission 86<br/><br/>Viens rencontrer  les autres personnes queer de Poitiers autour d'une boisson chaude !<br/><br/>Pense à t'inscrire par message sur Instagram (@transmission.86)",
   "Geo":"46.5834849;0.3423213"
+},
+{
+  "Title": "Forum LGBTQIA+ et Féministe",
+  "DayStart": "17/3/2022",
+  "TimeStart":"13:00",
+  "TimeEnd":"18:30",
+  "Place":"Maison des Étudiant&middotse&middot;s - 1, rue de Neuma Fechine Borges - 86000 POITIERS",
+  "Link":"https://www.instagram.com/p/Cah27jtMpo_/",
+  "Geo":"46.568784;0.386421"
 },
 {
   "Title": "Dinette LGBTQIA+",
